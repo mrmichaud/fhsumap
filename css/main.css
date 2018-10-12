@@ -15,3 +15,16 @@
         height: 100%;
     }
 }
+
+.navbar-nav img {
+    width: 30px;
+    height: 30px;
+}
+
+.icon-text-container {
+    display: inline-block;
+    text-align: center;
+}
+.text-block {
+    display: block;
+}

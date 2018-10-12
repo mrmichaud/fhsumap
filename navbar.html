@@ -7,16 +7,66 @@
     <title>Navbar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
 </head>
 
 <body>
-    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control ml-sm-5" type="search" size="30" placeholder="Buildings/Stuff name" aria-label="Search">
+                    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+             </form>
+        
+        <div class="">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a  class="nav-link icon-text-container" href="#">
+                    <span><img src="./img/layers.png"  class="d-inline-block align-top" alt="layers"></span>
+                    <span class="text-block">Layers</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a  class="nav-link icon-text-container" href="#">
+                    <span><img src="./img/building.png"  class="d-inline-block align-top" alt="buildings"></span>
+                    <span class="text-block">Buildings</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a  class="nav-link icon-text-container" href="#">
+                    <span><img src="./img/parking.png"  class="d-inline-block align-top" alt="parking"></span>
+                    <span class="text-block">Parking</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a  class="nav-link icon-text-container" href="#">
+                    <span><img src="./img/tour.svg"  class="d-inline-block align-top" alt="tour"></span>
+                    <span class="text-block">Tour</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a  class="nav-link icon-text-container" href="#">
+                    <span><img src="./img/direction.png"  class="d-inline-block align-top" alt="direction"></span>
+                    <span class="text-block">Direction</span>
+                </a>
+            </li>
+            </ul>
+            <a class="navbar-brand mr-sm-6" href="#">Fort Hays State University Map</a>
+            
+            <span class="nav-link icon-text-container">
+                <ul>
+                    <li class="nav-item">
+                    <a  class="nav-link icon-text-container" href="#">
+                    <span img src="./img/account.png"  class="d-inline-block align-top" alt="account"></span>
+                    <span class="text-block">Account</span>
+                    </a>
+                    </li>
+                </ul>
+            </span>
+        </div>
+    </nav>
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

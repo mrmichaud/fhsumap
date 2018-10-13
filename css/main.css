@@ -1,24 +1,58 @@
-@media screen and (max-width: 768px) {
-    .navbar {
-        overflow: hidden;
-        background-color: rgba(255, 215, 0, 1);
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        font-size: 10px;
-    }
-}
-
-.navbar-nav img {
-    width: 30px;
-    height: 30px;
-}
-
 .icon-text-container {
     display: inline-block;
     text-align: center;
 }
 
-.text-block {
+body {
+    background-color: aqua;
+}
+
+
+/* top navbar design */
+
+nav {
+    background-color: #eaaf0f;
+    text-align: center;
+}
+
+nav img {
+    width: 25px;
+    height: 25px;
+}
+
+nav .navbar-border {
+    padding: 3px;
+    border: 10px solid black;
+}
+
+nav .nav-menu {
+    display: inline-block;
+    margin: 3px;
+}
+
+nav .nav-text {
     display: block;
 }
+
+nav .nav-menu .hide {
+    display: none;
+}
+
+nav a {
+    color: #000;
+}
+
+
+/* mobile version navbar */
+
+
+/* @media screen and (max-width: 768px) {
+    .navbar {
+        z-index: 1;
+        overflow: hidden;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        font-size: 10px;
+    }
+} */

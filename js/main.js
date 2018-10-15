@@ -1,15 +1,16 @@
 /* side bar */
 // function openNav() {
-//     document.getElementById("side-nav").style.width = "250px";
+//     document.getElementById("main-sidebar").style.width = "250px";
 // }
 
 // function closeNav() {
-//     document.getElementById("side-nav").style.width = "0";
+//     document.getElementById("main-sidebar").style.width = "0";
 // }
 
 $(document).ready(() => {
     $('#search').on('click', () => {
-        $('#side-search').toggle();
+        $('#side-search').toggleClass('main-sidebar-width');
     });
+
 
 });

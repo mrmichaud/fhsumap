@@ -1,10 +1,12 @@
-.icon-text-container {
-    display: inline-block;
-    text-align: center;
-}
+/* Total Config */
 
 body {
-    background-color: aqua;
+    background-color: white;
+}
+
+.body-config {
+    margin: 0 5px;
+    /* padding: 5px; */
 }
 
 
@@ -14,6 +16,16 @@ nav {
     background-color: #eaaf0f;
     font-family: 'Athiti', sans-serif;
     text-align: center;
+    z-index: 10;
+    bottom: 0;
+}
+
+.navbar {
+    z-index: 10;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 nav img {
@@ -68,10 +80,12 @@ nav a {
 
 @media screen and (max-width: 567px) {
     .navbar {
-        z-index: 1;
+        z-index: 10;
         overflow: hidden;
+        position: fixed;
         width: 100%;
         font-size: 15px;
+        bottom: 0;
         padding: 4px;
     }
     nav .nav-menu {
@@ -82,11 +96,13 @@ nav a {
     nav a {
         font-size: 12px;
     }
+    /* sidebar design */
 }
 
 @media screen and (max-width: 414px) {
+    /* navbar design */
     .navbar {
-        z-index: 1;
+        z-index: 10;
         overflow: hidden;
         position: fixed;
         bottom: 0;
@@ -112,7 +128,7 @@ nav a {
 
 @media screen and (max-width: 330px) {
     .navbar {
-        z-index: 1;
+        z-index: 10;
         overflow: hidden;
         position: fixed;
         bottom: 0;
@@ -140,8 +156,55 @@ nav a {
 
 /* Map Design */
 
-.map img {
+.main-map img {
     width: 100%;
     height: auto;
     max-width: 100%;
+}
+
+
+/* Sidebar Design */
+
+main .main-sidebar {
+    z-index: 2;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+main .main-sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+main .main-sidebar a:hover {
+    background-color: rgba(217, 217, 217, 0.829);
+}
+
+main .main-sidebar .left-arrow {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .main-sidebar {
+        padding-top: 15px;
+    }
+    .main-sidebar a {
+        font-size: 18px;
+    }
 }

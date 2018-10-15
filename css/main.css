@@ -1,11 +1,12 @@
 /* Total Config */
 
 body {
-    background-color: white;
+    background-color: black;
+    /*    background: url('../img/japan-map.jpg') no-repeat contain; */
 }
 
 .body-config {
-    margin: 0 5px;
+    margin: 0 0;
     /* padding: 5px; */
 }
 
@@ -76,84 +77,6 @@ nav a {
 }
 
 
-/* mobile version navbar */
-
-@media screen and (max-width: 567px) {
-    .navbar {
-        z-index: 10;
-        overflow: hidden;
-        position: fixed;
-        width: 100%;
-        font-size: 15px;
-        bottom: 0;
-        padding: 4px;
-    }
-    nav .nav-menu {
-        display: inline-block;
-        width: 60px;
-        margin: 3px auto;
-    }
-    nav a {
-        font-size: 12px;
-    }
-    /* sidebar design */
-}
-
-@media screen and (max-width: 414px) {
-    /* navbar design */
-    .navbar {
-        z-index: 10;
-        overflow: hidden;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
-    nav a {
-        font-size: 8px;
-    }
-    nav .nav-menu {
-        display: inline-block;
-        width: 35px;
-        margin: 1px auto;
-    }
-    nav .navbar-border {
-        padding: 0;
-        margin: 0 auto;
-    }
-    nav .navbar-border img {
-        width: 18px;
-        height: 20px;
-    }
-}
-
-@media screen and (max-width: 330px) {
-    .navbar {
-        z-index: 10;
-        overflow: hidden;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
-    nav a {
-        font-size: 7px;
-    }
-    nav .nav-menu {
-        display: inline-block;
-        width: 35px;
-        margin: 1px auto;
-    }
-    nav .navbar-border {
-        padding: 0;
-        margin: 0 auto;
-        min-width: 320;
-    }
-    nav .navbar-border img {
-        width: 18px;
-        height: 20px;
-    }
-}
-
-
 /* Map Design */
 
 .main-map img {
@@ -180,20 +103,20 @@ main .main-sidebar {
 }
 
 main .main-sidebar-width {
-    width: 320px;
+    width: 408px;
 }
 
 main .main-sidebar a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: ivory;
     display: block;
     transition: 0.3s;
 }
 
 main .main-sidebar a:hover {
-    background-color: rgba(217, 217, 217, 0.829);
+    background-color: rgba(119, 117, 117, 0.822);
 }
 
 main .main-sidebar .left-arrow {
@@ -205,18 +128,107 @@ main .main-sidebar .left-arrow {
 }
 
 .nav-img-opacity {
-    opacity: 0.2;
+    opacity: 0.3;
 }
 
 .nav-text-color {
     color: white;
 }
 
-@media screen and (max-height: 450px) {
+
+/* mobile version navbar */
+
+@media screen and (max-width: 567px) {
+    .navbar {
+        z-index: 10;
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        font-size: 15px;
+        bottom: 0;
+        padding: 4px;
+    }
+    nav .nav-menu {
+        display: inline-block;
+        width: 60px;
+        margin: 3px auto;
+    }
+    /* sidebar design */
+    main .main-sidebar-width {
+        width: 100%;
+    }
+    nav a {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    /* navbar design */
+    .navbar {
+        z-index: 10;
+        overflow: hidden;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    nav .nav-menu {
+        display: inline-block;
+        width: 45px;
+        margin: 1px auto;
+    }
+    nav .navbar-border {
+        padding: 0;
+        margin: 0 auto;
+    }
+    nav .navbar-border img {
+        width: 18px;
+        height: 20px;
+    }
+    /* sidebar design */
+    main .main-sidebar-width {
+        width: 100%;
+    }
+    nav .nav-text {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .navbar {
+        z-index: 10;
+        overflow: hidden;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    nav .nav-menu {
+        display: inline-block;
+        width: 35px;
+        margin: 1px auto;
+    }
+    nav .navbar-border {
+        padding: 0;
+        margin: 0 auto;
+        min-width: 320;
+    }
+    nav .navbar-border img {
+        width: 18px;
+        height: 20px;
+    }
+    main .main-sidebar-width {
+        width: 100%;
+    }
+    nav .nav-text {
+        font-size: 6px;
+    }
+}
+
+
+/* @media screen and (max-height: 450px) {
     .main-sidebar {
         padding-top: 15px;
     }
     .main-sidebar a {
         font-size: 18px;
     }
-}
+} */

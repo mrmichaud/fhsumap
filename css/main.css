@@ -180,7 +180,7 @@ main .main-sidebar {
 }
 
 main .main-sidebar-width {
-    width: 350px;
+    width: 320px;
 }
 
 main .main-sidebar a {
@@ -202,6 +202,14 @@ main .main-sidebar .left-arrow {
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+}
+
+.img-search-opacity {
+    opacity: 0.2;
+}
+
+.text-search-color {
+    color: white;
 }
 
 @media screen and (max-height: 450px) {

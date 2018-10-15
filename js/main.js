@@ -10,7 +10,7 @@
 $(document).ready(() => {
     $('#search').on('click', () => {
         $('#side-search').toggleClass('main-sidebar-width');
+        $('#text-search').toggleClass('text-search-color');
+        $('#img-search').toggleClass('img-search-opacity');
     });
-
-
 });

@@ -28,6 +28,7 @@ $(document).ready(() => {
         /* sidebar */
         $('#sidebar-layers').toggleClass('main-sidebar-width');
         // active_menu = 'sidebar-layers';
+        $('#' + active_menu).hide();
 
     });
 
@@ -38,7 +39,7 @@ $(document).ready(() => {
         $('#nav-img-building').toggleClass('nav-img-opacity');
         /* sidebar */
         $('#sidebar-building').toggleClass('main-sidebar-width');
-        // $('#' + active_menu).hide();
+
 
     });
 
@@ -75,3 +76,14 @@ $(document).ready(() => {
 
 
 }); /* End:  $(document).ready */
+
+
+/* Google Map */
+var map;
+
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 38.8714, lng: -99.3445 },
+        zoom: 17
+    });
+}

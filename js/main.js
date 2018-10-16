@@ -128,7 +128,7 @@ $(document).ready(() => {
             /* sidebar */
             $('#sidebar-search').toggleClass('main-sidebar-width');
         } else {
-            /* navbar */
+            /* navbar  */
             $('#nav-text-search').toggleClass('nav-text-color');
             $('#nav-img-search').toggleClass('nav-img-opacity');
             /* sidebar */

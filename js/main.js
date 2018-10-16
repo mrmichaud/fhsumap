@@ -1,37 +1,80 @@
-/* side bar */
-// function openNav() {
-//     document.getElementById("main-sidebar").style.width = "250px";
-// }
-
-// function closeNav() {
-//     document.getElementById("main-sidebar").style.width = "0";
-// }
+/* sidebar design */
 
 $(document).ready(() => {
-
-
-
-
-    /* nav-menu-layers */
     $('#nav-menu-layers').on('click', () => {
-        /* navbar */
-        $('#nav-text-layers').toggleClass('nav-text-color');
-        $('#nav-img-layers').toggleClass('nav-img-opacity');
-        /* sidebar */
-        $('#sidebar-layers').toggleClass('main-sidebar-width');
-
+        if ($('#sidebar-layers').hasClass('main-sidebar-width')) {
+            /* navbar */
+            $('#nav-text-layers').removeClass('nav-text-color');
+            $('#nav-img-layers').removeClass('nav-img-opacity');
+            /* sidebar */
+            $('#sidebar-layers').removeClass('main-sidebar-width');
+        } else if ($('main').children().hasClass('main-sidebar-width')) {
+            /* the other navbar */
+            $('.nav-text').removeClass('nav-text-color');
+            $('.nav-img').removeClass('nav-img-opacity');
+            /* the other sidebar */
+            /* $('main').children().hide(); */
+            $('main').children().removeClass('main-sidebar-width');
+            /* self::navbar */
+            $('#nav-text-layers').addClass('nav-text-color');
+            $('#nav-img-layers').addClass('nav-img-opacity');
+            /* self::sidebar */
+            $('#sidebar-layers').addClass('main-sidebar-width');
+        } else {
+            /* self::navbar */
+            $('#nav-text-layers').addClass('nav-text-color');
+            $('#nav-img-layers').addClass('nav-img-opacity');
+            /* self::sidebar */
+            $('#sidebar-layers').addClass('main-sidebar-width');
+        }
     });
 
-    /* nav-menu-building */
     $('#nav-menu-building').on('click', () => {
-        /* navbar */
-        $('#nav-text-building').toggleClass('nav-text-color');
-        $('#nav-img-building').toggleClass('nav-img-opacity');
-        /* sidebar */
-        $('#sidebar-building').toggleClass('main-sidebar-width');
-
-
+        if ($('#sidebar-building').hasClass('main-sidebar-width')) {
+            /* navbar */
+            $('#nav-text-building').removeClass('nav-text-color');
+            $('#nav-img-building').removeClass('nav-img-opacity');
+            /* sidebar */
+            $('#sidebar-building').removeClass('main-sidebar-width');
+        } else if ($('main').children().hasClass('main-sidebar-width')) {
+            /* the other navbar */
+            $('.nav-text').removeClass('nav-text-color');
+            $('.nav-img').removeClass('nav-img-opacity');
+            /* the other sidebar */
+            /* $('main').children().hide(); */
+            $('main').children().removeClass('main-sidebar-width');
+            /* self::navbar */
+            $('#nav-text-building').addClass('nav-text-color');
+            $('#nav-img-building').addClass('nav-img-opacity');
+            /* self::sidebar */
+            $('#sidebar-building').addClass('main-sidebar-width');
+        } else {
+            /* self::navbar */
+            $('#nav-text-building').addClass('nav-text-color');
+            $('#nav-img-building').addClass('nav-img-opacity');
+            /* self::sidebar */
+            $('#sidebar-building').addClass('main-sidebar-width');
+        }
     });
+
+    /* Below is original code */
+    // /* nav-menu-layers */
+    // $('#nav-menu-layers').on('click', () => {
+    //     /* navbar */
+    //     $('#nav-text-layers').toggleClass('nav-text-color');
+    //     $('#nav-img-layers').toggleClass('nav-img-opacity');
+    //     /* sidebar */
+    //     $('#sidebar-layers').toggleClass('main-sidebar-width');
+    // });
+
+    // /* nav-menu-building */
+    // $('#nav-menu-building').on('click', () => {
+    //     /* navbar */
+    //     $('#nav-text-building').toggleClass('nav-text-color');
+    //     $('#nav-img-building').toggleClass('nav-img-opacity');
+    //     /* sidebar */
+    //     $('#sidebar-building').toggleClass('main-sidebar-width');
+    // });
 
     // /* nav-menu-direction */
     // $('#nav-menu-direction').on('click', () => {

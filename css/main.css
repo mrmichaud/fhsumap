@@ -76,6 +76,11 @@ nav a {
     color: #000;
 }
 
+.filter {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+}
+
 
 /* Map Design */
 

@@ -8,7 +8,7 @@
 // }
 
 $(document).ready(() => {
-    let active_menu = undefined;
+
 
 
 
@@ -19,7 +19,7 @@ $(document).ready(() => {
         $('#nav-img-layers').toggleClass('nav-img-opacity');
         /* sidebar */
         $('#sidebar-layers').toggleClass('main-sidebar-width');
-        active_menu = 'sidebar-layers';
+
 
     });
 
@@ -30,7 +30,7 @@ $(document).ready(() => {
         $('#nav-img-building').toggleClass('nav-img-opacity');
         /* sidebar */
         $('#sidebar-building').toggleClass('main-sidebar-width');
-        $('#' + active_menu).hide();
+
 
     });
 

@@ -136,6 +136,7 @@ $(document).ready(() => {
             $('#sidebar-search').addClass('main-sidebar-width');
         }
     }); /* End: $('#nav-menu-search').on */
+
 }); /* End: $(document).ready */
 
 /* Google Map */

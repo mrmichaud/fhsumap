@@ -4,27 +4,54 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Navbar</title>
+    <title>test-code</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/bootstrap-4.1.3.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!--  <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" /> -->
     <style>
+        /* test menu color black/white */
+        
         body {
             background-color: lightblue;
-            min-width: 800px;
-            min-height: 400px
+            min-width: 400px;
+            min-height: 400px;
+            display: block;
+            font-size: 12px;
+            line-height: 200%;
         }
         
         .filter {
             -webkit-filter: brightness(0) invert(1);
             filter: brightness(0) invert(1);
         }
+        /* test top navbar */
+        
+        p {
+            display: block
+        }
+        
+        span {
+            display: inline
+        }
     </style>
 </head>
 
 <body>
 
-    <input class='white' name='color' type='radio' />
+    <!-- test top navbar -->
+    <P>Beginning of body contents.
+        <SPAN id="outer"> Start of outer contents.
+            <SPAN id="inner"> Inner contents.</SPAN> End of outer contents.</SPAN>
+        End of body contents.
+    </P>
+
+
+
+
+
+
+    <!-- test menu color black/white -->
+    <!--     <input class='white' name='color' type='radio' />
     <div class="nav-menu" id="nav-menu-search">
         <img class="nav-img filter" src="./img/search.png" alt="search" id="nav-img-search"><span class="nav-text" id="nav-text-search">Search</span>
     </div>
@@ -33,7 +60,7 @@
     </div>
     <div class="nav-menu" id="nav-menu-test">
         <img class="nav-img" src="./img/test.png" alt="test" id="nav-img-test"><span class="nav-text" id="nav-text-test">test</span>
-    </div>
+    </div> -->
 
     <script src="./js/jquery-3.3.1.js"></script>
     <script src="./js/bootstrap.bundle-4.1.3.js"></script>

@@ -16,6 +16,7 @@ nav .nav-mobile-top {
     background-color: #eaaf0f;
     /* display: inline; */
     font-family: 'Athiti', sans-serif;
+    font-size: 16px;
     overflow: hidden;
     margin: 0 auto;
     min-width: 310px;
@@ -29,7 +30,7 @@ nav .nav-mobile-top {
 
 nav .nav-menu-top {
     display: inline;
-    width: 100px;
+    width: 75px;
     align-items: center;
     vertical-align: middle;
     /*     margin: 10px 10px; */
@@ -38,7 +39,7 @@ nav .nav-menu-top {
 nav #nav-menu-fhsu {
     display: inline-block;
     margin-top: 5px;
-    width: 300px;
+    width: 325px;
     font-weight: bold;
 }
 
@@ -79,7 +80,7 @@ nav .nav-mobile-bottom {
 nav .nav-menu {
     align-items: center;
     display: inline-block;
-    width: 100px;
+    width: 60px;
     margin: 5px auto;
 }
 
@@ -147,6 +148,10 @@ main .main-sidebar a:hover {
 }
 
 @media (max-width: 768px) {
+    nav .nav-mobile-top {
+        font-size: 19px;
+    }
+    /* mobile nav bottom design */
     nav .nav-img {
         width: 25px;
         height: 25px;
@@ -178,6 +183,7 @@ main .main-sidebar a:hover {
 }
 
 @media (max-width: 640px) {
+    /* mobile nav bottom design */
     nav .nav-img {
         width: 20px;
         height: 20px;
@@ -193,6 +199,7 @@ main .main-sidebar a:hover {
 }
 
 @media (max-width: 520px) {
+    /* mobile nav bottom design */
     nav .nav-img {
         width: 15px;
         height: 15px;
@@ -262,7 +269,7 @@ main .main-sidebar a:hover {
     /* mobile nav top design */
     nav .nav-menu-top {
         display: inline-block;
-        width: 60px;
+        width: 59px;
         align-items: center;
         vertical-align: middle;
         /*     margin: 10px 10px; */
@@ -295,12 +302,12 @@ main .main-sidebar a:hover {
         float: left;
         height: 20px;
         width: 20px;
-        margin-top: 2px;
+        margin-top: 5px;
         vertical-align: middle;
     }
     nav #nav-menu-hamburger img {
         float: right;
-        margin-top: 3px;
+        margin-top: 8px;
         margin-right: 5px;
         width: 15px;
         height: 15px;
@@ -323,3 +330,6 @@ main .main-sidebar a:hover {
         width: 100%;
     }
 }
+
+
+/* desk version */

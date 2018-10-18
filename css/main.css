@@ -17,8 +17,8 @@ body {
 nav .nav-desk {
     align-items: center;
     background-color: #eaaf0f;
-    display: flex;
-    /* display: inline-block; */
+    /* display: flex; */
+    display: inline-block;
     font-family: 'Athiti', sans-serif;
     overflow: hidden;
     margin: 0 auto;
@@ -31,34 +31,63 @@ nav .nav-desk {
 
 nav .desk-nav-menu {
     align-items: center;
-    display: inline-block;
-    width: 100px;
-    margin: 5px auto;
+    /* display: inline-block; */
+    float: left;
+    width: 120px;
+    margin: 15px auto 10px auto;
 }
 
 nav #desk-nav-menu-fhsu {
-    width: 300px;
-}
 
+}
+nav #desk-nav-menu-fhsu img {
+  width: 30px;
+  height: 30px;
+}
 nav .desk-nav-img {
     width: 25px;
     height: 25px;
 }
+nav .desk-nav-text {
+  margin-left: 5px;
+}
+nav #desk-nav-menu-hamburger {
+  width: 80px;
+  float: left;
+}
 
+nav #desk-nav-menu-fhsu {
+  float: left;
+  position: relative;
+  left: 70px;
+  margin-left: 20px;
 
+  width: 480px;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 11px;
+}
+nav #desk-nav-menu-info {
+  float: right;
+  position: absolute;
+  right: 0;
+  width: 70px;
+
+}
 /* desk sidebar design */
 
 section .section-sidebar {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 1);
     height: 100%;
     margin: 0;
     overflow-x: hidden;
     overflow-y: scroll;
     padding: 65px 0;
     position: fixed;
-    transition: 0.05s;
-    width: 30%;
+    /* transition: 0.05s; */
+    /* width: 30%; */
     max-width: 401px;
+    min-width: 330px;
     z-index: 3;
 }
 
@@ -274,7 +303,7 @@ main .main-sidebar a:hover {
         z-index: 2;
     }
     main .main-sidebar-width {
-        width: 408px;
+        width: 330px;
     }
 }
 
@@ -319,6 +348,9 @@ main .main-sidebar a:hover {
     }
     nav .nav-text {
         font-size: 12px;
+    }
+    main .main-sidebar-width {
+        width: 330px;
     }
 }
 

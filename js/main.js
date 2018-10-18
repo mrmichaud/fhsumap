@@ -1,6 +1,33 @@
 /* jQuery */
 $(document).ready(() => {
     /* sidebar design */
+    /* #sidebar-hamburger */
+    $('#nav-menu-hamburger').on('click', () => {
+        if ($('#sidebar-hamburger').hasClass('main-sidebar-width')) {
+            /* self::navbar */
+            $('#nav-text-hamburger').removeClass('nav-text-color');
+            $('#nav-img-hamburger').removeClass('filter');
+            /* self::sidebar */
+            $('#sidebar-hamburger').removeClass('main-sidebar-width');
+        } else if ($('main').children().hasClass('main-sidebar-width')) {
+            /* the other navbar */
+            $('.nav-text').removeClass('nav-text-color');
+            $('.nav-img').removeClass('filter');
+            /* the other sidebar */
+            $('main').children().removeClass('main-sidebar-width');
+            /* self::navbar */
+            $('#nav-text-hamburger').addClass('nav-text-color');
+            $('#nav-img-hamburger').addClass('filter');
+            /* self::sidebar */
+            $('#sidebar-hamburger').addClass('main-sidebar-width');
+        } else {
+            /* self::navbar */
+            $('#nav-text-hamburger').addClass('nav-text-color');
+            $('#nav-img-hamburger').addClass('filter');
+            /* self::sidebar */
+            $('#sidebar-hamburger').addClass('main-sidebar-width');
+        }
+    }); /* End: $('#nav-menu-layers').on */
     /* #sidebar-layers */
     $('#nav-menu-layers').on('click', () => {
         if ($('#sidebar-layers').hasClass('main-sidebar-width')) {

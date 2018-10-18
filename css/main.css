@@ -31,17 +31,23 @@ nav .nav-desk {
 
 nav .desk-nav-menu {
     align-items: center;
-    /* display: inline-block; */
+    /* display: flex; */
     float: left;
     width: 120px;
     margin: 15px auto 8px auto;
 }
 
+nav .desk-nav-menu-form {
+    align-items: center;
+    /* display: flex; */
+    float: left;
+    width: 250px;
+    margin: 0 auto;
+}
+
 nav .desk-nav-text-color {
     color: ivory;
 }
-
-nav #desk-nav-menu-fhsu {}
 
 nav #desk-nav-menu-fhsu img {
     width: 45px;
@@ -54,6 +60,10 @@ nav .desk-nav-img {
 }
 
 nav .desk-nav-text {
+    margin-left: 5px;
+}
+
+nav #desk-nav-img-search {
     margin-left: 5px;
 }
 
@@ -85,7 +95,7 @@ nav #desk-nav-menu-info {
 }
 
 nav #desk-nav-menu-search {
-    width: 350px;
+    width: 300px;
     margin-top: 8px;
 }
 

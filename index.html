@@ -7,6 +7,7 @@
     <title>Fort Hays State University Campus Map</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/bootstrap-4.1.3.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
 </head>
@@ -14,29 +15,66 @@
 <body>
     <!-- desk navbar -->
     <nav>
-
+        <div class="nav-desk">
+            <!-- desk-nav-menu-hamburger -->
+            <div class="desk-nav-menu" id="desk-nav-menu-hamburger">
+                <img class="desk-nav-img" src="./img/hamburger.png" alt="hamburger" id="desk-nav-img-hamburger">
+                <!-- <span class="desk-nav-text" id="desk-nav-text-hamburger">hamburger</span> -->
+            </div>
+            <!-- desk-nav-menu-search -->
+            <div class="desk-nav-menu" id="desk-nav-menu-search">
+                <img class="desk-nav-img" src="./img/search.png" alt="search" id="desk-nav-img-search"><span class="desk-nav-text" id="desk-nav-text-search">Search</span>
+            </div>
+            <!-- desk-nav-menu-layers -->
+            <div class="desk-nav-menu" id="desk-nav-menu-layers">
+                <img class="desk-nav-img" src="./img/layers.png " alt="layer" id="desk-nav-img-layers"><span class="desk-nav-text" id="desk-nav-text-layers">Layers</span>
+            </div>
+            <!-- desk-nav-menu-building -->
+            <div class="desk-nav-menu" id="desk-nav-menu-building">
+                <img class="desk-nav-img" src="./img/building.png " alt="building" id="desk-nav-img-building"><span class="desk-nav-text" id="desk-nav-text-building">Building</span>
+            </div>
+            <!-- desk-nav-menu-parking -->
+            <div class="desk-nav-menu" id="desk-nav-menu-parking">
+                <img class="desk-nav-img" src="./img/parking.png " alt="parking" id="desk-nav-img-parking"><span class="desk-nav-text" id="desk-nav-text-parking">Parking</span>
+            </div>
+            <!-- desk-nav-menu-direction -->
+            <div class="desk-nav-menu" id="desk-nav-menu-direction">
+                <img class="desk-nav-img" src="./img/direction.png " alt="direction" id="desk-nav-img-direction"><span class="desk-nav-text" id="desk-nav-text-direction">Direction</span>
+            </div>
+            <!-- desk-nav-menu-tour -->
+            <div class="desk-nav-menu" id="desk-nav-menu-tour">
+                <img class="desk-nav-img" src="./img/tour03.png " alt="tour" id="desk-nav-img-tour"><span class="desk-nav-text" id="desk-nav-text-tour">Tour</span>
+            </div>
+            <!-- desk-nav-menu-tiger -->
+            <!--  <div class="desk-nav-menu" id="desk-nav-menu-tiger">
+                <img class="desk-nav-img" src="./img/tiger.png " alt="tiger" id="desk-nav-img-tiger">
+            </div> -->
+            <!-- desk-nav-menu-fhsu -->
+            <div class="desk-nav-menu" id="desk-nav-menu-fhsu">
+                <img class="desk-nav-img" src="./img/tiger.png " alt="tiger" id="desk-nav-img-tiger">
+                <span class="desk-nav-text" id="desk-nav-text-fhsu">Fort Hays State University Campus Map</span>
+            </div>
+            <!-- desk-nav-menu-info -->
+            <div class="desk-nav-menu" id="desk-nav-menu-info">
+                <img class="desk-nav-img" src="./img/info.png " alt="tour" id="desk-nav-img-info">
+                <!-- <span class="desk-nav-text" id="desk-nav-text-info">Info</span> -->
+            </div>
+        </div>
     </nav>
-
-
-
-
-
-
-
-
 
     <!-- mobile navbar top -->
     <nav>
         <div class="nav-mobile-top">
             <!-- nav-menu-tiger -->
-            <div class="nav-menu-top" id="nav-menu-tiger">
+            <!-- <div class="nav-menu-top" id="nav-menu-tiger">
                 <img class="nav-img-top" src="./img/tiger.png " alt="tiger" id="nav-img-tiger">
-            </div>
+            </div> -->
             <!-- nav-menu-fhsu -->
-            <div class="nav-menu-top" id="nav-menu-fhsu">
+            <div class="nav-menu-top" id="nav-menu-fhsu" id="nav-menu-tiger">
+                <img class="nav-img-top" src="./img/tiger.png " alt="tiger" id="nav-img-tiger">
                 <span class="nav-text-top" id="nav-text-fhsu">Fort Hays State University Campus Map</span>
             </div>
-            <!-- nav-menu-layers -->
+            <!-- nav-menu-hamburger -->
             <div class="nav-menu-top" id="nav-menu-hamburger">
                 <img class="nav-img" src="./img/hamburger.png" alt="hamburger" id="nav-img-hamburger">
                 <!-- <span class="nav-text" id="nav-text-hamburger">hamburger</span> -->
@@ -64,7 +102,7 @@
             </div>
             <!-- nav-menu-tour -->
             <div class="nav-menu" id="nav-menu-tour">
-                <img class="nav-img" src="./img/tour01.png " alt="tour" id="nav-img-tour"><span class="nav-text" id="nav-text-tour">Tour</span>
+                <img class="nav-img" src="./img/tour03.png " alt="tour" id="nav-img-tour"><span class="nav-text" id="nav-text-tour">Tour</span>
             </div>
             <!-- nav-menu-search -->
             <div class="nav-menu" id="nav-menu-search">
@@ -72,8 +110,6 @@
             </div>
         </div>
     </nav>
-
-
     <!--sidebar content -->
     <main>
         <!-- sidebar-hamburger -->
@@ -127,6 +163,13 @@
             <a href="# ">#</a>
         </div>
     </main>
+    <section>
+        <div class="section-sidebar">
+            <a href="# ">desk sidebar</a>
+            <a href="# ">#</a>
+            <a href="# ">#</a>
+            <a href="# ">#</a></div>
+    </section>
     <!-- map area -->
     <div id="map"></div>
     <!-- javascript reference area -->

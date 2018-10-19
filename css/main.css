@@ -7,8 +7,12 @@ body {
     padding: 0;
     background-color: lightblue;
 }
-
-
+nav #desk-nav-menu-fhsu {
+  font-family: 'Anton', sans-serif;
+}
+nav #nav-menu-fhsu {
+  font-family: 'Anton', sans-serif;
+}
 /* desk version */
 nav .desk-nav-text-color {
     color: ivory;
@@ -18,6 +22,9 @@ nav .desk-nav-text {
 }
 nav .desk-nav-img {
   display: inline-block;
+}
+nav #desk-nav-img-search {
+  background-color: #eaaf0f;
 }
 /* desk sidebar design */
 
@@ -65,14 +72,7 @@ section #section-sidebar-introduction {
 
 /* >1600px */
 
-@media (min-width: 1601px) {
-
-}
-
-
-/* 1250px-1600px */
-
-@media (min-width: 1250px) and (max-width: 1600px) {
+@media (min-width: 1361px) {
   /* total */
   nav .desk-nav-img {
     width: 30px;
@@ -83,6 +83,7 @@ section #section-sidebar-introduction {
     background-color: #eaaf0f;
     display: inline-block;
     font-family: 'Athiti', sans-serif;
+    font-size: 15x;
     overflow: hidden;
     margin: 0 auto;
     padding: 10px;
@@ -117,9 +118,84 @@ section #section-sidebar-introduction {
   }
   nav #desk-nav-menu-search {
     width: 50px;
+    background-color: #eaaf0f;
+    z-index: 11;
   }
   nav #desk-nav-menu-fhsu {
-    width: 320px;
+    font-size: 20px;
+    width: 300px;
+    margin: 0 auto;
+  }
+  nav #desk-nav-menu-fhsu img{
+    width: 40px;
+    height: 40px;
+  }
+  nav #desk-nav-menu-info {
+    float: right;
+    width: 50px;
+  }
+}
+
+
+/* 1250px-1360px */
+
+@media (min-width: 1250px) and (max-width: 1360px) {
+  /* total */
+  nav .desk-nav-img {
+    width: 30px;
+    height: 30px;
+  }
+  nav .nav-desk {
+    align-items: center;
+    background-color: #eaaf0f;
+    display: inline-block;
+    font-family: 'Athiti', sans-serif;
+    font-size: 15x;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 10px;
+    position: fixed;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 100%;
+    z-index: 10;
+  }
+  nav .desk-nav-menu {
+    display: inline-block;
+    width: 90px;
+    margin: 0 auto;
+  }
+  /* individule */
+  nav #desk-nav-menu-hamburger {
+
+    align-items: center;
+    margin-left: 20px;
+    width: 50px;
+  }
+  nav #desk-nav-menu-hamburger img {
+      width: 25px;
+      height: 25px;
+  }
+
+  nav .desk-nav-menu-form {
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 50px;
+    width: 200px;
+  }
+  nav #desk-nav-menu-search {
+    width: 50px;
+    background-color: #eaaf0f;
+    z-index: 11;
+  }
+  nav #desk-nav-menu-fhsu {
+    font-size: 18px;
+    width: 300px;
+
+  }
+  nav #desk-nav-menu-fhsu img{
+    width: 40px;
+    height: 40px;
   }
   nav #desk-nav-menu-info {
     float: right;
@@ -209,7 +285,7 @@ nav .nav-menu {
     align-items: center;
     display: inline-block;
     width: 60px;
-    margin: 15px auto 5px auto;
+    margin: 5px auto 5px auto;
 }
 
 nav .nav-text {
@@ -388,7 +464,7 @@ main .main-sidebar a:hover {
     nav .nav-menu {
         display: inline-block;
         width: 100px;
-        margin: 10px auto;
+        margin: 5px auto;
     }
     main .main-sidebar {
         background-color: rgba(0, 0, 0, 0.8);
@@ -445,7 +521,7 @@ main .main-sidebar a:hover {
     nav .nav-menu {
         display: inline-block;
         width: 80px;
-        margin: 10px auto;
+        margin: 5px auto;
     }
     nav .nav-text {
         font-size: 12px;
@@ -492,7 +568,7 @@ main .main-sidebar a:hover {
     nav .nav-menu {
         display: inline-block;
         width: 60px;
-        margin: 10px auto;
+        margin: 5px auto;
     }
     nav .nav-text {
         font-size: 10px;
@@ -511,7 +587,7 @@ main .main-sidebar a:hover {
     nav .nav-menu {
         display: inline-block;
         width: 50px;
-        margin: 10px auto;
+        margin: 5px auto;
     }
     nav .nav-text {
         font-size: 10px;
@@ -589,7 +665,7 @@ main .main-sidebar a:hover {
     nav .nav-menu {
         display: inline-block;
         width: 40px;
-        margin: 10px auto;
+        margin: 5px auto;
     }
     nav .nav-text {
         font-size: 10px;

@@ -11,6 +11,68 @@ body {
 
 /* desk version */
 
+
+/* desk nav design */
+
+
+
+
+
+
+nav .desk-nav-text-color {
+    color: ivory;
+}
+
+nav .desk-nav-text {
+    margin-left: 5px;
+}
+/*
+nav #desk-nav-img-search {
+    margin-left: 5px;
+}
+
+nav #desk-nav-text-tour {
+    margin-left: 0;
+}
+
+nav #desk-nav-menu-hamburger {
+    width: 80px;
+    float: left;
+} */
+
+/* nav #desk-nav-menu-fhsu {
+    float: left;
+    position: relative;
+    left: 70px;
+    margin-left: 20px;
+    width: 480px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 8px;
+} */
+
+/* nav #desk-nav-menu-info {
+    float: right;
+    position: absolute;
+    right: 0;
+    width: 70px;
+} */
+
+/* nav #desk-nav-menu-search {
+    width: 300px;
+    margin-top: 8px;
+} */
+
+/* nav #desk-nav-menu-search {
+
+} */
+
+
+/* nav form img {
+    background-color: #eaaf0f;
+} */
+
+
 /* desk sidebar design */
 
 section .section-sidebar {
@@ -65,7 +127,76 @@ section #section-sidebar-introduction {
 /* 1250px-1600px */
 
 @media (min-width: 1250px) and (max-width: 1600px) {
+    nav .nav-desk {
+        align-items: center;
+        background-color: #eaaf0f;
+        /* display: inline; */
+        /* display: inline; */
+        font-family: 'Athiti', sans-serif;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        text-align: center;
+        width: 100%;
+        z-index: 10;
+    }
+    nav .desk-nav-menu {
+        align-items: center;
+        /* display: flex; */
+        float: left;
+        width: 100px;
+        margin: 15px auto 8px auto;
+    }
+    nav .desk-nav-menu-form {
+        align-items: center;
+        /* display: flex; */
+        display: inline-block;
+        width: 250px;
+        margin: 0 auto;
+    }
+    nav #desk-nav-menu-fhsu img {
+        width: 35px;
+        height: 35px;
+    }
+    nav .desk-nav-img {
+        width: 25px;
+        height: 25px;
+    }
+    nav #desk-nav-menu-hamburger {
+        float: left;
+        margin-left: 30px;
+        width: 70px;
+    }
+    nav #desk-nav-menu-fhsu {
+        /* display: inline-block; */
+        float: left;
+        position: relative;
+        left: 70px;
+        /* margin-left: 100px; */
+        width: 380px;
+        font-size: 20px;
+        font-weight: bold;
+        margin: 10px auto;
+    }
+    nav #desk-nav-menu-info {
+        float: right;
+        position: absolute;
+        right: 0;
+        width: 50px;
 
+    }
+    nav #desk-nav-menu-search {
+        /* width: 300px; */
+        margin-top: 8px;
+        margin-left: 5px;
+        background-color: #eaaf0f;
+    }
+
+    nav #desk-nav-menu-tour {
+        margin-left: 10px;
+        width: 70px;
+    }
 }
 
 

@@ -10,7 +10,15 @@ body {
 
 
 /* desk version */
-
+nav .desk-nav-text-color {
+    color: ivory;
+}
+nav .desk-nav-text {
+  margin-left: 5px;
+}
+nav .desk-nav-img {
+  display: inline-block;
+}
 /* desk sidebar design */
 
 section .section-sidebar {
@@ -65,8 +73,64 @@ section #section-sidebar-introduction {
 /* 1250px-1600px */
 
 @media (min-width: 1250px) and (max-width: 1600px) {
+  /* total */
+  nav .desk-nav-img {
+    width: 30px;
+    height: 30px;
+  }
+  nav .nav-desk {
+    align-items: center;
+    background-color: #eaaf0f;
+    display: inline-block;
+    font-family: 'Athiti', sans-serif;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 10px;
+    position: fixed;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 100%;
+    z-index: 10;
+  }
+  nav .desk-nav-menu {
+    display: inline-block;
+    width: 100px;
+    margin: 0 auto;
+  }
+  /* individule */
+  nav #desk-nav-menu-hamburger {
 
-}
+    align-items: center;
+    margin-left: 20px;
+    width: 50px;
+  }
+  nav #desk-nav-menu-hamburger img {
+      width: 25px;
+      height: 25px;
+  }
+
+  nav .desk-nav-menu-form {
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 50px;
+    width: 200px;
+  }
+  nav #desk-nav-menu-search {
+    width: 50px;
+  }
+  nav #desk-nav-menu-fhsu {
+    width: 320px;
+  }
+  nav #desk-nav-menu-info {
+    float: right;
+    width: 50px;
+  }
+
+
+
+
+
+} /*  End of @media (min-width: 1250px) and (max-width: 1600px) */
 
 
 /* mobile design */
@@ -123,6 +187,7 @@ nav #nav-menu-hamburger img {
 }
 
 
+
 /* mobile nav bottom design */
 
 nav .nav-mobile-bottom {
@@ -133,7 +198,7 @@ nav .nav-mobile-bottom {
     overflow: hidden;
     margin: 0 auto;
     min-width: 310px;
-    padding: 0;
+    padding-top: 5px;
     position: fixed;
     text-align: center;
     width: 100%;
@@ -144,7 +209,7 @@ nav .nav-menu {
     align-items: center;
     display: inline-block;
     width: 60px;
-    margin: 10px auto 5px auto;
+    margin: 15px auto 5px auto;
 }
 
 nav .nav-text {
@@ -256,7 +321,7 @@ main .main-sidebar a:hover {
     nav .nav-menu {
         display: inline-block;
         width: 100px;
-        margin: 5px auto;
+        margin: 10px auto;
     }
     main .main-sidebar {
         background-color: rgba(0, 0, 0, 0.8);
@@ -323,7 +388,7 @@ main .main-sidebar a:hover {
     nav .nav-menu {
         display: inline-block;
         width: 100px;
-        margin: 5px auto;
+        margin: 10px auto;
     }
     main .main-sidebar {
         background-color: rgba(0, 0, 0, 0.8);
@@ -380,7 +445,7 @@ main .main-sidebar a:hover {
     nav .nav-menu {
         display: inline-block;
         width: 80px;
-        margin: 5px auto;
+        margin: 10px auto;
     }
     nav .nav-text {
         font-size: 12px;
@@ -427,7 +492,7 @@ main .main-sidebar a:hover {
     nav .nav-menu {
         display: inline-block;
         width: 60px;
-        margin: 5px auto;
+        margin: 10px auto;
     }
     nav .nav-text {
         font-size: 10px;
@@ -446,7 +511,7 @@ main .main-sidebar a:hover {
     nav .nav-menu {
         display: inline-block;
         width: 50px;
-        margin: 5px auto;
+        margin: 10px auto;
     }
     nav .nav-text {
         font-size: 10px;
@@ -524,7 +589,7 @@ main .main-sidebar a:hover {
     nav .nav-menu {
         display: inline-block;
         width: 40px;
-        margin: 5px auto;
+        margin: 10px auto;
     }
     nav .nav-text {
         font-size: 10px;

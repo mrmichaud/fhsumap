@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<div id="target">Loading...</div>
+<script src="jquery-3.3.1.min.js">
+</script>
+<script src="mustache.min.js">
+</script>
+
+
+
+<script id="template" type="x-tmpl-mustache">
+<h3>Building Directory</h3>
+{{#buildings}}
+<li>{{buildingName}} ({{code}})</li>
+{{/buildings}}
+
+<br>
+<h3>Walking Directions</h3>
+{{#buildings}}
+<li>{{buildingName}}</li>
+{{/buildings}}
+
+<br>
+<h3>Parking</h3>
+{{#parking}}
+<li>{{parkingName}}, Zone: {{zone}}</li>
+{{/parking}}
+
+
+<h3>Categories</h3>
+{{#categories}}
+<li>{{label}}</li>
+{{/categories}}
+<br>
+
+</script>
+
+
+<script>
+$.getJSON( "http://localhost/fhsumap/json_fhsuDataTypes.json", function( data ) {
+  console.log(data);
+  var template = $('#template').html();
+  Mustache.parse(template);   // optional, speeds up future uses
+  var rendered = Mustache.render(template, data);
+  $('#target').html(rendered);
+});
+
+
+/*
+function loadUser() {
+  var template = $('#template').html();
+  Mustache.parse(template);   // optional, speeds up future uses
+  var rendered = Mustache.render(template, {name: "Luke"});
+  $('#target').html(rendered);
+}
+*/
+</script>
+</body>
+</html>

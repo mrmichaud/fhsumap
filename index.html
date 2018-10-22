@@ -243,39 +243,30 @@
 </script>
 
 
-
-<script id="template" type="x-tmpl-mustache">
-
-
-<br>
-<h3>Walking Directions</h3>
-{{#buildings}}
-<li>{{buildingName}}</li>
-{{/buildings}}
-
-<br>
-<h3>Parking</h3>
-{{#parking}}
-<li>{{parkingName}}, Zone: {{zone}}</li>
-{{/parking}}
-
-
-<h3>Categories</h3>
-{{#categories}}
-<li>{{label}}</li>
-{{/categories}}
-<br>
-
-</script>
-
-
 <script>
 $.getJSON( "http://localhost/fhsumap/json_fhsuDataTypes.json", function( data ) {
   console.log(data);
-  var template = '<h3>Building Directory</h3>{{#buildings}}<li>{{buildingName}} ({{code}})</li>{{/buildings}}';
-  Mustache.parse(template);   // optional, speeds up future uses
-  var rendered = Mustache.render(template, data);
+  var templateBuildingDirectory = '<h3>Building Directory</h3>{{#buildings}}<li>{{buildingName}} ({{code}})</li>{{/buildings}}';
+  Mustache.parse(templateBuildingDirectory);   // optional, speeds up future uses
+  var rendered = Mustache.render(templateBuildingDirectory, data);
+  $('#sidebar-building').html(rendered);
+  
+  
+  var templateWalkingDirectionBuildings = '<br><h3>Walking Directions</h3>{{#buildings}}<li>{{buildingName}}</li>{{/buildings}}';
+  Mustache.parse(templateWalkingDirectionBuildings);   // optional, speeds up future uses
+  var rendered = Mustache.render(templateWalkingDirectionBuildings, data);
+  $('#sidebar-direction').html(rendered);
+  
+  var templateParking = '<br><h3>Parking</h3>{{#parking}}<li>{{parkingName}}, Zone: {{zone}}</li>{{/parking}}';
+  Mustache.parse(templateParking);   // optional, speeds up future uses
+  var rendered = Mustache.render(templateParking, data);
+  $('#sidebar-parking').html(rendered);
+  
+  var templateCategories = '<h3>Categories</h3>{{#categories}}<li>{{label}}</li>{{/categories}}<br>';
+  Mustache.parse(templateCategories);   // optional, speeds up future uses
+  var rendered = Mustache.render(templateCategories, data);
   $('#sidebar-layers').html(rendered);
+  
 });
 
 

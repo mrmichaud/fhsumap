@@ -37,6 +37,7 @@ nav #desk-nav-img-search {
 
 nav #desk-nav-menu-info {
     margin-top: 4px;
+    position: inherit;
 }
 
 
@@ -135,7 +136,7 @@ section #section-sidebar-introduction {
     }
     nav #desk-nav-menu-fhsu {
         font-size: 20px;
-        width: 300px;
+        width: 400 px;
         margin: 0 auto;
     }
     nav #desk-nav-menu-fhsu img {
@@ -208,7 +209,7 @@ section #section-sidebar-introduction {
     }
     nav #desk-nav-menu-info {
         float: right;
-        width: 50px;
+        width: 50px;  
     }
 }
 

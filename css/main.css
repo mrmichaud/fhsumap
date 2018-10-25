@@ -1,6 +1,6 @@
 /* webpage config */
 
-html,ls
+html,
 body {
     height: 100%;
     margin: 0;
@@ -350,10 +350,10 @@ main .main-sidebar a:hover {
     }
     nav .nav-mobile-top {
         display: none;
-    }/*
+    }
     main .main-sidebar {
         display: none;
-    }*/
+    }
 }
 
 @media (max-width: 1249px) {

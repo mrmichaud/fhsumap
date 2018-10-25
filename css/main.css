@@ -166,7 +166,7 @@ section #section-sidebar-introduction {
         font-size: 15px;
         overflow: hidden;
         margin: 0 auto;
-        padding: 10px;
+        padding: 0 10px 15px 10px;
         position: fixed;
         vertical-align: middle;
         white-space: nowrap;

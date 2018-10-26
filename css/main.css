@@ -11,15 +11,30 @@ nav .navbar-nav {
     display: inline-block;
     width: 100%;
 }
+nav button {
+    background: #eaaf0f; 
+}
 nav .nav-item {
    display: inline-block;
    margin: 0 10px; 
 }
+nav .filter {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+}
 /* specific */
 nav #info-float-right {
     float: right;
+    margin-top: 6px;
 }
 nav .nav-item #info-rotate {
     transform: rotate(180deg);
 
+}
+
+/* desk navbar disappear when width < 1249px */
+@media (max-width: 1249px) {
+    #desk-navbar {
+        display: none;
+    }
 }

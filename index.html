@@ -60,73 +60,7 @@
             </div>
         </div>
     </nav>
-    <!-- desk-sidebar-content -->
-    <section>
-        <!-- section-sidebar-hamburger -->
-        <div class="section-sidebar" id="section-sidebar-hamburger">
-            <a href="# ">hamburger(desk)</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-        </div>
-        <!--section-sidebar-search -->
-        <div class="section-sidebar" id="section-sidebar-search">
-            <a href="# ">search(desk)</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-        </div>
-        <!-- section-sidebar-layers -->
-        <div class="section-sidebar" id="section-sidebar-layers">
-            <a href="# ">layers(desk)</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-            <a href="# ">#####</a>
-        </div>
-        <!-- section-sidebar-building -->
-        <div class="section-sidebar" id="section-sidebar-building">
-            <a href="# ">building(desk)</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-        </div>
-        <!-- section-sidebar-parking -->
-        <div class="section-sidebar" id="section-sidebar-parking">
-            <a href="# ">parking(desk)</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-        </div>
-        <!-- section-sidebar-direction -->
-        <div class="section-sidebar" id="section-sidebar-direction">
-            <a href="# ">direction(desk)</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-        </div>
-        <!-- section-sidebar-tour -->
-        <div class="section-sidebar" id="section-sidebar-tour">
-            <a href="# ">tour(desk)</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-        </div>
-        <!-- section-sidebar-info -->
-        <div class="section-sidebar" id="section-sidebar-info">
-            <a href="# ">info(desk)</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-        </div>
-        <!-- section-sidebar-hamburger -->
-        <div class="section-sidebar" id="section-sidebar-introduction">
-            <a href="# ">Introduction(desk)</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-		</div>
-    </section>
+
     <!-- mobile navbar includes two parts: top and bottom -->
     <!-- mobile navbar top -->
     <nav>
@@ -179,55 +113,23 @@
     <!--mobile sidebar content -->
     <main>
         <!-- sidebar-hamburger -->
-        <div class="main-sidebar" id="sidebar-hamburger">
+        <div class="main-sidebar section-sidebar" id="sidebar-hamburger">
+                section-sidebar-hamburger
             <a href="# ">hamburger</a>
             <a href="# ">#</a>
             <a href="# ">#</a>
             <a href="# ">#</a>
         </div>
         <!-- sidebar-layers -->
-        <div class="main-sidebar" id="sidebar-layers">
+        <div class="main-sidebar section-sidebar"  id="sidebar-layers">
+                section-sidebar-layers
             <a href="# ">layers</a>
             <a href="# ">#</a>
             <a href="# ">#</a>
             <a href="# ">#</a>
             <a href="# ">#####</a>
         </div>
-        <!-- sidebar-building -->
-        <div class="main-sidebar" id="sidebar-building">
-            <a href="# ">building</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-        </div>
-        <!-- sidebar-parking -->
-        <div class="main-sidebar" id="sidebar-parking">
-            <a href="# ">parking</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-        </div>
-        <!-- sidebar-direction -->
-        <div class="main-sidebar" id="sidebar-direction">
-            <a href="# ">direction</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-        </div>
-        <!-- sidebar-tour -->
-        <div class="main-sidebar" id="sidebar-tour">
-            <a href="# ">tour</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-        </div>
-        <!--sidebar-search -->
-        <div class="main-sidebar" id="sidebar-search">
-            <a href="# ">search</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-            <a href="# ">#</a>
-        </div>
+       
     </main>
 
     <!--Google map area -->
@@ -250,23 +152,23 @@ $.getJSON( "http://localhost/fhsumap/json_fhsuDataTypes.json", function( data ) 
   Mustache.parse(templateBuildingDirectory);   // optional, speeds up future uses
   var rendered = Mustache.render(templateBuildingDirectory, data);
   $('#sidebar-building').html(rendered);
-  
-  
+
+
   var templateWalkingDirectionBuildings = '<br><h3>Walking Directions</h3>{{#buildings}}<li>{{buildingName}}</li>{{/buildings}}';
   Mustache.parse(templateWalkingDirectionBuildings);   // optional, speeds up future uses
   var rendered = Mustache.render(templateWalkingDirectionBuildings, data);
   $('#sidebar-direction').html(rendered);
-  
+
   var templateParking = '<br><h3>Parking</h3>{{#parking}}<li>{{parkingName}}, Zone: {{zone}}</li>{{/parking}}';
   Mustache.parse(templateParking);   // optional, speeds up future uses
   var rendered = Mustache.render(templateParking, data);
   $('#sidebar-parking').html(rendered);
-  
+
   var templateCategories = '<h3>Categories</h3>{{#categories}}<li>{{label}}</li>{{/categories}}<br>';
   Mustache.parse(templateCategories);   // optional, speeds up future uses
   var rendered = Mustache.render(templateCategories, data);
   $('#sidebar-layers').html(rendered);
-  
+
 });
 
 

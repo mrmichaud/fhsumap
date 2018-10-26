@@ -1,4 +1,25 @@
-/* total */
+/* general */
 nav {
     background-color: #eaaf0f;
+    
+}
+nav img {
+    height: 30px;
+    width: 30px;
+}
+nav .navbar-nav {
+    display: inline-block;
+    width: 100%;
+}
+nav .nav-item {
+   display: inline-block;
+   margin: 0 10px; 
+}
+/* specific */
+nav #info-float-right {
+    float: right;
+}
+nav .nav-item #info-rotate {
+    transform: rotate(180deg);
+
 }

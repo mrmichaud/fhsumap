@@ -1,9 +1,16 @@
+// XMLHttpRequest
+let request = new XMLHttpRequest();
+request.open('get', '../json/layers.json', true);
+request.onload = function() {
+    console.log(request.responseText);
+}
+request.send();
 /* jQuery */
 $(document).ready(() => {
 
 
 
-}); /* End: $(document).ready */
+}); /* End: jQuery */
 
 /* Google Map */
 let map;

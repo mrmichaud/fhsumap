@@ -1,7 +1,13 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* -------------------Navbar------------------- */
 /* general */
 nav {
     background-color: #eaaf0f;
-    
+
 }
 nav img {
     height: 30px;
@@ -12,11 +18,11 @@ nav .navbar-nav {
     width: 100%;
 }
 nav button {
-    background: #eaaf0f; 
+    background: #eaaf0f;
 }
 nav .nav-item {
    display: inline-block;
-   margin: 0 10px; 
+   margin: 0 10px;
 }
 nav .filter {
     -webkit-filter: brightness(0) invert(1);
@@ -32,9 +38,34 @@ nav .nav-item #info-rotate {
 
 }
 
+/* -------------------Sidebar------------------- */
+.sidebar {
+        background-color: rgba(0, 0, 0, 1);
+        color: ivory;
+        height: 100%;
+        margin: 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        padding: 10px;
+
+        transition: 0.05s;
+        width: 330px;
+        z-index: 2;
+    }
+
 /* desk navbar disappear when width < 1249px */
 @media (max-width: 1249px) {
     #desk-navbar {
         display: none;
     }
+}
+/* Map css */
+
+
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+
+#map {
+    height: 100%;
+    z-index: 2;
 }

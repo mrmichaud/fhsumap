@@ -2,6 +2,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: black;
 }
 a {
     color:black;
@@ -10,6 +11,10 @@ a {
 /* general */
 nav {
     background-color: #eaaf0f;
+    font-family: 'Athiti', sans-serif;
+    position: absolute;
+    text-align: center;
+
 }
 nav img {
     height: 30px;
@@ -39,21 +44,18 @@ nav .nav-item #info-rotate {
     transform: rotate(180deg);
 
 }
+/*---------------------Mobile-----------------------*/
 
 #m-b-navbar {
+    background-color: #eaaf0f;
     position: fixed;
     bottom: 0;
+    left: 0;
+    margin-left: 0;
+    padding: 10px;
     z-index: 10;
 }
-/* desk navbar disappear when width < 1249px */
-@media (max-width: 1249px) {
-    #desk-navbar {
-        display: none;
-    }
-    .sidebar {
-        width: 0px;
-    }
-}
+
 /* -------------------Sidebar------------------- */
 .sidebar {
         background-color: rgba(0, 0, 0, 1);
@@ -66,11 +68,30 @@ nav .nav-item #info-rotate {
         transition: 0.05s;
         z-index: 3;
     }
+
 @media (min-width: 1250px) {
     .sidebar {
         padding: 10px;
         width: 330px;
     }
+    #mobile-top-navbar, #mobile-bottom-navbar {
+        display: none;
+    }
+}
+/* desk navbar disappear when width < 1249px */
+@media (max-width: 1249px) {
+    #desk-navbar {
+        display: none;
+    }
+    .sidebar {
+
+        width: 0;
+
+    }
+    /* .sidebar-open {
+        padding: 10px;
+        width: 100%;
+    } */
 }
 
 /* --------------------Map css-------------------- */

@@ -23,7 +23,7 @@
     }
 
     // Sets the "filter" class on the active navigation link.
-    function setActiveLink(fragmentId) {
+    function setActiveLinkDesk(fragmentId) {
         $("#d-navbar a").each(function(i, linkElement) {
             let link = $(linkElement),
                 pageName = link.attr("href").substr(1);
@@ -35,16 +35,16 @@
         });
     }
 
-    function setActiveLink(fragmentId) {
+    function setActiveLinkMobile(fragmentId) {
         $("#m-b-navbar a").each(function(i, linkElement) {
             let link = $(linkElement),
                 pageName = link.attr("href").substr(1);
             if (pageName === fragmentId) {
                 link.attr("class", "filter");
-                $('#js-sidebar').addClass("sidebar-open");
+                $("#js-sidebar").addClass("sidebar-open");
             } else {
                 link.removeAttr("class");
-                $('#js-sidebar').removeClass("sidebar-open");
+                $("#js-sidebar").removeClass("sidebar-open");
             }
         });
     }
@@ -55,7 +55,7 @@
         // This gets rid of the "#" character.
         let fragmentId = location.hash.substr(1);
         getContent(fragmentId, function(content) {
-            $('#js-sidebar').html(content);
+            $("#js-sidebar").html(content);
         })
 
         // Toggle the "active" class on the link currently navigated to.

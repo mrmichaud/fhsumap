@@ -1,7 +1,13 @@
-/* jQuery */
-$(document).ready(() => {
-    // Gets the appropriate content for the given fragment identifier.
-    function getContent(fragmentId, callback) {
+// Wrap everything in an immediately invoked function expression,
+// so no global variables are introduced.
+(function() {
+    // Stores the cached partial HTML pages.
+    // Keys correspond to fragment identifiers.
+    // Values are the text content of each loaded partial HTML file.
+    var partialsCache = {}
+        // Fetches the file at the given path, then
+        // calls the callback with the text content of the file.
+    function fetchFile(path, callback) {
         // Create a new AJAX request for fetching the partial HTML file.
         var request = new XMLHttpRequest();
 
@@ -9,20 +15,33 @@ $(document).ready(() => {
         request.onload = function() {
             callback(request.responseText);
         };
-
         // Fetch the partial HTML file for the given fragment id.
-        request.open("GET", "json/" + fragmentId + ".json");
+        request.open("GET", path);
         request.send(null);
+    }
+
+    // Gets the appropriate content for the given fragment identifier.
+    function getContent(fragmentId, callback) {
+        // If the page has been fetched before,
+        if (partialsCache[fragmentId]) {
+            callback(partialsCache[fragmentId]);
+        } else {
+            fetchFile("json/" + fragmentId + ".json", function(content) {
+                // Store the fetched content in the cache.
+                partialsCache[fragmentId] = content;
+                // Pass the newly fetched content to the callback.
+                callback(content);
+            });
+
+        }
     }
     // Sets the "active" class on the active navigation link.
     function setActiveLink(fragmentId) {
         var navbarDiv = document.getElementById("d-navbar"),
             links = navbarDiv.children,
             i, link, pageName;
-        console.log(links);
         for (i = 0; i < links.length; i++) {
             link = links[i];
-
             pageName = link.getAttribute("href").substr(1);
             if (pageName === fragmentId) {
                 link.setAttribute("class", "filter");
@@ -54,31 +73,7 @@ $(document).ready(() => {
     navigate();
     // Navigate whenever the fragment identifier value changes.
     $(window).on("hashchange", navigate);
-    /*    let jsonDataContainer = document.getElementById("js-sidebar");
-
-        $('.js-img').on("click",()=>{
-            // XMLHttpRequest
-            let request = new XMLHttpRequest();
-            request.open('get', 'http://localhost:8080/navbar/json/layers.json', true);
-            request.onload = function() {
-                var data = JSON.parse(request.responseText);
-                // console.log(data[0]);
-                renderHTML(data);
-            };
-            request.send();
-        });
-
-        function renderHTML(data) {
-            let jsonData = "", i;
-            for(i = 0; i < data.length; i++ ) {
-                jsonData += "<p>" + data[i].city + " is great.</p>"
-            }
-            jsonDataContainer.insertAdjacentHTML('beforeend', jsonData);
-        }
-    */
-
-
-}); /* End: jQuery */
+}());
 
 /* Google Map */
 let map;
@@ -89,6 +84,6 @@ function initMap() {
             lat: 38.8714,
             lng: -99.3445
         },
-        zoom: 17
+        zoom: 18
     });
 }

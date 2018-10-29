@@ -28,9 +28,9 @@
       "sizes": "1024x1024"
     }
   ],
-  "start_url": "index.html",
+  "start_url": "template.html",
   "background_color": "#000",
   "display": "standalone",
-  "scope": "/campusMap/",
+  "scope": "",
   "theme_color": "#fdb913"
 }

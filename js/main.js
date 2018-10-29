@@ -41,10 +41,10 @@
                 pageName = link.attr("href").substr(1);
             if (pageName === fragmentId) {
                 link.attr("class", "filter");
-                $('#js-sidebar').attr("class", "sidebar-open");
+                $('#js-sidebar').addClass("sidebar-open");
             } else {
                 link.removeAttr("class");
-                $('#js-sidebar').attr("class", "sidebar-open");
+                $('#js-sidebar').removeClass("sidebar-open");
             }
         });
     }

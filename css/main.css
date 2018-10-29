@@ -10,7 +10,6 @@ a {
 /* general */
 nav {
     background-color: #eaaf0f;
-
 }
 nav img {
     height: 30px;
@@ -41,10 +40,18 @@ nav .nav-item #info-rotate {
 
 }
 
+#m-b-navbar {
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+}
 /* desk navbar disappear when width < 1249px */
 @media (max-width: 1249px) {
     #desk-navbar {
         display: none;
+    }
+    .sidebar {
+        width: 0px;
     }
 }
 /* -------------------Sidebar------------------- */
@@ -55,13 +62,16 @@ nav .nav-item #info-rotate {
         margin: 0;
         overflow-x: hidden;
         overflow-y: scroll;
-        padding: 10px;
         position: absolute;
         transition: 0.05s;
-        width: 330px;
         z-index: 3;
     }
-
+@media (min-width: 1250px) {
+    .sidebar {
+        padding: 10px;
+        width: 330px;
+    }
+}
 
 /* --------------------Map css-------------------- */
 

@@ -35,6 +35,18 @@
         });
     }
 
+    function setActiveLink(fragmentId) {
+        $("#m-b-navbar a").each(function(i, linkElement) {
+            let link = $(linkElement),
+                pageName = link.attr("href").substr(1);
+            if (pageName === fragmentId) {
+                link.attr("class", "filter");
+            } else {
+                link.removeAttr("class");
+            }
+        });
+    }
+
     function navigate() {
 
         // Isolate the fragment identifier using substr.

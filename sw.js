@@ -1,12 +1,11 @@
 const CACHE_NAME = 'my-site-cache-v2';
 const urlsToCache = [
   "manifest.html",
-  "assets/css/main.css",
   'manifest.webmanifest',
   'current.js',
   'icon/64.png',
   "icon/128.png",
-  "icon/194.png",
+  "icon/192.png",
   "icon/256.png",
   "icon/512.png",
   "icon/1024.png"

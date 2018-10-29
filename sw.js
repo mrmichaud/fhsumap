@@ -1,4 +1,4 @@
-var CACHE_NAME = 'my-site-cache-v1';
+var CACHE_NAME = 'my-site-cache-v2';
 var urlsToCache = [
   "manifest.html",
   "assets/css/main.css",
@@ -22,7 +22,7 @@ self.addEventListener('install', function(event) {
       })
   );
 });
-
+/*
 self.addEventListener('fetch', function(event) {
     event.respondWith(
       caches.match(event.request)
@@ -35,4 +35,4 @@ self.addEventListener('fetch', function(event) {
         }
       )
     );
-  });
+  });*/

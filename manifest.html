@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>CurrentPosition</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" >
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="manifest" href="manifest.js">
+    <link rel="apple-touch-icon" href="icon/64.png" sizes="64x64">
+    <link rel="apple-touch-icon" href="icon/128.png" sizes="128x128">
+    <link rel="apple-touch-icon" href="icon/194.png" sizes="194x194">
+    <link rel="apple-touch-icon" href="icon/256.png" sizes="256x256">
+    <link rel="apple-touch-icon" href="icon/512.png" sizes="512x512">
+    <link rel="apple-touch-icon" href="icon/1024.png" sizes="1024x1024">
+
+
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 95%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header-wrap" class="navbarfix">
+    <!-- Navbar Start -->
+      <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo navbarfix" style="background-color: #000; height:4rem; color:#fff">
+        <div class="container ">
+          <div class="navbar-header" >
+             <img src="pic/logo1.png" height="60px" > 
+            <h3 class="navbar-brand" >Campus Map</h3>
+          </div>
+        </div>
+      </nav>
+    <!-- Navbar End -->
+    </header>
+
+    <div id="map"></div>
+    <footer style="position: absolute;bottom: 0;width: 100%;height: 4rem; background-color: #000; color:#fff;">
+      <div >
+            <h3 class="navbar-brand" >Mobile Version</h3>
+      </div>
+    </footer>
+    <script type="text/javascript">
+        //service worker registration
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js').then(function(registration) {
+              // Registration was successful
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
+              // registration failed :(
+              console.log('ServiceWorker registration failed: ', err);
+            });
+          });
+        }
+        
+    </script>
+    <script type="text/javascript" src="current.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNR4W01zNnL-KUAV4WVcG1ScW1RMyayyc&callback=initMap"></script>
+    
+  </body>
+</html>

@@ -58,17 +58,16 @@
       
         //service worker registration
         if ('serviceWorker' in navigator) {
-          window.addEventListener('load', function() {
             navigator.serviceWorker.register('sw.js').then(function(registration) {
               // Registration was successful
-              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+              console.log('ServiceWorker registration successful with scope: '+ registration.scope);
             }, function(err) {
               // registration failed :(
-              console.log('ServiceWorker registration failed: ', err);
+              console.log('ServiceWorker registration failed: '+ err);
             });
-          });
-        }
-        
+          }
+
+                
     </script>
     <script type="text/javascript" src="current.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNR4W01zNnL-KUAV4WVcG1ScW1RMyayyc&callback=initMap"></script>

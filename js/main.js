@@ -5,65 +5,50 @@
     // Keys correspond to fragment identifiers.
     // Values are the text content of each loaded partial HTML file.
     var partialsCache = {}
-        // Fetches the file at the given path, then
-        // calls the callback with the text content of the file.
-    function fetchFile(path, callback) {
-        // Create a new AJAX request for fetching the partial HTML file.
-        var request = new XMLHttpRequest();
-
-        // Call the callback with the content loaded from the file.
-        request.onload = function() {
-            callback(request.responseText);
-        };
-        // Fetch the partial HTML file for the given fragment id.
-        request.open("GET", path);
-        request.send(null);
-    }
 
     // Gets the appropriate content for the given fragment identifier.
+    // This function implements a simple cache.
     function getContent(fragmentId, callback) {
         // If the page has been fetched before,
         if (partialsCache[fragmentId]) {
             callback(partialsCache[fragmentId]);
         } else {
-            fetchFile("json/" + fragmentId + ".json", function(content) {
+            $.get("json/" + fragmentId + ".json", function(content) {
                 // Store the fetched content in the cache.
                 partialsCache[fragmentId] = content;
                 // Pass the newly fetched content to the callback.
                 callback(content);
             });
-
         }
     }
-    // Sets the "active" class on the active navigation link.
+
+    // Sets the "filter" class on the active navigation link.
     function setActiveLink(fragmentId) {
-        var navbarDiv = document.getElementById("d-navbar"),
-            links = navbarDiv.children,
-            i, link, pageName;
-        for (i = 0; i < links.length; i++) {
-            link = links[i];
-            pageName = link.getAttribute("href").substr(1);
+        $("#d-navbar a").each(function(i, linkElement) {
+            let link = $(linkElement),
+                pageName = link.attr("href").substr(1);
             if (pageName === fragmentId) {
-                link.setAttribute("class", "filter");
+                link.attr("class", "filter");
             } else {
-                link.removeAttribute("class");
+                link.removeAttr("class");
             }
-        }
+        });
     }
 
     function navigate() {
-        // Get a reference to the "content" div.
-        var contentSidebar = document.getElementById("js-sidebar");
 
         // Isolate the fragment identifier using substr.
         // This gets rid of the "#" character.
-        fragmentId = location.hash.substr(1);
+        let fragmentId = location.hash.substr(1);
         getContent(fragmentId, function(content) {
-                contentSidebar.innerHTML = content;
-            })
-            // Toggle the "active" class on the link currently navigated to.
+            $('#js-sidebar').html(content);
+        })
+
+        // Toggle the "active" class on the link currently navigated to.
         setActiveLink(fragmentId);
     }
+
+    // If no fragment identifier is provided,
     if (!location.hash) {
 
         // default to #home

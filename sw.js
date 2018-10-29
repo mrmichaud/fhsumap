@@ -2,7 +2,7 @@ var CACHE_NAME = 'my-site-cache-v2';
 var urlsToCache = [
   "manifest.html",
   "assets/css/main.css",
-  'manifest.json',
+  'manifest.webmanifest',
   'current.js',
   'icon/64.png',
   "icon/128.png",

@@ -1,5 +1,5 @@
-var CACHE_NAME = 'my-site-cache-v2';
-var urlsToCache = [
+const CACHE_NAME = 'my-site-cache-v2';
+const urlsToCache = [
   "manifest.html",
   "assets/css/main.css",
   'manifest.webmanifest',

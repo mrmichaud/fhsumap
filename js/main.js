@@ -45,11 +45,11 @@ $(document).ready(() => {
             // Toggle the "active" class on the link currently navigated to.
         setActiveLink(fragmentId);
     }
-    /*    if (!location.hash) {
+    if (!location.hash) {
 
-            // default to #home
-            location.hash = "#tiger";
-        }*/
+        // default to #home
+        location.hash = "#tiger";
+    }
     // Navigate once to the initial hash value.
     navigate();
     // Navigate whenever the fragment identifier value changes.

@@ -10,6 +10,24 @@ request.onload = function() {
 request.send();
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Google Map */
 let map;
 

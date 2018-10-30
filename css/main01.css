@@ -1,49 +1,70 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: lightblue;
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: lightblue;
 }
+
 a {
-    color:black;
+    color: black;
 }
+
+a:hover {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+}
+
+
 /* -------------------Navbar------------------- */
+
+
 /* general */
+
 nav {
     background-color: #eaaf0f;
     font-family: 'Athiti', sans-serif;
     position: absolute;
     text-align: center;
-
 }
+
 nav img {
     height: 30px;
     width: 30px;
 }
+
 nav .navbar-nav {
     display: inline-block;
     width: 100%;
 }
+
 nav button {
     background: #eaaf0f;
 }
+
 nav .nav-item {
-   display: inline-block;
-   margin: 0 10px;
+    display: inline-block;
+    margin: 0 10px;
 }
+
 nav .filter {
     -webkit-filter: brightness(0) invert(1);
     filter: brightness(0) invert(1);
 }
+
+
 /* specific */
+
 nav #info-float-right {
     float: right;
     margin-top: 6px;
 }
+
 nav .nav-item #info-rotate {
     transform: rotate(180deg);
-
 }
+
+
 /*---------------------Mobile-----------------------*/
 
 #m-b-navbar {
@@ -56,29 +77,35 @@ nav .nav-item #info-rotate {
     z-index: 10;
 }
 
+
 /* -------------------Sidebar------------------- */
+
 #js-sidebar {
-        background-color: rgba(0, 0, 0, 1);
-        color: ivory;
-        height: 100%;
-        margin: 0;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        position: absolute;
-        transition: 0.05s;
-        z-index: 3;
-    }
+    background-color: rgba(0, 0, 0, 1);
+    color: ivory;
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: absolute;
+    transition: 0.05s;
+    z-index: 3;
+}
 
 @media (min-width: 1250px) {
     #js-sidebar {
         padding: 10px;
         width: 330px;
     }
-    #mobile-top-navbar, #mobile-bottom-navbar {
+    #mobile-top-navbar,
+    #mobile-bottom-navbar {
         display: none;
     }
 }
+
+
 /* desk navbar disappear when width < 1249px */
+
 @media (max-width: 1249px) {
     #desk-navbar {
         display: none;
@@ -103,7 +130,9 @@ nav .nav-item #info-rotate {
     } */
 }
 
+
 /* --------------------Map css-------------------- */
+
 
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */

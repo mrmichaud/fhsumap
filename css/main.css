@@ -50,7 +50,6 @@ nav img {
 
 nav .navbar-nav {
     display: inline-block;
-    vertical-align: middle;
     width: 100%;
 }
 
@@ -61,6 +60,7 @@ nav button {
 nav .nav-item {
     display: inline-block;
     margin: 0 2px;
+    vertical-align: middle;
 }
 
 nav .filter {
@@ -80,15 +80,35 @@ nav .nav-item #info-rotate {
     transform: rotate(180deg);
 }
 
-@media (min-width: 1250px) and (max-width: 1450px) {
+@media (min-width: 1250px) and (max-width: 1700px) {
     nav #d-tiger {
+        width: 420px;
+    }
+    nav #d-tiger span {
         font-family: 'Anton', sans-serif;
         font-size: 1.5rem;
-        margin-top: 3px;
     }
     nav #d-tiger img {
         height: 40px;
         width: 40px;
+    }
+}
+
+@media (min-width: 1701px) {
+    nav #d-tiger {
+        width: 600px;
+    }
+    nav .nav-item {
+        font-size: 1.3rem;
+        margin: 0 10px;
+    }
+    nav #d-tiger span {
+        font-family: 'Anton', sans-serif;
+        font-size: 2rem;
+    }
+    nav #d-tiger img {
+        height: 45px;
+        width: 45px;
     }
 }
 
@@ -109,6 +129,21 @@ nav .nav-item #info-rotate {
     #mobile-top-navbar,
     #mobile-bottom-navbar {
         display: none;
+    }
+}
+
+@media (max-width:1249px) {
+    #m-t-navbar,
+    #m-b-navbar .nav-item {
+        text-align: center;
+    }
+    #m-t-navbar,
+    #m-b-navbar .nav-item span {
+        display: inline-block;
+    }
+    #m-t-navbar,
+    #m-b-navbar .nav-item img {
+        display: inline-block;
     }
 }
 

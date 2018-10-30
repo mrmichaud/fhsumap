@@ -1,3 +1,17 @@
+/* --------------------Map css-------------------- */
+
+
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+
+#map {
+    height: 100%;
+    z-index: 2;
+}
+
+
+/* ------------------------Config------------------------ */
+
 html,
 body {
     height: 100%;
@@ -24,8 +38,9 @@ a:hover {
 nav {
     background-color: #eaaf0f;
     font-family: 'Athiti', sans-serif;
+    font-size: 14px;
     position: absolute;
-    text-align: center;
+    text-align: left;
 }
 
 nav img {
@@ -35,6 +50,7 @@ nav img {
 
 nav .navbar-nav {
     display: inline-block;
+    vertical-align: middle;
     width: 100%;
 }
 
@@ -44,7 +60,7 @@ nav button {
 
 nav .nav-item {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 2px;
 }
 
 nav .filter {
@@ -64,6 +80,18 @@ nav .nav-item #info-rotate {
     transform: rotate(180deg);
 }
 
+@media (min-width: 1250px) and (max-width: 1450px) {
+    nav #d-tiger {
+        font-family: 'Anton', sans-serif;
+        font-size: 1.5rem;
+        margin-top: 3px;
+    }
+    nav #d-tiger img {
+        height: 40px;
+        width: 40px;
+    }
+}
+
 
 /*---------------------Mobile-----------------------*/
 
@@ -75,6 +103,13 @@ nav .nav-item #info-rotate {
     margin-left: 0;
     padding: 10px;
     z-index: 10;
+}
+
+@media (min-width: 1250px) {
+    #mobile-top-navbar,
+    #mobile-bottom-navbar {
+        display: none;
+    }
 }
 
 
@@ -96,10 +131,6 @@ nav .nav-item #info-rotate {
     #js-sidebar {
         padding: 10px;
         width: 330px;
-    }
-    #mobile-top-navbar,
-    #mobile-bottom-navbar {
-        display: none;
     }
 }
 
@@ -128,16 +159,4 @@ nav .nav-item #info-rotate {
         padding: 10px;
         width: 100%;
     } */
-}
-
-
-/* --------------------Map css-------------------- */
-
-
-/* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-
-#map {
-    height: 100%;
-    z-index: 2;
 }

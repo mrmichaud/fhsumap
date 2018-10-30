@@ -3,10 +3,10 @@
 (function() {
 
     // Check the screen size.
-    var ws=window.innerWidth < 1249 ? 0 : 1;
+    let ws = window.innerWidth < 1249 ? 0 : 1;
     $(window).resize(function() {
         // console.log(window.innerWidth);
-        if(ws!=0 && window.innerWidth<1249){
+        if (ws != 0 && window.innerWidth < 1249) {
             // alert('mobile');
             // Stores the cached partial HTML pages.
             // Keys correspond to fragment identifiers.
@@ -20,7 +20,8 @@
                 if (partialsCache[fragmentId]) {
                     callback(partialsCache[fragmentId]);
                 } else {
-                    $.get("json/" + fragmentId + ".json", function(content) {
+                    $.get("json/" + fragmentId + ".json", function(
+                        content) {
                         // Store the fetched content in the cache.
                         partialsCache[fragmentId] = content;
                         // Pass the newly fetched content to the callback.
@@ -32,7 +33,8 @@
             function setActiveLink(fragmentId) {
                 $("#d-navbar a").each(function(i, linkElement) {
                     let link = $(linkElement),
-                        pageName = link.attr("href").substr(1);
+                        pageName = link.attr("href").substr(
+                            1);
                     if (pageName === fragmentId) {
                         link.attr("class", "filter");
                     } else {
@@ -40,7 +42,7 @@
                     }
                 });
             }
-                    
+
             function navigate() {
 
                 // Isolate the fragment identifier using substr.
@@ -49,14 +51,14 @@
                 getContent(fragmentId, function(content) {
                     $("#js-sidebar").html(content);
                 })
-        
+
                 // Toggle the "active" class on the link currently navigated to.
                 setActiveLink(fragmentId);
             }
-                
+
             // If no fragment identifier is provided,
             if (!location.hash) {
-        
+
                 // default to #home
                 location.hash = "#tiger";
             }
@@ -64,23 +66,24 @@
             navigate();
             // Navigate whenever the fragment identifier value changes.
             $(window).on("hashchange", navigate);
-            ws=0;
+            ws = 0;
         } // End of IF.
-        if(ws!=1 && window.innerWidth>=1249){
-         
+        if (ws != 1 && window.innerWidth >= 1249) {
+
             // alert('mobile');
             // Stores the cached partial HTML pages.
             // Keys correspond to fragment identifiers.
             // Values are the text content of each loaded partial HTML file.
             var partialsCache = {}
-            // Gets the appropriate content for the given fragment identifier.
-            // This function implements a simple cache.
+                // Gets the appropriate content for the given fragment identifier.
+                // This function implements a simple cache.
             function getContent(fragmentId, callback) {
                 // If the page has been fetched before,
                 if (partialsCache[fragmentId]) {
                     callback(partialsCache[fragmentId]);
                 } else {
-                    $.get("json/" + fragmentId + ".json", function(content) {
+                    //$.get("json/" + fragmentId + ".json", function(content)
+                    $.get("json/tiger.json", function(content) {
                         // Store the fetched content in the cache.
                         partialsCache[fragmentId] = content;
                         // Pass the newly fetched content to the callback.
@@ -88,16 +91,20 @@
                     });
                 }
             }
+
             function setActiveLink(fragmentId) {
                 $("#m-b-navbar a").each(function(i, linkElement) {
                     let link = $(linkElement),
-                        pageName = link.attr("href").substr(1);
+                        pageName = link.attr("href").substr(
+                            1);
                     if (pageName === fragmentId) {
                         link.attr("class", "filter");
-                        $("#js-sidebar").addClass("sidebar-open");
+                        $("#js-sidebar").addClass(
+                            "sidebar-open");
                     } else {
                         link.removeAttr("class");
-                        $("#js-sidebar").removeClass("sidebar-open");
+                        $("#js-sidebar").removeClass(
+                            "sidebar-open");
                     }
                 });
             }
@@ -110,14 +117,14 @@
                 getContent(fragmentId, function(content) {
                     $("#js-sidebar").html(content);
                 })
-        
+
                 // Toggle the "active" class on the link currently navigated to.
                 setActiveLink(fragmentId);
             }
-                
+
             // If no fragment identifier is provided,
             if (!location.hash) {
-        
+
                 // default to #home
                 location.hash = "#tiger";
             }
@@ -125,11 +132,9 @@
             navigate();
             // Navigate whenever the fragment identifier value changes.
             $(window).on("hashchange", navigate);
-            ws=1;
+            ws = 1;
         }
     });
-
-
 
 
 

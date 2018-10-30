@@ -51,6 +51,11 @@ nav img {
 nav .navbar-nav {
     display: inline-block;
     width: 100%;
+    padding: 5px;
+}
+
+.navbar {
+    padding: 0;
 }
 
 nav button {
@@ -145,6 +150,26 @@ nav .nav-item #info-rotate {
     #m-b-navbar .nav-item img {
         display: inline-block;
     }
+    /* --------------------Mobile top---------------------- */
+    #m-tiger {
+        width: 440px;
+        font-size: 1.5rem;
+        font-family: 'Anton', sans-serif;
+        margin-top: 5px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    #m-tiger img {
+        height: 35px;
+        width: 35px;
+    }
+    #m-hamburger {
+        float: right;
+        margin-top: 5px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    /* --------------------Mobile bottom---------------------- */
 }
 
 

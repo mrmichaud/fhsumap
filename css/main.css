@@ -85,6 +85,10 @@ nav .nav-item #info-rotate {
     transform: rotate(180deg);
 }
 
+#d-layers-icon {
+    transform: rotate(315deg);
+}
+
 @media (min-width: 1250px) and (max-width: 1700px) {
     nav #d-tiger {
         width: 420px;

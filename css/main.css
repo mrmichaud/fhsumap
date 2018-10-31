@@ -75,7 +75,7 @@
     
     nav #info-float-right {
         float: right;
-        margin-top: 6px;
+        /* margin-top: 6px; */
     }
     
     nav .nav-item #info-rotate {

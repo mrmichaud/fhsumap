@@ -10,6 +10,13 @@ function initMap() {
         zoom: 18
     });
 }
+/* Toggle sidebar */
+$('.nav-item').on('click', function() {
+    $('.nav-item').css('color', 'black');
+    $(".nav-item[data-label='" + $(this).data('label') + "']").css('color', 'white');
+    if (window.innerWidth < 1250) $('.sidebar').animate({ width: "toggle" });
+});
+
 
 /* Get data from json file */
 

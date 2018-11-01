@@ -11,31 +11,28 @@ function initMap() {
     });
 }
 /* Toggle sidebar */
+// $('.nav-item').on('click', function(event) {
+//     //$(event.currentTarget).css('color', 'white');
+//     if ($(event.currentTarget).css('color', 'black')) {
+
+//         $(event.currentTarget).css('color', 'white');
+//         $('#sidebar-content').addClass('sidebar-open');
+//     } else if ($(event.currentTarget).css('color', 'white')) {
+//         $(event.currentTarget).css('color', 'black');
+
+//         $('#sidebar-content').removeClass('.sidebar-open');
+//         // $(event.currentTarget).css('color', 'white')
+//         // $('.sidebar').addClass('.sidebar-open');
+//     }
+//     //else {
+//     //     $(event.currentTarget).css('color', 'white')
+//     //     $('.sidebar').removeClass('.sidebar-open');
+//     // }
+// });
+
+/* teacher's code */
 $('.nav-item').on('click', function() {
     $('.nav-item').css('color', 'black');
     $(".nav-item[data-label='" + $(this).data('label') + "']").css('color', 'white');
-    if (window.innerWidth < 1250) $('.sidebar').animate({ width: "toggle" });
+    $('.sidebar').animate({ width: "toggle" });
 });
-
-
-/* Get data from json file */
-
-let sidebarContainer = document.getElementById("js-sidebar");
-$("#d-hamburger").on('click', () => {
-    let request = new XMLHttpRequest();
-    request.open('GET', 'http://localhost:8080/navbar/json/real.json');
-    request.onload = function() {
-        let jsonData = JSON.parse(request.responseText);
-        renderHTML(jsonData);
-    }
-    request.send();
-});
-
-function renderHTML(data) {
-    var htmlString = "",
-        i;
-    for (i = 0; i < data.length; i++) {
-        htmlString += "<p>" + data[i].building + "</p>";
-    }
-    sidebarContainer.insertAdjacentHTML('beforeend', htmlString);
-}

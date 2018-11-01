@@ -78,21 +78,12 @@
         /* margin-top: 6px; */
     }
     
-    @media (min-width: 1250px) and (max-width: 1700px) {
-        nav #d-tiger {
-            width: 420px;
-        }
-        nav #d-tiger span {
-            font-family: 'Anton', sans-serif;
-            font-size: 1.5rem;
-        }
-        nav #d-tiger img {
-            height: 40px;
-            width: 40px;
-        }
-    }
-    
     @media (min-width: 1701px) {
+        nav #d-navbar {
+            align-items: center;
+            display: inline-block;
+            text-align: center;
+        }
         nav #d-tiger {
             width: 600px;
         }
@@ -100,13 +91,32 @@
             font-size: 1.3rem;
             margin: 0 10px;
         }
-        nav #d-tiger span {
+        nav #d-tiger {
             font-family: 'Anton', sans-serif;
             font-size: 2rem;
         }
         nav #d-tiger img {
             height: 45px;
             width: 45px;
+        }
+    }
+    
+    @media (min-width: 1250px) and (max-width: 1700px) {
+        nav #d-navbar {
+            align-items: center;
+            display: inline-block;
+            text-align: center;
+        }
+        nav #d-tiger {
+            width: 420px;
+        }
+        nav #d-tiger {
+            font-family: 'Anton', sans-serif;
+            font-size: 1.5rem;
+        }
+        nav #d-tiger img {
+            height: 40px;
+            width: 40px;
         }
     }
     /*---------------------Mobile-----------------------*/
@@ -132,7 +142,6 @@
     }
     
     @media (max-width:1249px) {
-        #m-t-navbar,
         #m-b-navbar {
             display: inline-block;
             text-align: center;
@@ -204,8 +213,8 @@
             font-size: 1rem;
         }
         #d-tiger img {
-            height: 30px;
-            width: 30px;
+            height: 25px;
+            width: 25px;
         }
         #m-hamburger {
             float: right;
@@ -225,8 +234,8 @@
     
     @media (max-width: 550px) {
         #d-tiger img {
-            height: 28px;
-            width: 28px;
+            height: 22px;
+            width: 22px;
         }
         #m-hamburger {
             float: right;
@@ -245,8 +254,8 @@
             font-size: 0.7rem;
         }
         #d-tiger img {
-            height: 25px;
-            width: 25px;
+            height: 20px;
+            width: 20px;
         }
         #m-hamburger {
             float: right;
@@ -274,8 +283,8 @@
             font-size: 0.7rem;
         }
         #d-tiger img {
-            height: 22px;
-            width: 22px;
+            height: 18px;
+            width: 18px;
         }
         #m-hamburger {
             float: right;
@@ -303,8 +312,8 @@
             font-size: 0.5rem;
         }
         #d-tiger img {
-            height: 22px;
-            width: 22px;
+            height: 18px;
+            width: 18px;
         }
         #m-hamburger {
             float: right;
@@ -328,7 +337,8 @@
     
     @media (max-width: 319px) {
         #desk-navbar,
-        #mobile-bottom-navbar {
+        #mobile-bottom-navbar,
+        .sidebar {
             display: none;
         }
     }
@@ -338,27 +348,71 @@
         background-color: rgba(0, 0, 0, 1);
         color: ivory;
         height: 100%;
-        margin: 0;
         overflow-x: hidden;
         overflow-y: scroll;
+        padding: 10px;
+        padding-bottom: 100px !important;
         position: absolute;
         z-index: 2;
+    }
+    /* sidebar margin */
+    
+    @media (max-width:1249px) {
+        .sidebar {
+            margin: 45px 0;
+        }
+    }
+    
+    @media (max-width:920px) {
+        .sidebar {
+            margin: 42px 0;
+        }
+    }
+    
+    @media (max-width:690px) {
+        .sidebar {
+            margin: 35px 0;
+        }
+    }
+    
+    @media (max-width:550px) {
+        .sidebar {
+            margin: 34px 0;
+        }
+    }
+    /* @media (max-width:490px) {} */
+    
+    @media (max-width:445px) {
+        .sidebar {
+            margin: 31px 0;
+        }
+    }
+    
+    @media (min-width:1250px) {
+        .sidebar {
+            margin: 50px 0;
+        }
+    }
+    
+    @media (min-width:1701px) {
+        .sidebar {
+            margin: 58px 0;
+        }
+    }
+    /* sidebar width */
+    
+    @media (max-width:600px) {
+        .sidebar {
+            width: 100%;
+        }
     }
     
     @media (min-width: 600px) {
         .sidebar {
-            /* padding: 10px; */
             width: 330px;
         }
     }
-    
-    @media (max-width:600px) {
-        .sidebar {
-            /* padding: 10px; */
-            width: 100%;
-        }
-    }
-    /* desk navbar disappear when width < 1249px */
+    /* desk navbar elements disappear when width < 1249px */
     
     @media (max-width: 1249px) {
         #d-search,

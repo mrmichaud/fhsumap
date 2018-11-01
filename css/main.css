@@ -4,7 +4,8 @@
     
     #map {
         height: 100%;
-        z-index: 1;
+        /* position: absolute; */
+        z-index: 20;
     }
     /* ------------------------Config------------------------ */
     
@@ -51,6 +52,7 @@
         display: inline-block;
         width: 100%;
         padding: 5px;
+        align-items: center !important;
     }
     
     .navbar {
@@ -78,11 +80,22 @@
         /* margin-top: 6px; */
     }
     
+    #d-tiger {}
+    /* Start test------------------------------------ */
+    
+    nav .vertical-align {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    /* End test------------------------------------ */
+    
     @media (min-width: 1701px) {
         nav #d-navbar {
             align-items: center;
             display: inline-block;
             text-align: center;
+            vertical-align: middle;
         }
         nav #d-tiger {
             width: 600px;
@@ -106,6 +119,7 @@
             align-items: center;
             display: inline-block;
             text-align: center;
+            vertical-align: middle;
         }
         nav #d-tiger {
             width: 420px;
@@ -127,9 +141,10 @@
     
     #m-b-navbar {
         background-color: #eaaf0f;
-        position: fixed;
+        position: absolute;
         bottom: 0;
         left: 0;
+        right: 500px;
         margin-top: 0;
         padding: 10px;
         z-index: 5;
@@ -177,7 +192,7 @@
             margin-bottom: 0;
             padding-bottom: 0;
         }
-        #m-b-navbar,
+        #m-b-navbar .nav-item,
         #d-navbar .nav-item {
             align-items: center;
             font-size: 1rem;
@@ -422,5 +437,11 @@
         #d-direction,
         #d-tour {
             display: none;
+        }
+        nav #d-navbar {
+            align-items: center;
+            display: inline-block;
+            text-align: center !important;
+            vertical-align: middle;
         }
     }

@@ -4,7 +4,7 @@
     
     #map {
         height: 100%;
-        z-index: 2;
+        z-index: 1;
     }
     /* ------------------------Config------------------------ */
     
@@ -78,14 +78,6 @@
         /* margin-top: 6px; */
     }
     
-    nav .nav-item #info-rotate {
-        transform: rotate(180deg);
-    }
-    
-    #d-layers-icon {
-        transform: rotate(315deg);
-    }
-    
     @media (min-width: 1250px) and (max-width: 1700px) {
         nav #d-tiger {
             width: 420px;
@@ -119,14 +111,18 @@
     }
     /*---------------------Mobile-----------------------*/
     
+    nav #mobile-bottom-navbar {
+        margin-top: 10px;
+    }
+    
     #m-b-navbar {
         background-color: #eaaf0f;
         position: fixed;
         bottom: 0;
         left: 0;
-        margin-left: 0;
+        margin-top: 0;
         padding: 10px;
-        z-index: 10;
+        z-index: 5;
     }
     
     @media (min-width: 1250px) {
@@ -346,7 +342,7 @@
         overflow-x: hidden;
         overflow-y: scroll;
         position: absolute;
-        z-index: 3;
+        z-index: 2;
     }
     
     @media (min-width: 600px) {

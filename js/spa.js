@@ -17,113 +17,136 @@ $(document).ready(() => {
     $("#d-layers").on('click', () => {
         if ($('#s-layers').hasClass('sidebar-open')) {
             $("#d-layers").removeClass('white');
-            //$("#d-layers[data-label='" + $(this).data('label') + "']").css('color', 'white');
+            $("#m-layers").removeClass('white');
             $('#s-layers').removeClass('sidebar-open')
         } else if ($('.sidebar').children().hasClass('sidebar-open')) {
             $('.sidebar').children().removeClass('sidebar-open');
             $('.nav-item').removeClass('white');
             $("#d-layers").addClass('white');
+            $("#m-layers").addClass('white');
             $('#s-layers').addClass('sidebar-open');
         } else {
             $("#d-layers").addClass('white');
+            $("#m-layers").addClass('white');
             $('#s-layers').addClass('sidebar-open');
         }
     });
     $("#d-building").on('click', () => {
         if ($('#s-building').hasClass('sidebar-open')) {
             $("#d-building").removeClass('white');
+            $("#m-building").removeClass('white');
             $('#s-building').removeClass('sidebar-open')
         } else if ($('.sidebar').children().hasClass('sidebar-open')) {
             $('.sidebar').children().removeClass('sidebar-open');
             $('.nav-item').removeClass('white');
             $("#d-building").addClass('white');
+            $("#m-building").addClass('white');
             $('#s-building').addClass('sidebar-open');
         } else {
             $("#d-building").addClass('white');
+            $("#m-building").addClass('white');
             $('#s-building').addClass('sidebar-open');
         }
     });
     $("#d-parking").on('click', () => {
         if ($('#s-parking').hasClass('sidebar-open')) {
             $("#d-parking").removeClass('white');
+            $("#m-parking").removeClass('white');
             $('#s-parking').removeClass('sidebar-open')
         } else if ($('.sidebar').children().hasClass('sidebar-open')) {
             $('.sidebar').children().removeClass('sidebar-open');
             $('.nav-item').removeClass('white');
             $("#d-parking").addClass('white');
+            $("#m-parking").addClass('white');
             $('#s-parking').addClass('sidebar-open');
         } else {
             $("#d-parking").addClass('white');
+            $("#m-parking").addClass('white');
             $('#s-parking').addClass('sidebar-open');
         }
     });
     $("#d-direction").on('click', () => {
         if ($('#s-direction').hasClass('sidebar-open')) {
             $("#d-direction").removeClass('white');
+            $("#m-direction").removeClass('white');
             $('#s-direction').removeClass('sidebar-open')
         } else if ($('.sidebar').children().hasClass('sidebar-open')) {
             $('.sidebar').children().removeClass('sidebar-open');
             $('.nav-item').removeClass('white');
             $("#d-direction").addClass('white');
+            $("#m-direction").addClass('white');
             $('#s-direction').addClass('sidebar-open');
         } else {
             $("#d-direction").addClass('white');
+            $("#m-direction").addClass('white');
             $('#s-direction').addClass('sidebar-open');
         }
     });
     $("#d-tour").on('click', () => {
         if ($('#s-tour').hasClass('sidebar-open')) {
             $("#d-tour").removeClass('white');
+            $("#m-tour").removeClass('white');
             $('#s-tour').removeClass('sidebar-open')
         } else if ($('.sidebar').children().hasClass('sidebar-open')) {
             $('.sidebar').children().removeClass('sidebar-open');
             $('.nav-item').removeClass('white');
             $("#d-tour").addClass('white');
+            $("#m-tour").addClass('white');
             $('#s-tour').addClass('sidebar-open');
         } else {
             $("#d-tour").addClass('white');
+            $("#m-tour").addClass('white');
             $('#s-tour').addClass('sidebar-open');
         }
     });
     $("#d-search").on('click', () => {
         if ($('#s-search').hasClass('sidebar-open')) {
             $("#d-search").removeClass('white');
+            $("#m-search").removeClass('white');
             $('#s-search').removeClass('sidebar-open')
         } else if ($('.sidebar').children().hasClass('sidebar-open')) {
             $('.sidebar').children().removeClass('sidebar-open');
             $('.nav-item').removeClass('white');
             $("#d-search").addClass('white');
+            $("#m-search").addClass('white');
             $('#s-search').addClass('sidebar-open');
         } else {
             $("#d-search").addClass('white');
+            $("#m-search").addClass('white');
             $('#s-search').addClass('sidebar-open');
         }
     });
     $("#d-hamburger").on('click', () => {
         if ($('#s-hamburger').hasClass('sidebar-open')) {
             $("#d-hamburger").removeClass('white');
+            $("#m-hamburger").removeClass('white');
             $('#s-hamburger').removeClass('sidebar-open')
         } else if ($('.sidebar').children().hasClass('sidebar-open')) {
             $('.sidebar').children().removeClass('sidebar-open');
             $('.nav-item').removeClass('white');
             $("#d-hamburger").addClass('white');
+            $("#m-hamburger").addClass('white');
             $('#s-hamburger').addClass('sidebar-open');
         } else {
             $("#d-hamburger").addClass('white');
+            $("#m-hamburger").addClass('white');
             $('#s-hamburger').addClass('sidebar-open');
         }
     });
     $("#d-info").on('click', () => {
         if ($('#s-info').hasClass('sidebar-open')) {
             $("#d-info").removeClass('white');
+            $("#m-info").removeClass('white');
             $('#s-info').removeClass('sidebar-open')
         } else if ($('.sidebar').children().hasClass('sidebar-open')) {
             $('.sidebar').children().removeClass('sidebar-open');
             $('.nav-item').removeClass('white');
             $("#d-info").addClass('white');
+            $("#m-info").addClass('white');
             $('#s-info').addClass('sidebar-open');
         } else {
             $("#d-info").addClass('white');
+            $("#m-info").addClass('white');
             $('#s-info').addClass('sidebar-open');
         }
     });
@@ -131,84 +154,102 @@ $(document).ready(() => {
     $("#m-layers").on('click', () => {
         if ($('#s-layers').hasClass('sidebar-open')) {
             $("#m-layers").removeClass('white');
+            $("#d-layers").removeClass('white');
             $('#s-layers').removeClass('sidebar-open')
         } else if ($('.sidebar').children().hasClass('sidebar-open')) {
             $('.sidebar').children().removeClass('sidebar-open');
             $('.nav-item').removeClass('white');
             $("#m-layers").addClass('white');
+            $("#d-layers").addClass('white');
             $('#s-layers').addClass('sidebar-open');
         } else {
             $("#m-layers").addClass('white');
+            $("#d-layers").addClass('white');
             $('#s-layers').addClass('sidebar-open');
         }
     });
     $("#m-building").on('click', () => {
         if ($('#s-building').hasClass('sidebar-open')) {
             $("#m-building").removeClass('white');
+            $("#d-building").removeClass('white');
             $('#s-building').removeClass('sidebar-open')
         } else if ($('.sidebar').children().hasClass('sidebar-open')) {
             $('.sidebar').children().removeClass('sidebar-open');
             $('.nav-item').removeClass('white');
             $("#m-building").addClass('white');
+            $("#d-building").addClass('white');
             $('#s-building').addClass('sidebar-open');
         } else {
             $("#m-building").addClass('white');
+            $("#d-building").addClass('white');
             $('#s-building').addClass('sidebar-open');
         }
     });
     $("#m-parking").on('click', () => {
         if ($('#s-parking').hasClass('sidebar-open')) {
             $("#m-parking").removeClass('white');
+            $("#d-parking").removeClass('white');
             $('#s-parking').removeClass('sidebar-open')
         } else if ($('.sidebar').children().hasClass('sidebar-open')) {
             $('.sidebar').children().removeClass('sidebar-open');
             $('.nav-item').removeClass('white');
             $("#m-parking").addClass('white');
+            $("#d-parking").addClass('white');
             $('#s-parking').addClass('sidebar-open');
         } else {
             $("#m-parking").addClass('white');
+            $("#d-parking").addClass('white');
             $('#s-parking').addClass('sidebar-open');
         }
     });
     $("#m-direction").on('click', () => {
         if ($('#s-direction').hasClass('sidebar-open')) {
             $("#m-direction").removeClass('white');
+            $("#d-direction").removeClass('white');
             $('#s-direction').removeClass('sidebar-open')
         } else if ($('.sidebar').children().hasClass('sidebar-open')) {
             $('.sidebar').children().removeClass('sidebar-open');
             $('.nav-item').removeClass('white');
             $("#m-direction").addClass('white');
+            $("#d-direction").addClass('white');
             $('#s-direction').addClass('sidebar-open');
         } else {
             $("#m-direction").addClass('white');
+            $("#d-direction").addClass('white');
             $('#s-direction').addClass('sidebar-open');
         }
     });
     $("#m-tour").on('click', () => {
         if ($('#s-tour').hasClass('sidebar-open')) {
             $("#m-tour").removeClass('white');
+            $("#d-tour").removeClass('white');
             $('#s-tour').removeClass('sidebar-open')
         } else if ($('.sidebar').children().hasClass('sidebar-open')) {
             $('.sidebar').children().removeClass('sidebar-open');
             $('.nav-item').removeClass('white');
             $("#m-tour").addClass('white');
+            $("#d-tour").addClass('white');
             $('#s-tour').addClass('sidebar-open');
         } else {
             $("#m-tour").addClass('white');
+            $("#d-tour").addClass('white');
             $('#s-tour').addClass('sidebar-open');
         }
     });
     $("#m-search").on('click', () => {
         if ($('#s-search').hasClass('sidebar-open')) {
             $("#m-search").removeClass('white');
+            $("#d-search").removeClass('white');
             $('#s-search').removeClass('sidebar-open')
         } else if ($('.sidebar').children().hasClass('sidebar-open')) {
             $('.sidebar').children().removeClass('sidebar-open');
             $('.nav-item').removeClass('white');
             $("#m-search").addClass('white');
+            $("#d-search").addClass('white');
             $('#s-search').addClass('sidebar-open');
         } else {
             $("#m-search").addClass('white');
+            $("#d-search").addClass('white');
             $('#s-search').addClass('sidebar-open');
         }
     });

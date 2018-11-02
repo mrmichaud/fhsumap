@@ -63,12 +63,26 @@
     nav button {
         background: #eaaf0f;
     }
-    
-    nav .nav-item {
-        display: inline-block;
-        margin: 0 10px;
-        vertical-align: middle;
+    /* @media (min-width: 1250px) {
+        #d-hamburger,
+        #d-search,
+        #d-layers,
+        #d-building,
+        #d-parking,
+        #d-direction,
+        #d-tour,
+        #d-info {
+            display: inline-block;
+            align-items: center;
+            margin: 0 10px;
+            margin-top: 8px !important;
+            vertical-align: middle;
+        }
     }
+    
+    #d-tiger {
+        margin-top: 0 !important;
+    } */
     
     nav .filter {
         -webkit-filter: brightness(0) invert(1);

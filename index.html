@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Fort Hays State University Campus Map</title>
-    <link rel="icon" href="./img/maps-icon.png">
+    <link rel="icon" href="./img/tiger.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Anton|Athiti" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
     <!-- ---------------------------------Desk---------------------------- -->
     <nav class="navbar navbar-expand-md fixed-top" id="desk-navbar">
         <div class="navbar-nav" id="d-navbar">
@@ -23,10 +22,8 @@
                 <i class="fas fa-bars"></i>
             </div>
             <div class="nav-item" id="d-search">
-                <form class="form-inline">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn" type="submit"><i class="fas fa-search fa-lg"></i></button>
-                </form>
+                <i class="fas fa-search fa-lg"></i>
+                <span class="js-text">Search</span>
             </div>
             <div class="nav-item" id="d-layers" data-label="layers">
                 <i class="fas fa-layer-group"></i>
@@ -60,84 +57,88 @@
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar-content">
         <div class="js-sidebar" id="s-layers">
-            <a>Layers</a>
-            <a>1</a>
-            <a>2</a>
-            <a>3</a>
-            <a>4</a>
-            <a>5</a>
-            <a>6</a>
-            <a>7</a>
+            <a href="#">Layers</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
         </div>
         <div class="js-sidebar" id="s-building">
-            <a>Building</a>
-            <a>1</a>
-            <a>2</a>
-            <a>3</a>
-            <a>4</a>
-            <a>5</a>
-            <a>6</a>
-            <a>7</a>
+            <a href="#">Building</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
         </div>
         <div class="js-sidebar" id="s-parking">
-            <a>Parking</a>
-            <a>1</a>
-            <a>2</a>
-            <a>3</a>
-            <a>4</a>
-            <a>5</a>
-            <a>6</a>
-            <a>7</a>
+            <a href="#">Parking</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
         </div>
         <div class="js-sidebar" id="s-direction">
-            <a>Direction</a>
-            <a>1</a>
-            <a>2</a>
-            <a>3</a>
-            <a>4</a>
-            <a>5</a>
-            <a>6</a>
-            <a>7</a>
+            <a href="#">Direction</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
         </div>
         <div class="js-sidebar" id="s-tour">
-            <a>Tour</a>
-            <a>1</a>
-            <a>2</a>
-            <a>3</a>
-            <a>4</a>
-            <a>5</a>
-            <a>6</a>
-            <a>7</a>
+            <a href="#">Tour</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
         </div>
         <div class="js-sidebar" id="s-search">
-            <a>Search</a>
-            <a>1</a>
-            <a>2</a>
-            <a>3</a>
-            <a>4</a>
-            <a>5</a>
-            <a>6</a>
-            <a>7</a>
+            <form class="form-inline">
+                <input class="form-control" type="search" placeholder="Building/Staff Name" aria-label="Search">
+                <button class="btn" type="submit">GO</button>
+                <!-- <button class="btn" type="submit"><i class="fas fa-search fa-lg"></i></button> -->
+            </form>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
         </div>
         <div class="js-sidebar" id="s-hamburger">
-            <a>Hamburger</a>
-            <a>1</a>
-            <a>2</a>
-            <a>3</a>
-            <a>4</a>
-            <a>5</a>
-            <a>6</a>
-            <a>7</a>
+            <a href="#">Hamburger</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
         </div>
         <div class="js-sidebar" id="s-info">
-            <a>Info</a>
-            <a>1</a>
-            <a>2</a>
-            <a>3</a>
-            <a>4</a>
-            <a>5</a>
-            <a>6</a>
-            <a>7</a>
+            <a href="#">Info</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
         </div>
     </div>
     <!--Google map area -->

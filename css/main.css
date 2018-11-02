@@ -17,10 +17,6 @@
         padding: 0;
         background-color: lightblue;
     }
-    
-    a {
-        color: black;
-    }
     /* a:hover {
     -webkit-filter: brightness(0) invert(1);
     filter: brightness(0) invert(1);
@@ -375,7 +371,7 @@
     }
     
     .js-sidebar a {
-        color: ivory;
+        color: ivory !important;
         display: block;
         font-size: 25px;
         margin-bottom: 20px;

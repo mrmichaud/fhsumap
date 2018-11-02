@@ -384,7 +384,7 @@
         overflow-y: scroll;
         padding-bottom: 100px !important;
         position: absolute;
-        transition: 0;
+        transition: 0.1s;
         width: 0;
         z-index: 20 !important;
     }

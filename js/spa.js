@@ -11,6 +11,9 @@ function initMap() {
     });
 }
 /* Toggle sidebar */
+$(".nav-item[data-label='layers']").on('click', () => {
+    $('#s-layers').hasClass('sidebar-open');
+});
 // $('.nav-item').on('click', function(event) {
 //     //$(event.currentTarget).css('color', 'white');
 //     if ($(event.currentTarget).css('color', 'black')) {
@@ -31,8 +34,8 @@ function initMap() {
 // });
 
 /* teacher's code */
-$('.nav-item').on('click', function() {
-    $('.nav-item').css('color', 'black');
-    $(".nav-item[data-label='" + $(this).data('label') + "']").css('color', 'white');
-    $('.sidebar').animate({ width: "toggle" });
-});
+// $('.nav-item').on('click', function() {
+//     $('.nav-item').css('color', 'black');
+//     $(".nav-item[data-label='" + $(this).data('label') + "']").css('color', 'white');
+//     $('.sidebar').animate({ width: "toggle" });
+// });

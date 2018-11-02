@@ -361,22 +361,31 @@
     }
     /* -------------------Sidebar------------------- */
     
-    #sidebar-content {
+    .js-sidebar {
         background-color: rgba(0, 0, 0, 1);
-        color: ivory;
         height: 100%;
         overflow-x: hidden;
         overflow-y: scroll;
         padding-bottom: 100px !important;
         position: absolute;
         transition: 0.05s;
-        /* width: 0; */
+        width: 0;
         z-index: 20 !important;
+    }
+    
+    .js-sidebar a {
+        color: ivory;
+        display: block;
+        font-size: 25px;
+        margin-bottom: 20px;
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        transition: 0.1s;
     }
     /* sidebar width */
     
     @media (max-width:600px) {
-        .sidebar {
+        .sidebar-open {
             width: 100%;
         }
     }
@@ -388,7 +397,6 @@
     
     @media(min-width:600px) {
         .sidebar-open {
-            padding: 10px;
             width: 350px;
         }
     }

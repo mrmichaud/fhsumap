@@ -17,6 +17,7 @@ $(document).ready(() => {
     $("#d-layers").on('click', () => {
         if ($('#s-layers').hasClass('sidebar-open')) {
             $("#d-layers").removeClass('white');
+            //$("#d-layers[data-label='" + $(this).data('label') + "']").css('color', 'white');
             $('#s-layers').removeClass('sidebar-open')
         } else if ($('.sidebar').children().hasClass('sidebar-open')) {
             $('.sidebar').children().removeClass('sidebar-open');

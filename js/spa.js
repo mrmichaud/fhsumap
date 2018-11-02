@@ -11,8 +11,8 @@ function initMap() {
     });
 }
 /* Toggle sidebar */
-$(".nav-item[data-label='layers']").on('click', () => {
-    $('#s-layers').hasClass('sidebar-open');
+$("#d-layers").on('click', () => {
+    $("#d-layers").hasClass('white');
 });
 // $('.nav-item').on('click', function(event) {
 //     //$(event.currentTarget).css('color', 'white');

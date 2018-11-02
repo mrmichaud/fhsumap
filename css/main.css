@@ -6,6 +6,7 @@
         height: 100%;
         /* position: absolute; */
         z-index: 1;
+        padding-bottom: 200px;
     }
     /* ------------------------Config------------------------ */
     
@@ -31,6 +32,10 @@
     
     #d-tiger {
         cursor: initial;
+    }
+    
+    .white {
+        color: ivory;
     }
     /* -------------------Navbar------------------- */
     /* general */
@@ -137,16 +142,12 @@
     }
     /*---------------------Mobile-----------------------*/
     
-    nav #mobile-bottom-navbar {
-        margin-top: 10px;
-    }
-    
     #m-b-navbar {
         background-color: #eaaf0f;
         position: absolute;
         bottom: 0;
-        left: 0;
-        right: 500px;
+        /* left: 0; */
+        /* right: 500px; */
         margin-top: 0;
         /* padding: 10px; */
         z-index: 5;

@@ -16,6 +16,10 @@
         padding: 0;
         background-color: lightblue;
     }
+    
+    a {
+        color: black;
+    }
     /* Cursor------------------------------------------------  */
     
     .nav-item {
@@ -31,13 +35,18 @@
     nav {
         background-color: #eaaf0f;
         font-family: 'Athiti', sans-serif;
-        position: absolute;
         text-align: left;
     }
     
     nav img {
         height: 30px;
         width: 30px;
+    }
+    
+    nav .nav-item {
+        display: inline-block;
+        margin: 0 2px;
+        vertical-align: middle;
     }
     
     nav button {

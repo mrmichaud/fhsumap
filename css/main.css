@@ -4,7 +4,7 @@
     
     #map {
         height: 100%;
-        z-index: 1;
+        z-index: 10;
     }
     /* Config------------------------------------------------ */
     
@@ -39,19 +39,6 @@
         height: 30px;
         width: 30px;
     }
-    /* This setting is important, don't delete it */
-    
-    nav .navbar-nav {
-        display: inline-block;
-        width: 100%;
-        padding: 5px;
-        align-items: center;
-    }
-    /* This setting is important, don't delete it */
-    
-    .navbar {
-        padding: 0;
-    }
     
     nav button {
         background: #eaaf0f;
@@ -72,7 +59,7 @@
         overflow-x: hidden;
         overflow-y: scroll;
         position: absolute;
-        z-index: 3;
+        z-index: 20;
         padding: 10px;
         top: 31px;
         bottom: 66px;

@@ -84,9 +84,39 @@
         /* Sidebar position */
         .sidebar {
             top: 35px;
+            bottom: 41px;
+        }
+        #map {
+            top: 35px;
+            bottom: 41px;
         }
         #m-b-navbar .nav-item {
             font-size: 0.8rem;
+        }
+    }
+    
+    @media (min-width:425px) and (max-width:1200px) {
+        /* Sidebar position */
+        .sidebar {
+            position: relative;
+            top: 44px;
+            bottom: 49px;
+        }
+        #map {
+            top: 35px;
+            bottom: 41px;
+        }
+    }
+    
+    @media (min-width:1200px) {
+        /* Sidebar position */
+        .sidebar {
+            top: 44px;
+            bottom: 0;
+        }
+        #map {
+            top: 44px;
+            bottom: 10px;
         }
     }
     

@@ -12,6 +12,7 @@
     
     html,
     body {
+        font-size: 14px;
         height: 100%;
         margin: 0;
         padding: 0;
@@ -39,7 +40,6 @@
     nav {
         background-color: #eaaf0f;
         font-family: 'Athiti', sans-serif;
-        font-size: 14px;
         position: absolute;
         text-align: left;
     }
@@ -367,17 +367,43 @@
             width: 12px;
         }
     }
-    
-    @media (max-width: 319px) {
+    /* @media (max-width: 319px) {
         #desk-navbar,
         #mobile-bottom-navbar,
         .sidebar {
             display: none;
         }
-    }
+    } */
     /* -------------------Sidebar------------------- */
     
-    .js-sidebar {
+    .sidebar {
+        background-color: rgba(0, 0, 0, 1);
+        color: ivory;
+        margin: 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        position: absolute;
+        z-index: 3;
+        padding: 10px;
+        top: 31px;
+        bottom: 66px;
+    }
+    
+    @media (min-width:768px) {
+        .sidebar {
+            top: 50px;
+            width: 330px;
+            bottom: 0px;
+        }
+    }
+    
+    @media (max-width:768px) {
+        .sidebar {
+            top: 31px;
+            width: 100%;
+        }
+    }
+    /* .js-sidebar {
         background-color: rgba(0, 0, 0, 1);
         height: 100%;
         overflow-x: hidden;
@@ -401,34 +427,31 @@
     
     .js-sidebar a:hover {
         background-color: gray;
-    }
+    } */
     /* sidebar width */
-    
-    @media (max-width:600px) {
+    /* @media (max-width:600px) {
         .sidebar-open {
             width: 100%;
         }
-    }
+    } */
     /* @media (min-width: 600px) {
         .sidebar {
             width: 330px;
         }
     } */
-    
+    /*     
     @media(min-width:600px) {
         .sidebar-open {
             width: 350px;
         }
-    }
+    } */
     /* sidebar margin */
-    
-    @media (max-width:1249px) {
+    /* @media (max-width:1249px) {
         .sidebar {
             margin: 45px 0;
         }
-    }
-    
-    @media (max-width:920px) {
+    } */
+    /* @media (max-width:920px) {
         .sidebar {
             margin: 40px 0;
         }
@@ -444,10 +467,9 @@
         .sidebar {
             margin: 34px 0;
         }
-    }
+    } */
     /* @media (max-width:490px) {} */
-    
-    @media (max-width:445px) {
+    /* @media (max-width:445px) {
         .sidebar {
             margin: 31px 0;
         }
@@ -463,7 +485,7 @@
         .sidebar {
             margin: 58px 0;
         }
-    }
+    } */
     /* desk navbar float left */
     
     @media (min-width: 1250px) {

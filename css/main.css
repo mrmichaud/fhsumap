@@ -81,18 +81,36 @@
             height: 20px;
             width: 20px;
         }
+        /* Sidebar position */
         .sidebar {
             top: 35px;
+        }
+        #m-b-navbar .nav-item {
+            font-size: 0.8rem;
         }
     }
     
     @media (max-width: 319px) {
         .sidebar,
         .navbar {
-            display: none;
+            display: none !important;
         }
     }
     /* Mobile-------------------------------------------- */
+    
+    #m-b-navbar {
+        display: inline-block;
+        text-align: center;
+    }
+    
+    #m-b-navbar .nav-item {
+        display: inline-block !important;
+    }
+    
+    #m-b-navbar .nav-item span {
+        display: block !important;
+        line-height: 1;
+    }
     /* Sidebar------------------------------------------- */
     
     .sidebar {

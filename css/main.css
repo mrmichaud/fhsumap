@@ -47,7 +47,7 @@
     
     nav .nav-item {
         display: inline-block;
-        margin: 0 5px;
+        margin: 0 12px;
         vertical-align: middle;
     }
     
@@ -59,6 +59,11 @@
         display: block;
         width: auto;
         margin-left: 10px;
+    }
+    
+    nav .btn {
+        margin: 0;
+        padding: 0;
     }
     
     nav .filter {
@@ -92,6 +97,11 @@
         }
         #m-b-navbar .nav-item {
             font-size: 0.8rem;
+        }
+        nav .nav-item {
+            display: inline-block;
+            margin: 0;
+            vertical-align: middle;
         }
     }
     

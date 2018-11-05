@@ -1,6 +1,7 @@
 ﻿{
 	"buildings":[
 		{
+		"id" : 001,
 		"code"				: "SC",
 		"displayCode"		: "false",
 		"buildingName"		: "Soccer Complex", 
@@ -30,6 +31,7 @@
 
 		
 	{
+		"id" : 002,
 		"code"				: "SH",
 		"displayCode"		: "true",
 		"buildingName"		: "Sheridan Hall", 
@@ -57,6 +59,7 @@
 		
 
 	{
+		"id" : 003,
 		"code"				: "MC",
 		"displayCode"		: "true",
 		"buildingName"		: "McCartney Hall", 
@@ -91,6 +94,7 @@
 
 
 	{
+		"id" : 004,
 		"code"				: "AH",
 		"displayCode"		: "true",
 		"buildingName"		: "Albertson Hall", 
@@ -144,6 +148,7 @@
 
 
 	{
+		"id" : 005,
 		"code"				: "UN",
 		"displayCode"		: "true",
 		"buildingName"		: "Memorial Union", 
@@ -199,6 +204,7 @@
 		
 
 	{
+		"id" : 006,
 		"code"				: "SMBH",
 		"displayCode"		: "false",
 		"buildingName"		: "Sternberg Museum of Natural History (Beach Hall)", 
@@ -259,6 +265,7 @@
 
 
 	{
+		"id" : 007,
 		"code"				: "PP",
 		"displayCode"		: "false",
 		"buildingName"		: "Power Plant", 
@@ -286,6 +293,7 @@
 
 
 	{
+		"id" : 008,
 		"code"				: "RH",
 		"displayCode"		: "true",
 		"buildingName"		: "Rarick Hall", 
@@ -350,6 +358,7 @@
 
 
 	{
+		"id" : 009,
 		"code"				: "MA",
 		"displayCode"		: "true",
 		"buildingName"		: "Martin Allen Hall", 
@@ -386,6 +395,7 @@
 
 
 	{
+		"id" : 010,
 		"code"				: "PH",
 		"displayCode"		: "true",
 		"buildingName"		: "Picken Hall", 
@@ -437,6 +447,7 @@
 
 
 	{
+		"id" : 011,
 		"code"				: "ST",
 		"displayCode"		: "true",
 		"buildingName"		: "Stroup Hall", 
@@ -473,6 +484,7 @@
 
 
 	{
+		"id" : 012,
 		"code"				: "PR",
 		"displayCode"		: "false",
 		"buildingName"		: "President's Residence", 
@@ -500,6 +512,7 @@
 
 
 	{
+		"id" : 013,
 		"code"				: "MH",
 		"displayCode"		: "true",
 		"buildingName"		: "Malloy Hall", 
@@ -544,6 +557,7 @@
 
 
 	{
+		"id" : 014,
 		"code"				: "FL",
 		"displayCode"		: "true",
 		"buildingName"		: "Forsyth Library", 
@@ -572,6 +586,7 @@
 
 
 	{
+		"id" : 015,
 		"code"				: "TPS",
 		"displayCode"		: "false",
 		"buildingName"		: "The Plymouth Schoolhouse", 
@@ -599,6 +614,7 @@
 
 
 	{
+		"id" : 016,
 		"code"				: "TH",
 		"displayCode"		: "true",
 		"buildingName"		: "Tomanek Hall", 
@@ -643,6 +659,7 @@
 
 
 	{
+		"id" : 017,
 		"code"				: "HMH",
 		"displayCode"		: "true",
 		"buildingName"		: "Hammond Hall", 
@@ -696,6 +713,7 @@
 
 
 	{
+		"id" : 018,
 		"code"				: "AEC",
 		"displayCode"		: "false",
 		"buildingName"		: "Akers Energy Center", 
@@ -720,6 +738,7 @@
 
 
 	{
+		"id" : 019,
 		"code"				: "SB",
 		"displayCode"		: "false",
 		"buildingName"		: "Switchgear Building", 
@@ -743,6 +762,7 @@
 
 
 	{
+		"id" : 020,
 		"code"				: "CT",
 		"displayCode"		: "true",
 		"buildingName"		: "Custer Hall", 
@@ -778,6 +798,7 @@
 
 
 	{
+		"id" : 021,
 		"code"				: "MM",
 		"displayCode"		: "true",
 		"buildingName"		: "McMindes Hall", 
@@ -826,6 +847,7 @@
 
 
 	{
+		"id" : 022,
 		"code"				: "HH",
 		"displayCode"		: "true",
 		"buildingName"		: "Heather Hall", 
@@ -855,6 +877,7 @@
 
 
 	{
+		"id" : 023,
 		"code"				: "AG",
 		"displayCode"		: "true",
 		"buildingName"		: "Agnew Hall", 
@@ -882,6 +905,7 @@
 
 
 	{
+		"id" : 024,
 		"code"				: "WP1",
 		"displayCode"		: "false",
 		"buildingName"		: "Wooster Place No. 1 (WP)", 
@@ -930,6 +954,7 @@
 
 
 	{
+		"id" : 025,
 		"code"				: "WP2",
 		"displayCode"		: "false",
 		"buildingName"		: "Wooster Place No. 2 (WP)", 
@@ -966,6 +991,7 @@
 
 
 	{
+		"id" : 026,
 		"code"				: "VEV",
 		"displayCode"		: "false",
 		"buildingName"		: "Victor E. Village", 
@@ -1052,6 +1078,7 @@
 
 
 	{
+		"id" : 027,
 		"code"				: "HSH",
 		"displayCode"		: "false",
 		"buildingName"		: "Dane G. Hansen Scholarship Hall", 
@@ -1094,6 +1121,7 @@
 
 
 	{
+		"id" : 028,
 		"code"				: "SP",
 		"displayCode"		: "true",
 		"buildingName"		: "Stadium Place", 
@@ -1177,6 +1205,7 @@
 
 		
 		{
+		"id" : 029,
 		"code"				: "TV",
 		"displayCode"		: "false",
 		"buildingName"		: "Tiger Village", 
@@ -1218,6 +1247,7 @@
 
 
 		{
+		"id" : 030,
 		"code"				: "LFS",
 		"displayCode"		: "false",
 		"buildingName"		: "Lewis Field Stadium", 
@@ -1281,6 +1311,7 @@
 
 
 		{
+		"id" : 031,
 		"code"				: "SBATF",
 		"displayCode"		: "false",
 		"buildingName"		: "Schmidt-Bickle Athletic Training Facility", 
@@ -1307,6 +1338,7 @@
 
 
 		{
+		"id" : 032,
 		"code"				: "SMB",
 		"displayCode"		: "false",
 		"buildingName"		: "South Maintenance Building", 
@@ -1330,6 +1362,7 @@
 
 
 		{
+		"id" : 033,
 		"code"				: "CAT",
 		"displayCode"		: "true",
 		"buildingName"		: "Center for Applied Technology", 
@@ -1360,6 +1393,7 @@
 
 
 		{
+		"id" : 034,
 		"code"				: "MP",
 		"displayCode"		: "false",
 		"buildingName"		: "Motor Pool", 
@@ -1385,6 +1419,7 @@
 
 
 		{
+		"id" : 035,
 		"code"				: "GBG",
 		"displayCode"		: "false",
 		"buildingName"		: "Grounds Building and Greenhouse", 
@@ -1415,6 +1450,7 @@
 
 
 		{
+		"id" : 036,
 		"code"				: "BSB",
 		"displayCode"		: "false",
 		"buildingName"		: "R.U. Brooks Service Building", 
@@ -1439,6 +1475,7 @@
 
 		
 		{
+		"id" : 037,
 		"code"				: "WMB",
 		"displayCode"		: "false",
 		"buildingName"		: "C.A. Witt Maintenance Building", 
@@ -1465,6 +1502,7 @@
 		
 		
 		{
+		"id" : 038,
 		"code"				: "RC",
 		"displayCode"		: "false",
 		"buildingName"		: "Robbins Center", 
@@ -1500,6 +1538,7 @@
 
 
 		{
+		"id" : 039,
 		"code"				: "GM",
 		"displayCode"		: "true",
 		"buildingName"		: "Gross Memorial Coliseum", 
@@ -1537,6 +1576,7 @@
 
 
 		{
+		"id" : 040,
 		"code"				: "CH",
 		"displayCode"		: "true",
 		"buildingName"		: "Cunningham Hall", 
@@ -1576,6 +1616,7 @@
 	
 	"pois":[
         {
+			"id" : 0001,
 	    	"title":"Memorial Union",
 	    	"latLng":{"lat":38.87404,"lng":-99.3419},
 	    	"category":"placesOfInterest",
@@ -1589,6 +1630,7 @@
 
         },
         {
+			"id" : 0002,
 	    	"title":"Robbins Center",
 	    	"latLng":{"lat":38.87401,"lng":-99.34925},
 	    	"category":"placesOfInterest",
@@ -1604,6 +1646,7 @@
 
 	"circles":[
 		{
+			"id" : 0001,
 		  	"name":"Wooster Place",
 		    "latLngCenter" :{"lat": 38.870065,"lng": -99.343837},
 		    "radius":1,
@@ -1620,6 +1663,7 @@
 	
 	"polylines":[
 		{
+			"id" : 0001,
 		    "name":"walking path for President Mason",
 		    "latLngArray":[
 		    	{"lat": 38.87276,"lng":-99.34099 },
@@ -1636,6 +1680,7 @@
 
 	"polygons":[
 		{
+			"id" : 0001,
 			"name":"Main Administrative buildings",
 			"latLngCenter":{"lat": 38.87292,"lng": -99.3404},
 			"outline":[
@@ -1661,6 +1706,7 @@
 
 	"parking":[
 		{
+			"id" : 0001,
 			"zone"				: "1",
 			"parkingName"		: "A-2", 
 			"latLngCenter"		: {"lat": 38.87478, "lng": -99.34311},
@@ -1677,6 +1723,7 @@
 		},
 
 		{
+			"id" : 0002,
 			"zone"				: "1",
 			"parkingName"		: "A-3", 
 			"latLngCenter"		: {"lat": 38.87443, "lng": -99.34463},
@@ -1719,6 +1766,7 @@
 		},
 		
 		{
+			"id" : 0003,		
 			"zone"				: "1",
 			"parkingName"		: "N", 
 			"latLngCenter"		: {"lat": 38.8722, "lng": -99.33959},
@@ -1737,6 +1785,7 @@
 		},
 		
 		{
+			"id" : 0004,		
 			"zone"				: "1",
 			"parkingName"		: "D", 
 			"latLngCenter"		: {"lat": 38.87254, "lng": -99.34409},
@@ -1765,18 +1814,22 @@
 	
 	"categories" :[
 		{
+			"id" : 0001,
 			"label": "Academics",
 			"layerID" : [1]
 		},
 		{
+			"id" : 0002,		
 			"label": "Athletics",
 			"layerID" : [2]
 		},
 		{
+			"id" : 0003,		
 			"label": "Residence Buildings",
 			"layerID" : [3]
 		},
 		{
+			"id" : 0004,		
 			"label": "Service Buildings",
 			"layerID" : [4]
 		}
@@ -1787,6 +1840,7 @@
 	
 	"layers" :[
 		{
+			"id" : 0001,		
 			"layerName": "Academics",
 			"layerDescription" : "All academic buildings",
 			"myElement" : {
@@ -1799,6 +1853,7 @@
 			}
 		},
 		{
+			"id" : 0002,		
 			"layerName": "Athletics",
 			"layerDescription" : "All athletic buildings",
 			"myElement" : {
@@ -1816,6 +1871,7 @@
 	
 	"mapSettings": [
 		{
+			"id" :  0001,
 			"zoom" :  17 ,
 			"mapCenter" :  {"lat"	: 38.87359, "lng"	: -99.34427} ,
 			"buildingSelectedBorderSize" : 4 ,

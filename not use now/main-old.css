@@ -1,0 +1,244 @@
+/* Total Config */
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+}
+
+
+/* top navbar design */
+
+nav {
+    background-color: #eaaf0f;
+    font-family: 'Athiti', sans-serif;
+    text-align: center;
+    z-index: 10;
+}
+
+
+/* .navbar {
+    z-index: 10;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+} */
+
+nav img {
+    width: 25px;
+    height: 25px;
+}
+
+nav .navbar-bottom {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    display: inline-block;
+    padding: 6px;
+    /* border: 1px solid black; */
+    margin: 0 auto;
+    width: 100%;
+    min-width: 320px;
+}
+
+nav .nav-menu {
+    display: inline-block;
+    width: 80px;
+    margin: 5px auto;
+}
+
+nav .nav-menu input {
+    display: block;
+}
+
+nav .nav-menu-words {
+    display: inline-block;
+    margin: 5px auto;
+}
+
+nav .nav-menu-account {
+    margin: 5px auto;
+    float: right;
+}
+
+nav .nav-text {
+    display: block;
+}
+
+nav .nav-menu .hide {
+    display: none;
+}
+
+nav a {
+    color: #000;
+}
+
+.filter {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+}
+
+
+/* Map Design */
+
+.main-map img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+
+/* Sidebar Design */
+
+main .main-sidebar {
+    z-index: 2;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow-x: hidden;
+    transition: 0.05s;
+    padding-top: 60px;
+}
+
+main .main-sidebar-width {
+    width: 408px;
+}
+
+main .main-sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: ivory;
+    display: block;
+    transition: 0.1s;
+}
+
+main .main-sidebar a:hover {
+    background-color: rgba(119, 117, 117, 0.822);
+}
+
+main .main-sidebar .left-arrow {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.nav-img-opacity {
+    opacity: 0.3;
+}
+
+.nav-text-color {
+    color: white;
+}
+
+
+/* mobile version navbar */
+
+@media screen and (max-width: 567px) {
+    .nav-bottom {
+        z-index: 10;
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        font-size: 15px;
+        bottom: 0;
+        padding: 4px;
+    }
+    nav .nav-menu {
+        display: inline-block;
+        width: 60px;
+        margin: 3px auto;
+    }
+    /* sidebar design */
+    main .main-sidebar-width {
+        width: 100%;
+    }
+    nav a {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    /* navbar design */
+    .navbar-bottom {
+        z-index: 10;
+        overflow: hidden;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    nav .nav-menu {
+        display: inline-block;
+        width: 45px;
+        margin: 1px auto;
+    }
+    nav .navbar-bottom {
+        padding: 0;
+        margin: 0 auto;
+    }
+    nav .navbar-bottom img {
+        width: 18px;
+        height: 20px;
+    }
+    /* sidebar design */
+    main .main-sidebar-width {
+        width: 100%;
+    }
+    nav .nav-text {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .navbar-bottom {
+        z-index: 10;
+        overflow: hidden;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    nav .nav-menu {
+        display: inline-block;
+        width: 35px;
+        margin: 1px auto;
+    }
+    nav .navbar-bottom {
+        padding: 0;
+        margin: 0 auto;
+        min-width: 320;
+    }
+    nav .navbar-bottom img {
+        width: 18px;
+        height: 20px;
+    }
+    main .main-sidebar-width {
+        width: 100%;
+    }
+    nav .nav-text {
+        font-size: 6px;
+    }
+}
+
+
+/* Map css */
+
+
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+
+#map {
+    height: 100%;
+}

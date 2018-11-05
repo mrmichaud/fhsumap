@@ -121,7 +121,7 @@
     @media (min-width:1200px) {
         /* Sidebar position */
         .sidebar {
-            top: 44px;
+            top: 56.25px;
             bottom: 0;
         }
         #map {

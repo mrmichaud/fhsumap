@@ -28,7 +28,7 @@
       "sizes": "1024x1024"
     }
   ],
-  "start_url": "index.html",
+  "start_url": "manifest.html",
   "background_color": "black",
   "display": "standalone",
   "description":"An app we want to work",

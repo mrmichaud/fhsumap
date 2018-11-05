@@ -14,7 +14,7 @@
               lng: position.coords.longitude
             };
 
-            var iconBase = 'pic/';
+            var iconBase = 'img/';
             var icons = {
               currentPos: {
                 icon: iconBase + 'red-circle-big.png'

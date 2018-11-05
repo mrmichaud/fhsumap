@@ -1,6 +1,6 @@
 const CACHE_NAME = 'my-site-cache-v2';
 const urlsToCache = [
-  "index.html",
+  "manifest.html",
   'manifest.webmanifest',
   'current.js',
   'icon/64.png',

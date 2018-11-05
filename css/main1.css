@@ -1,6 +1,6 @@
 /* webpage config */
 
-html,
+html,ls
 body {
     height: 100%;
     margin: 0;
@@ -8,16 +8,16 @@ body {
     background-color: lightblue;
 }
 
+nav #desk-nav-menu-fhsu {
+    font-family: 'Anton', sans-serif;
+}
+
+nav #nav-menu-fhsu {
+    font-family: 'Anton', sans-serif;
+}
+
 
 /* desk version */
-
-
-/* desk nav design */
-
-
-
-
-
 
 nav .desk-nav-text-color {
     color: ivory;
@@ -26,51 +26,18 @@ nav .desk-nav-text-color {
 nav .desk-nav-text {
     margin-left: 5px;
 }
-/*
+
+nav .desk-nav-img {
+    display: inline-block;
+}
+
 nav #desk-nav-img-search {
-    margin-left: 5px;
-}
-
-nav #desk-nav-text-tour {
-    margin-left: 0;
-}
-
-nav #desk-nav-menu-hamburger {
-    width: 80px;
-    float: left;
-} */
-
-/* nav #desk-nav-menu-fhsu {
-    float: left;
-    position: relative;
-    left: 70px;
-    margin-left: 20px;
-    width: 480px;
-    font-size: 25px;
-    font-weight: bold;
-    margin-top: 8px;
-} */
-
-/* nav #desk-nav-menu-info {
-    float: right;
-    position: absolute;
-    right: 0;
-    width: 70px;
-} */
-
-/* nav #desk-nav-menu-search {
-    width: 300px;
-    margin-top: 8px;
-} */
-
-/* nav #desk-nav-menu-search {
-
-} */
-
-
-/* nav form img {
     background-color: #eaaf0f;
-} */
+}
+
+nav #desk-nav-menu-info {
+    margin-top: 4px;
+}
 
 
 /* desk sidebar design */
@@ -119,85 +86,134 @@ section #section-sidebar-introduction {
 
 /* >1600px */
 
-@media (min-width: 1601px) {
-
-}
-
-
-/* 1250px-1600px */
-
-@media (min-width: 1250px) and (max-width: 1600px) {
+@media (min-width: 1361px) {
+    /* total */
+    nav .desk-nav-img {
+        width: 30px;
+        height: 30px;
+    }
     nav .nav-desk {
         align-items: center;
         background-color: #eaaf0f;
-        /* display: inline; */
-        /* display: inline; */
+        display: inline-block;
         font-family: 'Athiti', sans-serif;
+        font-size: 15x;
         overflow: hidden;
-        margin: 0;
-        padding: 0;
+        margin: 0 auto;
+        padding: 10px;
         position: fixed;
-        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
         width: 100%;
         z-index: 10;
     }
     nav .desk-nav-menu {
-        align-items: center;
-        /* display: flex; */
-        float: left;
-        width: 100px;
-        margin: 15px auto 8px auto;
-    }
-    nav .desk-nav-menu-form {
-        align-items: center;
-        /* display: flex; */
         display: inline-block;
-        width: 250px;
+        width: 100px;
         margin: 0 auto;
     }
-    nav #desk-nav-menu-fhsu img {
-        width: 35px;
-        height: 35px;
+    /* individule */
+    nav #desk-nav-menu-hamburger {
+        align-items: center;
+        margin-left: 20px;
+        width: 50px;
     }
-    nav .desk-nav-img {
+    nav #desk-nav-menu-hamburger img {
         width: 25px;
         height: 25px;
     }
-    nav #desk-nav-menu-hamburger {
-        float: left;
-        margin-left: 30px;
-        width: 70px;
+    nav .desk-nav-menu-form {
+        display: inline-block;
+        margin-left: 0;
+        margin-right: 50px;
+        width: 200px;
+    }
+    nav #desk-nav-menu-search {
+        width: 50px;
+        background-color: #eaaf0f;
+        z-index: 11;
     }
     nav #desk-nav-menu-fhsu {
-        /* display: inline-block; */
-        float: left;
-        position: relative;
-        left: 70px;
-        /* margin-left: 100px; */
-        width: 380px;
         font-size: 20px;
-        font-weight: bold;
-        margin: 10px auto;
+        width: 300px;
+        margin: 0 auto;
+    }
+    nav #desk-nav-menu-fhsu img {
+        width: 40px;
+        height: 40px;
     }
     nav #desk-nav-menu-info {
         float: right;
-        position: absolute;
-        right: 0;
         width: 50px;
-
-    }
-    nav #desk-nav-menu-search {
-        /* width: 300px; */
-        margin-top: 8px;
-        margin-left: 5px;
-        background-color: #eaaf0f;
-    }
-
-    nav #desk-nav-menu-tour {
-        margin-left: 10px;
-        width: 70px;
     }
 }
+
+
+/* 1250px-1360px */
+
+@media (min-width: 1250px) and (max-width: 1360px) {
+    /* total */
+    nav .desk-nav-img {
+        width: 30px;
+        height: 30px;
+    }
+    nav .nav-desk {
+        align-items: center;
+        background-color: #eaaf0f;
+        display: inline-block;
+        font-family: 'Athiti', sans-serif;
+        font-size: 15x;
+        overflow: hidden;
+        margin: 0 auto;
+        padding: 10px;
+        position: fixed;
+        vertical-align: middle;
+        white-space: nowrap;
+        width: 100%;
+        z-index: 10;
+    }
+    nav .desk-nav-menu {
+        display: inline-block;
+        width: 90px;
+        margin: 0 auto;
+    }
+    /* individule */
+    nav #desk-nav-menu-hamburger {
+        align-items: center;
+        margin-left: 20px;
+        width: 50px;
+    }
+    nav #desk-nav-menu-hamburger img {
+        width: 25px;
+        height: 25px;
+    }
+    nav .desk-nav-menu-form {
+        display: inline-block;
+        margin-left: 0;
+        margin-right: 50px;
+        width: 200px;
+    }
+    nav #desk-nav-menu-search {
+        width: 50px;
+        background-color: #eaaf0f;
+        z-index: 11;
+    }
+    nav #desk-nav-menu-fhsu {
+        font-size: 18px;
+        width: 300px;
+    }
+    nav #desk-nav-menu-fhsu img {
+        width: 40px;
+        height: 40px;
+    }
+    nav #desk-nav-menu-info {
+        float: right;
+        width: 50px;
+    }
+}
+
+
+/*  End of @media (min-width: 1250px) and (max-width: 1600px) */
 
 
 /* mobile design */
@@ -264,7 +280,7 @@ nav .nav-mobile-bottom {
     overflow: hidden;
     margin: 0 auto;
     min-width: 310px;
-    padding: 0;
+    padding-top: 5px;
     position: fixed;
     text-align: center;
     width: 100%;
@@ -275,7 +291,7 @@ nav .nav-menu {
     align-items: center;
     display: inline-block;
     width: 60px;
-    margin: 10px auto 5px auto;
+    margin: 5px auto 5px auto;
 }
 
 nav .nav-text {
@@ -387,7 +403,7 @@ main .main-sidebar a:hover {
     nav .nav-menu {
         display: inline-block;
         width: 100px;
-        margin: 5px auto;
+        margin: 10px auto;
     }
     main .main-sidebar {
         background-color: rgba(0, 0, 0, 0.8);

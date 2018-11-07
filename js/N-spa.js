@@ -1,4 +1,6 @@
 /* Add content on sidebar */
+
+
 function loadContent(tab) {
     $('#sidebar').append('<div id="sidebar-' + tab + '" class="sidebar-content">' + tab + '</div>');
 }
@@ -37,3 +39,36 @@ function initMap() {
         zoom: 18
     });
 }
+
+ if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            var iconBase = 'img/';
+            var icons = {
+              currentPos: {
+                icon: iconBase + 'red-circle-big.png'
+              }
+            };
+
+            var features = [{
+                position: pos,
+                type: 'currentPos'
+              }];
+
+          // Create markers.
+            features.forEach(function(feature) {
+              var marker = new google.maps.Marker({
+                position: feature.position,
+                icon: icons[feature.type].icon,
+                map: map
+              });
+            });
+              
+
+       });     
+      };
+    

@@ -1840,7 +1840,7 @@
 	
 	"layers" :[
 		{
-			"id" : 0001,		
+			"layerID" : 1,
 			"layerName": "Academics",
 			"layerDescription" : "All academic buildings",
 			"myElement" : {
@@ -1853,7 +1853,7 @@
 			}
 		},
 		{
-			"id" : 0002,		
+			"layerID" : 2,
 			"layerName": "Athletics",
 			"layerDescription" : "All athletic buildings",
 			"myElement" : {

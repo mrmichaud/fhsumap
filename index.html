@@ -71,6 +71,9 @@
     <!-- Sidebar -->
     <div id="sidebar" class="sidebar">
         <div id="sidebar-layers" class="sidebar-content">Some content for layers</div>
+        <div id="sidebar-building" class="sidebar-content" style="display:none">Some content for buildings</div>
+        <div id="sidebar-direction" class="sidebar-content" style="display:none">Some content for directions</div>
+        <div id="sidebar-parking" class="sidebar-content" style="display:none">Some content for parking</div>
 		
     </div>
     <!--Google map area -->
@@ -122,7 +125,6 @@
 
 	<script>
 	$.getJSON( "http://localhost/fhsumap/json_fhsuDataTypes.json", function( data ) {
-	  console.log(data);/*
 	  var templateBuildingDirectory = '<h3>Building Directory</h3>{{#buildings}}<li>{{buildingName}} ({{code}})</li>{{/buildings}}';
 	  Mustache.parse(templateBuildingDirectory);   // optional, speeds up future uses
 	  var rendered = Mustache.render(templateBuildingDirectory, data);
@@ -142,7 +144,7 @@
 	  Mustache.parse(templateCategories);   // optional, speeds up future uses
 	  var rendered = Mustache.render(templateCategories, data);
 	  $('#sidebar-layers').html(rendered);
-	  console.log(rendered);*/
+	  console.log(rendered);
 	  
 	});
 
@@ -160,7 +162,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMYzAk4QMdMjpWb7ecr5ImwRaV8xp1sDw&callback=initMap" async defer></script>
 	
     <script type="text/javascript">
-      /*
+      
         //service worker registration
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js').then(function(registration) {
@@ -171,7 +173,6 @@
               console.log('ServiceWorker registration failed: '+ err);
             });
           }
-*/
                 
     </script>
 

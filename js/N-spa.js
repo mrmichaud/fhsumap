@@ -27,19 +27,8 @@ $('.nav-sb-menu').on('click', function() {
     currentTab = $(this).data('label');
 });
 
-/* Google Map */
-let map;
-
-function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: {
-            lat: 38.8714,
-            lng: -99.3445
-        },
-        zoom: 18
-    });
-}
-
+/* Google Map - Get Current Position - Geolocation*/
+/*
  if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
@@ -72,3 +61,4 @@ function initMap() {
        });     
       };
     
+*/

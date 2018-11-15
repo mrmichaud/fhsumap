@@ -13,7 +13,7 @@
             var myLatlng = new google.maps.LatLng(lat, lng);
             //alert(myLatlng);
             if(marker == null){
-                 var iconImage = new google.maps.MarkerImage('pic/icon49.png',
+                 var iconImage = new google.maps.MarkerImage('img/icon49.png',
                      //This marker is 28 pixels wide by 25 pixels high.
                      new google.maps.Size(25, 25),
                      //The origin for this image is (0, 0).

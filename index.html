@@ -282,9 +282,10 @@
 	  $('#sidebar-parking').html(rendered);
 	  
 	  var templateCategories = '<h3>Main Menu</h3>'+
+		'<div>Student Information</div>' +
+		'<div>Share</div>' +
 		'<div>About</div>' +
 		'<div>Help</div>' +
-		'<div>Student Information</div>' +
 		'<div>Version</div>' +
 		'{{#personalData}}<li class="sidebarOption">{{label}}</li>{{/personalData}}<br>';
 	  Mustache.parse(templateCategories);   // optional, speeds up future uses

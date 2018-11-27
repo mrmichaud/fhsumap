@@ -21,13 +21,13 @@ function OpenInfoWindow ( buildingCode ){
 	//parse from JSON data based on building code
 	//get infoBoxString
 	building_infoBoxString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
-		((CampusBuildingData[buildingCode].displayCode == "true") ? (CampusBuildingData[buildingCode].buildingName + ' (' + CampusBuildingData[buildingCode].code + ') ' ) : (CampusBuildingData[buildingCode].buildingName) ) + 
-		'</h1><div id="infoWindowBodyContent"><img class="infoWindowImages" src=' + CampusBuildingData[buildingCode].picture + '>' + CampusBuildingData[buildingCode].infoBoxString + 
-		'<p>For more information: <a href='+ CampusBuildingData[buildingCode].infoLinkString +' target="_blank">' +
+		((DataTypesInformation[buildingCode].displayCode == "true") ? (DataTypesInformation[buildingCode].buildingName + ' (' + DataTypesInformation[buildingCode].code + ') ' ) : (DataTypesInformation[buildingCode].buildingName) ) + 
+		'</h1><div id="infoWindowBodyContent"><img class="infoWindowImages" src=' + DataTypesInformation[buildingCode].picture + '>' + DataTypesInformation[buildingCode].infoBoxString + 
+		'<p>For more information: <a href='+ DataTypesInformation[buildingCode].infoLinkString +' target="_blank">' +
 		'Click Here</a></p></div></div>';
 	
 	//get latLngCenter
-	building_latLngCenter = CampusBuildingData[buildingCode].latLngCenter;
+	building_latLngCenter = DataTypesInformation[buildingCode].latLngCenter;
 
 	map.setCenter(building_latLngCenter);
 	 
@@ -109,21 +109,21 @@ function initMap() {
 	});
 	
 	var x;
-	for(x in CampusBuildingData){
+	for(x in DataTypesInformation){
 		// Create marker at center
 		
 		markersCenter[x] = new google.maps.Marker({
-			position: CampusBuildingData[x].latLngCenter,
-			title: CampusBuildingData[x].buildingName,
+			position: DataTypesInformation[x].latLngCenter,
+			title: DataTypesInformation[x].buildingName,
 			map: map,
 		});
 		markersCenter[x].setVisible(false);
 		
 		// Create marker at entrance
 		markersEntrance[x] = new google.maps.Marker({
-			position: CampusBuildingData[x].latLngMainEntrance,
+			position: DataTypesInformation[x].latLngMainEntrance,
 			map: map,
-			title: CampusBuildingData[x].buildingName + " Entrance",
+			title: DataTypesInformation[x].buildingName + " Entrance",
 		});
 		markersEntrance[x].setVisible(false);
 		
@@ -131,14 +131,13 @@ function initMap() {
 		
 		contentString[x] = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
 		((CampusBuildingData[x].displayCode == "true") ? (CampusBuildingData[x].buildingName + ' (' + CampusBuildingData[x].code + ') ' ) : (CampusBuildingData[x].buildingName) ) + 
-		'</h1><div id="infoWindowBodyContent"><img class="infoWindowImages" src=' + CampusBuildingData[x].picture + '>' + CampusBuildingData[x].infoBoxString + 
-		'<p>For more information: <a href='+ CampusBuildingData[x].infoLinkString +' target="_blank">' +
-		'Click Here</a></p></div></div>';
+		'</h1><div id="infoWindowBodyContent"><img class="infoWindowImages" src=' + CampusBuildingData[x].picture + '>' + CampusBuildingData[x].infoBoxString + 		
+		((CampusBuildingData[x].link360 == "true") ? ('<p>For more information: <a href='+ CampusBuildingData[x].infoLinkString +' target="_blank">Click Here</a></p><p>For a 360 interior view of this building: <a href='+ CampusBuildingData[x].link360String +' target="_blank">Click Here</a></p></div></div>' ) : ('<p>For more information: <a href='+ CampusBuildingData[x].infoLinkString +' target="_blank">Click Here</a></p></div></div>') );
 		
 		// This section of code creates a 2-pixel-wide gold polyline showing the outline of a test building.
 		
 		outlineEdge[x] = new google.maps.Polygon({
-			path: CampusBuildingData[x].buildingOutline,
+			path: DataTypesInformation[x].buildingOutline,
 			geodesic: true,
 			strokeColor: BUILDING_UNSELECTED_BORDER_COLOR,
 			strokeOpacity: BUILDING_UNSELECTED_BORDER_OPACITY,
@@ -185,6 +184,7 @@ function initMap() {
 	// CAMPUS TOUR
 	//Add polyline of campus tour:
 	campusTourCoordinates = CampusTourInformation.Polyline.latLngArray;
+	//campusTourCoordinates = DataTypesInformation.
 	
 	lineSymbol = {
 		path: google.maps.SymbolPath.CIRCLE,

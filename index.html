@@ -28,7 +28,7 @@
     <header>
         <nav class="navbar navbar-expand-xs fixed-top" id="top-navbar">
             <div class="navbar-brand d-none d-xl-block">
-                <a href="#" class="pull-left" style="padding:5px"><i class="fa fa-bars fa-sm" aria-hidden="true"></i></a>
+                <a href="#" class="pull-left nav-sb-menu" style="padding:5px" data-label="hamburger"><i class="fa fa-bars fa-sm" aria-hidden="true"></i></a>
                 <div class="form-inline d-none d-sm-inline">
                     <input id="headerSearchBarInput" class="form-control" type="text" placeholder="Search..." aria-label="Search" />
                     <button id="searchButton" class="btn" type="button"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
@@ -68,11 +68,13 @@
     </header>
     <!-- Sidebar -->
     <div id="sidebar" class="sidebar">
+		<div id="sidebar-main" class="sidebar-content" style="display:none">Some content for main menu</div>
         <div id="sidebar-search" class="sidebar-content" style="display:none">Some content for search</div>
         <div id="sidebar-layers" class="sidebar-content">Some content for layers</div>
         <div id="sidebar-building" class="sidebar-content" style="display:none">Some content for buildings</div>
         <div id="sidebar-direction" class="sidebar-content" style="display:none">Some content for directions</div>
         <div id="sidebar-parking" class="sidebar-content" style="display:none">Some content for parking</div>
+		<div id="sidebar-tours" class="sidebar-content" style="display:none">Some content for tours</div>
 		
     </div>
     <!--Google map area -->
@@ -123,43 +125,7 @@
 	</script>
 	
 	<script>
-	$.getJSON( "http://localhost/fhsumap/json_fhsuDataTypes.json", function( data ) {
-	  var templateBuildingDirectory = '<h3>Building Directory</h3>{{#buildings}}<li>{{buildingName}} ({{code}})</li>{{/buildings}}';
-	  Mustache.parse(templateBuildingDirectory);   // optional, speeds up future uses
-	  var rendered = Mustache.render(templateBuildingDirectory, data);
-	  $('#sidebar-building').html(rendered);
-	  
-	  var templateWalkingDirectionBuildings = '<br><h3>Walking Directions</h3>{{#buildings}}<li>{{buildingName}}</li>{{/buildings}}';
-	  Mustache.parse(templateWalkingDirectionBuildings);   // optional, speeds up future uses
-	  var rendered = Mustache.render(templateWalkingDirectionBuildings, data);
-	  $('#sidebar-direction').html(rendered);
-	  
-	  var templateParking = '<br><h3>Parking</h3>{{#parking}}<li>{{parkingName}}, Zone: {{zone}}</li>{{/parking}}';
-	  Mustache.parse(templateParking);   // optional, speeds up future uses
-	  var rendered = Mustache.render(templateParking, data);
-	  $('#sidebar-parking').html(rendered);
-	  
-	  var templateCategories = '<h3>Categories</h3>{{#categories}}<li>{{label}}</li>{{/categories}}<br>';
-	  Mustache.parse(templateCategories);   // optional, speeds up future uses
-	  var rendered = Mustache.render(templateCategories, data);
-	  $('#sidebar-layers').html(rendered);
-	  console.log(rendered);
-	  
-	});
-
-
-	/*
-	function loadUser() {
-	  var template = $('#template').html();
-	  Mustache.parse(template);   // optional, speeds up future uses
-	  var rendered = Mustache.render(template, {name: "Luke"});
-	  $('#target').html(rendered);
-	}
-	*/
-	</script>
-	
-	<script>			
-			
+		
 			/***********************
 			DECLARE GLOBAL VARIABLES TO STORE GEO DATA
 			***********************/
@@ -265,6 +231,93 @@
 			var CampusParkingInformation;
 			var x;
 			var y;
+	</script>
+	
+	<script>
+	$.getJSON( "http://localhost/fhsumap/json_fhsuDataTypes.json", function( data ) {
+	  var templateBuildingDirectory = '<h3>Building Directory</h3>{{#buildings}}<li class="sidebarOption">{{buildingName}} ({{code}})</li>{{/buildings}}';
+	  Mustache.parse(templateBuildingDirectory);   // optional, speeds up future uses
+	  var rendered = Mustache.render(templateBuildingDirectory, data);
+	  $('#sidebar-building').html(rendered);
+	  
+	  var templateWalkingDirectionBuildings = '<br><h3>Walking&nbsp;Directions</h3>' +
+	    '<div id="walkingInstructionText">' +
+			'<span class="intructionTexts">Select buildings from dropdown menus</span>' +
+		'</div>' +
+		
+		'<div id="walkingSelectionsContainer">' +
+			'<form id="walkingDropdownForm">' +
+				'<div id="walkingSelectionsStart">' +
+					'<div id="walkingSelectionsStartTitleText">' +
+						'<h4 class="walkingDirectionsSelectionHeaders">Start:</h4>' +
+					'</div>' +
+					'<div id="walkingSelectionsStartDropdownOption">' +
+						'<select name="start" id="walkingDirectionsStartInput">' +
+							'{{#buildings}}<option value={{code}}>{{buildingName}}</option>{{/buildings}}' +
+						'</select>' +
+					'</div>' +
+				'</div>' +
+				'<div id="walkingSelectionsEnd">' +
+					'<div id="walkingSelectionsEndTitleText">' +
+						'<h4 class="walkingDirectionsSelectionHeaders">End:</h4>' +
+					'</div>' +
+					'<div id="walkingSelectionsEndDropdownOption">' +
+						'<select name="end" id="walkingDirectionsEndInput">' +
+							'{{#buildings}}<option value={{code}}>{{buildingName}}</option>{{/buildings}}' +
+						'</select>' +
+					'</div>' +
+				'</div>' +
+				'<div id="walkingSelectionsSubmitButtonContainer">' +
+					'<button id="walkingSelectionsSubmitButton" type="button" onClick="showWalkingDirections()">Get Directions</button>' +
+				'</div>' +
+			'</form>' +
+		'</div>';
+	  Mustache.parse(templateWalkingDirectionBuildings);   // optional, speeds up future uses
+	  var rendered = Mustache.render(templateWalkingDirectionBuildings, data);
+	  $('#sidebar-direction').html(rendered);
+	  
+	  var templateParking = '<br><h3>Parking</h3>{{#parking}}<li class="sidebarOption">{{parkingName}}, Zone: {{zone}}</li>{{/parking}}';
+	  Mustache.parse(templateParking);   // optional, speeds up future uses
+	  var rendered = Mustache.render(templateParking, data);
+	  $('#sidebar-parking').html(rendered);
+	  
+	  var templateCategories = '<h3>Main Menu</h3>'+
+		'<div>About</div>' +
+		'<div>Help</div>' +
+		'<div>Student Information</div>' +
+		'<div>Version</div>' +
+		'{{#personalData}}<li class="sidebarOption">{{label}}</li>{{/personalData}}<br>';
+	  Mustache.parse(templateCategories);   // optional, speeds up future uses
+	  var rendered = Mustache.render(templateCategories, data);
+	  $('#sidebar-main').html(rendered);
+	  
+	  var templateCategories = '<h3>Layers</h3>{{#layersMenuOptions}}<li class="sidebarOption">{{label}}</li>{{/layersMenuOptions}}<br>'; 
+	  Mustache.parse(templateCategories);   // optional, speeds up future uses
+	  var rendered = Mustache.render(templateCategories, data);
+	  $('#sidebar-layers').html(rendered);
+	  //console.log(rendered);
+	  
+	  var templateCategories = '<h3>Tours</h3>{{#toursMenuOptions}}<li class="sidebarOption">{{label}}</li>{{/toursMenuOptions}}<br>';
+	  Mustache.parse(templateCategories);   // optional, speeds up future uses
+	  var rendered = Mustache.render(templateCategories, data);
+	  $('#sidebar-tours').html(rendered);
+	  //console.log(rendered);
+	  
+	});
+
+
+	/*
+	function loadUser() {
+	  var template = $('#template').html();
+	  Mustache.parse(template);   // optional, speeds up future uses
+	  var rendered = Mustache.render(template, {name: "Luke"});
+	  $('#target').html(rendered);
+	}
+	*/
+	</script>
+	
+	<script>			
+			
 	
 	
 			$("#headerSearchBarInput").on("keydown", function(e) {

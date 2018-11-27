@@ -33,8 +33,8 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 	
 	directionsService.route(
 		{
-			origin: CampusBuildingData[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance,
-			destination: CampusBuildingData[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance,
+			origin: DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance,
+			destination: DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance,
 			travelMode: 'WALKING'
 		}, 
 		
@@ -54,14 +54,14 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 				directionsDisplay.setDirections(response);
 				
 				var startMarker = new google.maps.Marker({
-                    position: CampusBuildingData[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance,
+                    position: DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance,
                     map: map,
                     icon: startAndEnd
                 });
 				startEndMarkerArray.push(startMarker);
 				
 				var endMarker = new google.maps.Marker({
-                    position: CampusBuildingData[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance,
+                    position: DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance,
                     map: map,
                     icon: startAndEnd
                 });

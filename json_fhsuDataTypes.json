@@ -604,7 +604,7 @@
 			{"lat"	: 38.87218, "lng"	: -99.34202},
 			{"lat"	: 38.87173, "lng"	: -99.34231}
 			],
-		"infoBoxString"		:	"The present Forsyth Library was completed in 1967 with an unfinished basement, two floors, and a structural capacity for a future third floor. The basement level of the building was finished in 1974, and the building was named after military leader General George A. Forsyth, who was stationed at old Fort Hays in the 1880s. This was in accordance with the custom of university president, President Lewis, in naming buildings for military figures associated with western history. <br>The library collection has been housed at various places through the years. At its inception in 1902, the library's 702 volume collection was housed in the old fort hospital building, relocated to Picken Hall from 1904 to 1916, then stayed briefly in Martin Allen Hall, and moved back to Picken Hall in 1918, where it remained until 1926 when the first Forsyth Library building, now McCartney Hall, was completed with the collection totaling 14,000 volumes. The collection sustained major damage when a flood in May of 1951 inundated the campus, and sixteen inches of water flooded the first floor of the library.",
+		"infoBoxString"		:	"Forsyth Library was finished in 1974 and named after military leader General George A. Forsyth, who was stationed at old Fort Hays in the 1880s. <br><br>The library collection, first housed in the old fort hospital building in 1902, then moved to Picken Hall, Martin Allen Hall, McCartney Hall, and finally to this building, has grown from 702 volumes to over 14,000 volumes. The collection sustained major damage in May of 1951 when sixteen inches of water flooded into the first floor of the library. <br><br>Here students can find the writing center, Tiger Food Exchange, and many more resources.",
 		"picture"			:	"buildingImages/13.JPG",
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Forsyth-Library/",
 		"link360"           : "false",
@@ -681,11 +681,11 @@
 			{"lat"	: 38.87113, "lng"	: -99.34278},
 			{"lat"	: 38.87091, "lng"	: -99.34271}
 			],
-		"infoBoxString"		:	"Built in 1995, this uniquely designed structure houses the Computing and Telecommunications Center and the departments of Chemistry, Geosciences, and Physics. It is comprised of 98,867 gross square feet. The saw-tooth design allows windows for faculty offices in the front portion of the building. The building was recognized by Architectural Record, American School & University and AIA Kansas for its design excellence. <br>The building is named for Dr. Gerald W. Tomanek, the seventh president of the university. He served as President from 1976 to 1987. Jerry began his association with FHSU as a student, receiving a bachelor's degree in 1942 and a master's degree in 1947. After completing his doctorate at the University of Nebraska, he returned to Fort Hays to teach in the biology department. During his tenure here, he rose through the ranks, serving as a department chair, division chair, Vice President for Academic Affairs and Acting President in 1975 when President Gustad became ill.",
+		"infoBoxString"		:	"Built in 1995, this uniquely designed structure was named for Dr. Gerald W. Tomanek, the seventh University President serving from 1976-1987. It is comprised of 98,867 gross square feet and was recognized for its design excellence. Today Tomanek Hall houses the Computing and Telecommunications Center and the departments of Chemistry, Geosciences, and Physics. It is also home to the skeleton of Al the dinosaur and our giant pendulum.",
 		"picture"			:	"buildingImages/15.JPG",
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Tomanek-Hall/",
-		"link360"           : "false",
-		"link360String"		: " ",
+		"link360"           : 	"false",
+		"link360String"		: 	" ",
 		"menuCategories"	:	["academic"]
 		},
 

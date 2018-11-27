@@ -130,9 +130,9 @@ function initMap() {
 		// This is the content of the info window.
 		
 		contentString[x] = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
-		((CampusBuildingData[x].displayCode == "true") ? (CampusBuildingData[x].buildingName + ' (' + CampusBuildingData[x].code + ') ' ) : (CampusBuildingData[x].buildingName) ) + 
-		'</h1><div id="infoWindowBodyContent"><img class="infoWindowImages" src=' + CampusBuildingData[x].picture + '>' + CampusBuildingData[x].infoBoxString + 		
-		((CampusBuildingData[x].link360 == "true") ? ('<p>For more information: <a href='+ CampusBuildingData[x].infoLinkString +' target="_blank">Click Here</a></p><p>For a 360 interior view of this building: <a href='+ CampusBuildingData[x].link360String +' target="_blank">Click Here</a></p></div></div>' ) : ('<p>For more information: <a href='+ CampusBuildingData[x].infoLinkString +' target="_blank">Click Here</a></p></div></div>') );
+		((DataTypesInformation[x].displayCode == "true") ? (DataTypesInformation[x].buildingName + ' (' + DataTypesInformation[x].code + ') ' ) : (DataTypesInformation[x].buildingName) ) + 
+		'</h1><div id="infoWindowBodyContent"><img class="infoWindowImages" src=' + DataTypesInformation[x].picture + '>' + DataTypesInformation[x].infoBoxString + 		
+		((DataTypesInformation[x].link360 == "true") ? ('<p>For more information: <a href='+ DataTypesInformation[x].infoLinkString +' target="_blank">Click Here</a></p><p>For a 360 interior view of this building: <a href='+ DataTypesInformation[x].link360String +' target="_blank">Click Here</a></p></div></div>' ) : ('<p>For more information: <a href='+ DataTypesInformation[x].infoLinkString +' target="_blank">Click Here</a></p></div></div>') );
 		
 		// This section of code creates a 2-pixel-wide gold polyline showing the outline of a test building.
 		

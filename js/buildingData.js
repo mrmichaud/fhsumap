@@ -9,7 +9,7 @@
 // infoBoxString, picture, infoLinkString, and campusTourCoordinates.
 //
 // Author: Monica Michaud
-// Date: 4-30-2018
+// Date: 11-28-2018
 //-----------------------------------------------------------------------------------------------
 
 
@@ -193,6 +193,7 @@ function initMap() {
 		fillColor: '#000000'
 	};
 	
+	//*********************Possibly General Polyline from this???***********************
 	campusTourPath = new google.maps.Polyline({
 		path: campusTourCoordinates,
 		geodesic: true,
@@ -211,37 +212,33 @@ function initMap() {
 	campusTourPath.setMap(map);
 	campusTourPath.setVisible(false);
 	
-	//-------------------TEMP FIX-------------
-	videoTourPath = new google.maps.Polyline({
-		path: campusTourCoordinates,
-		geodesic: true,
-		strokeColor: TOUR_PATH_COLOR,
-		strokeOpacity: 0,
-		strokeWeight: TOUR_PATH_SIZE,
-		icons: [{
-			icon: lineSymbol,
-			offset: '0',
-			repeat: '10px'
-		}
-		],
-		map: map
-	});
-
-	videoTourPath.setMap(map);
-	videoTourPath.setVisible(false);
-	
 	//console.log(CampusTourInformation.Markers);
 	
-// ***************************** CAMPUS TOUR MARKERS *******************************************************
-	for(y in CampusTourInformation.Markers){
+//*************************************************
+//To activate any layer:
+
+//Need to loop through each myElement in elements
+//If myElement.type == building, then...
+//If myElement.type == pois, then...
+//If myElement.type == circles, then...
+//If myElement.type == polylines, then...
+//If myElement.type == polygons, then...
+//If myElement.type == parking, then...
+
+
+//************************************************	
+	
+	
+// ***************************** GENERAL POIS/MARKERS (for both Picture and Video Tours also)*******************************************************
+	for(y in DataTypesInformation.Markers){ //Name would have to change, not sure how to access only tours layers...?????
 	// For loop placing tour markers on map
 		// Create marker at tour stop		
 
 		tourMarkers[y] = new google.maps.Marker({
-			position: CampusTourInformation.Markers[y].latLng,
-			title: CampusTourInformation.Markers[y].title,
+			position: DataTypesInformation.Markers[y].latLng,
+			title: DataTypesInformation.Markers[y].title,
 			map: map,
-			icon: "siteImages/info2.png",
+			icon: DataTypesInformation.Marker[y].icon,
 		});
 
 		tourMarkers[y].setVisible(false);
@@ -249,8 +246,13 @@ function initMap() {
 		//console.log(tourMarkers[y]);
 				
 		// This is the content of the info window.
-		tourContentString[y] = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + CampusTourInformation.Markers[y].title + 
-		'</h1><div id="infoWindowBodyContent"><img class="infoWindowImages" src=' + CampusTourInformation.Markers[y].picture + '>' + CampusTourInformation.Markers[y].infoBoxString + 
+		tourContentString[y] = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
+		DataTypesInformation.Markers[y].title + 
+		'</h1><div id="infoWindowBodyContent">' +
+		((DataTypesInformation.Markers[y].picture != "") ? ('<img class="infoWindowImages" src=' + DataTypesInformation.Markers[y].picture + '>') : ('<iframe title=' + DataTypesInformation.Markers[y].infoURLTitle + 
+		' width="480" height="270" allowTransparency="true" mozallowfullscreen webkitallowfullscreen allowfullscreen style="background-color:transparent;" frameBorder="0" src=' + DataTypesInformation.Markers[y].infoURLLink + 
+		'></iframe>') ) +
+		DataTypesInformation.Markers[y].infoBoxString + 
 		'</div></div>';
 				
 		// When the user clicks the center marker, an info window opens.
@@ -261,37 +263,6 @@ function initMap() {
 				infoWindow.open(map, tourMarkers[y]);
 			}
 		})(tourMarkers[y], y));
-
-	} //end of for loop
-	
-// ***************************** VIDEO TOUR MARKERS *******************************************************
-	for(y in VideoTourInformation.Markers){
-	// For loop placing tour markers on map
-		// Create marker at tour stop		
-
-		videoTourMarkers[y] = new google.maps.Marker({
-			position: VideoTourInformation.Markers[y].latLng,
-			title: VideoTourInformation.Markers[y].title,
-			map: map,
-			icon: "siteImages/info2.png",
-		});
-
-		videoTourMarkers[y].setVisible(false);
-				
-		// This is the content of the info window.
-		videoTourContentString[y] = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + VideoTourInformation.Markers[y].title + 
-		'</h1><div id="infoWindowBodyContent"><iframe title=' + VideoTourInformation.Markers[y].infoURLTitle + 
-		' width="480" height="270" allowTransparency="true" mozallowfullscreen webkitallowfullscreen allowfullscreen style="background-color:transparent;" frameBorder="0" src=' + VideoTourInformation.Markers[y].infoURLLink + 
-		'></iframe>' + VideoTourInformation.Markers[y].infoBoxString + '</div></div>';
-				
-		// When the user clicks the center marker, an info window opens.
-		
-		google.maps.event.addListener(videoTourMarkers[y], 'click', (function(marker, y) {
-			return function() {
-				infoWindow.setContent(videoTourContentString[y]);
-				infoWindow.open(map, videoTourMarkers[y]);
-			}
-		})(videoTourMarkers[y], y));
 
 	} //end of for loop
 	

@@ -284,9 +284,23 @@
 	  var templateCategories = '<h3>Main Menu</h3>'+
 		'<div><h3>Student Information</h3><table>Insert student info here!</table></div>' +
 		'<div><h3>Share</h3><table>Insert share information here!</table></div>' +
-		'<div><h3>About</h3></div>' +
-		'<div><h3>Help</h3></div>' +
-		'<div><h3>Version</h3></div>' +
+		'<div><h3>About</h3>' +
+			'<div>' +
+				'<p>Insert about info here... </p>' +
+			'</div></div>' +
+		'<div><h3>Help</h3>' +
+			'<div><h4>Contact the Institute for New Media Studies:</h4> ' +
+				'<p>Location: Malloy Hall Room 106</p>' + 
+				'<p>Email: newmedia@fhsu.edu</p>' +
+				'<p>Phone: 785-628-4784</p>' +
+			'</div></div>' +
+		'<div><h3>Version</h3>' +
+			'<div id="informationCreditsDisplay" title="About the Next Dimension">' +
+				'<p>Created by Monica Michaud, Meng (Ella) Ding, Conner Chessmore, Yangyang Cui</p>' +
+				'<p>In the Institute for New Media Studies and Informatics Department</p>' +
+				'<p>Advisers: Gordon Carlson, PhD ; Nicholas Caporusso</p>' +
+				'<p>Dev Version: 0.2.4 (Nov 28)</p>' +
+			'</div></div>' +
 		'{{#personalData}}<li class="sidebarOption">{{label}}</li>{{/personalData}}<br>';
 	  Mustache.parse(templateCategories);   // optional, speeds up future uses
 	  var rendered = Mustache.render(templateCategories, data);

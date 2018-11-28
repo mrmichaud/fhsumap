@@ -764,7 +764,7 @@
 			{"lat"	: 38.87103, "lng"	: -99.34344},
 			{"lat"	: 38.87085, "lng"	: -99.34357}
 			],
-		"infoBoxString"		:	"Known for many years as simply the Power Plant or the New Power Plant, this building was built in 1968, replacing the previous Power Plant located on the north side of campus. The Akers Energy Center is named in honor of Dale L. Akers, former Physical Plant Director. The dedication and renaming of the building took place in 1991.",
+		"infoBoxString"		:	"Known for many years as simply the New Power Plant, this building was built in 1968, replacing the previous Power Plant located on the north side of campus. The Akers Energy Center is named in honor of Dale L. Akers, former Physical Plant Director. The dedication and renaming of the building took place in 1991.",
 		"picture"			:	"buildingImages/17.JPG",
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Akers-Energy-Center/",
 		"link360"           : "false",
@@ -828,7 +828,7 @@
 			{"lat"	: 38.8707, 	"lng"	: -99.34062},
 			{"lat"	: 38.8704, 	"lng"	: -99.34082}
 			],
-		"infoBoxString"		:	"The first wing of Custer Hall was approved in 1921 and was completed in 1922. A second wing was added to Custer Hall in 1952 and an elevator addition completed the building in 1998. The building is named after Elizabeth Custer, the wife of General George Armstrong Custer. Presently, the building is utilized as office space, student residence space for high school students enrolled in the Kansas Academy of Mathematics and Science and its administrative offices, the Center of Public Safety (University Police Department), and the Kansas Small Business Development Regional Center. Graduate assistants in the Art Department have temporarily been assigned studio space in Custer Hall as well.",
+		"infoBoxString"		:	"The first wing of Custer Hall was completed in 1922, and a second wing was added in 1952 followed by an elevator in 1998. The building is named after Elizabeth Custer, the wife of General George Armstrong Custer. Presently, the building is the residence space for high school students enrolled in the Kansas Academy of Mathematics and Science and its administrative offices, the University Police Department, and the Kansas Small Business Development Regional Center.",
 		"picture"			:	"buildingImages/19.JPG",
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Custer-Hall/",
 		"link360"           : "false",
@@ -879,7 +879,7 @@
 			{"lat"	: 38.86991, "lng"	: -99.33993},
 			{"lat"	: 38.86979, "lng"	: -99.33993}
 			],
-		"infoBoxString"		:	"McMindes Hall was built in 1963 and added to in 1965. This six-story building now provides co-educational living accommodations for approximately 500 students. Dining services for all residential life facilities are provided in the newly renovated cafeteria area. <br>McMindes Hall is named in honor of Professor Maude M. McMindes who served as the Director of Secondary Teacher Training and Director of Student Teaching.",
+		"infoBoxString"		:	"This six-story building was built in the 1960s and now provides co-educational living accommodations for approximately 500 students. Dining services for all residential life facilities are provided in the newly renovated cafeteria area. <br>McMindes Hall is named in honor of Professor Maude M. McMindes who served as the Director of Secondary Teacher Training and Director of Student Teaching.",
 		"picture"			:	"buildingImages/20.JPG",
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/McMindes-Hall/",
 		"link360"           : "false",
@@ -911,7 +911,7 @@
 			{"lat"	: 38.86991, "lng"	: -99.34188},
 			{"lat"	: 38.86933, "lng"	: -99.34228}
 			],
-		"infoBoxString"		:	"Heather Hall opened in the fall of 2013 as one of FHSU's newest dormitories, with beds for 112 students. The building is named in honor of Jack R. Heather who was employed by President Cunningham in 1950 to develop the radio curriculum and provide proper experience and training for the broadcasting industry.",
+		"infoBoxString"		:	"Heather Hall opened in the Fall of 2013 as one of FHSU's newest dormitories, with beds for 112 students. The building is named in honor of Jack R. Heather who was employed by President Cunningham in 1950 to develop the radio curriculum and provide proper experience and training for the broadcasting industry.",
 		"picture"			:	"buildingImages/21.jpg",
 		"infoLinkString"	:	"https://www.fhsu.edu/reslife/housing/Tiger-Place/",
 		"link360"           : "false",
@@ -1449,7 +1449,7 @@
 			{"lat"	: 38.875247, "lng"	: -99.343251},
 			{"lat"	: 38.875726, "lng"	: -99.342940}
 			],
-		"infoBoxString"		:	"The Center for Applied Technology and Sculpture is our newest academic building on campus and home to both the Applied Technology department and the Art and Design Sculpture program. This two-story building holds 58,000 square feet of computer CAD, instuctional & graphics, STEM, woodworking, metalworking, plastics, power & energy, robotics, and construction managment labs, as well as sculpture studios and metal foundry studios.",
+		"infoBoxString"		:	"The Center for Applied Technology and Sculpture is our newest academic building on campus and home to both the Applied Technology department and the Art and Design Sculpture program. This two-story building holds 58,000 square feet of computer CAD, instuctional & graphics, STEM, woodworking, metalworking, plastics, power & energy, robotics, and construction managment labs, as well as sculpture and metal foundry studios.",
 		"picture"			:	"buildingImages/32.jpg",
 		"infoLinkString"	:	"https://www.fhsu.edu/iat/",
 		"link360"           : "false",
@@ -2690,7 +2690,74 @@
 		}
 	],
 	
-	
+	"studentData":[
+		{
+			"firstName" : "Monica",
+			"lastName"  : "Michaud",
+			"email"     : "mrmmichaud@mail.fhsu.edu",
+			"classes"     : {
+				"myClass" : {
+					"title" : "Introduction to Literature",
+					"instructor" : "Scott, Pauline",
+					"startTime" : "12:30PM",
+					"endTime" : "1:20PM",
+					"building" : "RH",
+					"room" : "369",
+					"latLng" : {"lat": 38.87405, "lng": -99.33962}
+				},
+				"myClass" : {
+					"title" : "World Geography",
+					"instructor" : "Schafer, Thomas",
+					"startTime" : "12:00PM",
+					"endTime" : "1:15PM",
+					"building" : "RH",
+					"room" : "201",
+					"latLng" : {"lat": 38.87405, "lng": -99.33962}
+				}				
+			}
+		},
+		{
+			"firstName" : "Conner",
+			"lastName"  : "Chessmore",
+			"email"     : "cdchessmore@mail.fhsu.edu",
+			"classes"     : {
+				"myClass" : {
+					"title" : "Introduction to Electronic Media",
+					"instructor" : "Schleicher, Steven",
+					"startTime" : "12:00PM",
+					"endTime" : "1:20PM",
+					"building" : "HMH",
+					"room" : "106",
+					"latLng" : {"lat": 38.871835, "lng": -99.344293}
+				}		
+			}
+		},
+		{
+			"firstName" : "Bobby",
+			"lastName"  : "Example",
+			"email"     : "bobbyexample@mail.fhsu.edu",
+			"classes"     : {
+				"myClass" : {
+					"title" : "Introduction to Painting",
+					"instructor" : "Hwang, Jee",
+					"startTime" : "9:30AM",
+					"endTime" : "12:15PM",
+					"building" : "RH",
+					"room" : "114",
+					"latLng" : {"lat": 38.87405, "lng": -99.33962}
+				},
+				"myClass" : {
+					"title" : "3-D Design",
+					"instructor" : "Flores, Tobias",
+					"startTime" : "12:30PM",
+					"endTime" : "2:20PM",
+					"building" : "RH",
+					"room" : "121",
+					"latLng" : {"lat": 38.87405, "lng": -99.33962}
+				}				
+			}
+		}
+	],
 	
 	"mapSettings": [
 		{

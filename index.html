@@ -7,11 +7,17 @@
     <title>Fort Hays State University Campus Map</title>
     <link rel="icon" href="./img/tiger.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- These five 'meta' below is about facebook share  -->
+    <meta property="og:url" content="https://www.your-domain.com/your-page.html" />
+    <meta property="og:type" content="Fort Hays State University Campus Map" />
+    <meta property="og:title" content="Fort Hays State University Campus Map" />
+    <meta property="og:description" content="Fort Hays State University Campus Map" />
+    <meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
     <link href="https://fonts.googleapis.com/css?family=Anton|Athiti" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/bootstrap-4.1.3.css">
     <link rel="stylesheet" href="./css/fontawesome-free-5.4.2-web-all.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="apple-touch-icon" href="icon/64.png" sizes="64x64">
     <link rel="apple-touch-icon" href="icon/128.png" sizes="128x128">
@@ -23,6 +29,37 @@
 </head>
 
 <body>
+    <!-- facebook share button, this code must be here according Facebook Developer JavaScript SDK -->
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- tweet share button -->
+    <script>
+        window.twttr = (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+
+            t._e = [];
+            t.ready = function(f) {
+                t._e.push(f);
+            };
+
+            return t;
+        }(document, "script", "twitter-wjs"));
+    </script>
     <!-- ---------------------------------Desk---------------------------- -->
     <header>
         <nav class="navbar navbar-expand-xs fixed-top" id="top-navbar">
@@ -66,11 +103,12 @@
     </header>
 
     <!-- Sidebar -->
+
     <div id="sidebar" class="sidebar">
         <!-- the code below will use in "N-spa.js" -->
         <div id="sidebar-hamburger" class="sidebar-content" style="display:none">
-            <h3>Student Information</h3>
-            <table>
+            <h3 class="toggle-student-info">Student Information</h3>
+            <table class="student-info">
                 <tr>
                     <td>Student Name:</td>
                     <td></td>
@@ -142,15 +180,26 @@
                     <td></td>
                 </tr>
             </table>
-            <h3>Share</h3>
-            <table>
-                <tr>
-                    <td><img src="./img/Facebook-logo.png" alt="facebook logo" class="share-img"></td>
-                    <td><img src="./img/Twitter-logo.png" alt="twitter logo" class="share-img"></td>
+            <h3 class="toggle-share">Share</h3>
+            <table class="share">
+                <tr class="share-button">
+                    <td>
+                        <!--Facebook share -->
+                        <div class="fb-share-button" data-href="https://www.your-domain.com/your-page.html" data-layout="button_count" data-size="large" data-mobile-iframe="true">
+                            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+                        </div>
+                    </td>
+                    <td>
+                        <!--Twitter share -->
+                        <div class="share-button">
+                            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="large">Tweet</a>
+                        </div>
+                    </td>
                 </tr>
             </table>
             <h3>Help</h3>
-            <p>FHSU Map Version 1.0</p>
+            <hr>
+            <p class="fhsu-version">FHSU Map Version 1.0</p>
         </div>
         <!-- the code above will use in "N-spa.js" -->
         <div id="sidebar-search" class="sidebar-content" style="display:none">Some content for search</div>
@@ -208,8 +257,8 @@
 
     <script>
         /***********************
-                                                                                                                                                                                                                                                                                        			DECLARE GLOBAL VARIABLES TO STORE GEO DATA
-                                                                                                                                                                                                                                                                                        			***********************/
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        			DECLARE GLOBAL VARIABLES TO STORE GEO DATA
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        			***********************/
 
         var NUMBER_OF_BUILDINGS = 40;
         var NUMBER_OF_TOUR_STOPS = 9;

@@ -250,6 +250,23 @@
         width: 40px;
     }
     
+    .student-info,
+    .share {
+        display: none;
+    }
+    
+    .share-button {
+        display: inline;
+    }
+    /*     .twitter-share-button {
+        margin-top: 5px;
+    }
+     */
+    
+    .fhsu-version {
+        color: gray;
+    }
+    
     @media (min-width:768px) {
         .sidebar {
             width: 330px;

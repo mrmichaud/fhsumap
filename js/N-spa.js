@@ -1,13 +1,10 @@
 /* Add content on sidebar */
-
-
 function loadContent(tab) {
     if (tab === "hamburger") {
-        $('#sidebar').append('<div id="sidebar-' + tab + '" class="sidebar-content">' + 'test hamburger' + '</div>');
+        $('#sidebar').append('<div id="sidebar-' + tab + '" class="sidebar-content">' + tab + '</div>');
     } else {
         $('#sidebar').append('<div id="sidebar-' + tab + '" class="sidebar-content">' + tab + '</div>');
     }
-
 }
 
 function showContent(tab) {

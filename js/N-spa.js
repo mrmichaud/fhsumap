@@ -1,4 +1,6 @@
 /* Add content on sidebar */
+
+
 function loadContent(tab) {
     $('#sidebar').append('<div id="sidebar-' + tab + '" class="sidebar-content">' + tab + '</div>');
 }
@@ -25,15 +27,38 @@ $('.nav-sb-menu').on('click', function() {
     currentTab = $(this).data('label');
 });
 
-/* Google Map */
-let map;
+/* Google Map - Get Current Position - Geolocation*/
+/*
+ if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
 
-function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: {
-            lat: 38.8714,
-            lng: -99.3445
-        },
-        zoom: 18
-    });
-}
+            var iconBase = 'img/';
+            var icons = {
+              currentPos: {
+                icon: iconBase + 'red-circle-big.png'
+              }
+            };
+
+            var features = [{
+                position: pos,
+                type: 'currentPos'
+              }];
+
+          // Create markers.
+            features.forEach(function(feature) {
+              var marker = new google.maps.Marker({
+                position: feature.position,
+                icon: icons[feature.type].icon,
+                map: map
+              });
+            });
+              
+
+       });     
+      };
+    
+*/

@@ -2,7 +2,12 @@
 
 
 function loadContent(tab) {
-    $('#sidebar').append('<div id="sidebar-' + tab + '" class="sidebar-content">' + tab + '</div>');
+    if (tab === "hamburger") {
+        $('#sidebar').append('<div id="sidebar-' + tab + '" class="sidebar-content">' + 'test hamburger' + '</div>');
+    } else {
+        $('#sidebar').append('<div id="sidebar-' + tab + '" class="sidebar-content">' + tab + '</div>');
+    }
+
 }
 
 function showContent(tab) {

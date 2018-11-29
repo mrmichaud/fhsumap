@@ -2088,7 +2088,7 @@
 			"visitorParking"    : "true",
 			"cycleStalls"       : "false",
 			"staffParking"      : "true",
-			"nearbyBuildings"	:	["222","107"],
+			"nearbyBuildings"	:	["34","33"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	" Done "
 		},
@@ -2109,7 +2109,7 @@
 			"visitorParking"    : "false",
 			"cycleStalls"       : "false",
 			"staffParking"      : "false",
-			"nearbyBuildings"	:	["107","305","220","319"],
+			"nearbyBuildings"	:	["33","5","35","12"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	" Done "
 		},
@@ -2156,7 +2156,7 @@
 			"visitorParking"    : "false",
 			"cycleStalls"       : "false",
 			"staffParking"      : "false",
-			"nearbyBuildings"	:	["319","139","220"],
+			"nearbyBuildings"	:	["12","11","35"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	" "
 		},
@@ -2175,7 +2175,7 @@
 			"visitorParking"    : "false",
 			"cycleStalls"       : "false",
 			"staffParking"      : "true",
-			"nearbyBuildings"	:	["102","103"],
+			"nearbyBuildings"	:	["2","3"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	" "
 		},	
@@ -2202,7 +2202,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "true",
-			"nearbyBuildings"	:	["109","141","148","143","127"],
+			"nearbyBuildings"	:	["13","141","17","16","14"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	" Done "
 		},
@@ -2221,7 +2221,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["143","127","502"],
+			"nearbyBuildings"	:	["16","14","15"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2248,7 +2248,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["310"],
+			"nearbyBuildings"	:	["20"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2267,7 +2267,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["310","325"],
+			"nearbyBuildings"	:	["20","21"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2289,7 +2289,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["325","318"],
+			"nearbyBuildings"	:	["21","22"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2302,7 +2302,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["316"],
+			"nearbyBuildings"	:	["28"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2315,7 +2315,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["316"],
+			"nearbyBuildings"	:	["28"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2338,7 +2338,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["322","312"],
+			"nearbyBuildings"	:	["26","24"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2359,7 +2359,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["116","326"],
+			"nearbyBuildings"	:	["30","29"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2378,7 +2378,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["138B"],
+			"nearbyBuildings"	:	["39"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2402,7 +2402,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["138B","138A"],
+			"nearbyBuildings"	:	["39","40"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2421,7 +2421,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["138A","138B"],
+			"nearbyBuildings"	:	["40","39"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2443,7 +2443,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["102","101"],
+			"nearbyBuildings"	:	["2","10"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2464,7 +2464,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["148"],
+			"nearbyBuildings"	:	["17"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2483,7 +2483,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["147"],
+			"nearbyBuildings"	:	["31"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2502,7 +2502,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["104"],
+			"nearbyBuildings"	:	["4"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2521,7 +2521,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["221","222","115"],
+			"nearbyBuildings"	:	["37","34","36"],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		}

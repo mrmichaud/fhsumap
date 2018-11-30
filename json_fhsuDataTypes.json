@@ -1963,7 +1963,7 @@
 			"id" : 1,
 		  	"name":"Wooster Place",
 		    "latLngCenter" :{"lat": 38.870065,"lng": -99.343837},
-		    "radius":1,
+		    "radius":10,
 		    "infoWindow":true,
 		  	"infoWindowContent":"Wooster Place apartments offer the benefits of on-campus living with modern amenities. Family friendly, but open to FHSU upperclassmen as well, Wooster Place offers both one- and two-bedroom apartments. Each residence includes a full kitchen, living room, bathroom, and bedrooms.",
 		  	"visible":true,

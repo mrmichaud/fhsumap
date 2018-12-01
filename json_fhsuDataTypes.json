@@ -28,7 +28,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Soccer-Facility/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["athletics"]
+		"menuCategories"	:	["athletics"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "false",
+        "parkingLotsId"     :   []
 		},
 
 		
@@ -58,7 +63,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Sheridan-Hall/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["academic"]
+		"menuCategories"	:	["academic"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [4, 17]
 		},
 		
 
@@ -95,7 +105,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/McCartney-Hall/",
 		"link360"           : 	"true",
 		"link360String"		: 	"http://tigermedianet.com/Hammond-Tour/wp-content/uploads/panoramas/McCartney/McCartneyTourTest.html",
-		"menuCategories"	:	["academic"]
+		"menuCategories"	:	["academic"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [4]
 		},
 
 
@@ -151,7 +166,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Albertson-Hall/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["academic"]
+		"menuCategories"	:	["academic"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [20]
 		},
 
 
@@ -209,7 +229,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Memorial-Union/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["placesOfInterest", "food"]
+		"menuCategories"	:	["placesOfInterest", "food"],
+		"openHours"         :   "true",
+        "hourOfOperation"   :   "Monday - Thursday 7:30am - Midnight; Friday - 7:30am - 6pm; Saturday - 10am - 5pm; Sunday - Noon - Midnight",
+        "hourLink”"         :   "https://www.fhsu.edu/library/",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [2]
 		},
 		
 
@@ -272,7 +297,12 @@
 		"infoLinkString"	:	"http://sternberg.fhsu.edu/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["academic", "placesOfInterest"]
+		"menuCategories"	:	["academic", "placesOfInterest"],
+		"openHours"         :   "true",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "false",
+        "parkingLotsId"     :   []
 		},
 
 
@@ -302,7 +332,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Old-Power-Plant/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["serviceBuildings"]
+		"menuCategories"	:	["serviceBuildings"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "false",
+        "parkingLotsId"     :   []
 		},
 
 
@@ -369,7 +404,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Rarick-Hall/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["academic"]
+		"menuCategories"	:	["academic"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [17]
 		},
 
 
@@ -408,7 +448,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Martin-Allen-Hall/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["academic"]
+		"menuCategories"	:	["academic"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [17]
 		},
 
 
@@ -462,7 +507,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Picken-Hall/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["academic"]
+		"menuCategories"	:	["academic"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [4, 17]
 		},
 
 
@@ -501,7 +551,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Stroup-Hall/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["academic"]
+		"menuCategories"	:	["academic"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [2, 3, 20]
 		},
 
 
@@ -531,7 +586,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/President-s-Residence/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["placesOfInterest"]
+		"menuCategories"	:	["placesOfInterest"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [2, 3]
 		},
 
 
@@ -578,7 +638,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Malloy-Hall/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["academic"]
+		"menuCategories"	:	["academic"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [5]
 		},
 
 
@@ -609,7 +674,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Forsyth-Library/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["academic", "placesOfInterest", "food"]
+		"menuCategories"	:	["academic", "placesOfInterest", "food"],
+		"openHours"         :   "true",
+        "hourOfOperation"   :   "Monday - Thursday 7:30am - Midnight; Friday - 7:30am  6pm; Saturday - 10am - 5pm; Sunday - Noon - Midnight",
+        "hourLink”"         :   "https://www.fhsu.edu/library/",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [5, 6]
 		},
 
 
@@ -639,7 +709,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Plymouth-Schoolhouse/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["placesOfInterest"]
+		"menuCategories"	:	["placesOfInterest"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [6]
 		},
 
 
@@ -686,7 +761,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Tomanek-Hall/",
 		"link360"           : 	"false",
 		"link360String"		: 	" ",
-		"menuCategories"	:	["academic"]
+		"menuCategories"	:	["academic"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [5, 6]
 		},
 
 
@@ -742,7 +822,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Hammond-Hall/",
 		"link360"           : 	"true",
 		"link360String"		: 	"http://tigermedianet.com/Hammond-Tour/wp-content/uploads/panoramas/Hammond/HammondTourFinal.html",
-		"menuCategories"	:	["academic"]
+		"menuCategories"	:	["academic"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [5, 18]
 		},
 
 
@@ -769,7 +854,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Akers-Energy-Center/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["serviceBuildings"]
+		"menuCategories"	:	["serviceBuildings"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [6]
 		},
 
 
@@ -777,7 +867,7 @@
 		"id" : 19,
 		"code"				: "SB",
 		"displayCode"		: "false",
-		"buildingName"		: "Switchgear Building", 
+		"buildingName"		: "Switch Gear Building", 
 		"latLngCenter"		: {"lat": 38.87078, "lng": -99.34372},
 		"latLngMainEntrance"	: {"lat": 38.87081, "lng": -99.34364},
 		"latLngEntrance"	: [
@@ -795,7 +885,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/physicalplant/departments/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["serviceBuildings"]
+		"menuCategories"	:	["serviceBuildings"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [6]
 		},
 
 
@@ -833,7 +928,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Custer-Hall/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["residenceBuildings"]
+		"menuCategories"	:	["residenceBuildings"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [7, 8]
 		},
 
 
@@ -884,7 +984,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/McMindes-Hall/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["residenceBuildings", "food"]
+		"menuCategories"	:	["residenceBuildings", "food"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [8, 9]
 		},
 
 
@@ -916,7 +1021,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/reslife/housing/Tiger-Place/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["residenceBuildings"]
+		"menuCategories"	:	["residenceBuildings"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [9]
 		},
 
 
@@ -946,7 +1056,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/reslife/housing/Tiger-Place/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["residenceBuildings"]
+		"menuCategories"	:	["residenceBuildings"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [6, 9]
 		},
 
 
@@ -997,7 +1112,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Wooster-Place/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["residenceBuildings"]
+		"menuCategories"	:	["residenceBuildings"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [12]
 		},
 
 
@@ -1036,7 +1156,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Wooster-Place/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["residenceBuildings"]
+		"menuCategories"	:	["residenceBuildings"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [12]
 		},
 
 
@@ -1125,7 +1250,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/reslife/housing/Wiest/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["residenceBuildings", "food"]
+		"menuCategories"	:	["residenceBuildings", "food"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [12]
 		},
 
 
@@ -1170,7 +1300,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/scholarshiphall/",
 		"link360"           : 	"true",
 		"link360String"		: 	"http://tigermedianet.com/Hammond-Tour/wp-content/uploads/panoramas/Hansen/HansenTourFinal.html",
-		"menuCategories"	:	["residenceBuildings"]
+		"menuCategories"	:	["residenceBuildings"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [12]
 		},
 
 
@@ -1256,7 +1391,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Stadium-Place/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["residenceBuildings"]
+		"menuCategories"	:	["residenceBuildings"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [10, 11]
 		},
 
 		
@@ -1300,7 +1440,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/reslife/Communities/Tiger-Village/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["residenceBuildings"]
+		"menuCategories"	:	["residenceBuildings"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [13]
 		},
 
 
@@ -1366,7 +1511,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Lewis-Field-Stadium/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["athletics"]
+		"menuCategories"	:	["athletics"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [13]
 		},
 
 
@@ -1395,7 +1545,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Schmidt-Bickle-Training-Facility/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["athletics"]
+		"menuCategories"	:	["athletics"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [19]
 		},
 
 
@@ -1421,7 +1576,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/administrative/physicalplant/departments/index.html",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["serviceBuildings"]
+		"menuCategories"	:	["serviceBuildings"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "false",
+        "parkingLotsId"     :   []
 		},
 
 
@@ -1454,7 +1614,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/iat/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["academic"]
+		"menuCategories"	:	["academic"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [1, 2]
 		},
 
 
@@ -1482,7 +1647,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Motor-Pool/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["serviceBuildings"]
+		"menuCategories"	:	["serviceBuildings"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [1, 21]
 		},
 
 
@@ -1515,7 +1685,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Grounds-Building-and-Greenhouse/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["serviceBuildings"]
+		"menuCategories"	:	["serviceBuildings"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [2]
 		},
 
 
@@ -1542,7 +1717,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/RU-Brooks-Building/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["serviceBuildings"]
+		"menuCategories"	:	["serviceBuildings"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [21]
 		},
 
 		
@@ -1571,7 +1751,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/C-A-Witt-Building/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["serviceBuildings"]
+		"menuCategories"	:	["serviceBuildings"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [21]
 		},
 		
 		
@@ -1609,7 +1794,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Robbins-Center/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["placesOfInterest"]
+		"menuCategories"	:	["placesOfInterest"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [14]
 		},
 
 
@@ -1649,7 +1839,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Gross-Coliseum/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["athletics"]
+		"menuCategories"	:	["athletics"],
+		"openHours"         :   "false",
+        "hourOfOperation"   :   "",
+        "hourLink”"         :   "",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [14, 15]
 		},
 
 
@@ -1690,7 +1885,12 @@
 		"infoLinkString"	:	"https://www.fhsu.edu/facilities-planning/campus-buildings/Cunningham-Hall/",
 		"link360"           : "false",
 		"link360String"		: " ",
-		"menuCategories"	:	["academic", "athletics"]
+		"menuCategories"	:	["academic", "athletics"],
+		"openHours"         :   "true",
+        "hourOfOperation"   :   "Monday - Thursday: 6:30 AM - 10:00 PM; Friday: 6:30 AM - 6:00 PM; Saturday - Sunday: 10:00 AM - 5:00 PM",
+        "hourLink”"         :   "https://www.fhsu.edu/hhp/Facility-Information/",
+        "nearbyParkingLots" :   "true",
+        "parkingLotsId"     :   [15, 16]
 		}
 	],
 	
@@ -2088,7 +2288,7 @@
 			"visitorParking"    : "true",
 			"cycleStalls"       : "false",
 			"staffParking"      : "true",
-			"nearbyBuildings"	:	["34","33"],
+			"nearbyBuildings"	:	[34,33],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	" Done "
 		},
@@ -2109,7 +2309,7 @@
 			"visitorParking"    : "false",
 			"cycleStalls"       : "false",
 			"staffParking"      : "false",
-			"nearbyBuildings"	:	["33","5","35","12"],
+			"nearbyBuildings"	:	[33,5,35,12],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	" Done "
 		},
@@ -2156,7 +2356,7 @@
 			"visitorParking"    : "false",
 			"cycleStalls"       : "false",
 			"staffParking"      : "false",
-			"nearbyBuildings"	:	["12","11","35"],
+			"nearbyBuildings"	:	[12,11,35],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	" "
 		},
@@ -2175,7 +2375,7 @@
 			"visitorParking"    : "false",
 			"cycleStalls"       : "false",
 			"staffParking"      : "true",
-			"nearbyBuildings"	:	["2","3"],
+			"nearbyBuildings"	:	[2,3],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	" "
 		},	
@@ -2202,7 +2402,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "true",
-			"nearbyBuildings"	:	["13","141","17","16","14"],
+			"nearbyBuildings"	:	[13,17,16,14],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	" Done "
 		},
@@ -2221,7 +2421,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["16","14","15"],
+			"nearbyBuildings"	:	[16,14,15],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2248,7 +2448,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["20"],
+			"nearbyBuildings"	:	[20],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2267,7 +2467,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["20","21"],
+			"nearbyBuildings"	:	[20,21],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2289,7 +2489,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["21","22"],
+			"nearbyBuildings"	:	[21,22],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2297,12 +2497,18 @@
 			"id" : 10,
 			"zone"				: "2",
 			"parkingName"		: "H-1", 
-			
+			"latLngCenter"		: {"lat": 38.86806, "lng": -99.34068}, 
+			"parkingOutline"	: [
+				{"lat"	: 38.86848,  "lng"	: -99.34066},
+				{"lat"	: 38.86847, "lng"	: -99.34041},
+				{"lat"	: 38.8674, "lng"	: -99.34057},
+				{"lat"	: 38.86741, "lng"	: -99.34082}
+				],
 			"disabledParking"   : "",
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["28"],
+			"nearbyBuildings"	:	[28],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2310,12 +2516,22 @@
 			"id" : 11,
 			"zone"				: "2",
 			"parkingName"		: "H-2", 
-			
+			"latLngCenter"		: {"lat": 38.86805, "lng": -99.34167},
+			"parkingOutline"	: [
+				{"lat"	: 38.86858, "lng"	: -99.34128},
+				{"lat"	: 38.86812, "lng"	: -99.34149},
+				{"lat"	: 38.86772, "lng"	: -99.34147},
+				{"lat"	: 38.8674, "lng"	: -99.3414},
+				{"lat"	: 38.8674, "lng"	: -99.34169},
+				{"lat"	: 38.86774, "lng"	: -99.3418}, 
+				{"lat"	: 38.86816, "lng"	: -99.34181}, 
+				{"lat"	: 38.86863, "lng"	: -99.3416}
+				],
 			"disabledParking"   : "",
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["28"],
+			"nearbyBuildings"	:	[28],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2338,7 +2554,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["26","24"],
+			"nearbyBuildings"	:	[26,24],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2359,7 +2575,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["30","29"],
+			"nearbyBuildings"	:	[30,29],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2378,7 +2594,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["39"],
+			"nearbyBuildings"	:	[39],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2402,7 +2618,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["39","40"],
+			"nearbyBuildings"	:	[39,40],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2421,7 +2637,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["40","39"],
+			"nearbyBuildings"	:	[40,39],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2443,7 +2659,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["2","10"],
+			"nearbyBuildings"	:	[2,10],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2464,7 +2680,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["17"],
+			"nearbyBuildings"	:	[17],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2483,7 +2699,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["31"],
+			"nearbyBuildings"	:	[31],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2502,7 +2718,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["4"],
+			"nearbyBuildings"	:	[4],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		},
@@ -2521,7 +2737,7 @@
 			"visitorParking"    : "",
 			"cycleStalls"       : "",
 			"staffParking"      : "",
-			"nearbyBuildings"	:	["37","34","36"],
+			"nearbyBuildings"	:	[37,34,36],
 			"infoWindow"	:	"False",
 			"infoWindowContent"		:	"  "
 		}
@@ -2701,22 +2917,38 @@
 			"email"     : "mrmmichaud@mail.fhsu.edu",
 			"classes"     : {
 				"myClass" : {
+					"classCode" : "ENG 126",
 					"title" : "Introduction to Literature",
 					"instructor" : "Scott, Pauline",
-					"startTime" : "12:30PM",
-					"endTime" : "1:20PM",
 					"building" : "RH",
 					"room" : "369",
-					"latLng" : {"lat": 38.87405, "lng": -99.33962}
+					"latLng" : {"lat": 38.87405, "lng": -99.33962},
+					"days"      : [
+						{"MON": "12:30 PM - 1:20 PM"},
+						{"TUE": ""},
+						{"WED": "12:30 PM - 1:20 PM"},
+						{"THU": ""},
+						{"FRI": "12:30 PM - 1:20 PM"},
+						{"SAT": ""},
+						{"SUN": ""}
+					]
 				},
 				"myClass" : {
+					"classCode" : "GSCI 120",
 					"title" : "World Geography",
 					"instructor" : "Schafer, Thomas",
-					"startTime" : "12:00PM",
-					"endTime" : "1:15PM",
 					"building" : "RH",
 					"room" : "201",
-					"latLng" : {"lat": 38.87405, "lng": -99.33962}
+					"latLng" : {"lat": 38.87405, "lng": -99.33962},
+					"days"      : [
+						{"MON": ""},
+						{"TUE": "12:00 PM - 1:15 PM"},
+						{"WED": ""},
+						{"THU": "12:00 PM - 1:15 PM"},
+						{"FRI": ""},
+						{"SAT": ""},
+						{"SUN": ""}
+					]
 				}				
 			}
 		},
@@ -2726,15 +2958,23 @@
 			"email"     : "cdchessmore@mail.fhsu.edu",
 			"classes"     : {
 				"myClass" : {
+					"classCode" : "INF 640",
 					"title" : "Introduction to Electronic Media",
 					"instructor" : "Schleicher, Steven",
-					"startTime" : "12:00PM",
-					"endTime" : "1:20PM",
 					"building" : "HMH",
 					"room" : "106",
-					"latLng" : {"lat": 38.871835, "lng": -99.344293}
+					"latLng" : {"lat": 38.871835, "lng": -99.344293},
+					"days"      : [
+						{"MON": "12:30 PM - 1:20 PM"},
+						{"TUE": ""},
+						{"WED": ""},
+						{"THU": "12:30 PM - 1:20 PM"},
+						{"FRI": ""},
+						{"SAT": ""},
+						{"SUN": ""}
+					]
 				}		
-			}
+			}			
 		},
 		{
 			"firstName" : "Bobby",
@@ -2742,24 +2982,40 @@
 			"email"     : "bobbyexample@mail.fhsu.edu",
 			"classes"     : {
 				"myClass" : {
+					"classCode" : "ART 121",
 					"title" : "Introduction to Painting",
 					"instructor" : "Hwang, Jee",
-					"startTime" : "9:30AM",
-					"endTime" : "12:15PM",
 					"building" : "RH",
 					"room" : "114",
-					"latLng" : {"lat": 38.87405, "lng": -99.33962}
+					"latLng" : {"lat": 38.87405, "lng": -99.33962},
+					"days"      : [
+						{"MON": ""},
+						{"TUE": ""},
+						{"WED": "9:30 AM - 12:15 PM"},
+						{"THU": "12:30 PM - 1:20 PM"},
+						{"FRI": ""},
+						{"SAT": ""},
+						{"SUN": ""}
+					]
 				},
 				"myClass" : {
+					"classCode" : "ART 342",
 					"title" : "3-D Design",
 					"instructor" : "Flores, Tobias",
-					"startTime" : "12:30PM",
-					"endTime" : "2:20PM",
 					"building" : "RH",
 					"room" : "121",
-					"latLng" : {"lat": 38.87405, "lng": -99.33962}
+					"latLng" : {"lat": 38.87405, "lng": -99.33962},
+					"days"      : [
+						{"MON": "12:30 PM - 1:20 PM"},
+						{"TUE": ""},
+						{"WED": "9:30 AM - 12:15 PM"},
+						{"THU": "12:30 PM - 1:20 PM"},
+						{"FRI": ""},
+						{"SAT": ""},
+						{"SUN": ""}
+					]
 				}				
-			}
+			}			
 		}
 	],
 	

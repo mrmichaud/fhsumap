@@ -97,6 +97,32 @@
 		background-color: #000000;
 	}
 	
+	/*INFOWINDOWS STYLES*/
+	/*Info Window body's text*/
+	#infoWindowBodyContent {
+		margin: 0px;
+		margin-top: 10px;
+	}
+	/*Info window header's text*/
+	#infoWindowHeading {
+		padding-left: 10px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		margin: 0px;
+		color: #eaaf0f;
+		background-color: black;
+	}
+	.infoWindowImages {
+		width: 200px;
+		height: 150px;
+		margin: 0px;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		border: 2px #000000 solid;
+		float: left; 
+	}
+	
+	
 	
     /* Cursor------------------------------------------------  */
     

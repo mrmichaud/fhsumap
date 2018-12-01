@@ -13,246 +13,6 @@
 // Date: 11-30-2018
 //-----------------------------------------------------------------------------------------------
 
-//********************DRAW EACH DATA TYPE TO THE MAP*******************
-	//Draws a single marker on the map
-	function drawPOI ( positionValue, titleValue ) {
-		//create marker using passed values
-		markersCenter = new google.maps.Marker({
-			position: positionValue,
-			title: titleValue,
-			map: map,
-		});
-		markersCenter.setVisible(true);
-		
-		// This is the content of the info window for a single marker
-		contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
-			//DataTypesInformation.pois[y].title + 
-			'INSERT TITLE HERE!' +
-			
-			'</h1><div id="infoWindowBodyContent">' +
-			//((DataTypesInformation.pois[y].picture != "") ? ('<img class="infoWindowImages" src=' + DataTypesInformation.pois[y].picture + '>') : ('<iframe title=' + DataTypesInformation.pois[y].infoURLTitle + 
-			//' width="480" height="270" allowTransparency="true" mozallowfullscreen webkitallowfullscreen allowfullscreen style="background-color:transparent;" frameBorder="0" src=' + DataTypesInformation.pois[y].infoURLLink + 
-			//'></iframe>') ) +
-			'Insert photo or video here with appropriate links included...' +
-			
-			//DataTypesInformation.pois[y].infoBoxString + 
-			'Insert info string of text here!' +
-			
-			'</div></div>';
-			
-		//Add a listener to the marker: when the user clicks the marker, the infoWindow appears
-		google.maps.event.addListener(markersCenter, 'click', (function(marker) {
-			return function() {
-				infoWindow.setContent(contentString);
-				infoWindow.open(map, markersCenter);
-			}
-		})(markersCenter));
-		
-	}
-	
-	//Draws a single building on the map
-	function drawBuilding ( pathValue ) {
-		//create building polygon using passed value and global variables from index.html
-		outlineEdge = new google.maps.Polygon({
-			path: pathValue,
-			geodesic: true,
-			strokeColor: BUILDING_UNSELECTED_BORDER_COLOR,
-			strokeOpacity: BUILDING_UNSELECTED_BORDER_OPACITY,
-			strokeWeight: BUILDING_UNSELECTED_BORDER_SIZE,
-			fillColor: 	BUILDING_UNSELECTED_FILL_COLOR,
-			fillOpacity: BUILDING_UNSELECTED_FILL_OPACITY
-		});
-		outlineEdge.setMap(map);
-		
-		
-		// This is the content of the info window for a single building
-		contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
-			//((DataTypesInformation.buildings[x].displayCode == "true") ? (DataTypesInformation.buildings[x].buildingName + ' (' + DataTypesInformation.buildings[x].code + ') ' ) : (DataTypesInformation.buildings[x].buildingName) ) + 
-			'INSERT NAME (and CODE) HERE!' +
-			
-			'</h1><div id="infoWindowBodyContent"><img class="infoWindowImages" src=' + 
-			//DataTypesInformation.buildings[x].picture + '>' + DataTypesInformation.buildings[x].infoBoxString + 		
-			'Insert photo and info string here...' +
-			
-			//Building hours of operation: check is displayHours is true, is yes then print hoursOfOperation and hoursLink, if not do not print
-			
-			//((DataTypesInformation.buildings[x].link360 == "true") ? ('<p>For more information: <a href='+ DataTypesInformation.buildings[x].infoLinkString +' target="_blank">Click Here</a></p><p>For a 360 interior view of this building: <a href='+ DataTypesInformation.buildings[x].link360String +' target="_blank">Click Here</a></p>' ) : ('<p>For more information: <a href='+ DataTypesInformation.buildings[x].infoLinkString +' target="_blank">Click Here</a></p>') )
-			'Insert applicable links here!' +
-			
-			'</div></div>';
-		
-			
-		//Add a listener to the marker: when the user clicks the marker, the infoWindow appears
-		google.maps.event.addListener(outlineEdge, 'click', (function(marker) {
-			return function() {
-				infoWindow.setContent(contentString);
-				infoWindow.open(map, outlineEdge);
-			}
-		})(outlineEdge));
-		
-	}
-	
-	//Draws a single parking lot on the map
-	function drawParking ( pathValue ) {
-		//create parking polygon using passed value and global variables from index.html
-		parkingOutline = new google.maps.Polygon({
-			path: pathValue,
-			geodesic: true,
-			strokeColor: PARKING_UNSELECTED_BORDER_COLOR,
-			strokeOpacity: PARKING_UNSELECTED_BORDER_OPACITY,
-			strokeWeight: PARKING_UNSELECTED_BORDER_SIZE,
-			fillColor: 	PARKING_UNSELECTED_FILL_COLOR,
-			fillOpacity: PARKING_UNSELECTED_FILL_OPACITY
-		});
-		parkingOutline.setMap(map);
-		parkingOutline.setVisible(true);
-		
-		// This is the content of the info window for a single parking lot
-		contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
-			//DataTypesInformation.parking[x].parkingName + ' ( Zone ' + DataTypesInformation.parking[x].zone + ') ' + 
-			'INSERT NAME and ZONE HERE!' +
-			
-			'</h1><div id="infoWindowBodyContent">' + 
-			//DataTypesInformation.parking[x].infoWindowContent + 		
-			'Insert info content here...' +
-			
-			'</div></div>';
-		
-			
-		//Add a listener to the marker: when the user clicks the marker, the infoWindow appears
-		google.maps.event.addListener(parkingOutline, 'click', (function(marker) {
-			return function() {
-				infoWindow.setContent(contentString);
-				infoWindow.open(map, parkingOutline);
-			}
-		})(parkingOutline));
-		
-	}
-	
-	//Draws a single polyline on the map
-	function drawPolyline ( pathCoordinates ) {
-		//creates the line symbols of black dots used for the polyline
-		lineSymbol = {
-			path: google.maps.SymbolPath.CIRCLE,
-			fillOpacity: 1,
-			scale: 2.5,
-			fillColor: '#000000'
-		};
-		
-		//create polyline using passed value, lineSymbol, and global variables from index.html
-		polylinePath = new google.maps.Polyline({
-			path: pathCoordinates,
-			geodesic: true,
-			strokeColor: TOUR_PATH_COLOR,
-			strokeOpacity: 0,
-			strokeWeight: TOUR_PATH_SIZE,
-			icons: [{
-				icon: lineSymbol,
-				offset: '0',
-				repeat: '10px'
-			}],
-			map: map
-		});
-
-		polylinePath.setMap(map);
-		polylinePath.setVisible(true);
-	}
-	
-	//Draws a single polygon on the map
-	function drawPolygon ( pathValue ) {
-		//create polygon using passed value and global variables from index.html
-		polygonOutline = new google.maps.Polygon({
-			path: pathValue,
-			geodesic: true,
-			strokeColor: POLYGON_UNSELECTED_BORDER_COLOR,
-			strokeOpacity: POLYGON_UNSELECTED_BORDER_OPACITY,
-			strokeWeight: POLYGON_UNSELECTED_BORDER_SIZE,
-			fillColor: 	POLYGON_UNSELECTED_FILL_COLOR,
-			fillOpacity: POLYGON_UNSELECTED_FILL_OPACITY
-		});
-		polygonOutline.setMap(map);
-		polygonOutline.setVisible(true);
-		
-		// This is the content of the info window for a single polygon
-		contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
-			//DataTypesInformation.polygons[x].name + 
-			'INSERT NAME HERE!' +
-			
-			'</h1><div id="infoWindowBodyContent"><img class="infoWindowImages" src=' + 
-			//DataTypesInformation.polygons[x].picture + '>' + DataTypesInformation.polygons[x].infoBoxString + 		
-			'> Insert photo and info string here...' +
-			
-			//'<p>For more information: <a href='+ DataTypesInformation.polygons[x].infoLinkString +' target="_blank">Click Here</a></p>' +
-			'Insert applicable links here!' +
-			
-			'</div></div>';
-		
-			
-		//Add a listener to the marker: when the user clicks the marker, the infoWindow appears
-		google.maps.event.addListener(polygonOutline, 'click', (function(marker) {
-			return function() {
-				infoWindow.setContent(contentString);
-				infoWindow.open(map, polygonOutline);
-			}
-		})(polygonOutline));
-		
-	}
-	
-	//Draws a single circle on the map
-	function drawCircle ( circleCenter, radiusValue ) {
-		//create circle using passed values and global variables from index.html
-		circleOutline = new google.maps.Circle({
-			strokeColor: CIRCLE_PATH_COLOR,
-			strokeOpacity: 0.8,
-			strokeWeight: CIRCLE_PATH_SIZE,
-			fillColor: CIRCLE_FILL_COLOR,
-			fillOpacity: CIRCLE_FILL_OPACITY,
-			map: map,
-			center: circleCenter,
-			radius: radiusValue
-        });
-		
-		
-		// This is the content of the info window for a single circle
-		contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
-			//DataTypesInformation.circles[x].name + 
-			'INSERT NAME HERE!' +
-			
-			'</h1><div id="infoWindowBodyContent">' + 
-			//DataTypesInformation.circles[x].infoWindowContent + 		
-			'Insert info content here...' +
-			
-			'</div></div>';
-		
-			
-		//Add a listener to the marker: when the user clicks the marker, the infoWindow appears
-		google.maps.event.addListener(circleOutline, 'click', (function(marker) {
-			return function() {
-				infoWindow.setContent(contentString);
-				infoWindow.open(map, circleOutline);
-			}
-		})(circleOutline));
-	}
-	
-	//*************************************************************************
-	//******************GET DATA TYPE OBJECT BASED ON A GIVEN ID*****************************************
-	function getPOIID (idValue) {
-		for (var i=0 ; i < DataTypesInformation.pois.length; i++) {
-			if (DataTypesInformation.pois[i].id == idValue) {
-				return DataTypesInformation.pois[i];
-			}
-		}//end for loop
-	}
-	
-	
-	function getBuildingID (idValue) {
-		for (var i=0 ; i < DataTypesInformation.buildings.length; i++) {
-			if (DataTypesInformation.buildings[i].id == idValue) {
-				return DataTypesInformation.buildings[i];
-			}
-		}//end for loop
-		
-	}
 
 function initMap() {
 	
@@ -317,7 +77,7 @@ function initMap() {
 	
 	
 	
-	// *****************TEST FUNCTIONS***************
+	// *****************TEST FUNCTIONS - SHOULD MOVE TO INDEX***************
 	//var temp = getPOIID(4);
 	//drawPOI (getPOIID(4).latLng, getPOIID(4).title);
 	//drawPOI (	{"lat": 38.87396, "lng": -99.34064}, "Center" );
@@ -358,3 +118,244 @@ function initMap() {
 			]);
 	drawCircle ({"lat": 38.870065,"lng": -99.343837}, 10); */
 }//end of initMap
+
+//********************DRAW EACH DATA TYPE TO THE MAP*******************
+	//Draws a single marker on the map
+	function drawPOI ( positionValue, titleValue, map ) {
+		//create marker using passed values
+		markersCenter = new google.maps.Marker({
+			position: positionValue,
+			title: titleValue,
+			map: map,
+		});
+		markersCenter.setVisible(true);
+		
+		// This is the content of the info window for a single marker
+		contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
+			//DataTypesInformation.pois[y].title + 
+			'INSERT TITLE HERE!' +
+			
+			'</h1><div id="infoWindowBodyContent">' +
+			//((DataTypesInformation.pois[y].picture != "") ? ('<img class="infoWindowImages" src=' + DataTypesInformation.pois[y].picture + '>') : ('<iframe title=' + DataTypesInformation.pois[y].infoURLTitle + 
+			//' width="480" height="270" allowTransparency="true" mozallowfullscreen webkitallowfullscreen allowfullscreen style="background-color:transparent;" frameBorder="0" src=' + DataTypesInformation.pois[y].infoURLLink + 
+			//'></iframe>') ) +
+			'Insert photo or video here with appropriate links included...' +
+			
+			//DataTypesInformation.pois[y].infoBoxString + 
+			'Insert info string of text here!' +
+			
+			'</div></div>';
+			
+		//Add a listener to the marker: when the user clicks the marker, the infoWindow appears
+		google.maps.event.addListener(markersCenter, 'click', (function(marker) {
+			return function() {
+				infoWindow.setContent(contentString);
+				infoWindow.open(map, markersCenter);
+			}
+		})(markersCenter));
+		
+	}
+	
+	//Draws a single building on the map
+	function drawBuilding ( pathValue, map ) {
+		//create building polygon using passed value and global variables from index.html
+		outlineEdge = new google.maps.Polygon({
+			path: pathValue,
+			geodesic: true,
+			strokeColor: BUILDING_UNSELECTED_BORDER_COLOR,
+			strokeOpacity: BUILDING_UNSELECTED_BORDER_OPACITY,
+			strokeWeight: BUILDING_UNSELECTED_BORDER_SIZE,
+			fillColor: 	BUILDING_UNSELECTED_FILL_COLOR,
+			fillOpacity: BUILDING_UNSELECTED_FILL_OPACITY
+		});
+		outlineEdge.setMap(map);
+		
+		
+		// This is the content of the info window for a single building
+		contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
+			//((DataTypesInformation.buildings[x].displayCode == "true") ? (DataTypesInformation.buildings[x].buildingName + ' (' + DataTypesInformation.buildings[x].code + ') ' ) : (DataTypesInformation.buildings[x].buildingName) ) + 
+			'INSERT NAME (and CODE) HERE!' +
+			
+			'</h1><div id="infoWindowBodyContent"><img class="infoWindowImages" src=' + 
+			//DataTypesInformation.buildings[x].picture + '>' + DataTypesInformation.buildings[x].infoBoxString + 		
+			'Insert photo and info string here...' +
+			
+			//Building hours of operation: check is displayHours is true, is yes then print hoursOfOperation and hoursLink, if not do not print
+			
+			//((DataTypesInformation.buildings[x].link360 == "true") ? ('<p>For more information: <a href='+ DataTypesInformation.buildings[x].infoLinkString +' target="_blank">Click Here</a></p><p>For a 360 interior view of this building: <a href='+ DataTypesInformation.buildings[x].link360String +' target="_blank">Click Here</a></p>' ) : ('<p>For more information: <a href='+ DataTypesInformation.buildings[x].infoLinkString +' target="_blank">Click Here</a></p>') )
+			'Insert applicable links here!' +
+			
+			'</div></div>';
+		
+			
+		//Add a listener to the marker: when the user clicks the marker, the infoWindow appears
+		google.maps.event.addListener(outlineEdge, 'click', (function(marker) {
+			return function() {
+				infoWindow.setContent(contentString);
+				infoWindow.open(map, outlineEdge);
+			}
+		})(outlineEdge));
+		
+	}
+	
+	//Draws a single parking lot on the map
+	function drawParking ( pathValue, map ) {
+		//create parking polygon using passed value and global variables from index.html
+		parkingOutline = new google.maps.Polygon({
+			path: pathValue,
+			geodesic: true,
+			strokeColor: PARKING_UNSELECTED_BORDER_COLOR,
+			strokeOpacity: PARKING_UNSELECTED_BORDER_OPACITY,
+			strokeWeight: PARKING_UNSELECTED_BORDER_SIZE,
+			fillColor: 	PARKING_UNSELECTED_FILL_COLOR,
+			fillOpacity: PARKING_UNSELECTED_FILL_OPACITY
+		});
+		parkingOutline.setMap(map);
+		parkingOutline.setVisible(true);
+		
+		// This is the content of the info window for a single parking lot
+		contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
+			//DataTypesInformation.parking[x].parkingName + ' ( Zone ' + DataTypesInformation.parking[x].zone + ') ' + 
+			'INSERT NAME and ZONE HERE!' +
+			
+			'</h1><div id="infoWindowBodyContent">' + 
+			//DataTypesInformation.parking[x].infoWindowContent + 		
+			'Insert info content here...' +
+			
+			'</div></div>';
+		
+			
+		//Add a listener to the marker: when the user clicks the marker, the infoWindow appears
+		google.maps.event.addListener(parkingOutline, 'click', (function(marker) {
+			return function() {
+				infoWindow.setContent(contentString);
+				infoWindow.open(map, parkingOutline);
+			}
+		})(parkingOutline));
+		
+	}
+	
+	//Draws a single polyline on the map
+	function drawPolyline ( pathCoordinates, map ) {
+		//creates the line symbols of black dots used for the polyline
+		lineSymbol = {
+			path: google.maps.SymbolPath.CIRCLE,
+			fillOpacity: 1,
+			scale: 2.5,
+			fillColor: '#000000'
+		};
+		
+		//create polyline using passed value, lineSymbol, and global variables from index.html
+		polylinePath = new google.maps.Polyline({
+			path: pathCoordinates,
+			geodesic: true,
+			strokeColor: TOUR_PATH_COLOR,
+			strokeOpacity: 0,
+			strokeWeight: TOUR_PATH_SIZE,
+			icons: [{
+				icon: lineSymbol,
+				offset: '0',
+				repeat: '10px'
+			}],
+			map: map
+		});
+
+		polylinePath.setMap(map);
+		polylinePath.setVisible(true);
+	}
+	
+	//Draws a single polygon on the map
+	function drawPolygon ( pathValue, map ) {
+		//create polygon using passed value and global variables from index.html
+		polygonOutline = new google.maps.Polygon({
+			path: pathValue,
+			geodesic: true,
+			strokeColor: POLYGON_UNSELECTED_BORDER_COLOR,
+			strokeOpacity: POLYGON_UNSELECTED_BORDER_OPACITY,
+			strokeWeight: POLYGON_UNSELECTED_BORDER_SIZE,
+			fillColor: 	POLYGON_UNSELECTED_FILL_COLOR,
+			fillOpacity: POLYGON_UNSELECTED_FILL_OPACITY
+		});
+		polygonOutline.setMap(map);
+		polygonOutline.setVisible(true);
+		
+		// This is the content of the info window for a single polygon
+		contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
+			//DataTypesInformation.polygons[x].name + 
+			'INSERT NAME HERE!' +
+			
+			'</h1><div id="infoWindowBodyContent"><img class="infoWindowImages" src=' + 
+			//DataTypesInformation.polygons[x].picture + '>' + DataTypesInformation.polygons[x].infoBoxString + 		
+			'> Insert photo and info string here...' +
+			
+			//'<p>For more information: <a href='+ DataTypesInformation.polygons[x].infoLinkString +' target="_blank">Click Here</a></p>' +
+			'Insert applicable links here!' +
+			
+			'</div></div>';
+		
+			
+		//Add a listener to the marker: when the user clicks the marker, the infoWindow appears
+		google.maps.event.addListener(polygonOutline, 'click', (function(marker) {
+			return function() {
+				infoWindow.setContent(contentString);
+				infoWindow.open(map, polygonOutline);
+			}
+		})(polygonOutline));
+		
+	}
+	
+	//Draws a single circle on the map
+	function drawCircle ( circleCenter, radiusValue, map ) {
+		//create circle using passed values and global variables from index.html
+		circleOutline = new google.maps.Circle({
+			strokeColor: CIRCLE_PATH_COLOR,
+			strokeOpacity: 0.8,
+			strokeWeight: CIRCLE_PATH_SIZE,
+			fillColor: CIRCLE_FILL_COLOR,
+			fillOpacity: CIRCLE_FILL_OPACITY,
+			map: map,
+			center: circleCenter,
+			radius: radiusValue
+        });
+		
+		
+		// This is the content of the info window for a single circle
+		contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
+			//DataTypesInformation.circles[x].name + 
+			'INSERT NAME HERE!' +
+			
+			'</h1><div id="infoWindowBodyContent">' + 
+			//DataTypesInformation.circles[x].infoWindowContent + 		
+			'Insert info content here...' +
+			
+			'</div></div>';
+		
+			
+		//Add a listener to the marker: when the user clicks the marker, the infoWindow appears
+		google.maps.event.addListener(circleOutline, 'click', (function(marker) {
+			return function() {
+				infoWindow.setContent(contentString);
+				infoWindow.open(map, circleOutline);
+			}
+		})(circleOutline));
+	}
+	
+	//*************************************************************************
+	//******************GET DATA TYPE OBJECT BASED ON A GIVEN ID*****************************************
+	function getPOIID (idValue) {
+		for (var i=0 ; i < DataTypesInformation.pois.length; i++) {
+			if (DataTypesInformation.pois[i].id == idValue) {
+				return DataTypesInformation.pois[i];
+			}
+		}//end for loop
+	}
+	
+	
+	function getBuildingID (idValue) {
+		for (var i=0 ; i < DataTypesInformation.buildings.length; i++) {
+			if (DataTypesInformation.buildings[i].id == idValue) {
+				return DataTypesInformation.buildings[i];
+			}
+		}//end for loop
+		
+	}

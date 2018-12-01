@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
-<test></test>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Fort Hays State University Campus Map</title>
     <link rel="icon" href="./siteImages/tiger.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- These five 'meta' below is about facebook share  -->
+    <meta property="og:url" content="https://www.your-domain.com/your-page.html" />
+    <meta property="og:type" content="Fort Hays State University Campus Map" />
+    <meta property="og:title" content="Fort Hays State University Campus Map" />
+    <meta property="og:description" content="Fort Hays State University Campus Map" />
+    <meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
     <link href="https://fonts.googleapis.com/css?family=Anton|Athiti" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/bootstrap-4.1.3.css">
@@ -23,8 +29,38 @@
 </head>
 
 <body>
+    <!-- facebook share button, this code must be here according Facebook Developer JavaScript SDK -->
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- tweet share button -->
+    <script>
+        window.twttr = (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+
+            t._e = [];
+            t.ready = function(f) {
+                t._e.push(f);
+            };
+
+            return t;
+        }(document, "script", "twitter-wjs"));
+    </script>
     <!-- ---------------------------------Desk---------------------------- -->
-    
     <header>
         <nav class="navbar navbar-expand-xs fixed-top" id="top-navbar">
             <div class="navbar-brand d-none d-xl-block">
@@ -60,22 +96,118 @@
                 <img src="./siteImages/tiger.png" alt="tiger">
                 <span class="js-text">Fort Hays State University Campus Map</span>
             </div>
-            
             <div class="nav-item d-block d-xl-none float-right">
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
         </nav>
     </header>
+
     <!-- Sidebar -->
+
     <div id="sidebar" class="sidebar">
-		<div id="sidebar-main" class="sidebar-content" style="display:none">Some content for main menu</div>
+        <!-- the code below will use in "N-spa.js" -->
+        <div id="sidebar-hamburger" class="sidebar-content" style="display:none">
+            <h3 class="toggle-student-info">Student Information</h3>
+            <table class="student-info">
+                <tr>
+                    <td>Student Name:</td>
+                    <td></td>
+                </tr>
+                <!-- Course One -->
+                <th>Course One</th>
+                <tr>
+                    <td>Name: </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Time: </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Location: </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Date: </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Instructor: </td>
+                    <td></td>
+                </tr>
+                <!-- Course Two -->
+                <th>Course Two</th>
+                <tr>
+                    <td>Name: </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Time: </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Location: </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Date: </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Instructor: </td>
+                    <td></td>
+                </tr>
+                <!-- Course Three -->
+                <th>Course Three</th>
+                <tr>
+                    <td>Name: </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Time: </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Location: </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Date: </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Instructor: </td>
+                    <td></td>
+                </tr>
+            </table>
+            <h3 class="toggle-share">Share</h3>
+            <table class="share">
+                <tr class="share-button">
+                    <td>
+                        <!--Facebook share -->
+                        <div class="fb-share-button" data-href="https://www.your-domain.com/your-page.html" data-layout="button_count" data-size="large" data-mobile-iframe="true">
+                            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+                        </div>
+                    </td>
+                    <td>
+                        <!--Twitter share -->
+                        <div class="share-button">
+                            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="large">Tweet</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <h3>Help</h3>
+            <hr>
+            <p class="fhsu-version">FHSU Map Version 1.0</p>
+        </div>
+        <!-- the code above will use in "N-spa.js" -->
         <div id="sidebar-search" class="sidebar-content" style="display:none">Some content for search</div>
         <div id="sidebar-layers" class="sidebar-content">Some content for layers</div>
         <div id="sidebar-building" class="sidebar-content" style="display:none">Some content for buildings</div>
         <div id="sidebar-direction" class="sidebar-content" style="display:none">Some content for directions</div>
         <div id="sidebar-parking" class="sidebar-content" style="display:none">Some content for parking</div>
-		<div id="sidebar-tours" class="sidebar-content" style="display:none">Some content for tours</div>
-		
+        <div id="sidebar-tour" class="sidebar-content" style="display:none">Some content for tours</div>
     </div>
     <!--Google map area -->
     <div id="map"></div>
@@ -125,145 +257,143 @@
 	</script>
 	
 	<script>
+		/***********************
+		DECLARE GLOBAL VARIABLES TO STORE GEO DATA
+		***********************/
 		
-			/***********************
-			DECLARE GLOBAL VARIABLES TO STORE GEO DATA
-			***********************/
+		var NUMBER_OF_BUILDINGS = 40;
+		var NUMBER_OF_TOUR_STOPS = 9;
+		
+		var MAP_ZOOM = 17;
+		var MAP_CENTER_COORDINATES = {lat: 38.8720, lng: -99.34238};
+		
+		var BUILDING_SELECTED_BORDER_SIZE = 4;
+		var BUILDING_SELECTED_BORDER_COLOR = "#000000";
+		var BUILDING_SELECTED_BORDER_OPACITY = 1.0;
+		var BUILDING_SELECTED_FILL_COLOR = '#eaaf0f';
+		var BUILDING_SELECTED_FILL_OPACITY = 0.9;
+		
+		var BUILDING_UNSELECTED_BORDER_SIZE = 3;
+		var BUILDING_UNSELECTED_BORDER_COLOR = "#eaaf0f";
+		var BUILDING_UNSELECTED_BORDER_OPACITY = 1.0;
+		var BUILDING_UNSELECTED_FILL_COLOR = '#000000';
+		var BUILDING_UNSELECTED_FILL_OPACITY = 0.75;
 			
-			var NUMBER_OF_BUILDINGS = 40;
-			var NUMBER_OF_TOUR_STOPS = 9;
+		var TOUR_PATH_SIZE = 5;
+		var TOUR_PATH_COLOR = "#eaaf0f";
+		var TOUR_FILL_COLOR = '#000000';
+		var TOUR_FILL_OPACITY = 0.75;
+		
+		
+		var PARKING_SELECTED_BORDER_SIZE = 3;
+		var PARKING_SELECTED_BORDER_COLOR = "#ffffff";
+		var PARKING_SELECTED_BORDER_OPACITY = 1.0;
+		var PARKING_SELECTED_FILL_COLOR = '#eaaf0f';
+		var PARKING_SELECTED_FILL_OPACITY = 0.75;
+		
+		var PARKING_UNSELECTED_BORDER_SIZE = 3;
+		var PARKING_UNSELECTED_BORDER_COLOR = "#eaaf0f";
+		var PARKING_UNSELECTED_BORDER_OPACITY = 1.0;
+		var PARKING_UNSELECTED_FILL_COLOR = '#000000';
+		var PARKING_UNSELECTED_FILL_OPACITY = 0.75;
+		
+		
+		var POLYGON_SELECTED_BORDER_SIZE = 3;
+		var POLYGON_SELECTED_BORDER_COLOR = "#ff0000";
+		var POLYGON_SELECTED_BORDER_OPACITY = 1.0;
+		var POLYGON_SELECTED_FILL_COLOR = '#00ff00';
+		var POLYGON_SELECTED_FILL_OPACITY = 0.75;
+		
+		var POLYGON_UNSELECTED_BORDER_SIZE = 3;
+		var POLYGON_UNSELECTED_BORDER_COLOR = "#00ff00";
+		var POLYGON_UNSELECTED_BORDER_OPACITY = 1.0;
+		var POLYGON_UNSELECTED_FILL_COLOR = '#ff0000';
+		var POLYGON_UNSELECTED_FILL_OPACITY = 0.75;
+		
+		
+		var CIRCLE_PATH_SIZE = 2;
+		var CIRCLE_PATH_COLOR = "#ff0000";
+		var CIRCLE_FILL_COLOR = '#ff0000';
+		var CIRCLE_FILL_OPACITY = 0.35;
+		
 			
-			var MAP_ZOOM = 17;
-			var MAP_CENTER_COORDINATES = {lat: 38.8720, lng: -99.34238};
-			
-			var BUILDING_SELECTED_BORDER_SIZE = 4;
-			var BUILDING_SELECTED_BORDER_COLOR = "#000000";
-			var BUILDING_SELECTED_BORDER_OPACITY = 1.0;
-			var BUILDING_SELECTED_FILL_COLOR = '#eaaf0f';
-			var BUILDING_SELECTED_FILL_OPACITY = 0.9;
-			
-			var BUILDING_UNSELECTED_BORDER_SIZE = 3;
-			var BUILDING_UNSELECTED_BORDER_COLOR = "#eaaf0f";
-			var BUILDING_UNSELECTED_BORDER_OPACITY = 1.0;
-			var BUILDING_UNSELECTED_FILL_COLOR = '#000000';
-			var BUILDING_UNSELECTED_FILL_OPACITY = 0.75;
-				
-			var TOUR_PATH_SIZE = 5;
-			var TOUR_PATH_COLOR = "#eaaf0f";
-			var TOUR_FILL_COLOR = '#000000';
-			var TOUR_FILL_OPACITY = 0.75;
-			
-			
-			var PARKING_SELECTED_BORDER_SIZE = 3;
-			var PARKING_SELECTED_BORDER_COLOR = "#ffffff";
-			var PARKING_SELECTED_BORDER_OPACITY = 1.0;
-			var PARKING_SELECTED_FILL_COLOR = '#eaaf0f';
-			var PARKING_SELECTED_FILL_OPACITY = 0.75;
-			
-			var PARKING_UNSELECTED_BORDER_SIZE = 3;
-			var PARKING_UNSELECTED_BORDER_COLOR = "#eaaf0f";
-			var PARKING_UNSELECTED_BORDER_OPACITY = 1.0;
-			var PARKING_UNSELECTED_FILL_COLOR = '#000000';
-			var PARKING_UNSELECTED_FILL_OPACITY = 0.75;
-			
-			
-			var POLYGON_SELECTED_BORDER_SIZE = 3;
-			var POLYGON_SELECTED_BORDER_COLOR = "#ff0000";
-			var POLYGON_SELECTED_BORDER_OPACITY = 1.0;
-			var POLYGON_SELECTED_FILL_COLOR = '#00ff00';
-			var POLYGON_SELECTED_FILL_OPACITY = 0.75;
-			
-			var POLYGON_UNSELECTED_BORDER_SIZE = 3;
-			var POLYGON_UNSELECTED_BORDER_COLOR = "#00ff00";
-			var POLYGON_UNSELECTED_BORDER_OPACITY = 1.0;
-			var POLYGON_UNSELECTED_FILL_COLOR = '#ff0000';
-			var POLYGON_UNSELECTED_FILL_OPACITY = 0.75;
-			
-			
-			var CIRCLE_PATH_SIZE = 2;
-			var CIRCLE_PATH_COLOR = "#ff0000";
-			var CIRCLE_FILL_COLOR = '#ff0000';
-			var CIRCLE_FILL_OPACITY = 0.35;
-			
-				
-			// This section declares each of the arrays used to hold building information
-			var buildingNames = {}; 
-			var latLngCenter = {};
-			var latLngMainEntrance = {}; 
-			var buildingOutline = {};
-			var infoBoxString = {};
-			var picture = {}; 
+		// This section declares each of the arrays used to hold building information
+		var buildingNames = {}; 
+		var latLngCenter = {};
+		var latLngMainEntrance = {}; 
+		var buildingOutline = {};
+		var infoBoxString = {};
+		var picture = {}; 
 
-			var markersCenter = {}; 
-			var markersEntrance = {};
-			var listeners = {};
-			var infoLinkString = {};
-			var contentString = {};
-			var outlineEdge = [];
-			var parkingOutline = [];
-			
-			var activeCategories = [];
-			
-			//Campus Tour Variables
-			var campusTourCoordinates = [];
-			var campusTourPath;
-			var lineSymbol;
-			var arrowSymbol;
-			var tourMarkers = new Array(NUMBER_OF_TOUR_STOPS);
-			var videoTourMarkers = new Array(NUMBER_OF_TOUR_STOPS);
-			var tourContentString = new Array(NUMBER_OF_TOUR_STOPS);
-			var videoTourContentString = new Array(NUMBER_OF_TOUR_STOPS);
-			
-			//Category Interactions Variables
-			var active_CampusTour = false;
-			var active_VideoTour = false;
-			var active_Academic = false;
-			var active_Athletics = false;
-			var active_PlacesOfInterest = false;
-			var active_ResidenceBuildings = false;
-			var active_ServiceBuildings = false;
-			var active_Food = false;
-			var active_EntranceMarkers = false;
-			var active_BuildingMarkers = false;
-			var active_TourMarkers = false;
-			var active_VideoTourMarkers = false;
-			var active_CampusParking = false;
-			
-			var categoryStateBeforeSearch;
-			var walkingStateBeforeSearch;
-			
-			//Walking Directions variables
-			var directionsService;
-			// Create a renderer for directions and bind it to the map.
-			var directionsDisplay;
-			// Instantiate an info window to hold step text.
-			var stepDisplay;
-			var markerArray;
-			var startEndMarkerArray = [];
-			var map;
-			//var infoWindow;
-			
-			var searchResults = [];
-			var DataTypesInformation;
-			var CampusTourInformation;
-			var VideoTourInformation;
-			var CampusParkingInformation;
-			var x;
-			var y;
+		var markersCenter = {}; 
+		var markersEntrance = {};
+		var listeners = {};
+		var infoLinkString = {};
+		var contentString = {};
+		var outlineEdge = [];
+		var parkingOutline = [];
+		
+		var activeCategories = [];
+		
+		//Campus Tour Variables
+		var campusTourCoordinates = [];
+		var campusTourPath;
+		var lineSymbol;
+		var arrowSymbol;
+		var tourMarkers = new Array(NUMBER_OF_TOUR_STOPS);
+		var videoTourMarkers = new Array(NUMBER_OF_TOUR_STOPS);
+		var tourContentString = new Array(NUMBER_OF_TOUR_STOPS);
+		var videoTourContentString = new Array(NUMBER_OF_TOUR_STOPS);
+		
+		//Category Interactions Variables
+		var active_CampusTour = false;
+		var active_VideoTour = false;
+		var active_Academic = false;
+		var active_Athletics = false;
+		var active_PlacesOfInterest = false;
+		var active_ResidenceBuildings = false;
+		var active_ServiceBuildings = false;
+		var active_Food = false;
+		var active_EntranceMarkers = false;
+		var active_BuildingMarkers = false;
+		var active_TourMarkers = false;
+		var active_VideoTourMarkers = false;
+		var active_CampusParking = false;
+		
+		var categoryStateBeforeSearch;
+		var walkingStateBeforeSearch;
+		
+		//Walking Directions variables
+		var directionsService;
+		// Create a renderer for directions and bind it to the map.
+		var directionsDisplay;
+		// Instantiate an info window to hold step text.
+		var stepDisplay;
+		var markerArray;
+		var startEndMarkerArray = [];
+		var map;
+		//var infoWindow;
+		
+		var searchResults = [];
+		var DataTypesInformation;
+		var CampusTourInformation;
+		var VideoTourInformation;
+		var CampusParkingInformation;
+		var x;
+		var y;
 	</script>
 	
 	<script>
 	$.getJSON( "http://localhost/fhsumap/json_fhsuDataTypes.json", function( data ) {
-	  var templateBuildingDirectory = '<h3>Building Directory</h3>{{#buildings}}<li class="sidebarOption">{{buildingName}} ({{code}})</li>{{/buildings}}';
-	  Mustache.parse(templateBuildingDirectory);   // optional, speeds up future uses
-	  var rendered = Mustache.render(templateBuildingDirectory, data);
-	  $('#sidebar-building').html(rendered);
-	  
-	  var templateWalkingDirectionBuildings = '<br><h3>Walking&nbsp;Directions</h3>' +
-	    '<div id="walkingInstructionText">' +
+		var templateBuildingDirectory = '<h3>Building Directory</h3>{{#buildings}}<li class="sidebarOption">{{buildingName}} ({{code}})</li>{{/buildings}}';
+		Mustache.parse(templateBuildingDirectory);   // optional, speeds up future uses
+		var rendered = Mustache.render(templateBuildingDirectory, data);
+		$('#sidebar-building').html(rendered);
+
+		var templateWalkingDirectionBuildings = '<br><h3>Walking&nbsp;Directions</h3>' +
+		'<div id="walkingInstructionText">' +
 			'<span class="intructionTexts">Select buildings from dropdown menus</span>' +
 		'</div>' +
-		
 		'<div id="walkingSelectionsContainer">' +
 			'<form id="walkingDropdownForm">' +
 				'<div id="walkingSelectionsStart">' +
@@ -291,16 +421,16 @@
 				'</div>' +
 			'</form>' +
 		'</div>';
-	  Mustache.parse(templateWalkingDirectionBuildings);   // optional, speeds up future uses
-	  var rendered = Mustache.render(templateWalkingDirectionBuildings, data);
-	  $('#sidebar-direction').html(rendered);
-	  
-	  var templateParking = '<br><h3>Parking</h3>{{#parking}}<li class="sidebarOption">{{parkingName}}, Zone: {{zone}}</li>{{/parking}}';
-	  Mustache.parse(templateParking);   // optional, speeds up future uses
-	  var rendered = Mustache.render(templateParking, data);
-	  $('#sidebar-parking').html(rendered);
-	  
-	  var templateCategories = '<h3>Main Menu</h3>'+
+		Mustache.parse(templateWalkingDirectionBuildings);   // optional, speeds up future uses
+		var rendered = Mustache.render(templateWalkingDirectionBuildings, data);
+		$('#sidebar-direction').html(rendered);
+
+		var templateParking = '<br><h3>Parking</h3>{{#parking}}<li class="sidebarOption">{{parkingName}}, Zone: {{zone}}</li>{{/parking}}';
+		Mustache.parse(templateParking);   // optional, speeds up future uses
+		var rendered = Mustache.render(templateParking, data);
+		$('#sidebar-parking').html(rendered);
+
+		var templateCategories = '<h3>Main Menu</h3>'+
 		'<div><h3>Student Information</h3><table>Insert student info here!</table></div>' +
 		'<div><h3>Share</h3><table>Insert share information here!</table></div>' +
 		'<div><h3>About</h3>' +
@@ -321,21 +451,21 @@
 				'<p>Dev Version: 0.2.4 (Nov 28)</p>' +
 			'</div></div>' +
 		'{{#personalData}}<li class="sidebarOption">{{label}}</li>{{/personalData}}<br>';
-	  Mustache.parse(templateCategories);   // optional, speeds up future uses
-	  var rendered = Mustache.render(templateCategories, data);
-	  $('#sidebar-main').html(rendered);
-	  
-	  var templateCategories = '<h3>Layers</h3>{{#layersMenuOptions}}<li class="sidebarOption" data-layerID="{{layerID}}">{{label}}</li>{{/layersMenuOptions}}<br>'; 
-	  Mustache.parse(templateCategories);   // optional, speeds up future uses
-	  var rendered = Mustache.render(templateCategories, data);
-	  $('#sidebar-layers').html(rendered);
-	  //console.log(rendered);
-	  
-	  var templateCategories = '<h3>Tours</h3>{{#toursMenuOptions}}<li class="sidebarOption">{{label}}</li>{{/toursMenuOptions}}<br>';
-	  Mustache.parse(templateCategories);   // optional, speeds up future uses
-	  var rendered = Mustache.render(templateCategories, data);
-	  $('#sidebar-tours').html(rendered);
-	  //console.log(rendered);
+		Mustache.parse(templateCategories);   // optional, speeds up future uses
+		var rendered = Mustache.render(templateCategories, data);
+		$('#sidebar-main').html(rendered);
+
+		var templateCategories = '<h3>Layers</h3>{{#layersMenuOptions}}<li class="sidebarOption" data-layerID="{{layerID}}">{{label}}</li>{{/layersMenuOptions}}<br>'; 
+		Mustache.parse(templateCategories);   // optional, speeds up future uses
+		var rendered = Mustache.render(templateCategories, data);
+		$('#sidebar-layers').html(rendered);
+		//console.log(rendered);
+
+		var templateCategories = '<h3>Tours</h3>{{#toursMenuOptions}}<li class="sidebarOption">{{label}}</li>{{/toursMenuOptions}}<br>';
+		Mustache.parse(templateCategories);   // optional, speeds up future uses
+		var rendered = Mustache.render(templateCategories, data);
+		$('#sidebar-tours').html(rendered);
+		//console.log(rendered);
 	  
 	});
 
@@ -351,175 +481,170 @@
 	</script>
 	
 	<script>			
+		$("#headerSearchBarInput").on("keydown", function(e) {
+			if (e.keyCode == 13) { findSearchResults( $(this).val() ); }});	
 			
+		$("#searchButton").on("click", function(e) {
+			 findSearchResults( $("#headerSearchBarInput").val() ); });	
 	
-	
-			$("#headerSearchBarInput").on("keydown", function(e) {
-				if (e.keyCode == 13) { findSearchResults( $(this).val() ); }});	
-				
-			$("#searchButton").on("click", function(e) {
-				 findSearchResults( $("#headerSearchBarInput").val() ); });	
+
+		//put xmlhttp here
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				DataTypesInformation = JSON.parse(this.responseText);
+			//console.log(DataTypesInformation);
+			
+			var test_building_data = getBuildingID(2);
+			var test_poi_data = getPOIID(4);
+			
+			drawPOI (test_poi_data.latLng, test_poi_data.title, map);
+			
+			//console.log(test_building_data);
+			//console.log(test_poi_data);
+
+			}
+		};
+		xmlhttp.open("GET", "json_fhsuDataTypes.json", true);
+		xmlhttp.send();
 		
-	
-			//put xmlhttp here
-			var xmlhttp = new XMLHttpRequest();
-			xmlhttp.onreadystatechange = function() {
-				if (this.readyState == 4 && this.status == 200) {
-					DataTypesInformation = JSON.parse(this.responseText);
-				//console.log(DataTypesInformation);
+		
+		function findSearchResults( searchQuery ) {
+			searchResults = [];
+			$("#searchResultsContainer").empty();
+			var x;
+			var y;
+			var z;
+			var outputText = "";				
+			
+				searchQuery = searchQuery.trim();
 				
-				var test_building_data = getBuildingID(2);
-				var test_poi_data = getPOIID(4);
+			if( searchQuery.length >= 1 && searchQuery.length <= 255 && typeof searchQuery === "string" ){
+			
+				for (x in DataTypesInformation.buildings){					
+					//call functions to check for various types of matches
+					inBuildingNames(x, searchQuery);
+					inBuildingCodes(x, searchQuery);
+					//inBuildingInfos(x, searchQuery);
+				}// end for loop through buildings x
 				
-				drawPOI (test_poi_data.latLng, test_poi_data.title, map);
+				for (y in DataTypesInformation.pois){					
+					//call functions to check for various types of matches
+					inPOINames(y, searchQuery);
+				} // end for loop through pois y
 				
-				//console.log(test_building_data);
-				//console.log(test_poi_data);
-	
+				for (z in DataTypesInformation.parking){					
+					//call functions to check for various types of matches
+					inParkingNames(z, searchQuery);
+				} // end for loop through parking z	
+			} 
+			
+			//check if searchResults array is empty-cells
+			if(searchResults.length > 0){
+				$('.sidebar-content').hide();
+				$('#sidebar-search').show();
+				
+				if (!tabToggle) {
+					$('.sidebar').animate({ width: "toggle" });
+					tabToggle = !tabToggle;
 				}
-			};
-			xmlhttp.open("GET", "json_fhsuDataTypes.json", true);
-			xmlhttp.send();
-			
-			
-			function findSearchResults( searchQuery ) {
-				searchResults = [];
-				$("#searchResultsContainer").empty();
-				var x;
-				var y;
-				var z;
-				var outputText = "";				
 				
-					searchQuery = searchQuery.trim();
-					
-				if( searchQuery.length >= 1 && searchQuery.length <= 255 && typeof searchQuery === "string" ){
-					
-					
+				newDivContent = "";
+				newBuildingNameContent = "";
+				newBuildingCodeContent = "";
+				//newBuildingInformationContent = "";
+				newPOINameContent = "";
+				newParkingNameContent = "";
 				
-					for (x in DataTypesInformation.buildings){					
-						//call functions to check for various types of matches
-						inBuildingNames(x, searchQuery);
-						inBuildingCodes(x, searchQuery);
-						//inBuildingInfos(x, searchQuery);
-					}// end for loop through buildings x
-					
-					for (y in DataTypesInformation.pois){					
-						//call functions to check for various types of matches
-						inPOINames(y, searchQuery);
-					} // end for loop through pois y
-					
-					for (z in DataTypesInformation.parking){					
-						//call functions to check for various types of matches
-						inParkingNames(z, searchQuery);
-					} // end for loop through parking z	
-				} 
-				
-				//check if searchResults array is empty-cells
-				if(searchResults.length > 0){
-					$('.sidebar-content').hide();
-					$('#sidebar-search').show();
-					
-					if (!tabToggle) {
-						$('.sidebar').animate({ width: "toggle" });
-						tabToggle = !tabToggle;
+				for ( y = 0; y < searchResults.length; y++ ){
+					//list all buildings included on Name
+					if (searchResults[y].type == "BuildingName"){
+						newBuildingNameContent += "<p><a href='#' onClick='OpenInfoWindow(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
+						//console.log(searchResults[y]);
 					}
-					
-					newDivContent = "";
-					newBuildingNameContent = "";
-					newBuildingCodeContent = "";
-					//newBuildingInformationContent = "";
-					newPOINameContent = "";
-					newParkingNameContent = "";
-					
-					for ( y = 0; y < searchResults.length; y++ ){
-						//list all buildings included on Name
-						if (searchResults[y].type == "BuildingName"){
-							newBuildingNameContent += "<p><a href='#' onClick='OpenInfoWindow(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
-							//console.log(searchResults[y]);
-						}
-						//list all buildings included on Code
-						if (searchResults[y].type == "BuildingCode"){
-							newBuildingCodeContent += "<p><a href='#' onClick='OpenInfoWindow(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
-						}
-						//list all buildings included on Information
-						//if (searchResults[y].type == "Information"){
-						//	newInformationContent += "<p><a href='#' onClick='OpenInfoWindow(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
-						//}
-						if (searchResults[y].type == "POIName"){
-							newPOINameContent += "<p><a href='#' onClick='OpenInfoWindow(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
-						}
-						
-						if (searchResults[y].type == "ParkingName"){
-							newParkingNameContent += "<p><a href='#' onClick='OpenInfoWindow(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
-						}
-						
-					}//end for loop through searchResults
-					
-					
-					//Add any building name results to newDivContent
-					if(newBuildingNameContent != ""){
-						newDivContent += "<h4>Building Names:</h4>" + newBuildingNameContent;
+					//list all buildings included on Code
+					if (searchResults[y].type == "BuildingCode"){
+						newBuildingCodeContent += "<p><a href='#' onClick='OpenInfoWindow(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
 					}
-					//Add any building code results to newDivContent
-					if(newBuildingCodeContent != ""){
-						newDivContent += "<h4>Building Codes:</h4>" + newBuildingCodeContent;
-					}
-					//if(newBuildingInformationContent != ""){
-					//	newDivContent += "<h4>Building Information:</h4>" + newBuildingInformationContent;
+					//list all buildings included on Information
+					//if (searchResults[y].type == "Information"){
+					//	newInformationContent += "<p><a href='#' onClick='OpenInfoWindow(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
 					//}
-					//Add any poi name results to newDivContent
-					if(newPOINameContent != ""){
-						newDivContent += "<h4>Points of Interest:</h4>" + newPOINameContent;
+					if (searchResults[y].type == "POIName"){
+						newPOINameContent += "<p><a href='#' onClick='OpenInfoWindow(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
 					}
-					//Add any parking name results to newDivContent
-					if(newParkingNameContent != ""){
-						newDivContent += "<h4>Parking Lots:</h4>" + newParkingNameContent;
-					}
-					$("#sidebar-search").html(newDivContent);
 					
+					if (searchResults[y].type == "ParkingName"){
+						newParkingNameContent += "<p><a href='#' onClick='OpenInfoWindow(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
+					}
+					
+				}//end for loop through searchResults
+				
+				
+				//Add any building name results to newDivContent
+				if(newBuildingNameContent != ""){
+					newDivContent += "<h4>Building Names:</h4>" + newBuildingNameContent;
 				}
-				else {
-					//add "No results were found for: " + searchQuery to searchResultsContainer
-					$("#sidebar-search").html("No results found for <br /><b>" + searchQuery + "</b>");	
-				}				
-			}//end findSearchResults function
-			
-			function inBuildingNames( x, searchQuery ) {
-				if((DataTypesInformation.buildings[x].buildingName.toLowerCase()).includes(searchQuery.toLowerCase())){
-					//add Name and building's name to searchResults array
-					searchResults.push({type: "BuildingName", building: (DataTypesInformation.buildings[x].buildingName), code: (DataTypesInformation.buildings[x].code)});
+				//Add any building code results to newDivContent
+				if(newBuildingCodeContent != ""){
+					newDivContent += "<h4>Building Codes:</h4>" + newBuildingCodeContent;
 				}
-			} // end inBuildingNames
-			
-			function inBuildingCodes( x, searchQuery ) {
-				if((DataTypesInformation.buildings[x].code.toLowerCase()) == (searchQuery.toLowerCase())){
-					//add Code and building's name to searchResults array
-					searchResults.push({type: "BuildingCode", building: (DataTypesInformation.buildings[x].buildingName), code: (DataTypesInformation.buildings[x].code)});
+				//if(newBuildingInformationContent != ""){
+				//	newDivContent += "<h4>Building Information:</h4>" + newBuildingInformationContent;
+				//}
+				//Add any poi name results to newDivContent
+				if(newPOINameContent != ""){
+					newDivContent += "<h4>Points of Interest:</h4>" + newPOINameContent;
 				}
-			} // end inBuildingCodes
-			
-			//function inBuildingInfos( x, searchQuery ) {
-			//	if( 0 <= ((DataTypesInformation[x].infoBoxString.toLowerCase()).search(searchQuery.toLowerCase()))){
-			//		//add Information and building's name to searchResults array
-			//		searchResults.push({type: "Information", building: (DataTypesInformation[x].buildingName), code: (DataTypesInformation[x].code)});
-			//	}
-			//} // end inBuildingInfos
-			
-			function inPOINames( x, searchQuery ) {
-				if((DataTypesInformation.pois[x].title.toLowerCase()).includes(searchQuery.toLowerCase())){
-					//**********************add pois' title and id to searchResults array with its type
-					searchResults.push({type: "POIName", building: (DataTypesInformation.pois[x].title), code: (DataTypesInformation.pois[x].id)}); 
+				//Add any parking name results to newDivContent
+				if(newParkingNameContent != ""){
+					newDivContent += "<h4>Parking Lots:</h4>" + newParkingNameContent;
 				}
-			} // end inPOINames
-			
-			function inParkingNames( x, searchQuery ) {
-				if((DataTypesInformation.parking[x].parkingName.toLowerCase()).includes(searchQuery.toLowerCase())){
-					//*********************add parking's name and id to searchResults array with its type
-					searchResults.push({type: "ParkingName", building: (DataTypesInformation.parking[x].parkingName), code: (DataTypesInformation.parking[x].id)}); 
-				}
-			} // end inParkingCodes
-			
-		</script>
+				$("#sidebar-search").html(newDivContent);
+				
+			}
+			else {
+				//add "No results were found for: " + searchQuery to searchResultsContainer
+				$("#sidebar-search").html("No results found for <br /><b>" + searchQuery + "</b>");	
+			}				
+		}//end findSearchResults function
+		
+		function inBuildingNames( x, searchQuery ) {
+			if((DataTypesInformation.buildings[x].buildingName.toLowerCase()).includes(searchQuery.toLowerCase())){
+				//add Name and building's name to searchResults array
+				searchResults.push({type: "BuildingName", building: (DataTypesInformation.buildings[x].buildingName), code: (DataTypesInformation.buildings[x].code)});
+			}
+		} // end inBuildingNames
+		
+		function inBuildingCodes( x, searchQuery ) {
+			if((DataTypesInformation.buildings[x].code.toLowerCase()) == (searchQuery.toLowerCase())){
+				//add Code and building's name to searchResults array
+				searchResults.push({type: "BuildingCode", building: (DataTypesInformation.buildings[x].buildingName), code: (DataTypesInformation.buildings[x].code)});
+			}
+		} // end inBuildingCodes
+		
+		//function inBuildingInfos( x, searchQuery ) {
+		//	if( 0 <= ((DataTypesInformation[x].infoBoxString.toLowerCase()).search(searchQuery.toLowerCase()))){
+		//		//add Information and building's name to searchResults array
+		//		searchResults.push({type: "Information", building: (DataTypesInformation[x].buildingName), code: (DataTypesInformation[x].code)});
+		//	}
+		//} // end inBuildingInfos
+		
+		function inPOINames( x, searchQuery ) {
+			if((DataTypesInformation.pois[x].title.toLowerCase()).includes(searchQuery.toLowerCase())){
+				//**********************add pois' title and id to searchResults array with its type
+				searchResults.push({type: "POIName", building: (DataTypesInformation.pois[x].title), code: (DataTypesInformation.pois[x].id)}); 
+			}
+		} // end inPOINames
+		
+		function inParkingNames( x, searchQuery ) {
+			if((DataTypesInformation.parking[x].parkingName.toLowerCase()).includes(searchQuery.toLowerCase())){
+				//*********************add parking's name and id to searchResults array with its type
+				searchResults.push({type: "ParkingName", building: (DataTypesInformation.parking[x].parkingName), code: (DataTypesInformation.parking[x].id)}); 
+			}
+		} // end inParkingCodes
+		
+	</script>
 	
     <script src="./js/N-spa.js"></script>
 	<!--
@@ -528,25 +653,24 @@
 	<script src="./js/interactions.js"></script>
 	<script src="./js/directions.js"></script>
 	<script src="./js/drawings.js"></script>
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMYzAk4QMdMjpWb7ecr5ImwRaV8xp1sDw&callback=initMap" async defer></script>
-	
+
     <script type="text/javascript">
-      
         //service worker registration
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js').then(function(registration) {
-              // Registration was successful
-              console.log('ServiceWorker registration successful with scope: '+ registration.scope);
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ' + registration.scope);
             }, function(err) {
-              // registration failed :(
-              console.log('ServiceWorker registration failed: '+ err);
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ' + err);
             });
-          }
-                
+        }
     </script>
 
     <!-- javascript -->
-    
+
 </body>
 
 </html>

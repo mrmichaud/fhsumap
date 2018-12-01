@@ -1,8 +1,10 @@
 /* Add content on sidebar */
-
-
 function loadContent(tab) {
-    $('#sidebar').append('<div id="sidebar-' + tab + '" class="sidebar-content">' + tab + '</div>');
+    if (tab === "hamburger") {
+        $('#sidebar').append('<div id="sidebar-' + tab + '" class="sidebar-content">' + tab + '</div>');
+    } else {
+        $('#sidebar').append('<div id="sidebar-' + tab + '" class="sidebar-content">' + tab + '</div>');
+    }
 }
 
 function showContent(tab) {
@@ -14,17 +16,27 @@ function showContent(tab) {
 var currentTab = 'layers';
 var tabToggle = true;
 $(".nav-sb-menu[data-label='layers']").css('color', 'white');
-$('.nav-sb-menu').on('click', function() {
-    $('.nav-sb-menu').css('color', 'black');
+$(".nav-sb-menu").on('click', function() {
+    $(".nav-sb-menu").css('color', 'black');
     if (currentTab != $(this).data('label') || !tabToggle) {
         $(".nav-sb-menu[data-label='" + $(this).data('label') + "']").css('color', 'white');
         showContent($(this).data('label'));
     }
     if (currentTab == $(this).data('label') || !tabToggle) {
-        $('.sidebar').animate({ width: "toggle" });
+        $(".sidebar").animate({ width: "toggle" });
         tabToggle = !tabToggle;
     }
     currentTab = $(this).data('label');
+});
+
+/* toggle student-info in sidebar */
+$(".toggle-student-info").on('click', function() {
+    $(".student-info").toggle();
+});
+
+/* toggle share in sidebar */
+$(".toggle-share").on('click', function() {
+    $(".share").toggle();
 });
 
 /* Google Map - Get Current Position - Geolocation*/

@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Fort Hays State University Campus Map</title>
-    <link rel="icon" href="./img/tiger.png">
+    <link rel="icon" href="./siteImages/tiger.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Anton|Athiti" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -57,7 +57,7 @@
                 </li>
             </ul>
             <div class="nav-item float-right" id="d-tiger">
-                <img src="./img/tiger.png" alt="tiger">
+                <img src="./siteImages/tiger.png" alt="tiger">
                 <span class="js-text">Fort Hays State University Campus Map</span>
             </div>
             
@@ -325,7 +325,7 @@
 	  var rendered = Mustache.render(templateCategories, data);
 	  $('#sidebar-main').html(rendered);
 	  
-	  var templateCategories = '<h3>Layers</h3>{{#layersMenuOptions}}<li class="sidebarOption">{{label}}</li>{{/layersMenuOptions}}<br>'; 
+	  var templateCategories = '<h3>Layers</h3>{{#layersMenuOptions}}<li class="sidebarOption" data-layerID="{{layerID}}">{{label}}</li>{{/layersMenuOptions}}<br>'; 
 	  Mustache.parse(templateCategories);   // optional, speeds up future uses
 	  var rendered = Mustache.render(templateCategories, data);
 	  $('#sidebar-layers').html(rendered);
@@ -366,7 +366,14 @@
 			xmlhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
 					DataTypesInformation = JSON.parse(this.responseText);
-				console.log(DataTypesInformation);
+				//console.log(DataTypesInformation);
+				
+				var test_building_data = getBuildingID(2);
+				var test_poi_data = getPOIID(4);
+				
+				//console.log(test_building_data);
+				//console.log(test_poi_data);
+	
 				}
 			};
 			xmlhttp.open("GET", "json_fhsuDataTypes.json", true);

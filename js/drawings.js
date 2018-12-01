@@ -13,64 +13,7 @@
 // Date: 11-30-2018
 //-----------------------------------------------------------------------------------------------
 
-function initMap() {
-	
-	//create map object and set default map settings
-	map = new google.maps.Map(document.getElementById('map'), {
-		zoom: MAP_ZOOM,
-		center: MAP_CENTER_COORDINATES,
-		mapTypeControl: true,
-		mapTypeControlOptions: {
-			style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-			position: google.maps.ControlPosition.TOP_RIGHT
-		},
-		styles: [
-			{
-				"featureType": "poi.attraction",
-				"elementType": "labels",
-				"stylers": [ { "visibility": "off" } ]
-			},
-			{
-				"featureType": "poi.business",
-				"elementType": "labels",
-				"stylers": [ { "visibility": "off" } ]
-			},
-			{
-				"featureType": "poi.government",
-				"elementType": "labels",
-				"stylers": [ { "visibility": "off" } ]
-			},
-			{
-				"featureType": "poi.park",
-				"elementType": "labels",
-				"stylers": [ { "visibility": "off" } ]
-			},
-			{
-				"featureType": "poi.school",
-				"elementType": "labels",
-				"stylers": [ { "visibility": "off" } ]
-			},
-			{
-				"featureType": "poi.sports_complex",
-				"elementType": "labels",
-				"stylers": [ { "visibility": "off" } ]
-			}
-		]
-	});
-	
-	//Define dummy infoWindow for use in drawing data type objects
-	infoWindow = new google.maps.InfoWindow({
-		position: {lat: 38.8726, lng: -99.34339},
-		content: "Dummy Text",
-		maxWidth: 500
-	});
-	
-	// Closes infoWindow if user clicks outside of the box
-	google.maps.event.addListener(map, "click", function(event) {
-		infoWindow.close();	
-	});
-	
-	
+//********************DRAW EACH DATA TYPE TO THE MAP*******************
 	//Draws a single marker on the map
 	function drawPOI ( positionValue, titleValue ) {
 		//create marker using passed values
@@ -130,6 +73,8 @@ function initMap() {
 			'</h1><div id="infoWindowBodyContent"><img class="infoWindowImages" src=' + 
 			//DataTypesInformation.buildings[x].picture + '>' + DataTypesInformation.buildings[x].infoBoxString + 		
 			'Insert photo and info string here...' +
+			
+			//Building hours of operation: check is displayHours is true, is yes then print hoursOfOperation and hoursLink, if not do not print
 			
 			//((DataTypesInformation.buildings[x].link360 == "true") ? ('<p>For more information: <a href='+ DataTypesInformation.buildings[x].infoLinkString +' target="_blank">Click Here</a></p><p>For a 360 interior view of this building: <a href='+ DataTypesInformation.buildings[x].link360String +' target="_blank">Click Here</a></p>' ) : ('<p>For more information: <a href='+ DataTypesInformation.buildings[x].infoLinkString +' target="_blank">Click Here</a></p>') )
 			'Insert applicable links here!' +
@@ -289,15 +234,102 @@ function initMap() {
 		})(circleOutline));
 	}
 	
-	drawPOI (	{"lat": 38.87396, "lng": -99.34064}, "Center" );
-	drawBuilding ( [
-				{"lat"	: 38.87212, "lng"	: -99.34055},
-				{"lat"	: 38.87239, "lng"	: -99.34122},
-				{"lat"	: 38.87275, "lng"	: -99.34098},
-				{"lat"	: 38.87247, "lng"	: -99.34031},
-				{"lat"	: 38.87212, "lng"	: -99.34055}
-			]);
-	drawParking ([
+	//*************************************************************************
+	//******************GET DATA TYPE OBJECT BASED ON A GIVEN ID*****************************************
+	function getPOIID (idValue) {
+		for (var i=0 ; i < DataTypesInformation.pois.length; i++) {
+			if (DataTypesInformation.pois[i].id == idValue) {
+				return DataTypesInformation.pois[i];
+			}
+		}//end for loop
+	}
+	
+	
+	function getBuildingID (idValue) {
+		for (var i=0 ; i < DataTypesInformation.buildings.length; i++) {
+			if (DataTypesInformation.buildings[i].id == idValue) {
+				return DataTypesInformation.buildings[i];
+			}
+		}//end for loop
+		
+	}
+
+function initMap() {
+	
+	//create map object and set default map settings
+	map = new google.maps.Map(document.getElementById('map'), {
+		zoom: MAP_ZOOM,
+		center: MAP_CENTER_COORDINATES,
+		mapTypeControl: true,
+		mapTypeControlOptions: {
+			style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+			position: google.maps.ControlPosition.TOP_RIGHT
+		},
+		styles: [
+			{
+				"featureType": "poi.attraction",
+				"elementType": "labels",
+				"stylers": [ { "visibility": "off" } ]
+			},
+			{
+				"featureType": "poi.business",
+				"elementType": "labels",
+				"stylers": [ { "visibility": "off" } ]
+			},
+			{
+				"featureType": "poi.government",
+				"elementType": "labels",
+				"stylers": [ { "visibility": "off" } ]
+			},
+			{
+				"featureType": "poi.park",
+				"elementType": "labels",
+				"stylers": [ { "visibility": "off" } ]
+			},
+			{
+				"featureType": "poi.school",
+				"elementType": "labels",
+				"stylers": [ { "visibility": "off" } ]
+			},
+			{
+				"featureType": "poi.sports_complex",
+				"elementType": "labels",
+				"stylers": [ { "visibility": "off" } ]
+			}
+		]
+	});
+	
+	//Define dummy infoWindow for use in drawing data type objects
+	infoWindow = new google.maps.InfoWindow({
+		position: {lat: 38.8726, lng: -99.34339},
+		content: "Dummy Text",
+		maxWidth: 500
+	});
+	
+	// Closes infoWindow if user clicks outside of the box
+	google.maps.event.addListener(map, "click", function(event) {
+		infoWindow.close();	
+	});
+	
+	
+	//console.log("DataTypesInformation: " + DataTypesInformation);
+	//console.log("testing: " + getBuildingID(2)); 
+	
+	
+	
+	// *****************TEST FUNCTIONS***************
+	//var temp = getPOIID(4);
+	//drawPOI (getPOIID(4).latLng, getPOIID(4).title);
+	//drawPOI (	{"lat": 38.87396, "lng": -99.34064}, "Center" );
+	//drawBuilding (getBuildingID(2).buildingOutline);
+	//drawBuilding ( [
+	//			{"lat"	: 38.87212, "lng"	: -99.34055},
+	//			{"lat"	: 38.87239, "lng"	: -99.34122},
+	//			{"lat"	: 38.87275, "lng"	: -99.34098},
+	//			{"lat"	: 38.87247, "lng"	: -99.34031},
+	//			{"lat"	: 38.87212, "lng"	: -99.34055}
+	//		]);
+	/* drawParking ([
 				{"lat"	: 38.87554, "lng"	: -99.34332},
 				{"lat"	: 38.87553, "lng"	: -99.34327}, 
 				{"lat"	: 38.87579, "lng"	: -99.34315}, 
@@ -324,5 +356,5 @@ function initMap() {
 				{"lat": 38.87302,"lng": -99.34055},
 				{"lat": 38.87302,"lng": -99.34055}
 			]);
-	drawCircle ({"lat": 38.870065,"lng": -99.343837}, 10);
+	drawCircle ({"lat": 38.870065,"lng": -99.343837}, 10); */
 }//end of initMap

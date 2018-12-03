@@ -41,7 +41,7 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-    <!-- tweet share button -->
+    <!-- twitter share button -->
     <script>
         window.twttr = (function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0],
@@ -185,14 +185,14 @@
                 <tr class="share-button">
                     <td>
                         <!--Facebook share -->
-                        <div class="fb-share-button" data-href="https://www.your-domain.com/your-page.html" data-layout="button_count" data-size="large" data-mobile-iframe="true">
+                        <div class="fb-share-button" data-href="newmedia.fhsu.edu/website/index.html?mapID=X&lat=Y&lng=Z" data-layout="button_count" data-size="large" data-mobile-iframe="true">
                             <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
                         </div>
                     </td>
                     <td>
                         <!--Twitter share -->
                         <div class="share-button">
-                            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="large">Tweet</a>
+                            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=newmedia.fhsu.edu/website/index.html?mapID=Z" data-size="large">Tweet</a>
                         </div>
                     </td>
                 </tr>
@@ -211,6 +211,7 @@
     </div>
     <!--Google map area -->
     <div id="map"></div>
+    <div id="location"></div>
     <!-- ----------------------------Mobile--------------------------------- -->
     <footer>
         <nav class="navbar d-block d-xl-none fixed-bottom">
@@ -257,8 +258,8 @@
 
     <script>
         /***********************
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        			DECLARE GLOBAL VARIABLES TO STORE GEO DATA
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        			***********************/
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        			DECLARE GLOBAL VARIABLES TO STORE GEO DATA
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        			***********************/
 
         var NUMBER_OF_BUILDINGS = 40;
         var NUMBER_OF_TOUR_STOPS = 9;
@@ -630,6 +631,7 @@
     </script>
 
     <script src="./js/N-spa.js"></script>
+    <script src="./js/locationJS.js"></script>
     <script src="./js/buildingData.js"></script>
     <script src="./js/interactions.js"></script>
     <script src="./js/directions.js"></script>

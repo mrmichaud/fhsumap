@@ -425,7 +425,7 @@
 		var rendered = Mustache.render(templateWalkingDirectionBuildings, data);
 		$('#sidebar-direction').html(rendered);
 
-		var templateParking = '<br><h3>Parking</h3>{{#parking}}<li class="sidebarOption">{{parkingName}}, Zone: {{zone}}</li>{{/parking}}';
+		var templateParking = '<br><h3>Parking</h3>{{#buildings}}<li class="sidebarOption">{{buildingName}}</li>{{/buildings}}';
 		Mustache.parse(templateParking);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateParking, data);
 		$('#sidebar-parking').html(rendered);
@@ -464,7 +464,7 @@
 		var templateCategories = '<h3>Tours</h3>{{#toursMenuOptions}}<li class="sidebarOption">{{label}}</li>{{/toursMenuOptions}}<br>';
 		Mustache.parse(templateCategories);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateCategories, data);
-		$('#sidebar-tours').html(rendered);
+		$('#sidebar-tour').html(rendered);
 		//console.log(rendered);
 	  
 	});

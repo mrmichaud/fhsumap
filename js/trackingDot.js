@@ -1,5 +1,5 @@
-            var map,watchID;
-            function initMap() {
+        var map,watchID;
+        function initMap() {
               map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: 38.870882, lng: -99.342660},
                 zoom: 18
@@ -13,7 +13,7 @@
             var myLatlng = new google.maps.LatLng(lat, lng);
             //alert(myLatlng);
             if(marker == null){
-                 var iconImage = new google.maps.MarkerImage('img/icon49.png',
+                 var iconImage = new google.maps.MarkerImage('pic/icon49.png',
                      //This marker is 28 pixels wide by 25 pixels high.
                      new google.maps.Size(25, 25),
                      //The origin for this image is (0, 0).
@@ -42,6 +42,8 @@
                    //navigator.geolocation.clearWatch(watchID);
                 } else if( err.code == 2) {
                    alert("Error: Position is unavailable!");
+                } else{
+                  //alert("Error: Timeout, Error Code: " + err.code);
                 }
              }
            
@@ -49,7 +51,7 @@
                 
                 if(navigator.geolocation){ 
                    // timeout at 1000 milliseconds (1 second)
-                   var options = {enableHighAcuracy: true,timeout:1000,maximumAge: 1000};              
+                   var options = {enableHighAcuracy: true,timeout: 5000,maximumAge: 0};              
                    watchID = navigator.geolocation.watchPosition(showPosition, errorHandler, options);
                 } else {
                    alert("Sorry, browser does not support geolocation!");

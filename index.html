@@ -106,101 +106,7 @@
 
     <div id="sidebar" class="sidebar">
         <!-- the code below will use in "N-spa.js" -->
-        <div id="sidebar-hamburger" class="sidebar-content" style="display:none">
-            <h3 class="toggle-student-info">Student Information</h3>
-            <table class="student-info">
-                <tr>
-                    <td>Student Name:</td>
-                    <td></td>
-                </tr>
-                <!-- Course One -->
-                <th>Course One</th>
-                <tr>
-                    <td>Name: </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Time: </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Location: </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Date: </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Instructor: </td>
-                    <td></td>
-                </tr>
-                <!-- Course Two -->
-                <th>Course Two</th>
-                <tr>
-                    <td>Name: </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Time: </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Location: </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Date: </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Instructor: </td>
-                    <td></td>
-                </tr>
-                <!-- Course Three -->
-                <th>Course Three</th>
-                <tr>
-                    <td>Name: </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Time: </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Location: </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Date: </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Instructor: </td>
-                    <td></td>
-                </tr>
-            </table>
-            <h3 class="toggle-share">Share</h3>
-            <table class="share">
-                <tr class="share-button">
-                    <td>
-                        <!--Facebook share -->
-                        <div class="fb-share-button" data-href="https://www.your-domain.com/your-page.html" data-layout="button_count" data-size="large" data-mobile-iframe="true">
-                            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
-                        </div>
-                    </td>
-                    <td>
-                        <!--Twitter share -->
-                        <div class="share-button">
-                            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="large">Tweet</a>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-            <h3>Help</h3>
-            <hr>
-            <p class="fhsu-version">FHSU Map Version 1.0</p>
-        </div>
+        <div id="sidebar-hamburger" class="sidebar-content" style="display:none">Some content for main menu</div>
         <!-- the code above will use in "N-spa.js" -->
         <div id="sidebar-search" class="sidebar-content" style="display:none">Some content for search</div>
         <div id="sidebar-layers" class="sidebar-content">Some content for layers</div>
@@ -372,6 +278,7 @@
 		var markerArray;
 		var startEndMarkerArray = [];
 		var map;
+		
 		//var infoWindow;
 		
 		var searchResults = [];
@@ -384,13 +291,17 @@
 	</script>
 	
 	<script>
+	//----------TEMPLATES BUILT WITH MUSTACHE : Build menu buttons and hamburger menu dynamically with data from JSON-----------
 	$.getJSON( "http://localhost/fhsumap/json_fhsuDataTypes.json", function( data ) {
-		var templateBuildingDirectory = '<h3>Building Directory</h3>{{#buildings}}<li class="sidebarOption">{{buildingName}} ({{code}})</li>{{/buildings}}';
+		var templateBuildingDirectory = '<h3>Building Directory</h3>{{#buildings}}<li class="sidebarOption" data-buildingID="{{id}}" onClick="toggleBuilding("data-buildingID")>{{buildingName}} ({{code}})</li>{{/buildings}}';
 		Mustache.parse(templateBuildingDirectory);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateBuildingDirectory, data);
 		$('#sidebar-building').html(rendered);
 
 		var templateWalkingDirectionBuildings = '<br><h3>Walking&nbsp;Directions</h3>' +
+		'<div id="walkingResetButtonContainer" class="sameLineStyle">' +
+			'<button id="walkingResetButton" class="resetButtons" type="button" onClick="clearDirections()"><img src="siteImages/white-restart-512.png"></button>' +
+		'</div>' +
 		'<div id="walkingInstructionText">' +
 			'<span class="intructionTexts">Select buildings from dropdown menus</span>' +
 		'</div>' +
@@ -425,14 +336,53 @@
 		var rendered = Mustache.render(templateWalkingDirectionBuildings, data);
 		$('#sidebar-direction').html(rendered);
 
-		var templateParking = '<br><h3>Parking</h3>{{#buildings}}<li class="sidebarOption">{{buildingName}}</li>{{/buildings}}';
+		var templateParking = '<br><h3>Parking</h3>{{#buildings}}<li class="sidebarOption" data-parkingAtBuildingID="{{id}}" onClick="toggleParking("data-parkingAtBuildingID")>{{buildingName}}</li>{{/buildings}}';
 		Mustache.parse(templateParking);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateParking, data);
 		$('#sidebar-parking').html(rendered);
 
 		var templateCategories = '<h3>Main Menu</h3>'+
-		'<div><h3>Student Information</h3><table>Insert student info here!</table></div>' +
-		'<div><h3>Share</h3><table>Insert share information here!</table></div>' +
+		'<div><h3 class="toggle-student-info">Student Information</h3>' +
+			'<table  class="student-info">' +
+				'<tr>' +
+                    '<td>Student Name:</td>' +
+                    '<td>{{firstName}} {{lastName}}</td>' +
+                '</tr>' +
+				'{{#myClass}}' +
+				'<th>{{classCode}}: {{title}}</th>' +
+                '<tr>' +
+                    '<td>Location: </td>' +
+                    '<td>{{building}} {{room}}</td>' +
+                '</tr>' +
+                '<tr>' +
+                    '<td>Time: </td>' +
+                    '<td>{{#days}} {{processDays}} {{/days}}</td>' +
+                '</tr>' +
+                '<tr>' +
+                    '<td>Instructor: </td>' +
+                    '<td>{{instructor}}</td>' +
+                '</tr>' +
+				'{{/myClass}}' +
+			'</table>' +
+		'</div>' +
+		'<div><h3 class="toggle-share">Share</h3>' +
+			//'<table class="share">' +
+			//	'<tr class="share-button">' +
+            //       '<td>' +
+            //            //Facebook share
+            //            '<div class="fb-share-button" data-href="https://www.your-domain.com/your-page.html" data-layout="button_count" data-size="large" data-mobile-iframe="true">' +
+                            //'<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>' +
+            //            '</div>' +
+            //        '</td>' +
+            //        '<td>' +
+                        //Twitter share 
+            //            '<div class="share-button">' +
+                            //'<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="large">Tweet</a>' +
+            //            '</div>' +
+            //        '</td>' +
+            //    '</tr>' +
+			//'</table>' +
+		'</div>' +
 		'<div><h3>About</h3>' +
 			'<div>' +
 				'<p>Insert about info here... </p>' +
@@ -448,20 +398,23 @@
 				'<p>Created by Monica Michaud, Meng (Ella) Ding, Conner Chessmore, Yangyang Cui</p>' +
 				'<p>In the Institute for New Media Studies and Informatics Department</p>' +
 				'<p>Advisers: Gordon Carlson, PhD ; Nicholas Caporusso</p>' +
-				'<p>Dev Version: 0.2.4 (Nov 28)</p>' +
+				'<p>Dev Version: 0.2.4 (Dec 4)</p>' +
 			'</div></div>' +
 		'{{#personalData}}<li class="sidebarOption">{{label}}</li>{{/personalData}}<br>';
 		Mustache.parse(templateCategories);   // optional, speeds up future uses
+		data.processDays = function() {
+			return this;
+		}
 		var rendered = Mustache.render(templateCategories, data);
 		$('#sidebar-main').html(rendered);
 
-		var templateCategories = '<h3>Layers</h3>{{#layersMenuOptions}}<li class="sidebarOption" data-layerID="{{layerID}}">{{label}}</li>{{/layersMenuOptions}}<br>'; 
+		var templateCategories = '<h3>Layers</h3>{{#layersMenuOptions}}<li class="sidebarOption" data-layerID="{{layerID}}" onClick="toggleLayer("data-layerID")>{{label}}</li>{{/layersMenuOptions}}<br>'; 
 		Mustache.parse(templateCategories);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateCategories, data);
 		$('#sidebar-layers').html(rendered);
 		//console.log(rendered);
 
-		var templateCategories = '<h3>Tours</h3>{{#toursMenuOptions}}<li class="sidebarOption">{{label}}</li>{{/toursMenuOptions}}<br>';
+		var templateCategories = '<h3>Tours</h3>{{#toursMenuOptions}}<li class="sidebarOption" data-tourID="{{tourID}}" onClick="toggleTour("data-tourID")>{{label}}</li>{{/toursMenuOptions}}<br>';
 		Mustache.parse(templateCategories);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateCategories, data);
 		$('#sidebar-tour').html(rendered);
@@ -495,10 +448,18 @@
 				DataTypesInformation = JSON.parse(this.responseText);
 			//console.log(DataTypesInformation);
 			
-			var test_building_data = getBuildingID(2);
-			var test_poi_data = getPOIID(4);
 			
-			drawPOI (test_poi_data.latLng, test_poi_data.title, map);
+			var test_poi_data = getPOIID(4);
+			var test_parking_data = getParkingID(4);
+			var test_polylines_data = getPolylineID(2);
+			var test_polygons_data = getPolygonID(1);
+			var test_circles_data = getCircleID(1);
+			
+			//drawPOI (test_poi_data.latLng, test_poi_data.title, map);
+			//drawParking (test_parking_data.parkingOutline, map);
+			//drawPolyline (test_polylines_data.latLngArray, map);
+			//drawPolygon (test_polygons_data.outline, map);
+			//drawCircle (test_circles_data.latLngCenter, test_circles_data.radius, map);
 			
 			//console.log(test_building_data);
 			//console.log(test_poi_data);
@@ -653,7 +614,9 @@
 	<script src="./js/interactions.js"></script>
 	<script src="./js/directions.js"></script>
 	<script src="./js/drawings.js"></script>
+	<script src="./js/toggle.js"></script>
 
+	
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMYzAk4QMdMjpWb7ecr5ImwRaV8xp1sDw&callback=initMap" async defer></script>
 
     <script type="text/javascript">

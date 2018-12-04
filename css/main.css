@@ -17,6 +17,11 @@
         background-color: lightblue;
     }
     
+	img {
+		width: 15px;
+		height: 15px;
+	}
+	
     a {
         color: black;
     }
@@ -61,7 +66,18 @@
 		border-color: #000000;	
 	}
 	*/
-
+	.resetButtons {
+		background-color: #000000;
+		margin: 10px 0px 0px 0px;
+		border: #000000 solid 1px;
+		padding: 1px;
+		width: 30px;
+		height: 30px;
+	}
+	.resetButtons:hover {
+		border-color: #eaaf0f;
+		border-width: 1px;
+	}
 	
 	/*WALKING DIRECTIONS STYLES*/
 	#walkingSelectionsStartDropdownOption {

@@ -2366,10 +2366,10 @@
 			"parkingName"		: "C", 
 			"latLngCenter"		: {"lat": 38.87263, "lng": -99.34132},
 			"parkingOutline"	: [
-				{"lat"	: 38.87254, "lng"  : -99.34144},
 				{"lat"	: 38.8725 , "lng"	: -99.34128},
+				{"lat"	: 38.87254, "lng"  : -99.34144},
 				{"lat"	: 38.87267, "lng"	: -99.34138},
-				{"lat"	: 38.87265, "lng"	: -99.34119} 
+				{"lat"	: 38.87265, "lng"	: -99.34119}
 				],
 			"disabledParking"   : "true",
 			"visitorParking"    : "false",

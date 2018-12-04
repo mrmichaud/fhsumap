@@ -59,6 +59,21 @@ function initMap() {
 		]
 	});
 	
+	
+	// Instantiate a directions service.
+	directionsService = new google.maps.DirectionsService;
+	// Create a renderer for directions and bind it to the map.
+	directionsDisplay = new google.maps.DirectionsRenderer({
+			map: map,
+			polylineOptions: {strokeColor: 'black'},
+			suppressMarkers: true,
+			//markerOptions: {strokeColor: "blue"}
+			
+		});
+	// Instantiate an info window to hold step text.
+	stepDisplay = new google.maps.InfoWindow;
+	markerArray = [];
+	
 	//Define dummy infoWindow for use in drawing data type objects
 	infoWindow = new google.maps.InfoWindow({
 		position: {lat: 38.8726, lng: -99.34339},

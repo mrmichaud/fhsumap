@@ -33,8 +33,10 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 	
 	directionsService.route(
 		{
-			origin: DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance,
-			destination: DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance,
+			origin: getBuildingID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance,
+			destination: getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance,			
+			//origin: DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance,
+			//destination: DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance,
 			travelMode: 'WALKING'
 		}, 
 		
@@ -54,14 +56,14 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 				directionsDisplay.setDirections(response);
 				
 				var startMarker = new google.maps.Marker({
-                    position: DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance,
+                    position: getBuildingID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance,
                     map: map,
                     icon: startAndEnd
                 });
 				startEndMarkerArray.push(startMarker);
 				
 				var endMarker = new google.maps.Marker({
-                    position: DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance,
+                    position: getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance,
                     map: map,
                     icon: startAndEnd
                 });

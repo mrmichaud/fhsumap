@@ -2747,7 +2747,7 @@
 		{
 			"id" : 1,
 			"label": "Academics",
-			"layerID" : [1]
+			"layerID" : [1,2]
 		},
 		{
 			"id" : 2,		
@@ -2784,31 +2784,61 @@
 			"id" : 1,		
 			"layerName": "Academics",
 			"layerDescription" : "All academic buildings",
-			"elements" : {
-				"myElement" : {
+			"elements" : [
+				{
 					"type" : "buildings",
 					"id" : 4
 				},
-				"myElement" : {
+				{
 					"type" : "buildings",
 					"id" : 5
 				}
-			}		
+			]		
 		},
 		{
 			"id" : 2,		
 			"layerName": "Athletics",
 			"layerDescription" : "All athletic buildings",
-			"elements" : {
-				"myElement" : {
+			"elements" : [
+				{
 					"type" : "buildings",
 					"id" : 12
 				},
-				"myElement" : {
+				{
 					"type" : "buildings",
 					"id" : 15
 				}
-			}
+			]
+		},
+		{
+			"id" : 3,		
+			"layerName": "Residence Buildings",
+			"layerDescription" : "All residence buildings",
+			"elements" : [
+				{
+					"type" : "buildings",
+					"id" : 20
+				},
+				{
+					"type" : "buildings",
+					"id" : 21
+				}
+			]
+		},
+		{
+			"id" : 4,		
+			"layerName": "Service Buildings",
+			"layerDescription" : "All service buildings",
+			"elements" : [
+				{
+					"type" : "buildings",
+					"id" : 35
+				},
+				{
+					"type" : "buildings",
+					"id" : 34
+				}
+			]
 		}
 		
 	],
@@ -2818,105 +2848,103 @@
 			"id" : 1,		
 			"tourName": "Campus Tour",
 			"tourDescription" : "FHSU Campus Picture Tour",
-			"elements" : {
-				"myElement" : {
+			"elements" : [
+				{
 					"type" : "pois",
 					"id" : 3
 				},
-				"myElement" : {
+				{
 					"type" : "pois",
 					"id" : 4
 				},
-				"myElement" : {
+				{
 					"type" : "pois",
 					"id" : 5
 				},
-				"myElement" : {
+				{
 					"type" : "pois",
 					"id" : 6
 				},
-				"myElement" : {
+				{
 					"type" : "pois",
 					"id" : 7
 				},
-				"myElement" : {
+				{
 					"type" : "pois",
 					"id" : 8
 				},
-				"myElement" : {
+				{
 					"type" : "pois",
 					"id" : 9
 				},
-				"myElement" : {
+				{
 					"type" : "pois",
 					"id" : 10
 				},
-				"myElement" : {
+				{
 					"type" : "pois",
 					"id" : 11
 				},
-				"myElement" : {
-					"type" : "polyline",
+				{
+					"type" : "polylines",
 					"id" : 2
 				}
-			}
+			]
 		},
 		{
 			"id" : 2,		
 			"layerName": "Video Tour",
 			"layerDescription" : "FHSU Campus Video Tour",
-			"elements" : {
-				"myElement" : {
+			"elements" : [
+				{
 					"type" : "pois",
 					"id" : 12
 				},
-				"myElement" : {
+				{
 					"type" : "pois",
 					"id" : 13
 				},
-				"myElement" : {
+				{
 					"type" : "pois",
 					"id" : 14
 				},
-				"myElement" : {
+				{
 					"type" : "pois",
 					"id" : 15
 				},
-				"myElement" : {
+				{
 					"type" : "pois",
 					"id" : 16
 				},
-				"myElement" : {
+				{
 					"type" : "pois",
 					"id" : 17
 				},
-				"myElement" : {
+				{
 					"type" : "pois",
 					"id" : 18
 				},
-				"myElement" : {
+				{
 					"type" : "pois",
 					"id" : 19
 				},
-				"myElement" : {
+				{
 					"type" : "pois",
 					"id" : 20
 				},
-				"myElement" : {
-					"type" : "polyline",
+				{
+					"type" : "polylines",
 					"id" : 2
 				}
-			}
+			]
 		}
 	],
 	
-	"studentData":[
-		{
+	"studentData":{
 			"firstName" : "Monica",
 			"lastName"  : "Michaud",
 			"email"     : "mrmmichaud@mail.fhsu.edu",
-			"classes"     : {
-				"myClass" : {
+			"classes"     : [ {
 					"classCode" : "ENG 126",
 					"title" : "Introduction to Literature",
 					"instructor" : "Scott, Pauline",
@@ -2933,7 +2961,7 @@
 						{"SUN": ""}
 					]
 				},
-				"myClass" : {
+				 {
 					"classCode" : "GSCI 120",
 					"title" : "World Geography",
 					"instructor" : "Schafer, Thomas",
@@ -2950,74 +2978,8 @@
 						{"SUN": ""}
 					]
 				}				
-			}
+			]
 		},
-		{
-			"firstName" : "Conner",
-			"lastName"  : "Chessmore",
-			"email"     : "cdchessmore@mail.fhsu.edu",
-			"classes"     : {
-				"myClass" : {
-					"classCode" : "INF 640",
-					"title" : "Introduction to Electronic Media",
-					"instructor" : "Schleicher, Steven",
-					"building" : "HMH",
-					"room" : "106",
-					"latLng" : {"lat": 38.871835, "lng": -99.344293},
-					"days"      : [
-						{"MON": "12:30 PM - 1:20 PM"},
-						{"TUE": ""},
-						{"WED": ""},
-						{"THU": "12:30 PM - 1:20 PM"},
-						{"FRI": ""},
-						{"SAT": ""},
-						{"SUN": ""}
-					]
-				}		
-			}			
-		},
-		{
-			"firstName" : "Bobby",
-			"lastName"  : "Example",
-			"email"     : "bobbyexample@mail.fhsu.edu",
-			"classes"     : {
-				"myClass" : {
-					"classCode" : "ART 121",
-					"title" : "Introduction to Painting",
-					"instructor" : "Hwang, Jee",
-					"building" : "RH",
-					"room" : "114",
-					"latLng" : {"lat": 38.87405, "lng": -99.33962},
-					"days"      : [
-						{"MON": ""},
-						{"TUE": ""},
-						{"WED": "9:30 AM - 12:15 PM"},
-						{"THU": "12:30 PM - 1:20 PM"},
-						{"FRI": ""},
-						{"SAT": ""},
-						{"SUN": ""}
-					]
-				},
-				"myClass" : {
-					"classCode" : "ART 342",
-					"title" : "3-D Design",
-					"instructor" : "Flores, Tobias",
-					"building" : "RH",
-					"room" : "121",
-					"latLng" : {"lat": 38.87405, "lng": -99.33962},
-					"days"      : [
-						{"MON": "12:30 PM - 1:20 PM"},
-						{"TUE": ""},
-						{"WED": "9:30 AM - 12:15 PM"},
-						{"THU": "12:30 PM - 1:20 PM"},
-						{"FRI": ""},
-						{"SAT": ""},
-						{"SUN": ""}
-					]
-				}				
-			}			
-		}
-	],
 	
 	"mapSettings": [
 		{

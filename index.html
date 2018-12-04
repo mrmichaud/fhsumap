@@ -293,7 +293,7 @@
 	<script>
 	//----------TEMPLATES BUILT WITH MUSTACHE : Build menu buttons and hamburger menu dynamically with data from JSON-----------
 	$.getJSON( "http://localhost/fhsumap/json_fhsuDataTypes.json", function( data ) {
-		var templateBuildingDirectory = '<h3>Building Directory</h3>{{#buildings}}<li class="sidebarOption" data-buildingID="{{id}}" onClick="toggleBuilding("data-buildingID")>{{buildingName}} ({{code}})</li>{{/buildings}}';
+		var templateBuildingDirectory = '<h3>Building Directory</h3>{{#buildings}}<li class="sidebarOption toggleBuilding" data-buildingid="{{id}}">{{buildingName}} ({{code}})</li>{{/buildings}}';
 		Mustache.parse(templateBuildingDirectory);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateBuildingDirectory, data);
 		$('#sidebar-building').html(rendered);
@@ -313,7 +313,7 @@
 					'</div>' +
 					'<div id="walkingSelectionsStartDropdownOption">' +
 						'<select name="start" id="walkingDirectionsStartInput">' +
-							'{{#buildings}}<option value={{code}}>{{buildingName}}</option>{{/buildings}}' +
+							'{{#buildings}}<option value={{id}}>{{buildingName}}</option>{{/buildings}}' +
 						'</select>' +
 					'</div>' +
 				'</div>' +
@@ -323,7 +323,7 @@
 					'</div>' +
 					'<div id="walkingSelectionsEndDropdownOption">' +
 						'<select name="end" id="walkingDirectionsEndInput">' +
-							'{{#buildings}}<option value={{code}}>{{buildingName}}</option>{{/buildings}}' +
+							'{{#buildings}}<option value={{id}}>{{buildingName}}</option>{{/buildings}}' +
 						'</select>' +
 					'</div>' +
 				'</div>' +
@@ -336,7 +336,7 @@
 		var rendered = Mustache.render(templateWalkingDirectionBuildings, data);
 		$('#sidebar-direction').html(rendered);
 
-		var templateParking = '<br><h3>Parking</h3>{{#buildings}}<li class="sidebarOption" data-parkingAtBuildingID="{{id}}" onClick="toggleParking("data-parkingAtBuildingID")>{{buildingName}}</li>{{/buildings}}';
+		var templateParking = '<br><h3>Parking</h3>{{#buildings}}<li class="sidebarOption" data-parkingAtBuildingID="{{id}}" onClick="toggleParking({{id}})">{{buildingName}}</li>{{/buildings}}';
 		Mustache.parse(templateParking);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateParking, data);
 		$('#sidebar-parking').html(rendered);
@@ -348,7 +348,7 @@
                     '<td>Student Name:</td>' +
                     '<td>{{firstName}} {{lastName}}</td>' +
                 '</tr>' +
-				'{{#myClass}}' +
+				'{{#classes}}' +
 				'<th>{{classCode}}: {{title}}</th>' +
                 '<tr>' +
                     '<td>Location: </td>' +
@@ -362,7 +362,7 @@
                     '<td>Instructor: </td>' +
                     '<td>{{instructor}}</td>' +
                 '</tr>' +
-				'{{/myClass}}' +
+				'{{/classes}}' +
 			'</table>' +
 		'</div>' +
 		'<div><h3 class="toggle-share">Share</h3>' +
@@ -405,16 +405,16 @@
 		data.processDays = function() {
 			return this;
 		}
-		var rendered = Mustache.render(templateCategories, data);
-		$('#sidebar-main').html(rendered);
+		var rendered = Mustache.render(templateCategories, data.studentData);
+		$('#sidebar-hamburger').html(rendered);
 
-		var templateCategories = '<h3>Layers</h3>{{#layersMenuOptions}}<li class="sidebarOption" data-layerID="{{layerID}}" onClick="toggleLayer("data-layerID")>{{label}}</li>{{/layersMenuOptions}}<br>'; 
+		var templateCategories = '<h3>Layers</h3>{{#layersMenuOptions}}<li class="sidebarOption" data-layerID="{{#layerID}}{{.}},{{/layerID}}" onClick="toggleLayer({{#layerID}}{{.}},{{/layerID}})">{{label}}</li>{{/layersMenuOptions}}<br>'; 
 		Mustache.parse(templateCategories);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateCategories, data);
 		$('#sidebar-layers').html(rendered);
 		//console.log(rendered);
 
-		var templateCategories = '<h3>Tours</h3>{{#toursMenuOptions}}<li class="sidebarOption" data-tourID="{{tourID}}" onClick="toggleTour("data-tourID")>{{label}}</li>{{/toursMenuOptions}}<br>';
+		var templateCategories = '<h3>Tours</h3>{{#toursMenuOptions}}<li class="sidebarOption" data-tourID="{{tourID}}" onClick="toggleTour({{tourID}})">{{label}}</li>{{/toursMenuOptions}}<br>';
 		Mustache.parse(templateCategories);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateCategories, data);
 		$('#sidebar-tour').html(rendered);
@@ -448,13 +448,14 @@
 				DataTypesInformation = JSON.parse(this.responseText);
 			//console.log(DataTypesInformation);
 			
-			
+			var test_building_data = getBuildingID(2);
 			var test_poi_data = getPOIID(4);
 			var test_parking_data = getParkingID(4);
 			var test_polylines_data = getPolylineID(2);
 			var test_polygons_data = getPolygonID(1);
 			var test_circles_data = getCircleID(1);
 			
+			drawBuilding (test_building_data.buildingOutline, map);
 			//drawPOI (test_poi_data.latLng, test_poi_data.title, map);
 			//drawParking (test_parking_data.parkingOutline, map);
 			//drawPolyline (test_polylines_data.latLngArray, map);
@@ -606,18 +607,19 @@
 		} // end inParkingCodes
 		
 	</script>
-	
+	    
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMYzAk4QMdMjpWb7ecr5ImwRaV8xp1sDw&callback=initMap" async defer></script>
+
     <script src="./js/N-spa.js"></script>
 	<!--
 	<script src="./js/buildingData.js"></script>
 	-->
 	<script src="./js/interactions.js"></script>
-	<script src="./js/directions.js"></script>
 	<script src="./js/drawings.js"></script>
 	<script src="./js/toggle.js"></script>
+	<script src="./js/directions.js"></script>
 
 	
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMYzAk4QMdMjpWb7ecr5ImwRaV8xp1sDw&callback=initMap" async defer></script>
 
     <script type="text/javascript">
         //service worker registration
@@ -633,7 +635,20 @@
     </script>
 
     <!-- javascript -->
+<script>
+/*This is for managing the building toggle function*/
+$('#sidebar-building').on('click','li.toggleBuilding',function(){
+console.log($(this).data('buildingid'));
+});
 
+/*Corrects map height in desktop and mobile versions*/
+$(function(){
+	$('#map').height(window.innerHeight - $('#top-navbar').height()-$('#m-b-navbar').height()-3);
+});
+$(window).resize(function(){
+	$('#map').height(window.innerHeight - $('#top-navbar').height()-$('#m-b-navbar').height()-3);
+});
+</script>
 </body>
 
 </html>

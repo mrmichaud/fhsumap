@@ -30,7 +30,7 @@ $(".nav-sb-menu").on('click', function() {
 });
 
 /* toggle student-info in sidebar */
-$(".toggle-student-info").on('click', function() {
+$("#sidebar").on('click', ".toggle-student-info",function() {
     $(".student-info").toggle();
 });
 

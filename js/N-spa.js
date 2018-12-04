@@ -71,6 +71,6 @@ $(".toggle-share").on('click', function() {
               
 
        });     
-      };
+};
     
 */

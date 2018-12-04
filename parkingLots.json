@@ -1,0 +1,655 @@
+{
+	"buildings":[
+		{
+			"code": "PH",
+			"buildingNumber": "010",
+			"buildingName": "Picken Hall"			
+		},
+		{
+			"code": "SH",
+			"buildingNumber": "002",
+			"buildingName": "Sheridan Hall"			
+		},
+		{
+			"code": "MC",
+			"buildingNumber": "003",
+			"buildingName": "McCartney Hall"			
+		},
+		{
+			"code": "AH",
+			"buildingNumber": "004",
+			"buildingName": "Albertson Hall"			
+		},
+		{
+			"code": "CAT",
+			"buildingNumber": "033",
+			"buildingName": "Center for Applied Technology"			
+		},
+		{
+			"code": "MAH",
+			"buildingNumber": "009",
+			"buildingName": "Martin Allen Hall"			
+		},
+		{
+			"code": "MH",
+			"buildingNumber": "013",
+			"buildingName": "Malloy Hall"			
+		},
+		{
+			"code": "BB",
+			"buildingNumber": "036",
+			"buildingName": "Brooks building"			
+		},
+		{
+			"code": "LFS",
+			"buildingNumber": "030",
+			"buildingName": "Lewis Fielld Stadium"			
+		},
+		{
+			"code": "FL",
+			"buildingNumber": "014",
+			"buildingName": "Forsyth Library"			
+		},
+		{
+			"code": "CH",
+			"buildingNumber": "040",
+			"buildingName": "Cunningham Hall"			
+		},
+		{
+			"code": "GMC",
+			"buildingNumber": "039",
+			"buildingName": "Gross Memorial Coliseum"			
+		},
+		{
+			"code": "STH",
+			"buildingNumber": "011",
+			"buildingName": "Stroup Hall"			
+		},
+		{
+			"code": "RH",
+			"buildingNumber": "008",
+			"buildingName": "Rarich Hall"			
+		},
+		{
+			"code": "TH",
+			"buildingNumber": "016",
+			"buildingName": "Tomanek Hall"			
+		},
+		{
+			"code": "SBTF",
+			"buildingNumber": "031",
+			"buildingName": "Schmidt Bickle Training Facility"			
+		},
+		{
+			"code": "HMH",
+			"buildingNumber": "017",
+			"buildingName": "Hammond Hall"			
+		},
+		{
+			"code": "GG",
+			"buildingNumber": "035",
+			"buildingName": "Grounds & Greenhouse"			
+		},
+		{
+			"code": "WBCP",
+			"buildingNumber": "037",
+			"buildingName": "C.A Witt Building, Center Purchasing"			
+		},
+		{
+			"code": "MP",
+			"buildingNumber": "034",
+			"buildingName": "Motor Pool"			
+		},
+		{
+			"code": "OPP",
+			"buildingNumber": "007",
+			"buildingName": "Old Power PLant"			
+		},
+		{
+			"code": "AEC",
+			"buildingNumber": "018",
+			"buildingName": "Akers Energy Center"			
+		},
+		{
+			"code": "SCMF",
+			"buildingNumber": "032",
+			"buildingName": "South Campus Maintenance Facility"			
+		},
+		{
+			"code": "WCB",
+			"buildingNumber": "",
+			"buildingName": "Westlink Cell Building"			
+		},
+		{
+			"code": "SGB",
+			"buildingNumber": "019",
+			"buildingName": "Switch Gear Building"			
+		},
+		{
+			"code": "MU",
+			"buildingNumber": "005",
+			"buildingName": "Memorial Union"			
+		},
+		{
+			"code": "CH",
+			"buildingNumber": "020",
+			"buildingName": "Custer Hall"			
+		},
+		{
+			"code": "AH",
+			"buildingNumber": "023",
+			"buildingName": "Agnew Hall"			
+		},
+		{
+			"code": "WP1",
+			"buildingNumber": "024",
+			"buildingName": "Wooster Place No. 1"			
+		},
+		{
+			"code": "WP2",
+			"buildingNumber": "025",
+			"buildingName": "Wooster Place No. 2"			
+		},
+		{
+			"code": "SP",
+			"buildingNumber": "028",
+			"buildingName": "Stadium Place"			
+		},
+		{
+			"code": "HH",
+			"buildingNumber": "022",
+			"buildingName": "Heather Hall"			
+		},
+		{
+			"code": "PR",
+			"buildingNumber": "012",
+			"buildingName": "President's Residence"			
+		},
+		{
+			"code": "VEV",
+			"buildingNumber": "026",
+			"buildingName": "Victor E. Village"			
+		},
+		{
+			"code": "MCH",
+			"buildingNumber": "021",
+			"buildingName": "McMindes Hall"			
+		},
+		{
+			"code": "TV",
+			"buildingNumber": "029",
+			"buildingName": "Tiger Village"			
+		},
+		{
+			"code": "HH",
+			"buildingNumber": "027",
+			"buildingName": "Hansen Hall"			
+		},
+		{
+			"code": "RLMF",
+			"buildingNumber": "031",
+			"buildingName": "Residential Life Maintenance Facility"			
+		},
+		{
+			"code": "FF",
+			"buildingNumber": "038",
+			"buildingName": "FHSU Foundation"			
+		},
+		{
+			"code": "PSH",
+			"buildingNumber": "015",
+			"buildingName": "Plymouth School House"			
+		}
+
+	],
+	"parking":[
+		{
+			"zone"				: "1",
+			"parkingName"		: "A-1", 
+			"latLngCenter"		: {"lat": 38.8757, "lng": -99.34324},
+			"parkingOutline"	: [
+				{"lat"	: 38.87554, "lng"	: -99.34332},
+				{"lat"	: 38.87553, "lng"	: -99.34327}, 
+				{"lat"	: 38.87579, "lng"	: -99.34315}, 
+				{"lat"	: 38.87581, "lng"	: -99.34321}, 
+				],
+			"disabledParking"   : "true",
+			"visitorParking"    : "true",
+			"cycleStalls"       : "false",
+			"staffParking"      : "true",
+			"nearbyBuildings"	:	["034","033"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	"  "
+		},
+
+		{
+			"zone"				: "1",
+			"parkingName"		: "A-2", 
+			"latLngCenter"		: {"lat": 38.87478, "lng": -99.34311},
+			"parkingOutline"	: [
+				{"lat"	: 38.87518, "lng"	: -99.34363},
+				{"lat"	: 38.87489, "lng"	: -99.34384},
+				{"lat"	: 38.87435, "lng"	: -99.34252},
+				{"lat"	: 38.87466, "lng"	: -99.34231},
+				{"lat"	: 38.87518, "lng"	: -99.34363}
+				],
+			"disabledParking"   : "true",
+			"visitorParking"    : "false",
+			"cycleStalls"       : "false",
+			"staffParking"      : "false",
+			"nearbyBuildings"	:	["033","005","035","012"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	" "
+		},
+
+		{
+			"zone"				: "1",
+			"parkingName"		: "A-3", 
+			"latLngCenter"		: {"lat": 38.87443, "lng": -99.34463},
+			"parkingOutline"	: [
+				{"lat"	: 38.87359, "lng"	: -99.34427},				
+				{"lat"	: 38.8731,  "lng"	: -99.34431},
+				{"lat"	: 38.8731,  "lng"	: -99.34438},
+				{"lat"	: 38.8736,  "lng"	: -99.34436},			
+				{"lat"	: 38.87361, "lng"	: -99.34466},
+				{"lat"	: 38.87406, "lng"	: -99.34485},
+				{"lat"	: 38.87412, "lng"	: -99.345},
+				{"lat"	: 38.87418, "lng"	: -99.34508},
+				{"lat"	: 38.87448, "lng"	: -99.34518},
+				{"lat"	: 38.87472, "lng"	: -99.34506},
+				{"lat"	: 38.87503, "lng"	: -99.34478},
+				{"lat"	: 38.87485, "lng"	: -99.34436},
+				{"lat"	: 38.87477, "lng"	: -99.34442},
+				{"lat"	: 38.87468, "lng"	: -99.34442},
+				{"lat"	: 38.87474, "lng"	: -99.34437},
+				{"lat"	: 38.87475, "lng"	: -99.34418},			
+				{"lat"	: 38.87465, "lng"	: -99.34418},
+				{"lat"	: 38.87466, "lng"	: -99.34402},
+				{"lat"	: 38.87469, "lng"	: -99.34396},
+				{"lat"	: 38.87488, "lng"	: -99.34379},
+				{"lat"	: 38.87485, "lng"	: -99.34372},
+				{"lat"	: 38.87467, "lng"	: -99.3439},
+				{"lat"	: 38.87461, "lng"	: -99.34399},
+				{"lat"	: 38.87459, "lng"	: -99.34418},		
+				{"lat"	: 38.87412, "lng"	: -99.34415},
+				{"lat"	: 38.87406, "lng"	: -99.34428},
+				{"lat"	: 38.87359, "lng"	: -99.34427}
+				],
+			"disabledParking"   : "false",
+			"visitorParking"    : "false",
+			"cycleStalls"       : "false",
+			"staffParking"      : "false",
+			"nearbyBuildings"	:	["012","011","035"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	" "
+		},
+		{
+			"zone"				: "1",
+			"parkingName"		: "C", 
+			"latLngCenter"		: {"lat": 38.87263, "lng": -99.34132},
+			"parkingOutline"	: [
+				{"lat"	: 38.87254, "lng"  : -99.34144},
+				{"lat"	: 38.8725 , "lng"	: -99.34128},
+				{"lat"	: 38.87267, "lng"	: -99.34138},
+				{"lat"	: 38.87265, "lng"	: -99.34119}, 
+				],
+			"disabledParking"   : "true",
+			"visitorParking"    : "false",
+			"cycleStalls"       : "false",
+			"staffParking"      : "true",
+			"nearbyBuildings"	:	["002","003"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	"  "
+		},
+
+		{
+			"zone"				: "1",
+			"parkingName"		: "D", 
+			"latLngCenter"		: {"lat": 38.87254, "lng": -99.34409},
+			"parkingOutline"	: [
+				{"lat"	: 38.87296, "lng"	: -99.3436},
+				{"lat"	: 38.873,   "lng"	: -99.34419},
+				{"lat"	: 38.87253, "lng"	: -99.34452},
+				{"lat"	: 38.87229, "lng"	: -99.34403},
+				{"lat"	: 38.87206, "lng"	: -99.34399},
+				{"lat"	: 38.87197, "lng"	: -99.34377},
+				{"lat"	: 38.87202, "lng"	: -99.34359},
+				{"lat"	: 38.87217, "lng"	: -99.34348},
+				{"lat"	: 38.87222, "lng"	: -99.34359},
+				{"lat"	: 38.87238, "lng"	: -99.34348},
+				{"lat"	: 38.87255, "lng"	: -99.3439},
+				{"lat"	: 38.87296, "lng"	: -99.3436}
+				],
+			"disabledParking"   : "true",
+			"visitorParking"    : "",
+			"cycleStalls"       : "",
+			"staffParking"      : "true",
+			"nearbyBuildings"	:	["013","017","016","014"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	" Done "
+		},
+
+		{
+			"zone"				: "2",
+			"parkingName"		: "E", 
+			"latLngCenter"		: {"lat": 38.87121, "lng": -99.34211},
+			"parkingOutline"	: [
+				{"lat"	: 38.87142, "lng"	: -99.34212},
+				{"lat"	: 38.87078, "lng"	: -99.34232},
+				{"lat"	: 38.87078, "lng"	:-99.34203 },
+				{"lat"	: 38.87144, "lng"	: -99.34183}
+				],
+			"disabledParking"   : "",
+			"visitorParking"    : "",
+			"cycleStalls"       : "",
+			"staffParking"      : "",
+			"nearbyBuildings"	:	["016","014","015"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	"  "
+		},
+		{
+			"zone"				: "2",
+			"parkingName"		: "F-1", 
+			"latLngCenter"		: {"lat": 38.87066, "lng": -99.34141}, 
+			"parkingOutline"	: [
+				{"lat"	: 38.8702, "lng"	: -99.34154}, 
+				{"lat"	: 38.87035, "lng"	: -99.3419},
+				{"lat"	: 38.87068, "lng"	: -99.34177},
+				{"lat"	: 38.87071, "lng"	: -99.34152},
+				{"lat"	: 38.87099, "lng"	: -99.34163}, 
+				{"lat"	: 38.87119, "lng"	: -99.34148}, 
+				{"lat"	: 38.87116, "lng"	: -99.34119}, 
+				{"lat"	: 38.87098, "lng"	: -99.34121}, 
+				{"lat"	: 38.87068, "lng"	: -99.34125}, 
+				{"lat"	: 38.87064, "lng"	: -99.341},
+				{"lat"	: 38.87053, "lng"	: -99.3409}, 
+				{"lat"	: 38.87037, "lng"	: -99.34103}
+				],
+			"disabledParking"   : "",
+			"visitorParking"    : "",
+			"cycleStalls"       : "",
+			"staffParking"      : "",
+			"nearbyBuildings"	:	["020"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	"  "
+		},
+		{
+			"zone"				: "2",
+			"parkingName"		: "F-2", 
+			"latLngCenter"		: {"lat": 38.87053, "lng": -99.34009}, 
+			"parkingOutline"	: [
+				{"lat"	: 38.87044, "lng"	: -99.34029},
+				{"lat"	: 38.87066, "lng"	: -99.34027}, 
+				{"lat"	: 38.8707, "lng"	: -99.34004}, 
+				{"lat"	: 38.87014, "lng"	: -99.34002},
+				],
+			"disabledParking"   : "",
+			"visitorParking"    : "",
+			"cycleStalls"       : "",
+			"staffParking"      : "",
+			"nearbyBuildings"	:	["020","021"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	"  "
+		},
+		{
+			"zone"				: "2",
+			"parkingName"		: "G", 
+			"latLngCenter"		: {"lat": 38.86955, "lng": -99.34145},
+			"parkingOutline"	: [
+				{"lat"	: 38.86971, "lng"	: -99.34157},
+				{"lat"	: 38.8697, "lng"	: -99.34113}, 
+				{"lat"	: 38.86933, "lng"	: -99.34122},
+				{"lat"	: 38.86941, "lng"	: -99.34188},
+				{"lat"	: 38.86941, "lng"	: -99.34082}, 
+				{"lat"	: 38.86951, "lng"	: -99.34114},
+				{"lat"	: 38.86932, "lng"	: -99.34083}
+				],
+			"disabledParking"   : "",
+			"visitorParking"    : "",
+			"cycleStalls"       : "",
+			"staffParking"      : "",
+			"nearbyBuildings"	:	["021","022"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	"  "
+		},
+		{
+			"zone"				: "2",
+			"parkingName"		: "H-1", 
+			"latLngCenter"		: {"lat": 38.86806, "lng": -99.34068}, 
+			"parkingOutline"	: [
+				{"lat"	: 38.86848,  "lng"	: -99.34066},
+				{"lat"	: 38.86847, "lng"	: -99.34041},
+				{"lat"	: 38.8674, "lng"	: -99.34057},
+				{"lat"	: 38.86741, "lng"	: -99.34082}
+				],
+			"disabledParking"   : "",
+			"visitorParking"    : "",
+			"cycleStalls"       : "",
+			"staffParking"      : "",
+			"nearbyBuildings"	:	["028"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	"  "
+		},
+		
+		{
+			"zone"				: "2",
+			"parkingName"		: "H-2", 
+			"latLngCenter"		: {"lat": 38.86805, "lng": -99.34167},
+			"parkingOutline"	: [
+				{"lat"	: 38.86858, "lng"	: -99.34128},
+				{"lat"	: 38.86812, "lng"	: -99.34149},
+				{"lat"	: 38.86772, "lng"	: -99.34147},
+				{"lat"	: 38.8674, "lng"	: -99.3414},
+				{"lat"	: 38.8674, "lng"	: -99.34169},
+				{"lat"	: 38.86774, "lng"	: -99.3418}, 
+				{"lat"	: 38.86816, "lng"	: -99.34181}, 
+				{"lat"	: 38.86863, "lng"	: -99.3416}
+				],
+			"disabledParking"   : "",
+			"visitorParking"    : "",
+			"cycleStalls"       : "",
+			"staffParking"      : "",
+			"nearbyBuildings"	:	["028"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	"  "
+		},
+		{
+			"zone"				: "2",
+			"parkingName"		: "I", 
+			"latLngCenter"		: {"lat": 38.86837, "lng": -99.34291},
+			"parkingOutline"	: [
+				{"lat"	: 38.86894, "lng"	: -99.34345},
+				{"lat"	: 38.8686, "lng"	: -99.34365},
+				{"lat"	: 38.86801, "lng"	: -99.34323},
+				{"lat"	: 38.86775, "lng"	: -99.34261},
+				{"lat"	: 38.86772, "lng"	: -99.34242}, 
+				{"lat"	: 38.86833, "lng"	: -99.34224},
+				{"lat"	: 38.86838, "lng"	: -99.34239},
+				{"lat"	: 38.86859, "lng"	: -99.3429},
+				],
+			"disabledParking"   : "",
+			"visitorParking"    : "",
+			"cycleStalls"       : "",
+			"staffParking"      : "",
+			"nearbyBuildings"	:	["026","024"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	"  "
+		},
+		{
+			"zone"				: "2",
+			"parkingName"		: "J", 
+			"latLngCenter"		: {"lat": 38.86808, "lng": -99.33934}, 
+			"parkingOutline"	: [
+				{"lat"	: 38.86709, "lng"	: -99.33989},
+				{"lat"	: 38.8677, "lng"	: -99.34041}, 
+				{"lat"	: 38.86844, "lng"	: -99.34026}, 
+				{"lat"	: 38.86897, "lng"	: -99.33976}, 
+				{"lat"	: 38.8694, "lng"	: -99.33927}, 
+				{"lat"	: 38.8677, "lng"	:  -99.3383}
+				],
+			"disabledParking"   : "",
+			"visitorParking"    : "",
+			"cycleStalls"       : "",
+			"staffParking"      : "",
+			"nearbyBuildings"	:	["030","029"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	"  "
+		},
+		{
+			"zone"				: "2",
+			"parkingName"		: "K", 
+			"latLngCenter"		: {"lat": 38.87285, "lng": -99.34892},
+			"parkingOutline"	: [
+				{"lat"	: 38.87313, "lng"	: -99.34978},
+				{"lat"	: 38.8721 , "lng"	: -99.34916}, 
+				{"lat"	: 38.87246, "lng"	: -99.34811},
+				{"lat"	: 38.87351, "lng"	: -99.34862},
+				],
+			"disabledParking"   : "",
+			"visitorParking"    : "",
+			"cycleStalls"       : "",
+			"staffParking"      : "",
+			"nearbyBuildings"	:	["039"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	"  "
+		},
+		{
+			"zone"				: "2",
+			"parkingName"		: "L", 
+			"latLngCenter"		: {"lat": 38.87193, "lng": -99.34791},
+			"parkingOutline"	: [
+				{"lat"	: 38.87351, "lng"	: -99.34862},
+				{"lat"	: 38.8715, "lng"	: -99.34752},
+				{"lat"	: 38.87157, "lng"	: -99.3473},
+				{"lat"	: 38.87146, "lng"	: -99.34768},
+				{"lat"	: 38.87123, "lng"	: -99.34721},
+				{"lat"	: 38.87239, "lng"	: -99.34834},
+				{"lat"	: 38.87147, "lng"	: -99.34771},
+				{"lat"	: 38.87146, "lng"	: -99.3476},
+				{"lat"	: 38.87121, "lng"	: -99.34736}
+			],
+			"disabledParking"   : "",
+			"visitorParking"    : "",
+			"cycleStalls"       : "",
+			"staffParking"      : "",
+			"nearbyBuildings"	:	["039","040"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	"  "
+		},
+		{
+			"zone"				: "2",
+			"parkingName"		: "M", 
+			"latLngCenter"		: {"lat": 38.87061, "lng": -99.34863},
+			"parkingOutline"	: [
+				{"lat"	: 38.87014, "lng"	: -99.34855},
+				{"lat"	: 38.87033, "lng"	: -99.34817}, 
+				{"lat"	: 38.87089, "lng"	: -99.34852},
+				{"lat"	: 38.87082, "lng"	: -99.34898} 		
+				],
+			"disabledParking"   : "",
+			"visitorParking"    : "",
+			"cycleStalls"       : "",
+			"staffParking"      : "",
+			"nearbyBuildings"	:	["040","039"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	"  "
+		},
+
+		{
+			"zone"				: "1",
+			"parkingName"		: "N", 
+			"latLngCenter"		: {"lat": 38.8722, "lng": -99.33959},
+			"parkingOutline"	: [
+				{"lat"	: 38.87199, "lng"	: -99.33966},
+				{"lat"	: 38.87231, "lng"	: -99.33945},
+				{"lat"	: 38.87238, "lng"	: -99.33961},
+				{"lat"	: 38.87226, "lng"	: -99.33968},
+				{"lat"	: 38.87221, "lng"	: -99.33971},
+				{"lat"	: 38.87207, "lng"	: -99.33981},
+				{"lat"	: 38.87199, "lng"	: -99.33966}
+				],
+			"disabledParking"   : "",
+			"visitorParking"    : "",
+			"cycleStalls"       : "",
+			"staffParking"      : "",
+			"nearbyBuildings"	:	["002","010"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	"  "
+		},
+		{
+			"zone"				: "1",
+			"parkingName"		: "Q", 
+			"latLngCenter"		: {"lat": 38.87192, "lng": -99.34525},
+			"parkingOutline"	: [
+				{"lat"	: 38.87133, "lng"	:  -99.34509},
+				{"lat"	: 38.8723,  "lng"	:  -99.34541},
+				{"lat"	: 38.87185, "lng"	:  -99.34542},
+				{"lat"	: 38.87149, "lng"	:  -99.3449},
+				{"lat"	: 38.87194, "lng"	:  -99.34511},
+				{"lat"	: 38.8723,  "lng"	:  -99.34519}
+				],
+			"disabledParking"   : "",
+			"visitorParking"    : "",
+			"cycleStalls"       : "",
+			"staffParking"      : "",
+			"nearbyBuildings"	:	["017"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	"  "
+		},
+		{
+			"zone"				: "1",
+			"parkingName"		: "R", 
+			"latLngCenter"		: {"lat": 38.87591, "lng": -99.34401},
+			"parkingOutline"	: [
+				{"lat"	: 38.87598, "lng"	:  -99.34417},
+				{"lat"	: 38.87591,  "lng"	:  -99.34422},
+				{"lat"	: 38.87576, "lng"	:  -99.34384},
+				{"lat"	: 38.87589, "lng"	:  -99.34379}
+				],
+			"disabledParking"   : "",
+			"visitorParking"    : "",
+			"cycleStalls"       : "",
+			"staffParking"      : "",
+			"nearbyBuildings"	:	["031"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	"  "
+		},
+		
+		{
+			"zone"				: "1",
+			"parkingName"		: "S", 
+			"latLngCenter"		: {"lat": 38.87316, "lng": -99.3428},
+			"parkingOutline"	: [
+				{"lat"	: 38.87305, "lng"	:  -99.34288},
+				{"lat"	: 38.87319,  "lng"	:  -99.34285}, 
+				{"lat"	: 38.87317, "lng"	:  -99.34273},
+				{"lat"	: 38.87304, "lng"	:  -99.34279}
+				],
+			"disabledParking"   : "",
+			"visitorParking"    : "",
+			"cycleStalls"       : "",
+			"staffParking"      : "",
+			"nearbyBuildings"	:	["004"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	"  "
+		},
+		{
+			"zone"				: "2",
+			"parkingName"		: "T", 
+			"latLngCenter"		: {"lat": 38.86633, "lng": -99.33793},
+			"parkingOutline"	: [
+				{"lat"	: 38.86613, "lng"	:  -99.33816},, 
+				{"lat"	: 38.86628,  "lng"	:  -99.33829}, , 
+				{"lat"	: 38.8664, "lng"	:  -99.33775},, 
+				{"lat"	: 38.86625, "lng"	:  -99.33771}, 
+				],
+			"disabledParking"   : "",
+			"visitorParking"    : "",
+			"cycleStalls"       : "",
+			"staffParking"      : "",
+			"nearbyBuildings"	:	["037","034","036"],
+			"infoWindow"	:	"true",
+			"infoWindowContent"		:	"  "
+		},
+	],
+}

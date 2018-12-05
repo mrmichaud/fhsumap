@@ -30,6 +30,10 @@
         color: white;
     }
     
+	.sameLineStyle {
+		display: inline-block;
+	}
+	
     .sidebar-content {
         list-style-type: none;
         margin: 0px 20px 0px 20px;
@@ -68,9 +72,9 @@
 	*/
 	.resetButtons {
 		background-color: #000000;
-		margin: 10px 0px 0px 0px;
+		margin: 0px 0px 0px 10px;
 		border: #000000 solid 1px;
-		padding: 1px;
+		padding: 1px 1px 10px 1px;
 		width: 30px;
 		height: 30px;
 	}
@@ -112,6 +116,14 @@
 		color:#eaaf0f;
 		background-color: #000000;
 	}
+	#walkingTitleBar {
+		padding: 0px;
+	}
+	#walkingTitleText {
+		margin: 0px;
+		padding: 0px;
+	}
+	
 	
 	/*INFOWINDOWS STYLES*/
 	/*Info Window body's text*/

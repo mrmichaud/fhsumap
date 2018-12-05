@@ -2669,12 +2669,12 @@
 			"parkingName"		: "Q", 
 			"latLngCenter"		: {"lat": 38.87192, "lng": -99.34525},
 			"parkingOutline"	: [
-				{"lat"	: 38.87133, "lng"	:  -99.34509},
-				{"lat"	: 38.8723,  "lng"	:  -99.34541},
-				{"lat"	: 38.87185, "lng"	:  -99.34542},
 				{"lat"	: 38.87149, "lng"	:  -99.3449},
-				{"lat"	: 38.87194, "lng"	:  -99.34511},
-				{"lat"	: 38.8723,  "lng"	:  -99.34519}
+				{"lat"	: 38.87133, "lng"	:  -99.34509},
+				{"lat"	: 38.87185, "lng"	:  -99.34542},
+				{"lat"	: 38.8723,  "lng"	:  -99.34541},
+				{"lat"	: 38.8723,  "lng"	:  -99.34519},
+				{"lat"	: 38.87194, "lng"	:  -99.34511}
 				],
 			"disabledParking"   : "",
 			"visitorParking"    : "",
@@ -2763,6 +2763,21 @@
 			"id" : 4,		
 			"label": "Service Buildings",
 			"layerID" : [4]
+		},
+		{
+			"id" : 5,		
+			"label": "Places of Interest",
+			"layerID" : [5]
+		},
+		{
+			"id" : 6,		
+			"label": "Food",
+			"layerID" : [6]
+		},
+		{
+			"id" : 7,		
+			"label": "All FHSU Buildings",
+			"layerID" : [1,2,3,4,5,6]
 		}
 	],
 	
@@ -2787,11 +2802,59 @@
 			"elements" : [
 				{
 					"type" : "buildings",
+					"id" : 2
+				},
+				{
+					"type" : "buildings",
+					"id" : 3
+				},
+				{
+					"type" : "buildings",
 					"id" : 4
 				},
 				{
 					"type" : "buildings",
-					"id" : 5
+					"id" : 6
+				},
+				{
+					"type" : "buildings",
+					"id" : 8
+				},
+				{
+					"type" : "buildings",
+					"id" : 9
+				},
+				{
+					"type" : "buildings",
+					"id" : 10
+				},
+				{
+					"type" : "buildings",
+					"id" : 11
+				},
+				{
+					"type" : "buildings",
+					"id" : 13
+				},
+				{
+					"type" : "buildings",
+					"id" : 14
+				},
+				{
+					"type" : "buildings",
+					"id" : 16
+				},
+				{
+					"type" : "buildings",
+					"id" : 17
+				},
+				{
+					"type" : "buildings",
+					"id" : 33
+				},
+				{
+					"type" : "buildings",
+					"id" : 40
 				}
 			]		
 		},
@@ -2802,11 +2865,23 @@
 			"elements" : [
 				{
 					"type" : "buildings",
-					"id" : 12
+					"id" : 1
 				},
 				{
 					"type" : "buildings",
-					"id" : 15
+					"id" : 30
+				},
+				{
+					"type" : "buildings",
+					"id" : 31
+				},
+				{
+					"type" : "buildings",
+					"id" : 39
+				},
+				{
+					"type" : "buildings",
+					"id" : 40
 				}
 			]
 		},
@@ -2822,6 +2897,38 @@
 				{
 					"type" : "buildings",
 					"id" : 21
+				},
+				{
+					"type" : "buildings",
+					"id" : 22
+				},
+				{
+					"type" : "buildings",
+					"id" : 23
+				},
+				{
+					"type" : "buildings",
+					"id" : 24
+				},
+				{
+					"type" : "buildings",
+					"id" : 25
+				},
+				{
+					"type" : "buildings",
+					"id" : 26
+				},
+				{
+					"type" : "buildings",
+					"id" : 27
+				},
+				{
+					"type" : "buildings",
+					"id" : 28
+				},
+				{
+					"type" : "buildings",
+					"id" : 29
 				}
 			]
 		},
@@ -2832,15 +2939,92 @@
 			"elements" : [
 				{
 					"type" : "buildings",
-					"id" : 35
+					"id" : 7
+				},
+				{
+					"type" : "buildings",
+					"id" : 18
+				},
+				{
+					"type" : "buildings",
+					"id" : 19
+				},
+				{
+					"type" : "buildings",
+					"id" : 32
 				},
 				{
 					"type" : "buildings",
 					"id" : 34
+				},
+				{
+					"type" : "buildings",
+					"id" : 35
+				},
+				{
+					"type" : "buildings",
+					"id" : 36
+				},
+				{
+					"type" : "buildings",
+					"id" : 37
+				}
+			]
+		},
+		{
+			"id" : 5,		
+			"layerName": "Places of Interest",
+			"layerDescription" : "All places of interest buildings",
+			"elements" : [
+				{
+					"type" : "buildings",
+					"id" : 5
+				},
+				{
+					"type" : "buildings",
+					"id" : 6
+				},
+				{
+					"type" : "buildings",
+					"id" : 12
+				},
+				{
+					"type" : "buildings",
+					"id" : 14
+				},
+				{
+					"type" : "buildings",
+					"id" : 15
+				},
+				{
+					"type" : "buildings",
+					"id" : 38
+				}
+			]
+		},
+		{
+			"id" : 6,		
+			"layerName": "Food",
+			"layerDescription" : "All main food location buildings",
+			"elements" : [
+				{
+					"type" : "buildings",
+					"id" : 5
+				},
+				{
+					"type" : "buildings",
+					"id" : 14
+				},
+				{
+					"type" : "buildings",
+					"id" : 21
+				},
+				{
+					"type" : "buildings",
+					"id" : 26
 				}
 			]
 		}
-		
 	],
 	
 	"tours" : [
@@ -2944,7 +3128,8 @@
 			"firstName" : "Monica",
 			"lastName"  : "Michaud",
 			"email"     : "mrmmichaud@mail.fhsu.edu",
-			"classes"     : [ {
+			"classes"     : [ 
+				{
 					"classCode" : "ENG 126",
 					"title" : "Introduction to Literature",
 					"instructor" : "Scott, Pauline",

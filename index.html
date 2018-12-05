@@ -293,15 +293,15 @@
 	<script>
 	//----------TEMPLATES BUILT WITH MUSTACHE : Build menu buttons and hamburger menu dynamically with data from JSON-----------
 	$.getJSON( "http://localhost/fhsumap/json_fhsuDataTypes.json", function( data ) {
-		var templateBuildingDirectory = '<h3>Building Directory</h3>{{#buildings}}<li class="sidebarOption toggleBuilding" data-buildingid="{{id}}">{{buildingName}} ({{code}})</li>{{/buildings}}';
+		var templateBuildingDirectory = '<h3>Building Directory</h3>{{#buildings}}<li class="sidebarOption toggleBuilding" onClick="toggleBuilding({{id}})">{{buildingName}} ({{code}})</li>{{/buildings}}';
 		Mustache.parse(templateBuildingDirectory);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateBuildingDirectory, data);
 		$('#sidebar-building').html(rendered);
 
-		var templateWalkingDirectionBuildings = '<br><h3>Walking&nbsp;Directions</h3>' +
+		var templateWalkingDirectionBuildings = '<div id="walkingTitleBar"><div id="walkingTitleText" class="sameLineStyle"><h3>Walking&nbsp;Directions</h3></div>' +
 		'<div id="walkingResetButtonContainer" class="sameLineStyle">' +
 			'<button id="walkingResetButton" class="resetButtons" type="button" onClick="clearDirections()"><img src="siteImages/white-restart-512.png"></button>' +
-		'</div>' +
+		'</div></div>' +
 		'<div id="walkingInstructionText">' +
 			'<span class="intructionTexts">Select buildings from dropdown menus</span>' +
 		'</div>' +
@@ -336,13 +336,13 @@
 		var rendered = Mustache.render(templateWalkingDirectionBuildings, data);
 		$('#sidebar-direction').html(rendered);
 
-		var templateParking = '<br><h3>Parking</h3>{{#buildings}}<li class="sidebarOption" data-parkingAtBuildingID="{{id}}" onClick="toggleParking({{id}})">{{buildingName}}</li>{{/buildings}}';
+		var templateParking = '<h3>Parking</h3>{{#buildings}}<li class="sidebarOption" onClick="toggleParking({{id}})">{{buildingName}}</li>{{/buildings}}';
 		Mustache.parse(templateParking);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateParking, data);
 		$('#sidebar-parking').html(rendered);
 
 		var templateCategories = '<h3>Main Menu</h3>'+
-		'<div><h3 class="toggle-student-info">Student Information</h3>' +
+		'<div><h4 class="toggle-student-info">Student Information</h4>' +
 			'<table  class="student-info">' +
 				'<tr>' +
                     '<td>Student Name:</td>' +
@@ -365,36 +365,36 @@
 				'{{/classes}}' +
 			'</table>' +
 		'</div>' +
-		'<div><h3 class="toggle-share">Share</h3>' +
-			//'<table class="share">' +
-			//	'<tr class="share-button">' +
-            //       '<td>' +
-            //            //Facebook share
-            //            '<div class="fb-share-button" data-href="https://www.your-domain.com/your-page.html" data-layout="button_count" data-size="large" data-mobile-iframe="true">' +
-                            //'<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>' +
-            //            '</div>' +
-            //        '</td>' +
-            //        '<td>' +
+		'<div><h4 class="toggle-share">Share</h4>' +
+			'<table class="share">' +
+				'<tr class="share-button">' +
+                   '<td>' +
+                        //Facebook share
+                        '<div class="fb-share-button" data-href="https://www.your-domain.com/your-page.html" data-layout="button_count" data-size="large" data-mobile-iframe="true">' +
+                            '<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>' +
+                        '</div>' +
+                    '</td>' +
+                    '<td>' +
                         //Twitter share 
-            //            '<div class="share-button">' +
-                            //'<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="large">Tweet</a>' +
-            //            '</div>' +
-            //        '</td>' +
-            //    '</tr>' +
-			//'</table>' +
+                        '<div class="share-button">' +
+                            '<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="large">Tweet</a>' +
+                        '</div>' +
+                    '</td>' +
+                '</tr>' +
+			'</table>' +
 		'</div>' +
-		'<div><h3>About</h3>' +
-			'<div>' +
+		'<div><h4 class="toggle-about">About</h4>' +
+			'<div class="about">' +
 				'<p>Insert about info here... </p>' +
 			'</div></div>' +
-		'<div><h3>Help</h3>' +
-			'<div><h4>Contact the Institute for New Media Studies:</h4> ' +
+		'<div><h4 class="toggle-help">Help</h4>' +
+			'<div class="help"><h5>Contact the Institute for New Media Studies:</h5> ' +
 				'<p>Location: Malloy Hall Room 106</p>' + 
 				'<p>Email: newmedia@fhsu.edu</p>' +
 				'<p>Phone: 785-628-4784</p>' +
 			'</div></div>' +
-		'<div><h3>Version</h3>' +
-			'<div id="informationCreditsDisplay" title="About the Next Dimension">' +
+		'<div><h4 class="toggle-version">Version</h4>' +
+			'<div id="informationCreditsDisplay" class="version" title="About the Next Dimension">' +
 				'<p>Created by Monica Michaud, Meng (Ella) Ding, Conner Chessmore, Yangyang Cui</p>' +
 				'<p>In the Institute for New Media Studies and Informatics Department</p>' +
 				'<p>Advisers: Gordon Carlson, PhD ; Nicholas Caporusso</p>' +
@@ -408,13 +408,13 @@
 		var rendered = Mustache.render(templateCategories, data.studentData);
 		$('#sidebar-hamburger').html(rendered);
 
-		var templateCategories = '<h3>Layers</h3>{{#layersMenuOptions}}<li class="sidebarOption" data-layerID="{{#layerID}}{{.}},{{/layerID}}" onClick="toggleLayer({{#layerID}}{{.}},{{/layerID}})">{{label}}</li>{{/layersMenuOptions}}<br>'; 
+		var templateCategories = '<h3>Layers</h3>{{#layersMenuOptions}}<li class="sidebarOption" onClick="toggleLayer({{#layerID}}{{.}},{{/layerID}})">{{label}}</li>{{/layersMenuOptions}}<br>'; 
 		Mustache.parse(templateCategories);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateCategories, data);
 		$('#sidebar-layers').html(rendered);
 		//console.log(rendered);
 
-		var templateCategories = '<h3>Tours</h3>{{#toursMenuOptions}}<li class="sidebarOption" data-tourID="{{tourID}}" onClick="toggleTour({{tourID}})">{{label}}</li>{{/toursMenuOptions}}<br>';
+		var templateCategories = '<h3>Tours</h3>{{#toursMenuOptions}}<li class="sidebarOption" onClick="toggleTour({{#tourID}}{{.}},{{/tourID}})">{{label}}</li>{{/toursMenuOptions}}<br>';
 		Mustache.parse(templateCategories);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateCategories, data);
 		$('#sidebar-tour').html(rendered);
@@ -455,16 +455,12 @@
 			var test_polygons_data = getPolygonID(1);
 			var test_circles_data = getCircleID(1);
 			
-			drawBuilding (test_building_data.buildingOutline, map);
-			//drawPOI (test_poi_data.latLng, test_poi_data.title, map);
-			//drawParking (test_parking_data.parkingOutline, map);
-			//drawPolyline (test_polylines_data.latLngArray, map);
-			//drawPolygon (test_polygons_data.outline, map);
-			//drawCircle (test_circles_data.latLngCenter, test_circles_data.radius, map);
-			
-			//console.log(test_building_data);
-			//console.log(test_poi_data);
-
+			//drawBuilding (test_building_data, map);
+			//drawPOI (test_poi_data, map);
+			//drawParking (test_parking_data, map);
+			//drawPolyline (test_polylines_data, map);
+			//drawPolygon (test_polygons_data, map);
+			//drawCircle (test_circles_data, map);
 			}
 		};
 		xmlhttp.open("GET", "json_fhsuDataTypes.json", true);
@@ -637,9 +633,9 @@
     <!-- javascript -->
 <script>
 /*This is for managing the building toggle function*/
-$('#sidebar-building').on('click','li.toggleBuilding',function(){
-console.log($(this).data('buildingid'));
-});
+//$('#sidebar-building').on('click','li.toggleBuilding',function(){
+//console.log($(this).data('buildingid'));
+//});
 
 /*Corrects map height in desktop and mobile versions*/
 $(function(){

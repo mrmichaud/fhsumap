@@ -35,9 +35,25 @@ $("#sidebar").on('click', ".toggle-student-info",function() {
 });
 
 /* toggle share in sidebar */
-$(".toggle-share").on('click', function() {
+$("#sidebar").on('click', ".toggle-share", function() {
     $(".share").toggle();
 });
+
+/* toggle about in sidebar */
+$("#sidebar").on('click', ".toggle-about", function() {
+    $(".about").toggle();
+});
+
+/* toggle help in sidebar */
+$("#sidebar").on('click', ".toggle-help", function() {
+    $(".help").toggle();
+});
+
+/* toggle version in sidebar */
+$("#sidebar").on('click', ".toggle-version", function() {
+    $(".version").toggle();
+});
+
 
 /* Google Map - Get Current Position - Geolocation*/
 /*

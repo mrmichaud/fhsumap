@@ -2,7 +2,7 @@
 //
 // ************************NEED TO UPDATE COMMENTS ABOVE**********************
 // Author: Monica Michaud
-// Date: 12-4-2018
+// Date: 12-5-2018
 //-----------------------------------------------------------------------------------------------
 
 
@@ -10,38 +10,34 @@
 
 
 function toggleBuilding( idValue ) {
-	console.log("Made it to toggle building");
 	var building_object_data = getBuildingID( idValue );
-	drawBuilding (building_object_data.buildingOutline, map);
+	drawBuilding (building_object_data, map);
 }
 
 function togglePOI( idValue ) {
-	console.log("Made it to toggle");
 	var poi_object_data = getPOIID( idValue );
-	drawPOI (poi_object_data.latLng, poi_object_data.title, map);
+	drawPOI (poi_object_data, map);
 }
 
 function togglePolyline( idValue ) {
-	console.log("Made it to toggle");
 	var polyline_object_data = getPolylineID( idValue );
-	drawPolyline (polyline_object_data.latLngArray, map);
+	drawPolyline (polyline_object_data, map);
 }
 
 function togglePolygon( idValue ) {
-	console.log("Made it to toggle");
 	var polygon_object_data = getPolygonID( idValue );
-	drawPolygon (polygon_object_data.outline, map);
+	drawPolygon (polygon_object_data, map);
 }
 
 function toggleParking( idValueOfBuilding ) {
-	console.log("Made it to toggle" + idValueOfBuilding);
 	var building_object_data = getBuildingID( idValueOfBuilding );
 	if (building_object_data.nearbyParkingLots=="true" || building_object_data.parkingLotsId.length>0) {
-		console.log(building_object_data.parkingLotsId);
+		//console.log(building_object_data.parkingLotsId);
 		for(i=0;i<building_object_data.parkingLotsId.length;i++){
-			console.log(building_object_data.parkingLotsId[i]);
+			//console.log(building_object_data.parkingLotsId[i]);
+			drawBuilding (building_object_data, map);
 			var parking_object_data = getParkingID( building_object_data.parkingLotsId[i] );
-			drawParking (parking_object_data.parkingOutline, map);
+			drawParking (parking_object_data, map);
 		}
 	}
 	else {
@@ -50,9 +46,8 @@ function toggleParking( idValueOfBuilding ) {
 }
 
 function toggleCircle( idValue ) {
-	console.log("Made it to toggle");
 	var circle_object_data = getCircleID( idValue );
-	drawCircle (circle_object_data.latLngCenter, circle_object_data.radius, map);
+	drawCircle (circle_object_data, map);
 }
 
 function toggleLayer (  ) {

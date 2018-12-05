@@ -124,6 +124,116 @@
 		padding: 0px;
 	}
 	
+	/*WALKING DIRECTIONS PANEL STYLING*/
+	#walkingDirectionsPanelTitleTextContainer {
+		margin-right: 110px;
+	}
+	#walkingDirectionsPanelTitleText {
+		margin: 10px 5px 2px 4px;
+		font-size: 19px;
+		font-weight: bold;
+		margin: 0px;
+		padding: 2px;
+		color: #eaaf0f;
+	}
+	#toggleWalkingDirectionsMarkerButton {
+		margin-left: 5px;
+		background-color: #000000;
+		border: #000000 solid 1px;
+		padding: 0px 2px 0px 2px;
+	}
+	#toggleWalkingDirectionsMarkerButton:hover {
+		border-color: #eaaf0f;
+		border-width: 1px;
+		color:#eaaf0f;
+		background-color: #000000;
+		padding: 0px 2px 0px 2px;
+	}
+	#toggleDirectionMarkers {
+		width: 12px;
+		height: 20px;
+		padding: 1px;
+	}
+	#closeWalkingDirectionsPanelButton {
+		background-color: #000000;
+		margin-left: 5px;
+		border: #000000 solid 1px;
+		padding: 1px;
+	}
+	#closeWalkingDirectionsPanelButton:hover {
+		border-color: #eaaf0f;
+		border-width: 1px;
+		color:#eaaf0f;
+		background-color: #000000;
+	}
+	#closeWalkingPanelImage {
+		width: 20px;
+		height: 20px;
+	}
+	#walkingStepsContainer {
+		color: white;
+	}
+	#walkingStepsContainer p {
+		margin: 0px 0px 0px 10px;
+		padding: 2px;
+	}			
+
+
+	/*WALKING DIRECTIONS STEPS STYLING FOLLOWING GOOGLE'S */
+	/*      STRICT CONVENTION - CHANGE WITH CAUTION!      */
+	.adp-warnbox {
+		display: none;
+	}
+	.adp { 
+		background-color: #000000; 
+		border: none; 
+		border-collapse: collapse; 
+	}			
+	.adp-text { 
+		color:#eaaf0f; 
+		margin: 0px; 
+		padding: 0px; 
+		border-collapse: collapse;
+	}						
+	.adp-placemark { 
+		border-color: #000000; 
+		border-collapse: collapse; 
+		margin: 0px; padding: 0px;
+	}			
+	.adp-placemark tr { 
+		background-color: #000000; 
+		border-color: #000000; 
+		border-collapse: collapse; 
+		margin: 0px; padding: 0px;
+	}			
+	.adp-placemark tr td { 
+		background-color: #000000; 
+		border-color: #000000;  
+		border-collapse: collapse; 
+		margin: 0px; 
+		padding: 0px;
+	}			
+	.adp-list { 
+		background-color: #000000; 
+	}
+	.adp-legal { 
+		background-color: #000000; 
+	}			
+	.adp-summary { 
+		background-color: #eaaf0f; 
+	}
+	.adp-directions { 
+		background-color: #000000; 
+		color: #ffffff;
+	}
+	.adp-substep { 
+		background-color: #000000; 
+		color: #ffffff; 
+	}			
+	.adp-stepicon { 
+		visibility: hidden; 
+	}
+	
 	
 	/*INFOWINDOWS STYLES*/
 	/*Info Window body's text*/

@@ -36,13 +36,14 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
           start = currentPosition;
         }
         else start = DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance;
-
+        console.log(start);
         if(document.getElementById('walkingDirectionsEndInput').value==0){
           end = currentPosition;
         }
         else end = DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance;
-
-	directionsService.route(
+        console.log(end);
+	    
+	    directionsService.route(
 		{
 			origin: end,
 			destination: start,

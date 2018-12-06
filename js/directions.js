@@ -14,7 +14,7 @@ function showWalkingDirections() {
 	for (var i = 0; i < startEndMarkerArray.length; i++){
 		startEndMarkerArray[i].setMap(null);
 	}
-
+	// Display the route between the initial start and end selections.
 	calculateAndDisplayRoute(directionsDisplay, directionsService, markerArray, stepDisplay, map);
 }
 
@@ -29,14 +29,14 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 	for (var i = 0; i < markerArray.length; i++) {
 		markerArray[i].setMap(null);
 	}
-	// Display the route between the initial start and end selections.
-	var start,end;
+	// Retrieve the start and end locations and create a DirectionsRequest using WALKING directions.
+	
+        var start,end;
         if(document.getElementById('walkingDirectionsStartInput').value==0){
           start = currentPosition;
         }
         else start = DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance;
 
-       console.log(start);
         if(document.getElementById('walkingDirectionsEndInput').value==0){
           end = currentPosition;
         }
@@ -47,9 +47,9 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 			origin: end,
 			destination: start,
 			travelMode: 'WALKING'
-		},
+		}, 
 		
-	  function(response, status) {
+		function(response, status) {
 			// Route the directions and pass the response to a function to create markers for each step.
 			
 			if (status === 'OK') {

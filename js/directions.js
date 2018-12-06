@@ -14,6 +14,21 @@ function showWalkingDirections() {
 	for (var i = 0; i < startEndMarkerArray.length; i++){
 		startEndMarkerArray[i].setMap(null);
 	}
+
+	calculateAndDisplayRoute(directionsDisplay, directionsService, markerArray, stepDisplay, map);
+}
+
+function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerArray, stepDisplay, map) {
+	
+	//connects directionsDisplay back to the map again
+	directionsDisplay.setMap(map);
+	directionsDisplay.setPanel(document.getElementById('walkingStepsContainer'));
+	
+	// First, remove any existing markers from the map.
+	//Basically hide function
+	for (var i = 0; i < markerArray.length; i++) {
+		markerArray[i].setMap(null);
+	}
 	// Display the route between the initial start and end selections.
 	var start,end;
         if(document.getElementById('walkingDirectionsStartInput').value==0){

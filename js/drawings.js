@@ -91,15 +91,15 @@ function initMap() {
 //Draws a single marker on the map
 function drawPOI ( POIObject, map ) {
 	//create marker using passed values
-	markersCenter = new google.maps.Marker({
+	var markersCenter = new google.maps.Marker({
 		position: POIObject.latLng ,
 		title: POIObject.title,
-		map: map,
+		map: map
 	});
 	markersCenter.setVisible(true);
 	
 	// This is the content of the info window for a single marker
-	contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
+	var contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
 		//Insert Title
 		POIObject.title +
 		
@@ -113,12 +113,12 @@ function drawPOI ( POIObject, map ) {
 		POIObject.infoBoxString + 	
 		
 		'</div></div>';
-		
+
 	//Add a listener to the marker: when the user clicks the marker, the infoWindow appears
 	google.maps.event.addListener(markersCenter, 'click', (function(marker) {
 		return function() {
 			infoWindow.setContent(contentString);
-			infoWindow.setPosition(POIObject.latLng);
+			infoWindow.setPosition(markersCenter.position);
 			infoWindow.open(map, markersCenter);
 		}
 	})(markersCenter));
@@ -127,6 +127,8 @@ function drawPOI ( POIObject, map ) {
 
 //Draws a single building on the map
 function drawBuilding ( buildingObject, map ) {
+	
+	console.log(buildingObject.buildingName);
 	//create building polygon using passed value and global variables from index.html
 	outlineEdge = new google.maps.Polygon({
 		path: buildingObject.buildingOutline,
@@ -141,7 +143,7 @@ function drawBuilding ( buildingObject, map ) {
 	
 	
 	// This is the content of the info window for a single building
-	contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
+	var contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
 		//((DataTypesInformation.buildings[x].displayCode == "true") ? (DataTypesInformation.buildings[x].buildingName + ' (' + DataTypesInformation.buildings[x].code + ') ' ) : (DataTypesInformation.buildings[x].buildingName) ) + 
 		//Insert Name (and Code)
 		((buildingObject.displayCode == "true") ? (buildingObject.buildingName + ' (' + buildingObject.code + ') ' ) : (buildingObject.buildingName) ) + 
@@ -155,11 +157,11 @@ function drawBuilding ( buildingObject, map ) {
 		((buildingObject.link360 == "true") ? ('<p>For more information: <a href='+ buildingObject.infoLinkString +' target="_blank">Click Here</a></p><p>For a 360 interior view of this building: <a href='+ buildingObject.link360String +' target="_blank">Click Here</a></p>' ) : ('<p>For more information: <a href='+ buildingObject.infoLinkString +' target="_blank">Click Here</a></p>') ) +
 		
 		'</div></div>';
-	
-		
+			
 	//Add a listener to the marker: when the user clicks the marker, the infoWindow appears
 	google.maps.event.addListener(outlineEdge, 'click', (function(marker) {
 		return function() {
+			console.log(buildingObject.latLngCenter);
 			infoWindow.setContent(contentString);
 			infoWindow.setPosition(buildingObject.latLngCenter);
 			infoWindow.open(map, outlineEdge);
@@ -184,7 +186,7 @@ function drawParking ( parkingObject, map ) {
 	parkingOutline.setVisible(true);
 	
 	// This is the content of the info window for a single parking lot
-	contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
+	var contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
 		parkingObject.parkingName + ' (Zone: ' + parkingObject.zone + ') ' +
 		'</h1>' +
 		//'<div id="infoWindowBodyContent">' + 
@@ -250,14 +252,14 @@ function drawPolygon ( polygonObject, map ) {
 	polygonOutline.setVisible(true);
 	
 	// This is the content of the info window for a single polygon
-	contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
+	var contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
 		//Insert Name
 		polygonObject.name + 
 				
 		'</h1><div id="infoWindowBodyContent"><img class="infoWindowImages" src=' + 
 		//Insert photo and info string
 		polygonObject.picture + '>' + polygonObject.infoBoxString + 		
-		'>' +
+		
 		
 		//Insert applicable links
 		'<p>For more information: <a href='+ polygonObject.infoLinkString +' target="_blank">Click Here</a></p>' +
@@ -290,7 +292,7 @@ function drawCircle ( circleObject, map ) {
 	
 	
 	// This is the content of the info window for a single circle
-	contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
+	var contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
 		//Insert Name
 		circleObject.name + 
 				

@@ -235,7 +235,7 @@
 		var markersEntrance = {};
 		var listeners = {};
 		var infoLinkString = {};
-		var contentString = {};
+		var contentString = "";
 		var outlineEdge = [];
 		var parkingOutline = [];
 		
@@ -288,6 +288,10 @@
 		var CampusParkingInformation;
 		var x;
 		var y;
+		
+		var buildingStates = [];
+		
+		
 	</script>
 	
 	<script>
@@ -418,6 +422,7 @@
 		'{{#personalData}}<li class="sidebarOption">{{label}}</li>{{/personalData}}<br>';
 		Mustache.parse(templateCategories);   // optional, speeds up future uses
 		data.processDays = function() {
+			//for (i=0; i<= days.length)
 			return this;
 		}
 		var rendered = Mustache.render(templateCategories, data.studentData);
@@ -463,6 +468,16 @@
 				DataTypesInformation = JSON.parse(this.responseText);
 			//console.log(DataTypesInformation);
 			
+			for (x in DataTypesInformation.buildings){
+				//add id and state to builingStates array
+				var newBuildingObj = {
+					id : x.id,
+					state : false
+				}
+				buildingStates[x.id]=newBuildingObj;
+				//buildingStates[idNumber].state = true to set to true
+			}
+			
 			var test_building_data = getBuildingID(2);
 			var test_poi_data = getPOIID(4);
 			var test_parking_data = getParkingID(4);
@@ -480,6 +495,7 @@
 		};
 		xmlhttp.open("GET", "json_fhsuDataTypes.json", true);
 		xmlhttp.send();
+		
 		
 		
 		function findSearchResults( searchQuery ) {
@@ -671,6 +687,11 @@ $(document).ready(function(){
 	$("#closeWalkingDirectionsPanelButton").click(function(){
 		$("#walkingDirectionsResultsContainer").hide();
 	});
+	
+	$(".about").hide();
+	$(".help").hide();
+	$(".version").hide();
+	
 });
 </script>
 </body>

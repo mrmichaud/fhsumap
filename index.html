@@ -296,7 +296,7 @@
 	
 	<script>
 	//----------TEMPLATES BUILT WITH MUSTACHE : Build menu buttons and hamburger menu dynamically with data from JSON-----------
-	$.getJSON( "http://localhost/fhsumap/json_fhsuDataTypes.json", function( data ) {
+	$.getJSON( "json_fhsuDataTypes.json", function( data ) {
 		var templateBuildingDirectory = '<h3>Building Directory</h3>{{#buildings}}<li class="sidebarOption toggleBuilding" onClick="toggleBuilding({{id}})">{{buildingName}} ({{code}})</li>{{/buildings}}';
 		Mustache.parse(templateBuildingDirectory);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateBuildingDirectory, data);

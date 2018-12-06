@@ -122,7 +122,6 @@ function initMap() {
      
        // generating routain
 
-        directionsDisplay.setMap(map);
 	
 	
 	// Instantiate a directions service.
@@ -135,6 +134,7 @@ function initMap() {
 			//markerOptions: {strokeColor: "blue"}
 			
 		});
+        directionsDisplay.setMap(map);
 	// Instantiate an info window to hold step text.
 	stepDisplay = new google.maps.InfoWindow;
 	markerArray = [];

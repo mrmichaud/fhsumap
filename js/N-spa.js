@@ -1,8 +1,10 @@
 /* Add content on sidebar */
-
-
 function loadContent(tab) {
-    $('#sidebar').append('<div id="sidebar-' + tab + '" class="sidebar-content">' + tab + '</div>');
+    if (tab === "hamburger") {
+        $('#sidebar').append('<div id="sidebar-' + tab + '" class="sidebar-content">' + tab + '</div>');
+    } else {
+        $('#sidebar').append('<div id="sidebar-' + tab + '" class="sidebar-content">' + tab + '</div>');
+    }
 }
 
 function showContent(tab) {
@@ -14,32 +16,47 @@ function showContent(tab) {
 var currentTab = 'layers';
 var tabToggle = true;
 $(".nav-sb-menu[data-label='layers']").css('color', 'white');
-$('.nav-sb-menu').on('click', function() {
-    $('.nav-sb-menu').css('color', 'black');
+$(".nav-sb-menu").on('click', function() {
+    $(".nav-sb-menu").css('color', 'black');
     if (currentTab != $(this).data('label') || !tabToggle) {
         $(".nav-sb-menu[data-label='" + $(this).data('label') + "']").css('color', 'white');
         showContent($(this).data('label'));
     }
     if (currentTab == $(this).data('label') || !tabToggle) {
-        $('.sidebar').animate({ width: "toggle" });
+        $(".sidebar").animate({ width: "toggle" });
         tabToggle = !tabToggle;
     }
     currentTab = $(this).data('label');
 });
 
-/* Google Map */
-let map;
+/* toggle student-info in sidebar */
+$("#sidebar").on('click', ".toggle-student-info",function() {
+    $(".student-info").toggle();
+});
 
-function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: {
-            lat: 38.8714,
-            lng: -99.3445
-        },
-        zoom: 18
-    });
-}
+/* toggle share in sidebar */
+$("#sidebar").on('click', ".toggle-share", function() {
+    $(".share").toggle();
+});
 
+/* toggle about in sidebar */
+$("#sidebar").on('click', ".toggle-about", function() {
+    $(".about").toggle();
+});
+
+/* toggle help in sidebar */
+$("#sidebar").on('click', ".toggle-help", function() {
+    $(".help").toggle();
+});
+
+/* toggle version in sidebar */
+$("#sidebar").on('click', ".toggle-version", function() {
+    $(".version").toggle();
+});
+
+
+/* Google Map - Get Current Position - Geolocation*/
+/*
  if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
@@ -72,3 +89,4 @@ function initMap() {
        });     
       };
     
+*/

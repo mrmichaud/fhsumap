@@ -278,6 +278,8 @@
 		var markerArray;
 		var startEndMarkerArray = [];
 		var map;
+
+		var currentPosition;
 		
 		//var infoWindow;
 		
@@ -317,6 +319,7 @@
 					'</div>' +
 					'<div id="walkingSelectionsStartDropdownOption">' +
 						'<select name="start" id="walkingDirectionsStartInput">' +
+						'<option value="0"> Current position</option>' +
 							'{{#buildings}}<option value={{id}}>{{buildingName}}</option>{{/buildings}}' +
 						'</select>' +
 					'</div>' +
@@ -327,6 +330,7 @@
 					'</div>' +
 					'<div id="walkingSelectionsEndDropdownOption">' +
 						'<select name="end" id="walkingDirectionsEndInput">' +
+						'<option value="0"> Current position</option>' +
 							'{{#buildings}}<option value={{id}}>{{buildingName}}</option>{{/buildings}}' +
 						'</select>' +
 					'</div>' +

@@ -58,6 +58,71 @@ function initMap() {
 			}
 		]
 	});
+
+//using watchPosition() to tract locations
+	var watchID;           
+    var marker = null;
+    var showPosition = function(position) {
+
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+        var myLatlng = new google.maps.LatLng(lat, lng);
+        currentPosition = myLatlng;  
+        //$("#start").prepend('<option selected value='+lat+','+lng+'> My Current Location</option>');
+        //alert(myLatlng);
+        if(marker == null){
+             var iconImage = new google.maps.MarkerImage('pic/icon49.png',
+                 //This marker is 28 pixels wide by 25 pixels high.
+                 new google.maps.Size(25, 25),
+                 //The origin for this image is (0, 0).
+                 //new google.maps.Point(0, 0),
+                 // The anchor for this image is the base of the flagpole at (7, 7).
+                 //new google.maps.Point(7, 7)
+             );
+            marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                icon: iconImage
+            });
+            marker.setMap(map);
+        }else{
+            
+            
+            marker.setPosition(myLatlng);
+            marker.setMap(map);
+        }
+    };
+
+             function errorHandler(err) {
+                if(err.code == 1) {
+                   alert("Error: Access is denied!");
+                   //navigator.geolocation.clearWatch(watchID);
+                } else if( err.code == 2) {
+                   alert("Error: Position is unavailable!");
+                } else{
+                  //alert("Error: Timeout, Error Code: " + err.code);
+                }
+             }
+           
+             function getLocationUpdate(){
+                
+                if(navigator.geolocation){ 
+                   // timeout at 1000 milliseconds (1 second)
+                   var options = {enableHighAcuracy: true,timeout: 5000,maximumAge: 0};              
+                   watchID = navigator.geolocation.watchPosition(showPosition, errorHandler, options);
+                } else {
+                   alert("Sorry, browser does not support geolocation!");
+                }
+
+             }
+           //setTimeout(getLocationUpdate(), 1000);
+           getLocationUpdate();
+  
+    
+     
+       // generating routain
+
+        directionsDisplay.setMap(map);
 	
 	
 	// Instantiate a directions service.

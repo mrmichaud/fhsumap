@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------------------------------
+//master-----------------------------------------------------------------------------------------------
 // directions.js contains the functions that contol the walking directions operations on the map.
 //
 // This includes: showWalkingDirections, calculateAndDisplayRoute, showSteps, and 
@@ -15,28 +15,21 @@ function showWalkingDirections() {
 		startEndMarkerArray[i].setMap(null);
 	}
 	// Display the route between the initial start and end selections.
-	calculateAndDisplayRoute(directionsDisplay, directionsService, markerArray, stepDisplay, map);
-}
+	var start,end;
+        if(document.getElementById('walkingDirectionsStartInput').value==0){
+          start = currentPosition;
+        }
+        else start = DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance;
 
-function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerArray, stepDisplay, map) {
-	
-	//connects directionsDisplay back to the map again
-	directionsDisplay.setMap(map);
-	directionsDisplay.setPanel(document.getElementById('walkingStepsContainer'));
-	
-	// First, remove any existing markers from the map.
-	//Basically hide function
-	for (var i = 0; i < markerArray.length; i++) {
-		markerArray[i].setMap(null);
-	}
-	// Retrieve the start and end locations and create a DirectionsRequest using WALKING directions.
-	
+        if(document.getElementById('walkingDirectionsEndInput').value==0){
+          end = currentPosition;
+        }
+        else end = DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance;
+
 	directionsService.route(
 		{
-			origin: getBuildingID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance,
-			destination: getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance,			
-			//origin: DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance,
-			//destination: DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance,
+			origin: end,
+			destination: start,
 			travelMode: 'WALKING'
 		}, 
 		
@@ -56,14 +49,14 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 				directionsDisplay.setDirections(response);
 				
 				var startMarker = new google.maps.Marker({
-                    position: getBuildingID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance,
+                    position: DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance,
                     map: map,
                     icon: startAndEnd
                 });
 				startEndMarkerArray.push(startMarker);
 				
 				var endMarker = new google.maps.Marker({
-                    position: getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance,
+                    position: DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance,
                     map: map,
                     icon: startAndEnd
                 });

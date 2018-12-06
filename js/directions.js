@@ -35,12 +35,15 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
         if(document.getElementById('walkingDirectionsStartInput').value==0){
           start = currentPosition;
         }
-        else start = DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance;
+        else start = getBuildingID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance;
+        //else start = getBuildingID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance;
         console.log(start);
         if(document.getElementById('walkingDirectionsEndInput').value==0){
           end = currentPosition;
         }
-        else end = DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance;
+
+        else start = getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance;
+        //else end = DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance;
         console.log(end);
 	    
 	    directionsService.route(

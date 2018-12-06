@@ -134,7 +134,8 @@ function initMap() {
 			//markerOptions: {strokeColor: "blue"}
 			
 		});
-        directionsDisplay.setMap(map);
+    
+    directionsDisplay.setMap(map);
 	// Instantiate an info window to hold step text.
 	stepDisplay = new google.maps.InfoWindow;
 	markerArray = [];

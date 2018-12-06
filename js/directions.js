@@ -21,6 +21,7 @@ function showWalkingDirections() {
         }
         else start = DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance;
 
+        console.log();
         if(document.getElementById('walkingDirectionsEndInput').value==0){
           end = currentPosition;
         }
@@ -31,7 +32,7 @@ function showWalkingDirections() {
 			origin: end,
 			destination: start,
 			travelMode: 'WALKING'
-		}, 
+		},
 		
 		function(response, status) {
 			// Route the directions and pass the response to a function to create markers for each step.

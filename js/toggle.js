@@ -11,6 +11,7 @@
 
 function toggleBuilding( idValue ) {
 	var building_object_data = getBuildingID( idValue );
+	console.log(building_object_data);
 	drawBuilding (building_object_data, map);
 }
 

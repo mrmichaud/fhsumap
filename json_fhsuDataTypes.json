@@ -2267,7 +2267,7 @@
 					],
 			"infoWindow": true,
 			"infoBoxString":"Sheridan Hall and Picken Hall are the main administrative buildings at FHSU",
-			"picture":"https://goo.gl/images/P1rCjA",
+			"picture":"buildingImages/23.JPG",
 			"infoLinkString":"https://www.fhsu.edu/administrative/facilities-planning/campus-buildings/Picken-Hall/index"
 		}
 	],
@@ -2778,7 +2778,13 @@
 			"id" : 7,		
 			"label": "All FHSU Buildings",
 			"layerID" : [1,2,3,4,5,6]
+		},
+		{
+			"id" : 8,		
+			"label": "Test All Data Types",
+			"layerID" : [7]
 		}
+		
 	],
 	
 	"toursMenuOptions" :[
@@ -3022,6 +3028,37 @@
 				{
 					"type" : "buildings",
 					"id" : 26
+				}
+			]
+		},
+		{
+			"id" : 7,		
+			"layerName": "Test All Data Types",
+			"layerDescription" : "Display one of each data type for testing",
+			"elements" : [
+				{
+					"type" : "buildings",
+					"id" : 2
+				},
+				{
+					"type" : "pois",
+					"id" : 1
+				},
+				{
+					"type" : "circles",
+					"id" : 1
+				},
+				{
+					"type" : "polylines",
+					"id" : 2
+				},
+				{
+					"type" : "polygons",
+					"id" : 1
+				},
+				{
+					"type" : "parking",
+					"id" : 3
 				}
 			]
 		}

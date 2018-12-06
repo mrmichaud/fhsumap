@@ -235,7 +235,7 @@
 		var markersEntrance = {};
 		var listeners = {};
 		var infoLinkString = {};
-		var contentString = {};
+		var contentString = "";
 		var outlineEdge = [];
 		var parkingOutline = [];
 		
@@ -290,15 +290,10 @@
 		var CampusParkingInformation;
 		var x;
 		var y;
-
-// show current position
-
-        
-	
-       
-    </script>
-	
-	<script>
+		
+		var buildingStates = [];
+		
+		
 	//----------TEMPLATES BUILT WITH MUSTACHE : Build menu buttons and hamburger menu dynamically with data from JSON-----------
 	$.getJSON( "json_fhsuDataTypes.json", function( data ) {
 		var templateBuildingDirectory = '<h3>Building Directory</h3>{{#buildings}}<li class="sidebarOption" data-buildingID="{{id}}" onClick="toggleBuilding("data-buildingID")>{{buildingName}} ({{code}})</li>{{/buildings}}';
@@ -414,6 +409,9 @@
 		'{{#personalData}}<li class="sidebarOption">{{label}}</li>{{/personalData}}<br>';
 		Mustache.parse(templateCategories);   // optional, speeds up future uses
 		data.processDays = function() {
+			//for (i=0; i<= days.length(); i++){
+				
+			//}
 			return this;
 		}
 		var rendered = Mustache.render(templateCategories, data);
@@ -458,8 +456,18 @@
 			if (this.readyState == 4 && this.status == 200) {
 				DataTypesInformation = JSON.parse(this.responseText);
 			//console.log(DataTypesInformation);
+
+			for (x in DataTypesInformation.buildings){
+				//add id and state to builingStates array
+				var newBuildingObj = {
+					id : x.id,
+					state : false
+				}
+				buildingStates[x.id]=newBuildingObj;
+				//buildingStates[idNumber].state = true to set to true
+			}
 			
-			
+			var test_building_data = getBuildingID(2);
 			var test_poi_data = getPOIID(4);
 			var test_parking_data = getParkingID(4);
 			var test_polylines_data = getPolylineID(2);
@@ -479,6 +487,7 @@
 		};
 		xmlhttp.open("GET", "json_fhsuDataTypes.json", true);
 		xmlhttp.send();
+		
 		
 		
 		function findSearchResults( searchQuery ) {
@@ -645,6 +654,37 @@
 
     <!-- javascript -->
 
+<script>
+/*This is for managing the building toggle function*/
+//$('#sidebar-building').on('click','li.toggleBuilding',function(){
+//console.log($(this).data('buildingid'));
+//});
+
+/*Corrects map height in desktop and mobile versions*/
+$(function(){
+	$('#map').height(window.innerHeight - $('#top-navbar').height()-$('#m-b-navbar').height()-3);
+});
+$(window).resize(function(){
+	$('#map').height(window.innerHeight - $('#top-navbar').height()-$('#m-b-navbar').height()-3);
+});
+
+//when get directions is clicked => open walkingDirectionsResultsContainer
+$(document).ready(function(){
+	$("#walkingSelectionsSubmitButton").click(function(){
+		$("#walkingDirectionsResultsContainer").show();				
+	});
+	$("#walkingDirectionsResultsContainer").hide();
+
+	$("#closeWalkingDirectionsPanelButton").click(function(){
+		$("#walkingDirectionsResultsContainer").hide();
+	});
+	
+	$(".about").hide();
+	$(".help").hide();
+	$(".version").hide();
+	
+});
+</script>
 </body>
 
 </html>

@@ -422,7 +422,9 @@
 		'{{#personalData}}<li class="sidebarOption">{{label}}</li>{{/personalData}}<br>';
 		Mustache.parse(templateCategories);   // optional, speeds up future uses
 		data.processDays = function() {
-			//for (i=0; i<= days.length)
+			//for (i=0; i<= days.length(); i++){
+				
+			//}
 			return this;
 		}
 		var rendered = Mustache.render(templateCategories, data.studentData);

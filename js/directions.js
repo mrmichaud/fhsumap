@@ -119,10 +119,10 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
         
 	directionsService.route(
 		{
-			origin: getBuildingID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance,
-			destination: getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance,			
-			//origin: DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance,
-			//destination: DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance,
+			//origin: getBuildingID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance,
+			//destination: getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance,			
+			origin: end,
+			destination: start,
 			travelMode: 'WALKING'
 		}, 
 		

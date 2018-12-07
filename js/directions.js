@@ -7,6 +7,8 @@
 // Author: Monica Michaud
 // Date: 5-1-2018
 //-----------------------------------------------------------------------------------------------
+
+console.log('123');
 var latLngMainEntrance = {}; 
 function showWalkingDirections() {
 	$("#walkingStepsContainer").empty();
@@ -37,14 +39,15 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
         }
         //else start = getBuildingID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance;
         else start = DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance;
-        console.log(start);
+        //console.log(start);
+
         if(document.getElementById('walkingDirectionsEndInput').value==0){
           end = currentPosition;
         }
 
         //else start = getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance;
         else end = DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance;
-        console.log(end);
+        //console.log(end);
 	    
 	    directionsService.route(
 		{

@@ -16,7 +16,7 @@ function showWalkingDirections() {
 	// Display the route between the initial start and end selections.
 	calculateAndDisplayRoute(directionsDisplay, directionsService, markerArray, stepDisplay, map);
 }
-
+/*
 function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerArray, stepDisplay, map) {
 	
 	//connects directionsDisplay back to the map again
@@ -97,8 +97,8 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 		}
 	);
 }
+*/
 
-/*
 function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerArray, stepDisplay, map) {
 	
 	//connects directionsDisplay back to the map again
@@ -184,7 +184,7 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 		}
 	);
 }
-*/
+
 function showSteps(directionResult, markerArray, stepDisplay, map) {
 	// For each step, place a marker, and add the text to the marker's infowindow.
 	// Also attach the marker to an array so we can keep track of it and remove it

@@ -104,20 +104,20 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 		markerArray[i].setMap(null);
 	}
 	// Retrieve the start and end locations and create a DirectionsRequest using WALKING directions.
-	
+	console.log(currentPosition);
 	var start, end;
-    if(document.getElementById('walkingDirectionsStartInput').value==0){
-          start = currentPosition;
-     console.log(start);            
+    if(document.getElementById('walkingDirectionsStartInput').value == 0){
+          start = currentPosition;           
         }
     else start = getBuildingID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance;
     console.log(start);   
 
-    if(document.getElementById('walkingDirectionsEndInput').value==0){
+    if(document.getElementById('walkingDirectionsEndInput').value == 0){
           end = currentPosition;
         }
     else start = getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance;
-        
+    console.log(end);    
+
 	directionsService.route(
 		{
 			origin: getBuildingID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance,

@@ -69,7 +69,7 @@ function initMap() {
         var myLatlng = new google.maps.LatLng(lat, lng);
 
         currentPosition = myLatlng;  
-        alert(currentPosition);
+        //alert(currentPosition);
         //$("#start").prepend('<option selected value='+lat+','+lng+'> My Current Location</option>');
         //alert(myLatlng);
         if(marker == null){

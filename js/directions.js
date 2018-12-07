@@ -148,13 +148,13 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 			          start = currentPosition;           
 			        }
 			    else start = getBuildingID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance;
-			    console.log(start);   
+			    //console.log(start);   
 
 			    if(document.getElementById('walkingDirectionsEndInput').value == 0){
 			          end = currentPosition;
 			        }
 			    else start = getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance;
-			    console.log(end);    
+			    //console.log(end);    
 				var startMarker = new google.maps.Marker({
                     position: start,
                     map: map,

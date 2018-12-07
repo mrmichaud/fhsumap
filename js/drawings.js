@@ -94,6 +94,7 @@ function drawPOI ( POIObject, map ) {
 	var markersCenter = new google.maps.Marker({
 		position: POIObject.latLng ,
 		title: POIObject.title,
+		icon: POIObject.icon,
 		map: map
 	});
 	markersCenter.setVisible(true);

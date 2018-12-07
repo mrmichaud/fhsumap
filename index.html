@@ -267,7 +267,7 @@
 	
 	<script>
 	//----------TEMPLATES BUILT WITH MUSTACHE : Build menu buttons and hamburger menu dynamically with data from JSON-----------
-	$.getJSON( "http://localhost/fhsumap/json_fhsuDataTypes.json", function( data ) {
+	$.getJSON( "json_fhsuDataTypes.json", function( data ) {
 		var templateBuildingDirectory = '<h3>Building Directory</h3>{{#buildings}}<li class="sidebarOption toggleBuilding" onClick="toggleBuilding({{id}})">{{buildingName}} ({{code}})</li>{{/buildings}}';
 		Mustache.parse(templateBuildingDirectory);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateBuildingDirectory, data);
@@ -357,16 +357,12 @@
 		'</div>' +
 		'<div><h4 class="sidebarOption" id="toggle-share">Share</h4>' +
 			'<div class="share">' +
-				
-                        //Facebook share
-                        '<div class="fb-share-button" data-href="https://www.your-domain.com/your-page.html" data-layout="button_count" data-size="large" data-mobile-iframe="false">' +
-                            '<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>' +
-                        '</div>' +
-                    
-                        //Twitter share 
-                        '<div class="">' +
-                            '<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="large">Tweet</a>' +
-                        '</div>' +
+				//Facebook share
+				'<iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button_count&size=small&mobile_iframe=true&width=88&height=20&appId" width="88" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>' +
+				//Twitter share 
+				'<div class="">' +
+					'<a style="background-color:#000" class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="large">Tweet</a>' +
+				'</div>' +
             '</div>' +        
 			
 		'</div>' +
@@ -401,6 +397,10 @@
 		}
 		var rendered = Mustache.render(templateCategories, data.studentData);
 		$('#sidebar-hamburger').html(rendered);
+		$("#walkingDirectionsResultsContainer").hide();
+		$(".about").hide();
+		$(".help").hide();
+		$(".version").hide();
 
 		var templateCategories = '<h3>Layers</h3>{{#layersMenuOptions}}<li class="sidebarOption" onClick="toggleLayer({{#layerID}}{{.}},{{/layerID}})">{{label}}</li>{{/layersMenuOptions}}<br>'; 
 		Mustache.parse(templateCategories);   // optional, speeds up future uses
@@ -651,20 +651,14 @@ $(window).resize(function(){
 });
 
 //when get directions is clicked => open walkingDirectionsResultsContainer
-$(document).ready(function(){
+$(function(){
 	$("#walkingSelectionsSubmitButton").click(function(){
 		$("#walkingDirectionsResultsContainer").show();				
 	});
 
-	$("#walkingDirectionsResultsContainer").hide();
-
 	$("#closeWalkingDirectionsPanelButton").click(function(){
 		$("#walkingDirectionsResultsContainer").hide();
 	});
-	
-	$(".about").hide();
-	$(".help").hide();
-	$(".version").hide();
 	
 });
 </script>

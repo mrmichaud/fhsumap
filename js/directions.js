@@ -16,7 +16,7 @@ function showWalkingDirections() {
 	// Display the route between the initial start and end selections.
 	calculateAndDisplayRoute(directionsDisplay, directionsService, markerArray, stepDisplay, map);
 }
-/*
+
 function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerArray, stepDisplay, map) {
 	
 	//connects directionsDisplay back to the map again
@@ -34,22 +34,18 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
         if(document.getElementById('walkingDirectionsStartInput').value==0){
           start = currentPosition;
         }
-        //else start = getBuildingID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance;
         else start = DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance;
-       alert(start);
-
+       
         if(document.getElementById('walkingDirectionsEndInput').value==0){
           end = currentPosition;
-        }
-
-        //else start = getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance;
+        }  
         else end = DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance;
-        //console.log(end);
+     
 	    
 	    directionsService.route(
 		{
-			origin: end,
-			destination: start,
+			origin: strat,
+			destination: end,
 			travelMode: 'WALKING'
 		}, 
 		
@@ -67,16 +63,27 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 				//alert(response.routes[0].warnings);
 				console.log(response);
 				directionsDisplay.setDirections(response);
+
+				 var start, end;
+		        if(document.getElementById('walkingDirectionsStartInput').value==0){
+		          start = currentPosition;
+		        }
+		        else start = DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance;
+		       
+		        if(document.getElementById('walkingDirectionsEndInput').value==0){
+		          end = currentPosition;
+		        }  
+		        else end = DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance;
 				
 				var startMarker = new google.maps.Marker({
-                    position: DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance,
+                    position: start,
                     map: map,
                     icon: startAndEnd
                 });
 				startEndMarkerArray.push(startMarker);
 				
 				var endMarker = new google.maps.Marker({
-                    position: DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance,
+                    position: end,
                     map: map,
                     icon: startAndEnd
                 });
@@ -90,8 +97,8 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 		}
 	);
 }
-*/
 
+/*
 function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerArray, stepDisplay, map) {
 	
 	//connects directionsDisplay back to the map again
@@ -177,7 +184,7 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 		}
 	);
 }
-
+*/
 function showSteps(directionResult, markerArray, stepDisplay, map) {
 	// For each step, place a marker, and add the text to the marker's infowindow.
 	// Also attach the marker to an array so we can keep track of it and remove it

@@ -60,7 +60,7 @@ function initMap() {
 	});
 
 //using watchPosition() to tract locations
-	var watchID, myLatlng;           
+	var watchID；          
     var marker = null;
     var showPosition = function(position) {
 

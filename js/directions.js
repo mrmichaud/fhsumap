@@ -104,7 +104,7 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 		markerArray[i].setMap(null);
 	}
 	// Retrieve the start and end locations and create a DirectionsRequest using WALKING directions.
-	console.log(currentPosition);
+	//console.log(currentPosition);
 	var start, end;
     if(document.getElementById('walkingDirectionsStartInput').value == 0){
           start = currentPosition;           
@@ -120,8 +120,8 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 
 	directionsService.route(
 		{
-			origin: getBuildingID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance,
-			destination: getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance,			
+			origin: start,
+			destination: end,			
 			//origin: DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance,
 			//destination: DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance,
 			travelMode: 'WALKING'

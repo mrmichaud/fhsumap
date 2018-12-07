@@ -8,7 +8,7 @@
 // Date: 5-1-2018
 //-----------------------------------------------------------------------------------------------
 
-console.log('123');
+alert('123');
 var latLngMainEntrance = {}; 
 function showWalkingDirections() {
 	$("#walkingStepsContainer").empty();

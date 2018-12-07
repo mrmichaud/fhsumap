@@ -115,7 +115,7 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
     if(document.getElementById('walkingDirectionsEndInput').value == 0){
           end = currentPosition;
         }
-    else start = getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance;
+    else end = getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance;
     console.log(end);    
 
 	directionsService.route(
@@ -153,7 +153,7 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 			    if(document.getElementById('walkingDirectionsEndInput').value == 0){
 			          end = currentPosition;
 			        }
-			    else start = getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance;
+			    else end = getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance;
 			    //console.log(end);    
 				var startMarker = new google.maps.Marker({
                     position: start,
@@ -177,6 +177,7 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 		}
 	);
 }
+
 function showSteps(directionResult, markerArray, stepDisplay, map) {
 	// For each step, place a marker, and add the text to the marker's infowindow.
 	// Also attach the marker to an array so we can keep track of it and remove it

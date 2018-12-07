@@ -108,9 +108,10 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 	var start, end;
     if(document.getElementById('walkingDirectionsStartInput').value==0){
           start = currentPosition;
+     alert(start);            
         }
     else start = getBuildingID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance;
-        
+    alert(start);   
 
     if(document.getElementById('walkingDirectionsEndInput').value==0){
           end = currentPosition;

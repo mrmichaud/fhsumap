@@ -249,6 +249,8 @@
 		var markerArray;
 		var startEndMarkerArray = [];
 		var map;
+
+      	var currentPosition;
 		
 		//var infoWindow;
 		
@@ -261,22 +263,22 @@
 		var y;
 		
 		var buildingStates = [];
-		
-		
 	</script>
 	
-	<script>
+	<script>	
+		
 	//----------TEMPLATES BUILT WITH MUSTACHE : Build menu buttons and hamburger menu dynamically with data from JSON-----------
-	$.getJSON( "http://localhost/fhsumap/json_fhsuDataTypes.json", function( data ) {
-		var templateBuildingDirectory = '<h3>Building Directory</h3>{{#buildings}}<li class="sidebarOption toggleBuilding" onClick="toggleBuilding({{id}})">{{buildingName}} ({{code}})</li>{{/buildings}}';
+	$.getJSON( "json_fhsuDataTypes.json", function( data ) {
+		var templateBuildingDirectory = '<h3>Building Directory</h3>{{#buildings}}<li class="sidebarOption" data-buildingID="{{id}}" onClick="toggleBuilding("data-buildingID")>{{buildingName}} ({{code}})</li>{{/buildings}}';
 		Mustache.parse(templateBuildingDirectory);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateBuildingDirectory, data);
 		$('#sidebar-building').html(rendered);
 
-		var templateWalkingDirectionBuildings = '<div id="walkingTitleBar"><div id="walkingTitleText" class="sameLineStyle"><h3>Walking&nbsp;Directions</h3></div>' +
+
+		var templateWalkingDirectionBuildings = '<br><h3>Walking&nbsp;Directions</h3>' +
 		'<div id="walkingResetButtonContainer" class="sameLineStyle">' +
 			'<button id="walkingResetButton" class="resetButtons" type="button" onClick="clearDirections()"><img src="siteImages/white-restart-512.png"></button>' +
-		'</div></div>' +
+		'</div>' +
 		'<div id="walkingInstructionText">' +
 			'<span class="intructionTexts">Select buildings from dropdown menus</span>' +
 		'</div>' +
@@ -288,7 +290,8 @@
 					'</div>' +
 					'<div id="walkingSelectionsStartDropdownOption">' +
 						'<select name="start" id="walkingDirectionsStartInput">' +
-							'{{#buildings}}<option value={{id}}>{{buildingName}}</option>{{/buildings}}' +
+						 	'<option value="0"> Current position</option>' +
+    						'{{#buildings}}<option value={{code}}>{{buildingName}}</option>{{/buildings}}' +
 						'</select>' +
 					'</div>' +
 				'</div>' +
@@ -298,7 +301,8 @@
 					'</div>' +
 					'<div id="walkingSelectionsEndDropdownOption">' +
 						'<select name="end" id="walkingDirectionsEndInput">' +
-							'{{#buildings}}<option value={{id}}>{{buildingName}}</option>{{/buildings}}' +
+						 	'<option value="0"> Current position</option>' +
+							'{{#buildings}}<option value={{code}}>{{buildingName}}</option>{{/buildings}}' +
 						'</select>' +
 					'</div>' +
 				'</div>' +
@@ -306,27 +310,12 @@
 					'<button id="walkingSelectionsSubmitButton" type="button" onClick="showWalkingDirections()">Get Directions</button>' +
 				'</div>' +
 			'</form>' +
-		'</div>' +
-		//Hidden as default, when walkingSelectionsSubmitButton is clicked/showWalkingDirections() is called, show this div with walking directions panel info in it.
-		'<div id="walkingDirectionsResultsContainer">' +
-			'<div id="walkingDirectionsPanelTitleTextContainer" class="sameLineStyle">' +
-				'<h4 id="walkingDirectionsPanelTitleText">Steps:</h4>' +
-			'</div>' +
-			'<div class="sameLineStyle">' +
-				'<button id="toggleWalkingDirectionsMarkerButton" type="button" onClick="toggleWalkingMarkers()"><img id="toggleDirectionMarkers" src="siteImages/google-map-pointer-grey-th.png"></button>' +
-			'</div>' +
-			'<div class="sameLineStyle">' +
-				'<button id="closeWalkingDirectionsPanelButton" type="button"><img id="closeWalkingPanelImage" src="siteImages/close-button.png"></button>' +
-			'</div>' +
-			'<div id="walkingStepsContainer">' +
-				'<p>No walking results yet - Select above!</p>' +
-			'</div>' +			
-		'</div>' ;
+		'</div>';
 		Mustache.parse(templateWalkingDirectionBuildings);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateWalkingDirectionBuildings, data);
 		$('#sidebar-direction').html(rendered);
 
-		var templateParking = '<h3>Parking</h3>{{#buildings}}<li class="sidebarOption" onClick="toggleParking({{id}})">{{buildingName}}</li>{{/buildings}}';
+		var templateParking = '<br><h3>Parking</h3>{{#buildings}}<li class="sidebarOption" data-parkingAtBuildingID="{{id}}" onClick="toggleParking("data-parkingAtBuildingID")>{{buildingName}}</li>{{/buildings}}';
 		Mustache.parse(templateParking);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateParking, data);
 		$('#sidebar-parking').html(rendered);
@@ -338,7 +327,7 @@
                     '<td>Student Name:</td>' +
                     '<td>{{firstName}} {{lastName}}</td>' +
                 '</tr>' +
-				'{{#classes}}' +
+				'{{#myClass}}' +
 				'<th>{{classCode}}: {{title}}</th>' +
                 '<tr>' +
                     '<td>Location: </td>' +
@@ -352,7 +341,7 @@
                     '<td>Instructor: </td>' +
                     '<td>{{instructor}}</td>' +
                 '</tr>' +
-				'{{/classes}}' +
+				'{{/myClass}}' +
 			'</table>' +
 		'</div>' +
 		'<div><h4 class="sidebarOption" id="toggle-share">Share</h4>' +
@@ -380,8 +369,8 @@
 				'<p>Email: newmedia@fhsu.edu</p>' +
 				'<p>Phone: 785-628-4784</p>' +
 			'</div></div>' +
-		'<div><h4 class="sidebarOption" id="toggle-version">Version</h4>' +
-			'<div id="informationCreditsDisplay" class="version" title="About the Next Dimension">' +
+		'<div><h3>Version</h3>' +
+			'<div id="informationCreditsDisplay" title="About the Next Dimension">' +
 				'<p>Created by Monica Michaud, Meng (Ella) Ding, Conner Chessmore, Yangyang Cui</p>' +
 				'<p>In the Institute for New Media Studies and Informatics Department</p>' +
 				'<p>Advisers: Gordon Carlson, PhD ; Nicholas Caporusso</p>' +
@@ -399,16 +388,16 @@
 			}
 			return returnContent;
 		}
-		var rendered = Mustache.render(templateCategories, data.studentData);
-		$('#sidebar-hamburger').html(rendered);
+		var rendered = Mustache.render(templateCategories, data);
+		$('#sidebar-main').html(rendered);
 
-		var templateCategories = '<h3>Layers</h3>{{#layersMenuOptions}}<li class="sidebarOption" onClick="toggleLayer({{#layerID}}{{.}},{{/layerID}})">{{label}}</li>{{/layersMenuOptions}}<br>'; 
+		var templateCategories = '<h3>Layers</h3>{{#layersMenuOptions}}<li class="sidebarOption" data-layerID="{{layerID}}" onClick="toggleLayer("data-layerID")>{{label}}</li>{{/layersMenuOptions}}<br>'; 
 		Mustache.parse(templateCategories);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateCategories, data);
 		$('#sidebar-layers').html(rendered);
 		//console.log(rendered);
 
-		var templateCategories = '<h3>Tours</h3>{{#toursMenuOptions}}<li class="sidebarOption" onClick="toggleTour({{#tourID}}{{.}},{{/tourID}})">{{label}}</li>{{/toursMenuOptions}}<br>';
+		var templateCategories = '<h3>Tours</h3>{{#toursMenuOptions}}<li class="sidebarOption" data-tourID="{{tourID}}" onClick="toggleTour("data-tourID")>{{label}}</li>{{/toursMenuOptions}}<br>';
 		Mustache.parse(templateCategories);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateCategories, data);
 		$('#sidebar-tour').html(rendered);
@@ -441,7 +430,7 @@
 			if (this.readyState == 4 && this.status == 200) {
 				DataTypesInformation = JSON.parse(this.responseText);
 			//console.log(DataTypesInformation);
-			
+
 			for (x in DataTypesInformation.buildings){
 				//add id and state to builingStates array
 				var newBuildingObj = {
@@ -459,12 +448,15 @@
 			var test_polygons_data = getPolygonID(1);
 			var test_circles_data = getCircleID(1);
 			
-			//drawBuilding (test_building_data, map);
-			//drawPOI (test_poi_data, map);
-			//drawParking (test_parking_data, map);
-			//drawPolyline (test_polylines_data, map);
-			//drawPolygon (test_polygons_data, map);
-			//drawCircle (test_circles_data, map);
+			//drawPOI (test_poi_data.latLng, test_poi_data.title, map);
+			//drawParking (test_parking_data.parkingOutline, map);
+			//drawPolyline (test_polylines_data.latLngArray, map);
+			//drawPolygon (test_polygons_data.outline, map);
+			//drawCircle (test_circles_data.latLngCenter, test_circles_data.radius, map);
+			
+			//console.log(test_building_data);
+			//console.log(test_poi_data);
+
 			}
 		};
 		xmlhttp.open("GET", "json_fhsuDataTypes.json", true);
@@ -608,19 +600,18 @@
 		} // end inParkingCodes
 		
 	</script>
-	    
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMYzAk4QMdMjpWb7ecr5ImwRaV8xp1sDw&callback=initMap" async defer></script>
-
+	
     <script src="./js/N-spa.js"></script>
 	<!--
 	<script src="./js/buildingData.js"></script>
 	-->
 	<script src="./js/interactions.js"></script>
+	<script src="./js/directions.js"></script>
 	<script src="./js/drawings.js"></script>
 	<script src="./js/toggle.js"></script>
-	<script src="./js/directions.js"></script>
 
 	
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMYzAk4QMdMjpWb7ecr5ImwRaV8xp1sDw&callback=initMap" async defer></script>
 
     <script type="text/javascript">
         //service worker registration
@@ -636,6 +627,7 @@
     </script>
 
     <!-- javascript -->
+
 <script>
 /*This is for managing the building toggle function*/
 //$('#sidebar-building').on('click','li.toggleBuilding',function(){
@@ -655,7 +647,6 @@ $(document).ready(function(){
 	$("#walkingSelectionsSubmitButton").click(function(){
 		$("#walkingDirectionsResultsContainer").show();				
 	});
-
 	$("#walkingDirectionsResultsContainer").hide();
 
 	$("#closeWalkingDirectionsPanelButton").click(function(){

@@ -142,15 +142,28 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 				console.log(response);
 				directionsDisplay.setDirections(response);
 				
+
+				var start, end;
+			    if(document.getElementById('walkingDirectionsStartInput').value == 0){
+			          start = currentPosition;           
+			        }
+			    else start = getBuildingID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance;
+			    console.log(start);   
+
+			    if(document.getElementById('walkingDirectionsEndInput').value == 0){
+			          end = currentPosition;
+			        }
+			    else start = getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance;
+			    console.log(end);    
 				var startMarker = new google.maps.Marker({
-                    position: getBuildingID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance,
+                    position: start,
                     map: map,
                     icon: startAndEnd
                 });
 				startEndMarkerArray.push(startMarker);
 				
 				var endMarker = new google.maps.Marker({
-                    position: getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance,
+                    position: end,
                     map: map,
                     icon: startAndEnd
                 });

@@ -17,20 +17,7 @@ function showWalkingDirections() {
 	calculateAndDisplayRoute(directionsDisplay, directionsService, markerArray, stepDisplay, map);
 }
 
-function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerArray, stepDisplay, map) {
-	
-	//connects directionsDisplay back to the map again
-	directionsDisplay.setMap(map);
-	directionsDisplay.setPanel(document.getElementById('walkingStepsContainer'));
-	
-	// First, remove any existing markers from the map.
-	//Basically hide function
-	for (var i = 0; i < markerArray.length; i++) {
-		markerArray[i].setMap(null);
-	}
-	// Retrieve the start and end locations and create a DirectionsRequest using WALKING directions.
-	
-        var start,end;
+var start, end;
         if(document.getElementById('walkingDirectionsStartInput').value==0){
           start = currentPosition;
         }
@@ -45,7 +32,36 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
         //else start = getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance;
         else end = DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance;
         //console.log(end);
-	    
+
+function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerArray, stepDisplay, map) {
+	
+	//connects directionsDisplay back to the map again
+	directionsDisplay.setMap(map);
+	directionsDisplay.setPanel(document.getElementById('walkingStepsContainer'));
+	
+	// First, remove any existing markers from the map.
+	//Basically hide function
+	for (var i = 0; i < markerArray.length; i++) {
+		markerArray[i].setMap(null);
+	}
+	// Retrieve the start and end locations and create a DirectionsRequest using WALKING directions.
+	/*
+        var start, end;
+        if(document.getElementById('walkingDirectionsStartInput').value==0){
+          start = currentPosition;
+        }
+        //else start = getBuildingID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance;
+        else start = DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance;
+       alert(start);
+
+        if(document.getElementById('walkingDirectionsEndInput').value==0){
+          end = currentPosition;
+        }
+
+        //else start = getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance;
+        else end = DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance;
+        //console.log(end);
+	 */   
 	    directionsService.route(
 		{
 			origin: end,

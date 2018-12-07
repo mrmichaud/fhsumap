@@ -130,7 +130,7 @@ function drawBuilding ( buildingObject, map ) {
 	
 	console.log(buildingObject.buildingName);
 	//create building polygon using passed value and global variables from index.html
-	outlineEdge = new google.maps.Polygon({
+	var outlineEdge = new google.maps.Polygon({
 		path: buildingObject.buildingOutline,
 		geodesic: true,
 		strokeColor: BUILDING_UNSELECTED_BORDER_COLOR,
@@ -152,7 +152,7 @@ function drawBuilding ( buildingObject, map ) {
 		//Insert photo and info string
 		buildingObject.picture + '>' + buildingObject.infoBoxString +
 		//Building hours of operation: check is displayHours is true, is yes then print hoursOfOperation and hoursLink, if not do not print
-		((buildingObject.openHours == "true") ? ('<p>Building Hours: ' + buildingObject.hoursOfOperation + '</p><p>For complet list of operating hours: <a href='+ buildingObject.hourLink +' target="_blank">Click Here</a></p>' ) : ('') ) +
+		((buildingObject.openHours == "true") ? ('<p>Building Hours: ' + buildingObject.hourOfOperation + '</p><p>For complet list of operating hours: <a href='+ buildingObject.hourLink +' target="_blank">Click Here</a></p>' ) : ('') ) +
 		//Link to 360 interior view if available with link to historical info, else just link to historical info
 		((buildingObject.link360 == "true") ? ('<p>For more information: <a href='+ buildingObject.infoLinkString +' target="_blank">Click Here</a></p><p>For a 360 interior view of this building: <a href='+ buildingObject.link360String +' target="_blank">Click Here</a></p>' ) : ('<p>For more information: <a href='+ buildingObject.infoLinkString +' target="_blank">Click Here</a></p>') ) +
 		
@@ -173,7 +173,7 @@ function drawBuilding ( buildingObject, map ) {
 //Draws a single parking lot on the map
 function drawParking ( parkingObject, map ) {
 	//create parking polygon using passed value and global variables from index.html
-	parkingOutline = new google.maps.Polygon({
+	var parkingOutline = new google.maps.Polygon({
 		path: parkingObject.parkingOutline,
 		geodesic: true,
 		strokeColor: PARKING_SELECTED_BORDER_COLOR,
@@ -218,7 +218,7 @@ function drawPolyline ( polylineObject, map ) {
 	};
 	
 	//create polyline using passed value, lineSymbol, and global variables from index.html
-	polylinePath = new google.maps.Polyline({
+	var polylinePath = new google.maps.Polyline({
 		path: polylineObject.latLngArray,
 		geodesic: true,
 		strokeColor: TOUR_PATH_COLOR,
@@ -239,7 +239,7 @@ function drawPolyline ( polylineObject, map ) {
 //Draws a single polygon on the map
 function drawPolygon ( polygonObject, map ) {
 	//create polygon using passed value and global variables from index.html
-	polygonOutline = new google.maps.Polygon({
+	var polygonOutline = new google.maps.Polygon({
 		path: polygonObject.outline,
 		geodesic: true,
 		strokeColor: POLYGON_UNSELECTED_BORDER_COLOR,
@@ -279,7 +279,7 @@ function drawPolygon ( polygonObject, map ) {
 //Draws a single circle on the map
 function drawCircle ( circleObject, map ) {
 	//create circle using passed values and global variables from index.html
-	circleOutline = new google.maps.Circle({
+	var circleOutline = new google.maps.Circle({
 		strokeColor: CIRCLE_PATH_COLOR,
 		strokeOpacity: 0.8,
 		strokeWeight: CIRCLE_PATH_SIZE,

@@ -44,7 +44,7 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 	    
 	    directionsService.route(
 		{
-			origin: strat,
+			origin: start,
 			destination: end,
 			travelMode: 'WALKING'
 		}, 

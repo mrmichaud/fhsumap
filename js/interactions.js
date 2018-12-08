@@ -106,7 +106,7 @@ function hideVideoTourMarkers() {
 }
 //-------------------------------------------------------------------------------
 function hideParking(parkingingCode){
-	active_CampusParking = true;
+	active_CampusParking = false;
 	for (x in CampusParkingInformation){
 		//unhighlightSingleBuilding( CampusParkingInformation[x].code );
 		

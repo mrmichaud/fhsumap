@@ -46,7 +46,7 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 
     if(start == end){
      
-    alert("NO"); 
+    $("#walkingSelectionsSubmitButtonContainer").append("<h4>NO</h4>"); 
 
     }
     else{

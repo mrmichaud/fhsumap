@@ -49,6 +49,23 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
         }
     else{
     
+    $("#walkingDirectionsResultsContainer").empty();
+
+    $("#walkingDirectionsResultsContainer").append(
+
+       '<div id="walkingDirectionsPanelTitleTextContainer" class="sameLineStyle">' +
+				'<h4 id="walkingDirectionsPanelTitleText">Steps:</h4>' +
+			'</div>' +
+			'<div class="sameLineStyle">' +
+				'<button id="toggleWalkingDirectionsMarkerButton" type="button" onClick="toggleWalkingMarkers()"><img id="toggleDirectionMarkers" src="siteImages/google-map-pointer-grey-th.png"></button>' +
+			'</div>' +
+			'<div class="sameLineStyle">' +
+				'<button id="closeWalkingDirectionsPanelButton" type="button"><img id="closeWalkingPanelImage" src="siteImages/close-button.png"></button>' +
+			'</div>' +
+			'<div id="walkingStepsContainer">' +
+				'<p>No walking results yet - Select above!</p>' +
+			'</div>'
+);
     directionsService.route(
 		{
 			origin: start,

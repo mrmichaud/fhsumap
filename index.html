@@ -342,7 +342,7 @@
 		'</div>' +
 		//Hidden as default, when walkingSelectionsSubmitButton is clicked/showWalkingDirections() is called, show this div with walking directions panel info in it.
 		'<div id="walkingDirectionsResultsContainer">' +
-			/*'<div id="walkingDirectionsPanelTitleTextContainer" class="sameLineStyle">' +
+			'<div id="walkingDirectionsPanelTitleTextContainer" class="sameLineStyle">' +
 				'<h4 id="walkingDirectionsPanelTitleText">Steps:</h4>' +
 			'</div>' +
 			'<div class="sameLineStyle">' +
@@ -353,7 +353,7 @@
 			'</div>' +
 			'<div id="walkingStepsContainer">' +
 				'<p>No walking results yet - Select above!</p>' +
-			'</div>' +	*/		
+			'</div>' +	
 		'</div>' ;
 		Mustache.parse(templateWalkingDirectionBuildings);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateWalkingDirectionBuildings, data);

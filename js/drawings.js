@@ -97,10 +97,13 @@ function initMap() {
 
              function errorHandler(err) {
                 if(err.code == 1) {
-                   alert("Error: Access is denied!");
+                   //alert("Attempting To Find Your Location");
+                   $(#map).append('<div id="errorOne"><span class="intructionTexts">Attempting To Find Your Location</span></div>');
                    //navigator.geolocation.clearWatch(watchID);
                 } else if( err.code == 2) {
-                   alert("Error: Position is unavailable!");
+                   //alert("The Server Couldn't Find Your Location!");
+                   $(#map).append('<div id="errorTwo"><span class="intructionTexts">The Server Could Not Find Your Location!</span></div>');
+
                 } else{
                   //alert("Error: Timeout, Error Code: " + err.code);
                 }
@@ -113,7 +116,9 @@ function initMap() {
                    var options = {enableHighAcuracy: true,timeout: 5000,maximumAge: 0};              
                    watchID = navigator.geolocation.watchPosition(showPosition, errorHandler, options);
                 } else {
-                   alert("Sorry, browser does not support geolocation!");
+                   //alert("Sorry, Your Browser Does Not Support Geolocation!");
+                   $(#map).append('<div id="errorThree"><span class="intructionTexts">Sorry, Your Browser Does Not Support Geolocation!</span></div>');
+
                 }
 
              }

@@ -50,7 +50,9 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 
     }
     else{
+    $("#walkingDirectionsResultsContainer").empty();
     $("#samewarning").remove(); 
+
     directionsService.route(
 		{
 			origin: start,

@@ -16,88 +16,7 @@ function showWalkingDirections() {
 	// Display the route between the initial start and end selections.
 	calculateAndDisplayRoute(directionsDisplay, directionsService, markerArray, stepDisplay, map);
 }
-/*
-function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerArray, stepDisplay, map) {
-	
-	//connects directionsDisplay back to the map again
-	directionsDisplay.setMap(map);
-	directionsDisplay.setPanel(document.getElementById('walkingStepsContainer'));
-	
-	// First, remove any existing markers from the map.
-	//Basically hide function
-	for (var i = 0; i < markerArray.length; i++) {
-		markerArray[i].setMap(null);
-	}
-	// Retrieve the start and end locations and create a DirectionsRequest using WALKING directions.
-	
-        var start, end;
-        if(document.getElementById('walkingDirectionsStartInput').value==0){
-          start = currentPosition;
-        }
-        else start = DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance;
-       
-        if(document.getElementById('walkingDirectionsEndInput').value==0){
-          end = currentPosition;
-        }  
-        else end = DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance;
-     
-	    
-	    directionsService.route(
-		{
-			origin: start,
-			destination: end,
-			travelMode: 'WALKING'
-		}, 
-		
-		function(response, status) {
-			// Route the directions and pass the response to a function to create markers for each step.
-			
-			if (status === 'OK') {
-				
-				var startAndEnd = {
-					url: "siteImages/gold_pin.png",
-					scaledSize: new google.maps.Size(40,40)
-				}
-				
-				//document.getElementById("warnings-panel").innerHTML = '<b>' + response.routes[0].warnings + '</b>';
-				//alert(response.routes[0].warnings);
-				console.log(response);
-				directionsDisplay.setDirections(response);
 
-				 var start, end;
-		        if(document.getElementById('walkingDirectionsStartInput').value==0){
-		          start = currentPosition;
-		        }
-		        else start = DataTypesInformation[document.getElementById('walkingDirectionsStartInput').value].latLngMainEntrance;
-		       
-		        if(document.getElementById('walkingDirectionsEndInput').value==0){
-		          end = currentPosition;
-		        }  
-		        else end = DataTypesInformation[document.getElementById('walkingDirectionsEndInput').value].latLngMainEntrance;
-				
-				var startMarker = new google.maps.Marker({
-                    position: start,
-                    map: map,
-                    icon: startAndEnd
-                });
-				startEndMarkerArray.push(startMarker);
-				
-				var endMarker = new google.maps.Marker({
-                    position: end,
-                    map: map,
-                    icon: startAndEnd
-                });
-				startEndMarkerArray.push(endMarker);
-				
-				showSteps(response, markerArray, stepDisplay, map);
-			} 
-			else {
-				window.alert('Directions request failed due to ' + status);
-			}
-		}
-	);
-}
-*/
 
 function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerArray, stepDisplay, map) {
 	
@@ -123,9 +42,16 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
           end = currentPosition;
         }
     else end = getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance;
-    console.log(end);    
+    console.log(end); 
 
-	directionsService.route(
+    if(start == end){
+     
+    alert("NO"); 
+
+    }
+    else{
+
+    directionsService.route(
 		{
 			origin: start,
 			destination: end,			
@@ -183,6 +109,10 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 			}
 		}
 	);
+
+    }  
+
+	
 }
 
 function showSteps(directionResult, markerArray, stepDisplay, map) {

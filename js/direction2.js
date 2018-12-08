@@ -45,9 +45,13 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
     console.log(end); 
 
     if(start == end){
-     alert("Please choose different positions!");
-        }
+    $("#walkingStepsContainer").empty(); 
+    $("#walkingStepsContainer").append("<h4 id='samewarning'>NO</h4>"); 
+
+    }
     else{
+    
+    $("#samewarning").remove(); 
 
     directionsService.route(
 		{

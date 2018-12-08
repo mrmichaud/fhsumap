@@ -46,11 +46,11 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 
     if(start == end){
      
-    $("#walkingSelectionsSubmitButtonContainer").append("<h4>NO</h4>"); 
+    $("#walkingSelectionsSubmitButtonContainer").append("<h4 id='samewarning'>NO</h4>"); 
 
     }
     else{
-
+    $("#samewarning").remove(); 
     directionsService.route(
 		{
 			origin: start,

@@ -13,7 +13,6 @@
 // Date: 12-5-2018
 //-----------------------------------------------------------------------------------------------
 
-
 function initMap() {
 	
 	//create map object and set default map settings
@@ -237,6 +236,7 @@ function drawBuilding ( buildingObject, map ) {
 			console.log(buildingObject.latLngCenter);
 			infoWindow.setContent(contentString);
 			infoWindow.setPosition(buildingObject.latLngCenter);
+			map.setCenter(buildingObject.latLngCenter);
 			infoWindow.open(map, outlineEdge[buildingObject.id]);
 		}
 	})(outlineEdge[buildingObject.id]));
@@ -281,6 +281,7 @@ function drawBuildingHighlighted ( buildingObject, map ) {
 			console.log(buildingObject.latLngCenter);
 			infoWindow.setContent(contentString);
 			infoWindow.setPosition(buildingObject.latLngCenter);
+			map.setCenter(buildingObject.latLngCenter);
 			infoWindow.open(map, outlineEdgeHighlighted[buildingObject.id]);
 		}
 	})(outlineEdgeHighlighted[buildingObject.id]));
@@ -318,6 +319,7 @@ function drawParking ( parkingObject, map ) {
 		return function() {
 			infoWindow.setContent(contentString);
 			infoWindow.setPosition(parkingObject.latLngCenter);
+			map.setCenter(parkingObject.latLngCenter);
 			infoWindow.open(map, parkingOutline[parkingObject.id]);
 		}
 	})(parkingOutline[parkingObject.id]));
@@ -351,6 +353,7 @@ function drawPolyline ( polylineObject, map ) {
 
 	polylinePath[polylineObject.id].setMap(map);
 	polylinePath[polylineObject.id].setVisible(true);
+	//map.setCenter(buildingObject.latLngCenter);
 }
 
 //Draws a single polygon on the map
@@ -387,6 +390,7 @@ function drawPolygon ( polygonObject, map ) {
 		return function() {
 			infoWindow.setContent(contentString);
 			infoWindow.setPosition(polygonObject.latLngCenter);
+			map.setCenter(polygonObject.latLngCenter);
 			infoWindow.open(map, polygonOutline[polygonObject.id]);
 		}
 	})(polygonOutline[polygonObject.id]));
@@ -423,6 +427,7 @@ function drawCircle ( circleObject, map ) {
 		return function() {
 			infoWindow.setContent(contentString);
 			infoWindow.setPosition(circleObject.latLngCenter);
+			map.setCenter(circleObject.latLngCenter);
 			infoWindow.open(map, circleOutline[circleObject.id]);
 		}
 	})(circleOutline[circleObject.id]));
@@ -501,4 +506,80 @@ function getBuildingByCode (codeValue) {
 			return DataTypesInformation.buildings[i];
 		}
 	}//end for loop
+}
+
+
+function openInfoWindowBuilding ( buildingCode ){
+	var building_infoBoxString;
+	var building_latLngCenter;
+	var buildingObject = getBuildingByCode (buildingCode);
+		
+	//get infoBoxString
+	building_infoBoxString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
+		//Insert Name (and Code)
+		((buildingObject.displayCode == "true") ? (buildingObject.buildingName + ' (' + buildingObject.code + ') ' ) : (buildingObject.buildingName) ) + 
+		'</h1><div id="infoWindowBodyContent"><img class="infoWindowImages" src=' + 
+		//Insert photo and info string
+		buildingObject.picture + '>' + buildingObject.infoBoxString +
+		//Building hours of operation: check is displayHours is true, is yes then print hoursOfOperation and hoursLink, if not do not print
+		((buildingObject.openHours == "true") ? ('<p>Building Hours: ' + buildingObject.hourOfOperation + '</p><p>For complet list of operating hours: <a href='+ buildingObject.hourLink +' target="_blank">Click Here</a></p>' ) : ('') ) +
+		//Link to 360 interior view if available with link to historical info, else just link to historical info
+		((buildingObject.link360 == "true") ? ('<p>For more information: <a href='+ buildingObject.infoLinkString +' target="_blank">Click Here</a></p><p>For a 360 interior view of this building: <a href='+ buildingObject.link360String +' target="_blank">Click Here</a></p>' ) : ('<p>For more information: <a href='+ buildingObject.infoLinkString +' target="_blank">Click Here</a></p>') ) +
+		'</div></div>';
+	
+	//get latLngCenter
+	building_latLngCenter = buildingObject.latLngCenter;
+	map.setCenter(building_latLngCenter);
+	infoWindow.setContent(building_infoBoxString);
+	infoWindow.setPosition(building_latLngCenter);
+	infoWindow.open(map);
+}
+
+function openInfoWindowPOI ( idValue ){
+	var POI_infoBoxString;
+	var POI_latLng;
+	var POIObject = getPOIID (idValue);
+		
+	//get infoBoxString
+	POI_infoBoxString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
+		//Insert Title
+		POIObject.title +
+		'</h1><div id="infoWindowBodyContent">' +
+		//Insert photo or video here with appropriate links included
+		((POIObject.picture != "") ? ('<img class="infoWindowImages" src=' + POIObject.picture + '>') : ('<iframe title=' + POIObject.infoURLTitle + 
+		' width="480" height="270" allowTransparency="true" mozallowfullscreen webkitallowfullscreen allowfullscreen style="background-color:transparent;" frameBorder="0" src=' + POIObject.infoURLLink + 
+		'></iframe>') ) +
+		//Insert info string of text
+		POIObject.infoBoxString + 	
+		'</div></div>';
+	
+	//get latLngCenter
+	POI_latLng = POIObject.latLng;
+	map.setCenter(POI_latLng);
+	infoWindow.setContent(POI_infoBoxString);
+	infoWindow.setPosition(POI_latLng);
+	infoWindow.open(map);
+}
+
+function openInfoWindowParking ( idValue ){
+	var parking_infoBoxString;
+	var parking_latLngCenter;
+	var parkingObject = getParkingID (idValue);
+		
+	//get infoBoxString
+	parking_infoBoxString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
+		parkingObject.parkingName + ' (Zone: ' + parkingObject.zone + ') ' +
+		'</h1>' +
+		//'<div id="infoWindowBodyContent">' + 
+		//DataTypesInformation.parking[x].infoWindowContent + 		
+		//'Insert info content here...' +
+		//'</div>' +
+		'</div>';
+	
+	//get latLngCenter
+	parking_latLngCenter = parkingObject.latLngCenter;
+	map.setCenter(parking_latLngCenter);
+	infoWindow.setContent(parking_infoBoxString);
+	infoWindow.setPosition(parking_latLngCenter);
+	infoWindow.open(map);
 }

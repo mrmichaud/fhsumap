@@ -1,0 +1,43 @@
+{
+	"studentData":{
+		"firstName" : "Monica",
+		"lastName"  : "Michaud",
+		"email"     : "mrmmichaud@mail.fhsu.edu",
+		"classes"     : [ 
+			{
+				"classCode" : "ENG 126",
+				"title" : "Introduction to Literature",
+				"instructor" : "Scott, Pauline",
+				"building" : "RH",
+				"room" : "369",
+				"latLng" : {"lat": 38.87405, "lng": -99.33962},
+				"days"      : [
+					{"MON": "12:30 PM - 1:20 PM"},
+					{"TUE": ""},
+					{"WED": "12:30 PM - 1:20 PM"},
+					{"THU": ""},
+					{"FRI": "12:30 PM - 1:20 PM"},
+					{"SAT": ""},
+					{"SUN": ""}
+				]
+			},
+			 {
+				"classCode" : "GSCI 120",
+				"title" : "World Geography",
+				"instructor" : "Schafer, Thomas",
+				"building" : "RH",
+				"room" : "201",
+				"latLng" : {"lat": 38.87405, "lng": -99.33962},
+				"days"      : [
+					{"MON": ""},
+					{"TUE": "12:00 PM - 1:15 PM"},
+					{"WED": ""},
+					{"THU": "12:00 PM - 1:15 PM"},
+					{"FRI": ""},
+					{"SAT": ""},
+					{"SUN": ""}
+				]
+			}				
+		]
+	}
+}

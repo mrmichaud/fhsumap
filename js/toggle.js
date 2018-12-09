@@ -257,3 +257,23 @@ function toggleTour (  ) {
 		}//end inner for loop
 	}//end of for loop
 }
+
+function showParkingLotOnly ( idValue ) {				
+	var parking_object_data = getParkingID( idValue );
+	drawParking (parking_object_data, map);
+}
+
+function showSearchResultsBuilding ( codeValue ) {
+	toggleBuildingHighlighted( codeValue );
+	openInfoWindowBuilding( codeValue );
+}
+
+function showSearchResultsPOI ( idValue ) {
+	togglePOI( idValue );
+	openInfoWindowPOI( idValue );
+}
+
+function showSearchResultsParking ( idValue ) {
+	showParkingLotOnly ( idValue );
+	openInfoWindowParking( idValue );
+}

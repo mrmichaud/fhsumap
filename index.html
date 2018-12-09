@@ -282,6 +282,95 @@
 	
 	<script>
 	//----------TEMPLATES BUILT WITH MUSTACHE : Build menu buttons and hamburger menu dynamically with data from JSON-----------
+	//Template for main menu/hamburger button
+	$.getJSON( "json_fhsuFakeStudentData.json", function( data ) {
+		var templateCategories = '<h3>Main Menu</h3>'+
+		'<div><h4 class="sidebarOption" id="toggle-student-info" >Student Information</h4>' +
+			'<table  class="student-info">' +
+				'<tr>' +
+                    '<td>Student Name:</td>' +
+                    '<td>{{firstName}} {{lastName}}</td>' +
+                '</tr>' +
+				'{{#classes}}' +
+				'<th colspan="2">{{classCode}}: {{title}}</th>' +
+                '<tr>' +
+                    '<td>Location: </td>' +
+                    '<td><div class="sidebarOption" onClick="toggleBuildingHighlighted(\'{{building}}\')">{{building}} {{room}}</div></td>' +
+                '</tr>' +
+                '<tr>' +
+                    '<td>Time: </td>' +
+                    '<td>{{#days}} {{{processDays}}} {{/days}}</td>' +
+                '</tr>' +
+                '<tr>' +
+                    '<td>Instructor: </td>' +
+                    '<td>{{instructor}}</td>' +
+                '</tr>' +
+				'{{/classes}}' +
+			'</table>' +
+		'</div>' +
+		'<div><h4 class="sidebarOption" id="toggle-share">Share</h4>' +
+			'<div class="share">' +
+				//Facebook share
+				'<iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button_count&size=small&mobile_iframe=true&width=88&height=20&appId" width="88" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>' +
+				//Twitter share 
+				'<div class="">' +
+					'<a style="background-color:#000" class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="large">Tweet</a>' +
+				'</div>' +
+            '</div>' +        
+		'</div>' +
+		'<div><h4 class="sidebarOption" id="toggle-about">About</h4>' +
+			'<div class="about">' +
+				'<p>Insert about info here... </p>' +
+			'</div></div>' +
+		'<div><h4 class="sidebarOption" id="toggle-help">Help</h4>' +
+			'<div class="help"><h5>Contact the Institute for New Media Studies:</h5> ' +
+				'<p>Location: Malloy Hall Room 106</p>' + 
+				'<p>Email: newmedia@fhsu.edu</p>' +
+				'<p>Phone: 785-628-4784</p>' +
+			'</div></div>' +
+		'<div><h4 class="sidebarOption" id="toggle-version">Version</h4>' +
+			'<div id="informationCreditsDisplay" class="version" title="About the Next Dimension">' +
+				'<p>Created by Monica Michaud, Meng (Ella) Ding, Conner Chessmore, Yangyang Cui</p>' +
+				'<p>In the Institute for New Media Studies and Informatics Department</p>' +
+				'<p>Advisers: Gordon Carlson, PhD ; Nicholas Caporusso</p>' +
+				'<p>Dev Version: 0.2.5 (Dec 6, 2018)</p>' +
+			'</div></div>' +
+		'{{#personalData}}<li class="sidebarOption">{{label}}</li>{{/personalData}}<br>';
+		Mustache.parse(templateCategories);   // optional, speeds up future uses
+		data.studentData.processDays = function() {
+			var returnContent = "";
+			var value=Object.values(this);
+			var keys=Object.keys(this);
+			//console.log(value);
+			if(value[0] && 0 !== value[0].length){//checks if day is not empty
+				returnContent += keys[0] + ": " + value[0] + "<br />";
+			}
+			return returnContent;
+		}
+		var rendered = Mustache.render(templateCategories, data.studentData);
+		$('#sidebar-hamburger').html(rendered);
+		$("#walkingDirectionsResultsContainer").hide();
+		$(".about").hide();
+		$(".help").hide();
+		$(".version").hide();
+	  
+		$(".sidebarOption").click(function(){
+			$(this).toggleClass("active");
+		});
+	  
+	});
+
+
+	/*
+	function loadUser() {
+	  var template = $('#template').html();
+	  Mustache.parse(template);   // optional, speeds up future uses
+	  var rendered = Mustache.render(template, {name: "Luke"});
+	  $('#target').html(rendered);
+	}
+	*/
+	
+	//Templates for various menu tabs:	
 	$.getJSON( "json_fhsuDataTypes.json", function( data ) {
 		var templateBuildingDirectory = '<h3>Building Directory</h3>{{#buildings}}<li class="sidebarOption toggleBuilding" onClick="toggleBuilding({{id}})">{{buildingName}} ({{code}})</li>{{/buildings}}';
 		Mustache.parse(templateBuildingDirectory);   // optional, speeds up future uses
@@ -348,76 +437,6 @@
 		var rendered = Mustache.render(templateParking, data);
 		$('#sidebar-parking').html(rendered);
 
-		var templateCategories = '<h3>Main Menu</h3>'+
-		'<div><h4 class="sidebarOption" id="toggle-student-info" >Student Information</h4>' +
-			'<table  class="student-info">' +
-				'<tr>' +
-                    '<td>Student Name:</td>' +
-                    '<td>{{firstName}} {{lastName}}</td>' +
-                '</tr>' +
-				'{{#classes}}' +
-				'<th>{{classCode}}: {{title}}</th>' +
-                '<tr>' +
-                    '<td>Location: </td>' +
-                    '<td><div class="sidebarOption" onClick="toggleBuildingHighlighted(\'{{building}}\')">{{building}} {{room}}</div></td>' +
-                '</tr>' +
-                '<tr>' +
-                    '<td>Time: </td>' +
-                    '<td>{{#days}} {{{processDays}}} {{/days}}</td>' +
-                '</tr>' +
-                '<tr>' +
-                    '<td>Instructor: </td>' +
-                    '<td>{{instructor}}</td>' +
-                '</tr>' +
-				'{{/classes}}' +
-			'</table>' +
-		'</div>' +
-		'<div><h4 class="sidebarOption" id="toggle-share">Share</h4>' +
-			'<div class="share">' +
-				//Facebook share
-				'<iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button_count&size=small&mobile_iframe=true&width=88&height=20&appId" width="88" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>' +
-				//Twitter share 
-				'<div class="">' +
-					'<a style="background-color:#000" class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="large">Tweet</a>' +
-				'</div>' +
-            '</div>' +        
-		'</div>' +
-		'<div><h4 class="sidebarOption" id="toggle-about">About</h4>' +
-			'<div class="about">' +
-				'<p>Insert about info here... </p>' +
-			'</div></div>' +
-		'<div><h4 class="sidebarOption" id="toggle-help">Help</h4>' +
-			'<div class="help"><h5>Contact the Institute for New Media Studies:</h5> ' +
-				'<p>Location: Malloy Hall Room 106</p>' + 
-				'<p>Email: newmedia@fhsu.edu</p>' +
-				'<p>Phone: 785-628-4784</p>' +
-			'</div></div>' +
-		'<div><h4 class="sidebarOption" id="toggle-version">Version</h4>' +
-			'<div id="informationCreditsDisplay" class="version" title="About the Next Dimension">' +
-				'<p>Created by Monica Michaud, Meng (Ella) Ding, Conner Chessmore, Yangyang Cui</p>' +
-				'<p>In the Institute for New Media Studies and Informatics Department</p>' +
-				'<p>Advisers: Gordon Carlson, PhD ; Nicholas Caporusso</p>' +
-				'<p>Dev Version: 0.2.5 (Dec 6, 2018)</p>' +
-			'</div></div>' +
-		'{{#personalData}}<li class="sidebarOption">{{label}}</li>{{/personalData}}<br>';
-		Mustache.parse(templateCategories);   // optional, speeds up future uses
-		data.studentData.processDays = function() {
-			var returnContent = "";
-			var value=Object.values(this);
-			var keys=Object.keys(this);
-			//console.log(value);
-			if(value[0] && 0 !== value[0].length){//checks if day is not empty
-				returnContent += keys[0] + ": " + value[0] + "<br />";
-			}
-			return returnContent;
-		}
-		var rendered = Mustache.render(templateCategories, data.studentData);
-		$('#sidebar-hamburger').html(rendered);
-		$("#walkingDirectionsResultsContainer").hide();
-		$(".about").hide();
-		$(".help").hide();
-		$(".version").hide();
-
 		var templateCategories = '<h3>Layers</h3>{{#layersMenuOptions}}<li class="sidebarOption" onClick="toggleLayer({{#layerID}}{{.}},{{/layerID}})">{{label}}</li>{{/layersMenuOptions}}<br>'; 
 		Mustache.parse(templateCategories);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateCategories, data);
@@ -435,16 +454,6 @@
 		});
 	  
 	});
-
-
-	/*
-	function loadUser() {
-	  var template = $('#template').html();
-	  Mustache.parse(template);   // optional, speeds up future uses
-	  var rendered = Mustache.render(template, {name: "Luke"});
-	  $('#target').html(rendered);
-	}
-	*/
 	</script>
 	
 	<script>			
@@ -454,7 +463,17 @@
 		$("#searchButton").on("click", function(e) {
 			 findSearchResults( $("#headerSearchBarInput").val() ); });	
 	
-
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				StudentInformation = JSON.parse(this.responseText);
+				//JSON.parse('<?php echo loadShapes() ?>');
+				//console.log(StudentInformation);
+			}
+		};
+		xmlhttp.open("GET", "json_fhsuFakeStudentData.json", true);
+		xmlhttp.send();
+	
 		//put xmlhttp here
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.onreadystatechange = function() {
@@ -462,118 +481,118 @@
 				DataTypesInformation = JSON.parse(this.responseText);
 				//JSON.parse('<?php echo loadShapes() ?>');
 				
-			//console.log(DataTypesInformation);
-			
-			//****CREATE ARRAY FOR EACH DATA TYPE HOLDING EACH OBJECT'S ID AND ACTIVE STATE**************
-			//console.log(DataTypesInformation.buildings);
-			for (x in DataTypesInformation.buildings){
-				//add id and state to builingStates array
-				var newBuildingObj = {
-					id : DataTypesInformation.buildings[x].id,
-					state : false
+				//console.log(DataTypesInformation);
+				
+				//****CREATE ARRAY FOR EACH DATA TYPE HOLDING EACH OBJECT'S ID AND ACTIVE STATE**************
+				//console.log(DataTypesInformation.buildings);
+				for (x in DataTypesInformation.buildings){
+					//add id and state to builingStates array
+					var newBuildingObj = {
+						id : DataTypesInformation.buildings[x].id,
+						state : false
+					}
+					buildingStates[DataTypesInformation.buildings[x].id]=newBuildingObj;
+					//console.log(buildingStates[DataTypesInformation.buildings.id]);
+					//console.log(x.id);
+					//console.log(newBuildingObj.id);
+					//buildingStates[idNumber].state = true to set to true
 				}
-				buildingStates[DataTypesInformation.buildings[x].id]=newBuildingObj;
-				//console.log(buildingStates[DataTypesInformation.buildings.id]);
-				//console.log(x.id);
-				//console.log(newBuildingObj.id);
-				//buildingStates[idNumber].state = true to set to true
-			}
-			
-			for (x in DataTypesInformation.buildings){
-				//add id and state to builingStates array
-				var newBuildingHighlightedObj = {
-					id : DataTypesInformation.buildings[x].id,
-					state : false
+				
+				for (x in DataTypesInformation.buildings){
+					//add id and state to builingStates array
+					var newBuildingHighlightedObj = {
+						id : DataTypesInformation.buildings[x].id,
+						state : false
+					}
+					buildingHighlightedStates[DataTypesInformation.buildings[x].id]=newBuildingHighlightedObj;
+					//buildingHighlightedStates[idNumber].state = true to set to true
 				}
-				buildingHighlightedStates[DataTypesInformation.buildings[x].id]=newBuildingHighlightedObj;
-				//buildingHighlightedStates[idNumber].state = true to set to true
-			}
-			
-			for (x in DataTypesInformation.pois){
-				//add id and state to poiStates array
-				var newPoiObj = {
-					id : DataTypesInformation.pois[x].id,
-					state : false
+				
+				for (x in DataTypesInformation.pois){
+					//add id and state to poiStates array
+					var newPoiObj = {
+						id : DataTypesInformation.pois[x].id,
+						state : false
+					}
+					poiStates[DataTypesInformation.pois[x].id]=newPoiObj;
+					//poiStates[idNumber].state = true to set to true
 				}
-				poiStates[DataTypesInformation.pois[x].id]=newPoiObj;
-				//poiStates[idNumber].state = true to set to true
-			}
-			
-			for (x in DataTypesInformation.circles){
-				//add id and state to circleStates array
-				var newCircleObj = {
-					id : DataTypesInformation.circles[x].id,
-					state : false
+				
+				for (x in DataTypesInformation.circles){
+					//add id and state to circleStates array
+					var newCircleObj = {
+						id : DataTypesInformation.circles[x].id,
+						state : false
+					}
+					circleStates[DataTypesInformation.circles[x].id]=newCircleObj;
+					//circleStates[idNumber].state = true to set to true
 				}
-				circleStates[DataTypesInformation.circles[x].id]=newCircleObj;
-				//circleStates[idNumber].state = true to set to true
-			}
-			
-			for (x in DataTypesInformation.polylines){
-				//add id and state to polylineStates array
-				var newPolylineObj = {
-					id : DataTypesInformation.polylines[x].id,
-					state : false
+				
+				for (x in DataTypesInformation.polylines){
+					//add id and state to polylineStates array
+					var newPolylineObj = {
+						id : DataTypesInformation.polylines[x].id,
+						state : false
+					}
+					polylineStates[DataTypesInformation.polylines[x].id]=newPolylineObj;
+					//polylineStates[idNumber].state = true to set to true
 				}
-				polylineStates[DataTypesInformation.polylines[x].id]=newPolylineObj;
-				//polylineStates[idNumber].state = true to set to true
-			}
-			
-			for (x in DataTypesInformation.polygons){
-				//add id and state to polygonStates array
-				var newPolygonObj = {
-					id : DataTypesInformation.polygons[x].id,
-					state : false
+				
+				for (x in DataTypesInformation.polygons){
+					//add id and state to polygonStates array
+					var newPolygonObj = {
+						id : DataTypesInformation.polygons[x].id,
+						state : false
+					}
+					polygonStates[DataTypesInformation.polygons[x].id]=newPolygonObj;
+					//polygonStates[idNumber].state = true to set to true
 				}
-				polygonStates[DataTypesInformation.polygons[x].id]=newPolygonObj;
-				//polygonStates[idNumber].state = true to set to true
-			}
-			
-			for (x in DataTypesInformation.parking){
-				//add id and state to parkingStates array
-				var newParkingObj = {
-					id : DataTypesInformation.parking[x].id,
-					state : false
+				
+				for (x in DataTypesInformation.parking){
+					//add id and state to parkingStates array
+					var newParkingObj = {
+						id : DataTypesInformation.parking[x].id,
+						state : false
+					}
+					parkingStates[DataTypesInformation.parking[x].id]=newParkingObj;
+					//parkingStates[idNumber].state = true to set to true
 				}
-				parkingStates[DataTypesInformation.parking[x].id]=newParkingObj;
-				//parkingStates[idNumber].state = true to set to true
-			}
-			
-			for (x in DataTypesInformation.layersMenuOptions){
-				//add id and state to layersMenuOptionsStates array
-				var newLayersMenuOptionsObj = {
-					id : DataTypesInformation.layersMenuOptions[x].id,
-					state : false
+				
+				for (x in DataTypesInformation.layersMenuOptions){
+					//add id and state to layersMenuOptionsStates array
+					var newLayersMenuOptionsObj = {
+						id : DataTypesInformation.layersMenuOptions[x].id,
+						state : false
+					}
+					layersMenuOptionsStates[DataTypesInformation.layersMenuOptions[x].id]=newLayersMenuOptionsObj;
+					//layerMenuOptionsStates[idNumber].state = true to set to true
 				}
-				layersMenuOptionsStates[DataTypesInformation.layersMenuOptions[x].id]=newLayersMenuOptionsObj;
-				//layerMenuOptionsStates[idNumber].state = true to set to true
-			}
-			
-			for (x in DataTypesInformation.toursMenuOptions){
-				//add id and state to toursMenuOptionsStates array
-				var newTourMenuOptionsObj = {
-					id : DataTypesInformation.toursMenuOptions[x].id,
-					state : false
-				}
-				toursMenuOptionsStates[DataTypesInformation.toursMenuOptions[x].id]=newTourMenuOptionsObj;
-				//toursMenuOptionsStates[idNumber].state = true to set to true
-			}			
-			
-			//**************TESTS FOR EACH DRAW FUNCTION*****************
-			
-			var test_building_data = getBuildingID(2);
-			var test_poi_data = getPOIID(4);
-			var test_parking_data = getParkingID(4);
-			var test_polylines_data = getPolylineID(2);
-			var test_polygons_data = getPolygonID(1);
-			var test_circles_data = getCircleID(1);
-			
-			//drawBuilding (test_building_data, map);
-			//drawPOI (test_poi_data, map);
-			//drawParking (test_parking_data, map);
-			//drawPolyline (test_polylines_data, map);
-			//drawPolygon (test_polygons_data, map);
-			//drawCircle (test_circles_data, map);
+				
+				for (x in DataTypesInformation.toursMenuOptions){
+					//add id and state to toursMenuOptionsStates array
+					var newTourMenuOptionsObj = {
+						id : DataTypesInformation.toursMenuOptions[x].id,
+						state : false
+					}
+					toursMenuOptionsStates[DataTypesInformation.toursMenuOptions[x].id]=newTourMenuOptionsObj;
+					//toursMenuOptionsStates[idNumber].state = true to set to true
+				}			
+				
+				//**************TESTS FOR EACH DRAW FUNCTION*****************
+				
+				var test_building_data = getBuildingID(2);
+				var test_poi_data = getPOIID(4);
+				var test_parking_data = getParkingID(4);
+				var test_polylines_data = getPolylineID(2);
+				var test_polygons_data = getPolygonID(1);
+				var test_circles_data = getCircleID(1);
+				
+				//drawBuilding (test_building_data, map);
+				//drawPOI (test_poi_data, map);
+				//drawParking (test_parking_data, map);
+				//drawPolyline (test_polylines_data, map);
+				//drawPolygon (test_polygons_data, map);
+				//drawCircle (test_circles_data, map);
 			}
 		};
 		xmlhttp.open("GET", "json_fhsuDataTypes.json", true);
@@ -631,23 +650,23 @@
 				for ( y = 0; y < searchResults.length; y++ ){
 					//list all buildings included on Name
 					if (searchResults[y].type == "BuildingName"){
-						newBuildingNameContent += "<p><a href='#' onClick='OpenInfoWindow(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
+						newBuildingNameContent += "<p><a href='#' onClick='showSearchResultsBuilding(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
 						//console.log(searchResults[y]);
 					}
 					//list all buildings included on Code
 					if (searchResults[y].type == "BuildingCode"){
-						newBuildingCodeContent += "<p><a href='#' onClick='OpenInfoWindow(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
+						newBuildingCodeContent += "<p><a href='#' onClick='showSearchResultsBuilding(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
 					}
 					//list all buildings included on Information
 					//if (searchResults[y].type == "Information"){
 					//	newInformationContent += "<p><a href='#' onClick='OpenInfoWindow(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
 					//}
 					if (searchResults[y].type == "POIName"){
-						newPOINameContent += "<p><a href='#' onClick='OpenInfoWindow(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
+						newPOINameContent += "<p><a href='#' onClick='showSearchResultsPOI(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
 					}
 					
 					if (searchResults[y].type == "ParkingName"){
-						newParkingNameContent += "<p><a href='#' onClick='OpenInfoWindow(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
+						newParkingNameContent += "<p><a href='#' onClick='showSearchResultsParking(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
 					}
 					
 				}//end for loop through searchResults

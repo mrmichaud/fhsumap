@@ -8,22 +8,22 @@
 
 //******************TOGGLE OBJECT BASED ON A GIVEN ID*****************************************
 
-function toggleBuildingHighlighted( idValue ) {
-	var building_object_data = getBuildingID( idValue );
+function toggleBuildingHighlighted( codeValue ) {
+	var building_object_data = getBuildingByCode( codeValue );
 	//check if building state is true or not
-	if (buildingStates[idValue].state) {
+	if (buildingHighlightedStates[building_object_data.id].state) {
 		//if state is true, hide building
 		//get correct outlineEdge.setVisible(false);
-		outlineEdge[idValue].setVisible(false);
+		outlineEdgeHighlighted[building_object_data.id].setVisible(false);
 		//change state to false
-		buildingStates[idValue].state = false;
+		buildingHighlightedStates[building_object_data.id].state = false;
 	}
 	else {
 		//if state is false, draw building
-		drawBuilding (building_object_data, map);
+		drawBuildingHighlighted (building_object_data, map);
 		
 		//change state to true
-		buildingStates[idValue].state = true;
+		buildingHighlightedStates[building_object_data.id].state = true;
 	}
 	//drawBuilding (building_object_data, map);
 }

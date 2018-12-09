@@ -201,7 +201,6 @@ function drawPOI ( POIObject, map ) {
 
 //Draws a single building on the map
 function drawBuilding ( buildingObject, map ) {
-	
 	//console.log(buildingObject.buildingName);
 	//create building polygon using passed value and global variables from index.html
 	outlineEdge[buildingObject.id] = new google.maps.Polygon({
@@ -241,6 +240,50 @@ function drawBuilding ( buildingObject, map ) {
 			infoWindow.open(map, outlineEdge[buildingObject.id]);
 		}
 	})(outlineEdge[buildingObject.id]));
+	
+}
+
+//Draws a single building on the map
+function drawBuildingHighlighted ( buildingObject, map ) {
+	//console.log(buildingObject.buildingName);
+	//create building polygon using passed value and global variables from index.html
+	outlineEdgeHighlighted[buildingObject.id] = new google.maps.Polygon({
+		path: buildingObject.buildingOutline,
+		geodesic: true,
+		strokeColor: BUILDING_SELECTED_BORDER_COLOR,
+		strokeOpacity: BUILDING_SELECTED_BORDER_OPACITY,
+		strokeWeight: BUILDING_SELECTED_BORDER_SIZE,
+		fillColor: 	BUILDING_SELECTED_FILL_COLOR,
+		fillOpacity: BUILDING_SELECTED_FILL_OPACITY
+	});
+	outlineEdgeHighlighted[buildingObject.id].setMap(map);
+	
+	
+	// This is the content of the info window for a single building
+	var contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
+		//((DataTypesInformation.buildings[x].displayCode == "true") ? (DataTypesInformation.buildings[x].buildingName + ' (' + DataTypesInformation.buildings[x].code + ') ' ) : (DataTypesInformation.buildings[x].buildingName) ) + 
+		//Insert Name (and Code)
+		((buildingObject.displayCode == "true") ? (buildingObject.buildingName + ' (' + buildingObject.code + ') ' ) : (buildingObject.buildingName) ) + 
+		
+		'</h1><div id="infoWindowBodyContent"><img class="infoWindowImages" src=' + 
+		//Insert photo and info string
+		buildingObject.picture + '>' + buildingObject.infoBoxString +
+		//Building hours of operation: check is displayHours is true, is yes then print hoursOfOperation and hoursLink, if not do not print
+		((buildingObject.openHours == "true") ? ('<p>Building Hours: ' + buildingObject.hourOfOperation + '</p><p>For complet list of operating hours: <a href='+ buildingObject.hourLink +' target="_blank">Click Here</a></p>' ) : ('') ) +
+		//Link to 360 interior view if available with link to historical info, else just link to historical info
+		((buildingObject.link360 == "true") ? ('<p>For more information: <a href='+ buildingObject.infoLinkString +' target="_blank">Click Here</a></p><p>For a 360 interior view of this building: <a href='+ buildingObject.link360String +' target="_blank">Click Here</a></p>' ) : ('<p>For more information: <a href='+ buildingObject.infoLinkString +' target="_blank">Click Here</a></p>') ) +
+		
+		'</div></div>';
+			
+	//Add a listener to the marker: when the user clicks the marker, the infoWindow appears
+	google.maps.event.addListener(outlineEdgeHighlighted[buildingObject.id], 'click', (function(marker) {
+		return function() {
+			console.log(buildingObject.latLngCenter);
+			infoWindow.setContent(contentString);
+			infoWindow.setPosition(buildingObject.latLngCenter);
+			infoWindow.open(map, outlineEdgeHighlighted[buildingObject.id]);
+		}
+	})(outlineEdgeHighlighted[buildingObject.id]));
 	
 }
 
@@ -451,7 +494,11 @@ function getTourID (idValue) {
 	}//end for loop
 }
 
-//*************************************************************************
-//******************REMOVE EACH DATA TYPE FROM THE MAP*********************
 
-
+function getBuildingByCode (codeValue) {
+	for (var i=0 ; i < DataTypesInformation.buildings.length; i++) {
+		if (DataTypesInformation.buildings[i].code == codeValue) {
+			return DataTypesInformation.buildings[i];
+		}
+	}//end for loop
+}

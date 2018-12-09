@@ -212,6 +212,7 @@
 		var outlineEdge = [];
 		var polylinePath = [];
 		var polygonOutline = [];
+		var outlineEdgeHighlighted = [];
 		var parkingOutline = [];
 		var circleOutline = [];
 		var poiMarker = [];
@@ -267,6 +268,7 @@
 		var y;
 		
 		var buildingStates = [];
+		var buildingHighlightedStates = [];
 		var poiStates = [];
 		var circleStates = [];
 		var polylineStates = [];
@@ -357,7 +359,7 @@
 				'<th>{{classCode}}: {{title}}</th>' +
                 '<tr>' +
                     '<td>Location: </td>' +
-                    '<td><div class="sidebarOption" onClick="toggleBuildingHighlighted(2)">{{building}} {{room}}</div></td>' +
+                    '<td><div class="sidebarOption" onClick="toggleBuildingHighlighted(\'{{building}}\')">{{building}} {{room}}</div></td>' +
                 '</tr>' +
                 '<tr>' +
                     '<td>Time: </td>' +
@@ -475,6 +477,16 @@
 				//console.log(x.id);
 				//console.log(newBuildingObj.id);
 				//buildingStates[idNumber].state = true to set to true
+			}
+			
+			for (x in DataTypesInformation.buildings){
+				//add id and state to builingStates array
+				var newBuildingHighlightedObj = {
+					id : DataTypesInformation.buildings[x].id,
+					state : false
+				}
+				buildingHighlightedStates[DataTypesInformation.buildings[x].id]=newBuildingHighlightedObj;
+				//buildingHighlightedStates[idNumber].state = true to set to true
 			}
 			
 			for (x in DataTypesInformation.pois){

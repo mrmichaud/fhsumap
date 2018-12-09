@@ -55,7 +55,7 @@
         cursor: pointer;
         border-color: #eaaf0f;
     }
-    /*
+    
 	.active {
 		background-color: #eaaf0f;
 		color: #000000;
@@ -63,7 +63,7 @@
 		border-width: 1px;
 		border-color: #000000;
 	}
-	
+	/*
 	li.active:hover {
 		background-color: #eaaf0f;
 		color: #000000;

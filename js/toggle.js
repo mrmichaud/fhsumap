@@ -8,47 +8,180 @@
 
 //******************TOGGLE OBJECT BASED ON A GIVEN ID*****************************************
 
+function toggleBuildingHighlighted( idValue ) {
+	var building_object_data = getBuildingID( idValue );
+	//check if building state is true or not
+	if (buildingStates[idValue].state) {
+		//if state is true, hide building
+		//get correct outlineEdge.setVisible(false);
+		outlineEdge[idValue].setVisible(false);
+		//change state to false
+		buildingStates[idValue].state = false;
+	}
+	else {
+		//if state is false, draw building
+		drawBuilding (building_object_data, map);
+		
+		//change state to true
+		buildingStates[idValue].state = true;
+	}
+	//drawBuilding (building_object_data, map);
+}
 
 function toggleBuilding( idValue ) {
 	var building_object_data = getBuildingID( idValue );
-	console.log(building_object_data);
-	drawBuilding (building_object_data, map);
+	//console.log(building_object_data);
+	//console.log(idValue);
+	//console.log(buildingStates[idValue]);
+	//check if building state is true or not
+	if (buildingStates[idValue].state) {
+		//if state is true, hide building
+		//get correct outlineEdge.setVisible(false);
+		outlineEdge[idValue].setVisible(false);
+		//change state to false
+		buildingStates[idValue].state = false;
+	}
+	else {
+		//if state is false, draw building
+		drawBuilding (building_object_data, map);
+		
+		//change state to true
+		//console.log("before: " + buildingStates[idValue].state);
+		buildingStates[idValue].state = true;
+		//console.log("after: " + buildingStates[idValue].state);
+	}
+	//drawBuilding (building_object_data, map);
 }
 
 function togglePOI( idValue ) {
 	var poi_object_data = getPOIID( idValue );
-	drawPOI (poi_object_data, map);
+	
+	//check if poi state is true or not
+	if (poiStates[idValue].state) {
+		//if state is true, hide poiMarker
+		//get correct poiMarker.setVisible(false);
+		poiMarker[idValue].setVisible(false);
+		//change state to false
+		poiStates[idValue].state = false;
+	}
+	else {
+		//if state is false, draw poi
+		drawPOI (poi_object_data, map);
+		
+		//change state to true
+		//console.log("before: " + poiStates[idValue].state);
+		poiStates[idValue].state = true;
+		//console.log("after: " + poiStates[idValue].state);
+	}
+	
+	//drawPOI (poi_object_data, map);
 }
 
 function togglePolyline( idValue ) {
 	var polyline_object_data = getPolylineID( idValue );
-	drawPolyline (polyline_object_data, map);
+	
+	//check if polyline state is true or not
+	if (polylineStates[idValue].state) {
+		//if state is true, hide polyline
+		//get correct polylinePath.setVisible(false);
+		polylinePath[idValue].setVisible(false);
+		//change state to false
+		polylineStates[idValue].state = false;
+	}
+	else {
+		//if state is false, draw polyline
+		drawPolyline (polyline_object_data, map);
+		
+		//change state to true
+		//console.log("before: " + polylineStates[idValue].state);
+		polylineStates[idValue].state = true;
+		//console.log("after: " + polylineStates[idValue].state);
+	}
+	
+	//drawPolyline (polyline_object_data, map);
 }
 
 function togglePolygon( idValue ) {
 	var polygon_object_data = getPolygonID( idValue );
-	drawPolygon (polygon_object_data, map);
+	
+	//check if polygon state is true or not
+	if (polygonStates[idValue].state) {
+		//if state is true, hide polygon
+		//get correct polygonOutline.setVisible(false);
+		polygonOutline[idValue].setVisible(false);
+		//change state to false
+		polygonStates[idValue].state = false;
+	}
+	else {
+		//if state is false, draw polygon
+		drawPolygon (polygon_object_data, map);
+		
+		//change state to true
+		//console.log("before: " + polygonStates[idValue].state);
+		polygonStates[idValue].state = true;
+		//console.log("after: " + polygonStates[idValue].state);
+	}
+	//drawPolygon (polygon_object_data, map);
 }
 
 function toggleParking( idValueOfBuilding ) {
 	var building_object_data = getBuildingID( idValueOfBuilding );
-	if (building_object_data.nearbyParkingLots=="true" || building_object_data.parkingLotsId.length>0) {
-		//console.log(building_object_data.parkingLotsId);
-		for(i=0;i<building_object_data.parkingLotsId.length;i++){
-			//console.log(building_object_data.parkingLotsId[i]);
-			drawBuilding (building_object_data, map);
-			var parking_object_data = getParkingID( building_object_data.parkingLotsId[i] );
-			drawParking (parking_object_data, map);
+	//check if parking state is true or not
+	if (parkingStates[idValueOfBuilding].state) {
+		//if state is true, hide parking
+		if (building_object_data.nearbyParkingLots=="true" || building_object_data.parkingLotsId.length>0) {
+			//console.log(building_object_data.parkingLotsId);
+			for(i=0;i<building_object_data.parkingLotsId.length;i++){				
+				var parking_object_data = getParkingID( building_object_data.parkingLotsId[i] );
+				//get correct parkingOutline.setVisible(false);
+				parkingOutline[parking_object_data.id].setVisible(false);
+			}
+			//get correct outlineEdge.setVisible(false);
+			outlineEdge[idValueOfBuilding].setVisible(false);
+			//change state to false
+			buildingStates[idValueOfBuilding].state = false;
+			//change state to false
+			parkingStates[idValueOfBuilding].state = false;
 		}
 	}
 	else {
-		alert("No nearby parking lots were found.");
-	}	
+		//if state is false, draw parking
+		if (building_object_data.nearbyParkingLots=="true" || building_object_data.parkingLotsId.length>0) {
+			//console.log(building_object_data.parkingLotsId);
+			for(i=0;i<building_object_data.parkingLotsId.length;i++){				
+				var parking_object_data = getParkingID( building_object_data.parkingLotsId[i] );
+				drawParking (parking_object_data, map);
+			}
+			drawBuilding (building_object_data, map);
+		}
+		else {
+			alert("No nearby parking lots were found.");
+		}	
+		parkingStates[idValueOfBuilding].state = true;
+	}
 }
 
 function toggleCircle( idValue ) {
 	var circle_object_data = getCircleID( idValue );
-	drawCircle (circle_object_data, map);
+	
+	//check if circle state is true or not
+	if (circleStates[idValue].state) {
+		//if state is true, hide circle
+		//get correct circleOutline.setVisible(false);
+		circleOutline[idValue].setVisible(false);
+		//change state to false
+		circleStates[idValue].state = false;
+	}
+	else {
+		//if state is false, draw circle
+		drawCircle (circle_object_data, map);
+		
+		//change state to true
+		//console.log("before: " + circleStates[idValue].state);
+		circleStates[idValue].state = true;
+		//console.log("after: " + circleStates[idValue].state);
+	}	
+	//drawCircle (circle_object_data, map);
 }
 
 function toggleLayer (  ) {

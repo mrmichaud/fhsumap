@@ -1,4 +1,6 @@
+
 <!DOCTYPE html>
+<!--*Add a < back to the beginning and put above doctype -  ?php require_once('mapPullFromDB.php'); ?>-->
 <html>
 
 <head>
@@ -202,13 +204,17 @@
 		var infoBoxString = {};
 		var picture = {}; 
 
-		var markersCenter = {}; 
+		//var markersCenter = {}; 
 		var markersEntrance = {};
 		var listeners = {};
 		var infoLinkString = {};
 		var contentString = "";
 		var outlineEdge = [];
+		var polylinePath = [];
+		var polygonOutline = [];
 		var parkingOutline = [];
+		var circleOutline = [];
+		var poiMarker = [];
 		
 		var activeCategories = [];
 		
@@ -261,6 +267,13 @@
 		var y;
 		
 		var buildingStates = [];
+		var poiStates = [];
+		var circleStates = [];
+		var polylineStates = [];
+		var polygonStates = [];
+		var parkingStates = [];
+		var layersMenuOptionsStates = [];
+		var toursMenuOptionsStates = [];
 		
 		
 	</script>
@@ -342,7 +355,7 @@
 				'<th>{{classCode}}: {{title}}</th>' +
                 '<tr>' +
                     '<td>Location: </td>' +
-                    '<td>{{building}} {{room}}</td>' +
+                    '<td><div class="sidebarOption" onClick="toggleBuildingHighlighted(2)">{{building}} {{room}}</div></td>' +
                 '</tr>' +
                 '<tr>' +
                     '<td>Time: </td>' +
@@ -389,7 +402,7 @@
 			var returnContent = "";
 			var value=Object.values(this);
 			var keys=Object.keys(this);
-			console.log(value);
+			//console.log(value);
 			if(value[0] && 0 !== value[0].length){//checks if day is not empty
 				returnContent += keys[0] + ": " + value[0] + "<br />";
 			}
@@ -413,6 +426,10 @@
 		var rendered = Mustache.render(templateCategories, data);
 		$('#sidebar-tour').html(rendered);
 		//console.log(rendered);
+	  
+		$(".sidebarOption").click(function(){
+			$(this).toggleClass("active");
+		});
 	  
 	});
 
@@ -440,17 +457,96 @@
 		xmlhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 				DataTypesInformation = JSON.parse(this.responseText);
+				//JSON.parse('<?php echo loadShapes() ?>');
+				
 			//console.log(DataTypesInformation);
 			
+			//****CREATE ARRAY FOR EACH DATA TYPE HOLDING EACH OBJECT'S ID AND ACTIVE STATE**************
+			//console.log(DataTypesInformation.buildings);
 			for (x in DataTypesInformation.buildings){
 				//add id and state to builingStates array
 				var newBuildingObj = {
-					id : x.id,
+					id : DataTypesInformation.buildings[x].id,
 					state : false
 				}
-				buildingStates[x.id]=newBuildingObj;
+				buildingStates[DataTypesInformation.buildings[x].id]=newBuildingObj;
+				//console.log(buildingStates[DataTypesInformation.buildings.id]);
+				//console.log(x.id);
+				//console.log(newBuildingObj.id);
 				//buildingStates[idNumber].state = true to set to true
 			}
+			
+			for (x in DataTypesInformation.pois){
+				//add id and state to poiStates array
+				var newPoiObj = {
+					id : DataTypesInformation.pois[x].id,
+					state : false
+				}
+				poiStates[DataTypesInformation.pois[x].id]=newPoiObj;
+				//poiStates[idNumber].state = true to set to true
+			}
+			
+			for (x in DataTypesInformation.circles){
+				//add id and state to circleStates array
+				var newCircleObj = {
+					id : DataTypesInformation.circles[x].id,
+					state : false
+				}
+				circleStates[DataTypesInformation.circles[x].id]=newCircleObj;
+				//circleStates[idNumber].state = true to set to true
+			}
+			
+			for (x in DataTypesInformation.polylines){
+				//add id and state to polylineStates array
+				var newPolylineObj = {
+					id : DataTypesInformation.polylines[x].id,
+					state : false
+				}
+				polylineStates[DataTypesInformation.polylines[x].id]=newPolylineObj;
+				//polylineStates[idNumber].state = true to set to true
+			}
+			
+			for (x in DataTypesInformation.polygons){
+				//add id and state to polygonStates array
+				var newPolygonObj = {
+					id : DataTypesInformation.polygons[x].id,
+					state : false
+				}
+				polygonStates[DataTypesInformation.polygons[x].id]=newPolygonObj;
+				//polygonStates[idNumber].state = true to set to true
+			}
+			
+			for (x in DataTypesInformation.parking){
+				//add id and state to parkingStates array
+				var newParkingObj = {
+					id : DataTypesInformation.parking[x].id,
+					state : false
+				}
+				parkingStates[DataTypesInformation.parking[x].id]=newParkingObj;
+				//parkingStates[idNumber].state = true to set to true
+			}
+			
+			for (x in DataTypesInformation.layersMenuOptions){
+				//add id and state to layersMenuOptionsStates array
+				var newLayersMenuOptionsObj = {
+					id : DataTypesInformation.layersMenuOptions[x].id,
+					state : false
+				}
+				layersMenuOptionsStates[DataTypesInformation.layersMenuOptions[x].id]=newLayersMenuOptionsObj;
+				//layerMenuOptionsStates[idNumber].state = true to set to true
+			}
+			
+			for (x in DataTypesInformation.toursMenuOptions){
+				//add id and state to toursMenuOptionsStates array
+				var newTourMenuOptionsObj = {
+					id : DataTypesInformation.toursMenuOptions[x].id,
+					state : false
+				}
+				toursMenuOptionsStates[DataTypesInformation.toursMenuOptions[x].id]=newTourMenuOptionsObj;
+				//toursMenuOptionsStates[idNumber].state = true to set to true
+			}			
+			
+			//**************TESTS FOR EACH DRAW FUNCTION*****************
 			
 			var test_building_data = getBuildingID(2);
 			var test_poi_data = getPOIID(4);

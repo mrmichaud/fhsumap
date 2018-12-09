@@ -30,27 +30,27 @@ $(".nav-sb-menu").on('click', function() {
 });
 
 /* toggle student-info in sidebar */
-$("#sidebar").on('click', ".toggle-student-info",function() {
+$("#sidebar").on('click', "#toggle-student-info",function() {
     $(".student-info").toggle();
 });
 
 /* toggle share in sidebar */
-$("#sidebar").on('click', ".toggle-share", function() {
+$("#sidebar").on('click', "#toggle-share", function() {
     $(".share").toggle();
 });
 
 /* toggle about in sidebar */
-$("#sidebar").on('click', ".toggle-about", function() {
+$("#sidebar").on('click', "#toggle-about", function() {
     $(".about").toggle();
 });
 
 /* toggle help in sidebar */
-$("#sidebar").on('click', ".toggle-help", function() {
+$("#sidebar").on('click', "#toggle-help", function() {
     $(".help").toggle();
 });
 
 /* toggle version in sidebar */
-$("#sidebar").on('click', ".toggle-version", function() {
+$("#sidebar").on('click', "#toggle-version", function() {
     $(".version").toggle();
 });
 

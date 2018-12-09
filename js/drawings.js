@@ -164,12 +164,13 @@ function initMap() {
 //Draws a single marker on the map
 function drawPOI ( POIObject, map ) {
 	//create marker using passed values
-	var markersCenter = new google.maps.Marker({
+	poiMarker[POIObject.id] = new google.maps.Marker({
 		position: POIObject.latLng ,
 		title: POIObject.title,
+		icon: POIObject.icon,
 		map: map
 	});
-	markersCenter.setVisible(true);
+	poiMarker[POIObject.id].setVisible(true);
 	
 	// This is the content of the info window for a single marker
 	var contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
@@ -188,22 +189,22 @@ function drawPOI ( POIObject, map ) {
 		'</div></div>';
 
 	//Add a listener to the marker: when the user clicks the marker, the infoWindow appears
-	google.maps.event.addListener(markersCenter, 'click', (function(marker) {
+	google.maps.event.addListener(poiMarker[POIObject.id], 'click', (function(marker) {
 		return function() {
 			infoWindow.setContent(contentString);
-			infoWindow.setPosition(markersCenter.position);
-			infoWindow.open(map, markersCenter);
+			infoWindow.setPosition(poiMarker.position);
+			infoWindow.open(map, poiMarker[POIObject.id]);
 		}
-	})(markersCenter));
+	})(poiMarker[POIObject.id]));
 	
 }
 
 //Draws a single building on the map
 function drawBuilding ( buildingObject, map ) {
 	
-	console.log(buildingObject.buildingName);
+	//console.log(buildingObject.buildingName);
 	//create building polygon using passed value and global variables from index.html
-	outlineEdge = new google.maps.Polygon({
+	outlineEdge[buildingObject.id] = new google.maps.Polygon({
 		path: buildingObject.buildingOutline,
 		geodesic: true,
 		strokeColor: BUILDING_UNSELECTED_BORDER_COLOR,
@@ -212,7 +213,7 @@ function drawBuilding ( buildingObject, map ) {
 		fillColor: 	BUILDING_UNSELECTED_FILL_COLOR,
 		fillOpacity: BUILDING_UNSELECTED_FILL_OPACITY
 	});
-	outlineEdge.setMap(map);
+	outlineEdge[buildingObject.id].setMap(map);
 	
 	
 	// This is the content of the info window for a single building
@@ -225,28 +226,28 @@ function drawBuilding ( buildingObject, map ) {
 		//Insert photo and info string
 		buildingObject.picture + '>' + buildingObject.infoBoxString +
 		//Building hours of operation: check is displayHours is true, is yes then print hoursOfOperation and hoursLink, if not do not print
-		((buildingObject.openHours == "true") ? ('<p>Building Hours: ' + buildingObject.hoursOfOperation + '</p><p>For complet list of operating hours: <a href='+ buildingObject.hourLink +' target="_blank">Click Here</a></p>' ) : ('') ) +
+		((buildingObject.openHours == "true") ? ('<p>Building Hours: ' + buildingObject.hourOfOperation + '</p><p>For complet list of operating hours: <a href='+ buildingObject.hourLink +' target="_blank">Click Here</a></p>' ) : ('') ) +
 		//Link to 360 interior view if available with link to historical info, else just link to historical info
 		((buildingObject.link360 == "true") ? ('<p>For more information: <a href='+ buildingObject.infoLinkString +' target="_blank">Click Here</a></p><p>For a 360 interior view of this building: <a href='+ buildingObject.link360String +' target="_blank">Click Here</a></p>' ) : ('<p>For more information: <a href='+ buildingObject.infoLinkString +' target="_blank">Click Here</a></p>') ) +
 		
 		'</div></div>';
 			
 	//Add a listener to the marker: when the user clicks the marker, the infoWindow appears
-	google.maps.event.addListener(outlineEdge, 'click', (function(marker) {
+	google.maps.event.addListener(outlineEdge[buildingObject.id], 'click', (function(marker) {
 		return function() {
 			console.log(buildingObject.latLngCenter);
 			infoWindow.setContent(contentString);
 			infoWindow.setPosition(buildingObject.latLngCenter);
-			infoWindow.open(map, outlineEdge);
+			infoWindow.open(map, outlineEdge[buildingObject.id]);
 		}
-	})(outlineEdge));
+	})(outlineEdge[buildingObject.id]));
 	
 }
 
 //Draws a single parking lot on the map
 function drawParking ( parkingObject, map ) {
 	//create parking polygon using passed value and global variables from index.html
-	parkingOutline = new google.maps.Polygon({
+	parkingOutline[parkingObject.id] = new google.maps.Polygon({
 		path: parkingObject.parkingOutline,
 		geodesic: true,
 		strokeColor: PARKING_SELECTED_BORDER_COLOR,
@@ -255,8 +256,8 @@ function drawParking ( parkingObject, map ) {
 		fillColor: 	PARKING_SELECTED_FILL_COLOR,
 		fillOpacity: PARKING_SELECTED_FILL_OPACITY
 	});
-	parkingOutline.setMap(map);
-	parkingOutline.setVisible(true);
+	parkingOutline[parkingObject.id].setMap(map);
+	parkingOutline[parkingObject.id].setVisible(true);
 	
 	// This is the content of the info window for a single parking lot
 	var contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
@@ -270,13 +271,13 @@ function drawParking ( parkingObject, map ) {
 	
 		
 	//Add a listener to the marker: when the user clicks the marker, the infoWindow appears
-	google.maps.event.addListener(parkingOutline, 'click', (function(marker) {
+	google.maps.event.addListener(parkingOutline[parkingObject.id], 'click', (function(marker) {
 		return function() {
 			infoWindow.setContent(contentString);
 			infoWindow.setPosition(parkingObject.latLngCenter);
-			infoWindow.open(map, parkingOutline);
+			infoWindow.open(map, parkingOutline[parkingObject.id]);
 		}
-	})(parkingOutline));
+	})(parkingOutline[parkingObject.id]));
 	
 }
 
@@ -291,7 +292,7 @@ function drawPolyline ( polylineObject, map ) {
 	};
 	
 	//create polyline using passed value, lineSymbol, and global variables from index.html
-	polylinePath = new google.maps.Polyline({
+	polylinePath[polylineObject.id] = new google.maps.Polyline({
 		path: polylineObject.latLngArray,
 		geodesic: true,
 		strokeColor: TOUR_PATH_COLOR,
@@ -305,14 +306,14 @@ function drawPolyline ( polylineObject, map ) {
 		map: map
 	});
 
-	polylinePath.setMap(map);
-	polylinePath.setVisible(true);
+	polylinePath[polylineObject.id].setMap(map);
+	polylinePath[polylineObject.id].setVisible(true);
 }
 
 //Draws a single polygon on the map
 function drawPolygon ( polygonObject, map ) {
 	//create polygon using passed value and global variables from index.html
-	polygonOutline = new google.maps.Polygon({
+	polygonOutline[polygonObject.id] = new google.maps.Polygon({
 		path: polygonObject.outline,
 		geodesic: true,
 		strokeColor: POLYGON_UNSELECTED_BORDER_COLOR,
@@ -321,8 +322,8 @@ function drawPolygon ( polygonObject, map ) {
 		fillColor: 	POLYGON_UNSELECTED_FILL_COLOR,
 		fillOpacity: POLYGON_UNSELECTED_FILL_OPACITY
 	});
-	polygonOutline.setMap(map);
-	polygonOutline.setVisible(true);
+	polygonOutline[polygonObject.id].setMap(map);
+	polygonOutline[polygonObject.id].setVisible(true);
 	
 	// This is the content of the info window for a single polygon
 	var contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
@@ -339,20 +340,20 @@ function drawPolygon ( polygonObject, map ) {
 		'</div></div>';
 	
 	//Add a listener to the marker: when the user clicks the marker, the infoWindow appears
-	google.maps.event.addListener(polygonOutline, 'click', (function(marker) {
+	google.maps.event.addListener(polygonOutline[polygonObject.id], 'click', (function(marker) {
 		return function() {
 			infoWindow.setContent(contentString);
 			infoWindow.setPosition(polygonObject.latLngCenter);
-			infoWindow.open(map, polygonOutline);
+			infoWindow.open(map, polygonOutline[polygonObject.id]);
 		}
-	})(polygonOutline));
+	})(polygonOutline[polygonObject.id]));
 	
 }
 
 //Draws a single circle on the map
 function drawCircle ( circleObject, map ) {
 	//create circle using passed values and global variables from index.html
-	circleOutline = new google.maps.Circle({
+	circleOutline[circleObject.id] = new google.maps.Circle({
 		strokeColor: CIRCLE_PATH_COLOR,
 		strokeOpacity: 0.8,
 		strokeWeight: CIRCLE_PATH_SIZE,
@@ -362,7 +363,7 @@ function drawCircle ( circleObject, map ) {
 		center: circleObject.latLngCenter,
 		radius: circleObject.radius
 	});
-	
+	circleOutline[circleObject.id].setVisible(true);
 	
 	// This is the content of the info window for a single circle
 	var contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
@@ -375,13 +376,13 @@ function drawCircle ( circleObject, map ) {
 		'</div></div>';
 		
 	//Add a listener to the marker: when the user clicks the marker, the infoWindow appears
-	google.maps.event.addListener(circleOutline, 'click', (function(marker) {
+	google.maps.event.addListener(circleOutline[circleObject.id], 'click', (function(marker) {
 		return function() {
 			infoWindow.setContent(contentString);
 			infoWindow.setPosition(circleObject.latLngCenter);
-			infoWindow.open(map, circleOutline);
+			infoWindow.open(map, circleOutline[circleObject.id]);
 		}
-	})(circleOutline));
+	})(circleOutline[circleObject.id]));
 }
 
 //*************************************************************************

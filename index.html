@@ -1,4 +1,6 @@
+
 <!DOCTYPE html>
+<!--*Add a < back to the beginning and put above doctype -  ?php require_once('mapPullFromDB.php'); ?>-->
 <html>
 
 <head>
@@ -30,36 +32,7 @@
 
 <body>
     <!-- facebook share button, this code must be here according Facebook Developer JavaScript SDK -->
-    <div id="fb-root"></div>
-    <script>
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <!-- tweet share button -->
-    <script>
-        window.twttr = (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0],
-                t = window.twttr || {};
-            if (d.getElementById(id)) return t;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "https://platform.twitter.com/widgets.js";
-            fjs.parentNode.insertBefore(js, fjs);
-
-            t._e = [];
-            t.ready = function(f) {
-                t._e.push(f);
-            };
-
-            return t;
-        }(document, "script", "twitter-wjs"));
-    </script>
+    <div id="fb-root"></div>	
     <!-- ---------------------------------Desk---------------------------- -->
     <header>
         <nav class="navbar navbar-expand-xs fixed-top" id="top-navbar">
@@ -105,7 +78,7 @@
     <!-- Sidebar -->
 
     <div id="sidebar" class="sidebar">
-        <!-- the code below will use in "N-spa.js" -->
+		<!-- the code below will use in "N-spa.js" -->
         <div id="sidebar-hamburger" class="sidebar-content" style="display:none">Some content for main menu</div>
         <!-- the code above will use in "N-spa.js" -->
         <div id="sidebar-search" class="sidebar-content" style="display:none">Some content for search</div>
@@ -231,13 +204,17 @@
 		var infoBoxString = {};
 		var picture = {}; 
 
-		var markersCenter = {}; 
+		//var markersCenter = {}; 
 		var markersEntrance = {};
 		var listeners = {};
 		var infoLinkString = {};
 		var contentString = "";
 		var outlineEdge = [];
+		var polylinePath = [];
+		var polygonOutline = [];
 		var parkingOutline = [];
+		var circleOutline = [];
+		var poiMarker = [];
 		
 		var activeCategories = [];
 		
@@ -281,8 +258,6 @@
 
 		var currentPosition;
 		
-		//var infoWindow;
-		
 		var searchResults = [];
 		var DataTypesInformation;
 		var CampusTourInformation;
@@ -292,6 +267,13 @@
 		var y;
 		
 		var buildingStates = [];
+		var poiStates = [];
+		var circleStates = [];
+		var polylineStates = [];
+		var polygonStates = [];
+		var parkingStates = [];
+		var layersMenuOptionsStates = [];
+		var toursMenuOptionsStates = [];
 		
 		
 	</script>
@@ -319,7 +301,7 @@
 					'</div>' +
 					'<div id="walkingSelectionsStartDropdownOption">' +
 						'<select name="start" id="walkingDirectionsStartInput">' +
-						'<option value="0"> Current position</option>' +
+							'<option value="0"> Current position</option>' +
 							'{{#buildings}}<option value={{id}}>{{buildingName}}</option>{{/buildings}}' +
 						'</select>' +
 					'</div>' +
@@ -330,7 +312,7 @@
 					'</div>' +
 					'<div id="walkingSelectionsEndDropdownOption">' +
 						'<select name="end" id="walkingDirectionsEndInput">' +
-						'<option value="0"> Current position</option>' +
+							'<option value="0"> Current position</option>' +
 							'{{#buildings}}<option value={{id}}>{{buildingName}}</option>{{/buildings}}' +
 						'</select>' +
 					'</div>' +
@@ -353,7 +335,7 @@
 			'</div>' +
 			'<div id="walkingStepsContainer">' +
 				'<p>No walking results yet - Select above!</p>' +
-			'</div>' +	
+			'</div>' +			
 		'</div>' ;
 		Mustache.parse(templateWalkingDirectionBuildings);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateWalkingDirectionBuildings, data);
@@ -365,7 +347,7 @@
 		$('#sidebar-parking').html(rendered);
 
 		var templateCategories = '<h3>Main Menu</h3>'+
-		'<div><h4 class="toggle-student-info" >Student Information</h4>' +
+		'<div><h4 class="sidebarOption" id="toggle-student-info" >Student Information</h4>' +
 			'<table  class="student-info">' +
 				'<tr>' +
                     '<td>Student Name:</td>' +
@@ -375,11 +357,11 @@
 				'<th>{{classCode}}: {{title}}</th>' +
                 '<tr>' +
                     '<td>Location: </td>' +
-                    '<td>{{building}} {{room}}</td>' +
+                    '<td><div class="sidebarOption" onClick="toggleBuildingHighlighted(2)">{{building}} {{room}}</div></td>' +
                 '</tr>' +
                 '<tr>' +
                     '<td>Time: </td>' +
-                    '<td>{{#days}} {{processDays}} {{/days}}</td>' +
+                    '<td>{{#days}} {{{processDays}}} {{/days}}</td>' +
                 '</tr>' +
                 '<tr>' +
                     '<td>Instructor: </td>' +
@@ -388,51 +370,51 @@
 				'{{/classes}}' +
 			'</table>' +
 		'</div>' +
-		'<div><h4 class="toggle-share" class="sidebarOption">Share</h4>' +
-			'<table class="share">' +
-				'<tr class="share-button">' +
-                   '<td>' +
-                        //Facebook share
-                        '<div class="fb-share-button" data-href="https://www.your-domain.com/your-page.html" data-layout="button_count" data-size="large" data-mobile-iframe="true">' +
-                            '<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>' +
-                        '</div>' +
-                    '</td>' +
-                    '<td>' +
-                        //Twitter share 
-                        '<div class="share-button">' +
-                            '<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="large">Tweet</a>' +
-                        '</div>' +
-                    '</td>' +
-                '</tr>' +
-			'</table>' +
+		'<div><h4 class="sidebarOption" id="toggle-share">Share</h4>' +
+			'<div class="share">' +
+				//Facebook share
+				'<iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button_count&size=small&mobile_iframe=true&width=88&height=20&appId" width="88" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>' +
+				//Twitter share 
+				'<div class="">' +
+					'<a style="background-color:#000" class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="large">Tweet</a>' +
+				'</div>' +
+            '</div>' +        
 		'</div>' +
-		'<div><h4 class="toggle-about" >About</h4>' +
+		'<div><h4 class="sidebarOption" id="toggle-about">About</h4>' +
 			'<div class="about">' +
 				'<p>Insert about info here... </p>' +
 			'</div></div>' +
-		'<div><h4 class="toggle-help" >Help</h4>' +
+		'<div><h4 class="sidebarOption" id="toggle-help">Help</h4>' +
 			'<div class="help"><h5>Contact the Institute for New Media Studies:</h5> ' +
 				'<p>Location: Malloy Hall Room 106</p>' + 
 				'<p>Email: newmedia@fhsu.edu</p>' +
 				'<p>Phone: 785-628-4784</p>' +
 			'</div></div>' +
-		'<div><h4 class="toggle-version" >Version</h4>' +
+		'<div><h4 class="sidebarOption" id="toggle-version">Version</h4>' +
 			'<div id="informationCreditsDisplay" class="version" title="About the Next Dimension">' +
 				'<p>Created by Monica Michaud, Meng (Ella) Ding, Conner Chessmore, Yangyang Cui</p>' +
 				'<p>In the Institute for New Media Studies and Informatics Department</p>' +
 				'<p>Advisers: Gordon Carlson, PhD ; Nicholas Caporusso</p>' +
-				'<p>Dev Version: 0.2.4 (Dec 4)</p>' +
+				'<p>Dev Version: 0.2.5 (Dec 6, 2018)</p>' +
 			'</div></div>' +
 		'{{#personalData}}<li class="sidebarOption">{{label}}</li>{{/personalData}}<br>';
 		Mustache.parse(templateCategories);   // optional, speeds up future uses
-		data.processDays = function() {
-			//for (i=0; i<= days.length(); i++){
-				
-			//}
-			return this;
+		data.studentData.processDays = function() {
+			var returnContent = "";
+			var value=Object.values(this);
+			var keys=Object.keys(this);
+			//console.log(value);
+			if(value[0] && 0 !== value[0].length){//checks if day is not empty
+				returnContent += keys[0] + ": " + value[0] + "<br />";
+			}
+			return returnContent;
 		}
 		var rendered = Mustache.render(templateCategories, data.studentData);
 		$('#sidebar-hamburger').html(rendered);
+		$("#walkingDirectionsResultsContainer").hide();
+		$(".about").hide();
+		$(".help").hide();
+		$(".version").hide();
 
 		var templateCategories = '<h3>Layers</h3>{{#layersMenuOptions}}<li class="sidebarOption" onClick="toggleLayer({{#layerID}}{{.}},{{/layerID}})">{{label}}</li>{{/layersMenuOptions}}<br>'; 
 		Mustache.parse(templateCategories);   // optional, speeds up future uses
@@ -445,6 +427,10 @@
 		var rendered = Mustache.render(templateCategories, data);
 		$('#sidebar-tour').html(rendered);
 		//console.log(rendered);
+	  
+		$(".sidebarOption").click(function(){
+			$(this).toggleClass("active");
+		});
 	  
 	});
 
@@ -472,17 +458,96 @@
 		xmlhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 				DataTypesInformation = JSON.parse(this.responseText);
+				//JSON.parse('<?php echo loadShapes() ?>');
+				
 			//console.log(DataTypesInformation);
 			
+			//****CREATE ARRAY FOR EACH DATA TYPE HOLDING EACH OBJECT'S ID AND ACTIVE STATE**************
+			//console.log(DataTypesInformation.buildings);
 			for (x in DataTypesInformation.buildings){
 				//add id and state to builingStates array
 				var newBuildingObj = {
-					id : x.id,
+					id : DataTypesInformation.buildings[x].id,
 					state : false
 				}
-				buildingStates[x.id]=newBuildingObj;
+				buildingStates[DataTypesInformation.buildings[x].id]=newBuildingObj;
+				//console.log(buildingStates[DataTypesInformation.buildings.id]);
+				//console.log(x.id);
+				//console.log(newBuildingObj.id);
 				//buildingStates[idNumber].state = true to set to true
 			}
+			
+			for (x in DataTypesInformation.pois){
+				//add id and state to poiStates array
+				var newPoiObj = {
+					id : DataTypesInformation.pois[x].id,
+					state : false
+				}
+				poiStates[DataTypesInformation.pois[x].id]=newPoiObj;
+				//poiStates[idNumber].state = true to set to true
+			}
+			
+			for (x in DataTypesInformation.circles){
+				//add id and state to circleStates array
+				var newCircleObj = {
+					id : DataTypesInformation.circles[x].id,
+					state : false
+				}
+				circleStates[DataTypesInformation.circles[x].id]=newCircleObj;
+				//circleStates[idNumber].state = true to set to true
+			}
+			
+			for (x in DataTypesInformation.polylines){
+				//add id and state to polylineStates array
+				var newPolylineObj = {
+					id : DataTypesInformation.polylines[x].id,
+					state : false
+				}
+				polylineStates[DataTypesInformation.polylines[x].id]=newPolylineObj;
+				//polylineStates[idNumber].state = true to set to true
+			}
+			
+			for (x in DataTypesInformation.polygons){
+				//add id and state to polygonStates array
+				var newPolygonObj = {
+					id : DataTypesInformation.polygons[x].id,
+					state : false
+				}
+				polygonStates[DataTypesInformation.polygons[x].id]=newPolygonObj;
+				//polygonStates[idNumber].state = true to set to true
+			}
+			
+			for (x in DataTypesInformation.parking){
+				//add id and state to parkingStates array
+				var newParkingObj = {
+					id : DataTypesInformation.parking[x].id,
+					state : false
+				}
+				parkingStates[DataTypesInformation.parking[x].id]=newParkingObj;
+				//parkingStates[idNumber].state = true to set to true
+			}
+			
+			for (x in DataTypesInformation.layersMenuOptions){
+				//add id and state to layersMenuOptionsStates array
+				var newLayersMenuOptionsObj = {
+					id : DataTypesInformation.layersMenuOptions[x].id,
+					state : false
+				}
+				layersMenuOptionsStates[DataTypesInformation.layersMenuOptions[x].id]=newLayersMenuOptionsObj;
+				//layerMenuOptionsStates[idNumber].state = true to set to true
+			}
+			
+			for (x in DataTypesInformation.toursMenuOptions){
+				//add id and state to toursMenuOptionsStates array
+				var newTourMenuOptionsObj = {
+					id : DataTypesInformation.toursMenuOptions[x].id,
+					state : false
+				}
+				toursMenuOptionsStates[DataTypesInformation.toursMenuOptions[x].id]=newTourMenuOptionsObj;
+				//toursMenuOptionsStates[idNumber].state = true to set to true
+			}			
+			
+			//**************TESTS FOR EACH DRAW FUNCTION*****************
 			
 			var test_building_data = getBuildingID(2);
 			var test_poi_data = getPOIID(4);
@@ -683,23 +748,47 @@ $(window).resize(function(){
 });
 
 //when get directions is clicked => open walkingDirectionsResultsContainer
-$(document).ready(function(){
+$(function(){
 	$("#walkingSelectionsSubmitButton").click(function(){
 		$("#walkingDirectionsResultsContainer").show();				
 	});
-
-	$("#walkingDirectionsResultsContainer").hide();
 
 	$("#closeWalkingDirectionsPanelButton").click(function(){
 		$("#walkingDirectionsResultsContainer").hide();
 	});
 	
-	$(".about").hide();
-	$(".help").hide();
-	$(".version").hide();
-	
 });
 </script>
+
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- tweet share button -->
+    <script>
+        window.twttr = (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+
+            t._e = [];
+            t.ready = function(f) {
+                t._e.push(f);
+            };
+
+            return t;
+        }(document, "script", "twitter-wjs"));
+    </script>
 </body>
 
 </html>

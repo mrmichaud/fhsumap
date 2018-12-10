@@ -7,8 +7,13 @@
 // Author: Monica Michaud
 // Date: 5-1-2018
 //-----------------------------------------------------------------------------------------------
+/*$("#walkingSelectionsSubmitButton").click(function(){
+	$("walkingStepsContainer").css("display","block");
+});
+*/
 function showWalkingDirections() {
 	$("#walkingStepsContainer").empty();
+	$("#walkingStepsContainer").css("display","block");
 	//turn off start and end markers
 	for (var i = 0; i < startEndMarkerArray.length; i++){
 		startEndMarkerArray[i].setMap(null);

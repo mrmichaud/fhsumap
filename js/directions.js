@@ -45,7 +45,7 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
     console.log(end); 
 
     if(start == end){
-    	alert("Please choose different positions!");
+    	alert("Please Make The Start and End As different Positions!");
     }
     else{
     

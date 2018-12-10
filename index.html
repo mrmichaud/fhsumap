@@ -463,26 +463,58 @@
 		$("#searchButton").on("click", function(e) {
 			 findSearchResults( $("#headerSearchBarInput").val() ); });	
 	
-		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				StudentInformation = JSON.parse(this.responseText);
-				//JSON.parse('<?php echo loadShapes() ?>');
-				//console.log(StudentInformation);
-			}
-		};
-		xmlhttp.open("GET", "json_fhsuFakeStudentData.json", true);
-		xmlhttp.send();
 	
-		//put xmlhttp here
-		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				DataTypesInformation = JSON.parse(this.responseText);
-				//JSON.parse('<?php echo loadShapes() ?>');
-				
+	
+		$(function(){
+			$.getJSON("json_fhsuFakeStudentData.json" , function(result){
+					StudentInformation = result;
+					//JSON.parse('<?php echo loadShapes() ?>');
+					//console.log(StudentInformation);
+			});
+		});
+			
+		$(function(){
+			$.getJSON("json_fhsuDataTypes.json" , function(result){
+				DataTypesInformation = result;
 				//console.log(DataTypesInformation);
+			
+				var layersArray = [];
 				
+				for (x in DataTypesInformation.layers){
+				
+					var newElementsArray = [];
+				
+					for (y in DataTypesInformation.layers[x].elements){
+					
+						var newLayerElement = {
+							type : DataTypesInformation.layers[x].elements[y].type,
+							id   : DataTypesInformation.layers[x].elements[y].id,
+							state : false					
+						}
+						
+						newElementsArray.push(newLayerElement);
+					
+					}
+					
+					var newLayer = {
+						id : DataTypesInformation.layers[x].id,
+						elements : newElementsArray
+					}
+					
+					layersArray[DataTypesInformation.layers[x].id] = newLayer;
+								
+					//alreadyDrawn = [];			
+					//alreadyDrawn.push({type: "building", id: 2});
+				
+				}
+				
+				console.log(layersArray);
+				
+				
+						
+				
+				
+			
 				//****CREATE ARRAY FOR EACH DATA TYPE HOLDING EACH OBJECT'S ID AND ACTIVE STATE**************
 				//console.log(DataTypesInformation.buildings);
 				for (x in DataTypesInformation.buildings){
@@ -593,12 +625,8 @@
 				//drawPolyline (test_polylines_data, map);
 				//drawPolygon (test_polygons_data, map);
 				//drawCircle (test_circles_data, map);
-			}
-		};
-		xmlhttp.open("GET", "json_fhsuDataTypes.json", true);
-		xmlhttp.send();
-		
-		
+			});
+		});		
 		
 		function findSearchResults( searchQuery ) {
 			searchResults = [];

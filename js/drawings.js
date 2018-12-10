@@ -353,7 +353,7 @@ function drawPolyline ( polylineObject, map ) {
 
 	polylinePath[polylineObject.id].setMap(map);
 	polylinePath[polylineObject.id].setVisible(true);
-	//map.setCenter(buildingObject.latLngCenter);
+	map.setCenter(polylineObject.latLngArray[0]);
 }
 
 //Draws a single polygon on the map

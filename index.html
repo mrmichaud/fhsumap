@@ -276,6 +276,8 @@
 		var parkingStates = [];
 		var layersMenuOptionsStates = [];
 		var toursMenuOptionsStates = [];
+		var layersArray = [];
+		var alreadyDrawn = [];
 		
 		
 	</script>
@@ -463,12 +465,9 @@
 		$("#searchButton").on("click", function(e) {
 			 findSearchResults( $("#headerSearchBarInput").val() ); });	
 	
-	
-	
 		$(function(){
 			$.getJSON("json_fhsuFakeStudentData.json" , function(result){
 					StudentInformation = result;
-					//JSON.parse('<?php echo loadShapes() ?>');
 					//console.log(StudentInformation);
 			});
 		});
@@ -478,42 +477,29 @@
 				DataTypesInformation = result;
 				//console.log(DataTypesInformation);
 			
-				var layersArray = [];
-				
 				for (x in DataTypesInformation.layers){
-				
 					var newElementsArray = [];
-				
 					for (y in DataTypesInformation.layers[x].elements){
-					
 						var newLayerElement = {
 							type : DataTypesInformation.layers[x].elements[y].type,
 							id   : DataTypesInformation.layers[x].elements[y].id,
 							state : false					
-						}
-						
+						}//end var newLayerElement
 						newElementsArray.push(newLayerElement);
-					
-					}
+					}//end for each element in layer
 					
 					var newLayer = {
 						id : DataTypesInformation.layers[x].id,
 						elements : newElementsArray
-					}
-					
+					}//end var newLayer
 					layersArray[DataTypesInformation.layers[x].id] = newLayer;
-								
+					
+					// The following is used in every draw function to check if an object has already been drawn on the map
 					//alreadyDrawn = [];			
 					//alreadyDrawn.push({type: "building", id: 2});
-				
 				}
-				
 				console.log(layersArray);
-				
-				
-						
-				
-				
+
 			
 				//****CREATE ARRAY FOR EACH DATA TYPE HOLDING EACH OBJECT'S ID AND ACTIVE STATE**************
 				//console.log(DataTypesInformation.buildings);

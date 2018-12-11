@@ -354,6 +354,7 @@ function drawPolyline ( polylineObject, map ) {
 	polylinePath[polylineObject.id].setMap(map);
 	polylinePath[polylineObject.id].setVisible(true);
 	map.setCenter(polylineObject.latLngArray[0]);
+	map.setZoom(MAP_ZOOM-1);
 }
 
 //Draws a single polygon on the map
@@ -582,4 +583,37 @@ function openInfoWindowParking ( idValue ){
 	infoWindow.setContent(parking_infoBoxString);
 	infoWindow.setPosition(parking_latLngCenter);
 	infoWindow.open(map);
+}
+
+
+function clearAllMapDrawings(){
+	//for every object of every object type setVisible to false
+	
+	//for every building
+	for ( x in DataTypesInformation.buildings ){
+		outlineEdge[DataTypesInformation.buildings[x].id].setVisible(false);
+	}
+	//for every poi
+	for ( x in DataTypesInformation.pois ){
+		poiMarker[DataTypesInformation.pois[x].id].setVisible(false);
+	}
+	//for every polyline
+	for ( x in DataTypesInformation.polylines ) {
+		polylinePath[DataTypesInformation.polylines[x].id].setVisible(false);
+	}
+	//for every polygon
+	for ( x in DataTypesInformation.polygons ) {
+		polygonOutline[DataTypesInformation.polygons[x].id].setVisible(false);
+	}
+	//for every parking
+	for ( x in DataTypesInformation.parking ) {
+		parkingOutline[DataTypesInformation.parking[x].id].setVisible(false);
+	}
+	//for every circle
+	for ( x in DataTypesInformation.circles ) {
+		circleOutline[DataTypesInformation.circles[x].id].setVisible(false);
+	}
+	
+	infoWindow.close();
+	alreadyDrawn = [];
 }

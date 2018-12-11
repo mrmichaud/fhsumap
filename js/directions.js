@@ -9,6 +9,7 @@
 //-----------------------------------------------------------------------------------------------
 function showWalkingDirections() {
 	$("#walkingDirectionsResultsContainer").removeAttr("style");
+	
 	$("#walkingStepsContainer").empty();
 	
 	//turn off start and end markers

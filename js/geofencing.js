@@ -24,9 +24,8 @@ function checkBuilding(myLatlng) {
             paths: schoolBuildingArray[i].buildingOutline
         });
         if (google.maps.geometry.poly.containsLocation(myLatlng, schoolBuilding)) {
-            $("#currentLocation").click(function() {
-                $(".modal-body").append(schoolBuildingArray[i].buildingName)
-            });
+
+
             console.log(schoolBuildingArray[i].buildingName);
             console.log(schoolBuildingArray[i].infoBoxString);
             building = i;
@@ -34,7 +33,14 @@ function checkBuilding(myLatlng) {
         }
         //console.log(schoolBuildingArray[i]);
     }
+
 } // End of FUNCTION checkBuilding
+
+// show info in index page------------------------------------------------------
+
+$("#currentLocation").click(function() {
+    $(".currentLocationInfo").toggle();
+});
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {

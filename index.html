@@ -202,11 +202,11 @@
             <table class="currentLocationInfo" style="display:none">
                 <tr>
                     <td>Building Name:</td>
-                    <td></td>
+                    <td id="current_building_name"></td>
                 </tr>
                 <tr>
                     <td>Building Introduction:</td>
-                    <td></td>
+                    <td id="current_building_info"></td>
                 </tr>
             </table>
             <hr>
@@ -261,16 +261,38 @@
             </div>
         </nav>
     </footer>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Current Location Introduction</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+                </div>
+                <div class="modal-body">
+                    <h3 class="currentLocationTitle"></h3>
+                    <p class="currentLocationContent"></p>
+                </div>
+                <div class="modal-footer">
+                    <input type="checkbox" name="close-popup-info" value="none" class="float-left" id="check-click" />Don't show this in this building.
+                    <br>
 
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="./js/jquery-3.3.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="./js/geofencing.js"></script>
     <!--<script type="text/javascript" src="js/current.js"></script>-->
     <script src="js/mustache.min.js"></script>
 
     <script>
         /***********************
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            			DECLARE GLOBAL VARIABLES TO STORE GEO DATA
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            			***********************/
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            			DECLARE GLOBAL VARIABLES TO STORE GEO DATA
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            			***********************/
 
         var NUMBER_OF_BUILDINGS = 40;
         var NUMBER_OF_TOUR_STOPS = 9;
@@ -329,7 +351,7 @@
         var parkingOutline = [];
 
         var activeCategories = [];
-
+        var whetherLocationChanged;
         //Campus Tour Variables
         var campusTourCoordinates = [];
         var campusTourPath;
@@ -368,7 +390,9 @@
         var startEndMarkerArray = [];
         var map;
         //var infoWindow;
+        var modalShown = false;
 
+        var showBuildingInfo = 1;
         var searchResults = [];
         var DataTypesInformation;
         var CampusTourInformation;

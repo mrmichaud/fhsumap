@@ -38,39 +38,3 @@ $(".toggle-student-info").on('click', function() {
 $(".toggle-share").on('click', function() {
     $(".share").toggle();
 });
-
-/* Google Map - Get Current Position - Geolocation*/
-/*
- if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-
-            var iconBase = 'img/';
-            var icons = {
-              currentPos: {
-                icon: iconBase + 'red-circle-big.png'
-              }
-            };
-
-            var features = [{
-                position: pos,
-                type: 'currentPos'
-              }];
-
-          // Create markers.
-            features.forEach(function(feature) {
-              var marker = new google.maps.Marker({
-                position: feature.position,
-                icon: icons[feature.type].icon,
-                map: map
-              });
-            });
-              
-
-       });     
-};
-    
-*/

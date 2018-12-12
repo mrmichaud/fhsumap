@@ -25,8 +25,30 @@ function checkBuilding(myLatlng) {
         });
         if (google.maps.geometry.poly.containsLocation(myLatlng, schoolBuilding)) {
 
-
+            if (showBuildingInfo == 1 && modalShown == false) {
+                $('#exampleModal').modal('show');
+                modalShown = true;
+            }
             console.log(schoolBuildingArray[i].buildingName);
+
+            /* Current Location show in Sidebar */
+            $('#current_building_name').text(schoolBuildingArray[i].buildingName);
+            $('#current_building_info').text(schoolBuildingArray[i].infoBoxString);
+
+
+            if (whetherLocationChanged != schoolBuildingArray[i].buildingName) {
+                whetherLocationChanged = schoolBuildingArray[i].buildingName;
+                /* Current location popup */
+                $('.currentLocationTitle').text(whetherLocationChanged);
+                $('.currentLocationContent').text(schoolBuildingArray[i].infoBoxString);
+            }
+            $('#check-click').on("click", function() {
+                showBuildingInfo = 0;
+                $('#exampleModal').modal('hide');
+            });
+            /* Current location popup */
+            //$('.currentLocationTitle').text(schoolBuildingArray[i].buildingName);
+            // $('.currentLocationContent').text(schoolBuildingArray[i].infoBoxString);
             console.log(schoolBuildingArray[i].infoBoxString);
             building = i;
             inbuilding = true;
@@ -35,8 +57,10 @@ function checkBuilding(myLatlng) {
     }
 
 } // End of FUNCTION checkBuilding
-
-// show info in index page------------------------------------------------------
+$('#exampleModal').on('hidden.bs.modal', function() {
+        modalShown = false;
+    })
+    // show info in index page------------------------------------------------------
 
 $("#currentLocation").click(function() {
     $(".currentLocationInfo").toggle();

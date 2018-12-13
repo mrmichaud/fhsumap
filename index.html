@@ -213,7 +213,7 @@
 		var polylinePath = [];
 		var polygonOutline = [];
 		var outlineEdgeHighlighted = [];
-		var parkingOutline = [];
+		var parkingOutline={};
 		var circleOutline = [];
 		var poiMarker = [];
 		
@@ -273,11 +273,12 @@
 		var circleStates = [];
 		var polylineStates = [];
 		var polygonStates = [];
-		var parkingStates = [];
+		var parkingStates = {};
 		var layersMenuOptionsStates = [];
 		var toursMenuOptionsStates = [];
 		var layersArray = [];
 		var alreadyDrawn = [];
+		var parkingLotObject = {};
 		
 		
 	</script>
@@ -335,7 +336,7 @@
 				'<p>Created by Monica Michaud, Meng (Ella) Ding, Conner Chessmore, Yangyang Cui</p>' +
 				'<p>In the Institute for New Media Studies and Informatics Department</p>' +
 				'<p>Advisers: Gordon Carlson, PhD ; Nicholas Caporusso</p>' +
-				'<p>Dev Version: 0.2.5 (Dec 6, 2018)</p>' +
+				'<p>Dev Version: 0.2.6 (Dec 13, 2018)</p>' +
 			'</div></div>' +
 		'{{#personalData}}<li class="sidebarOption">{{label}}</li>{{/personalData}}<br>';
 		Mustache.parse(templateCategories);   // optional, speeds up future uses
@@ -565,7 +566,7 @@
 					polygonStates[DataTypesInformation.polygons[x].id]=newPolygonObj;
 					//polygonStates[idNumber].state = true to set to true
 				}
-				
+
 				for (x in DataTypesInformation.parking){
 					//add id and state to parkingStates array
 					var newParkingObj = {
@@ -598,12 +599,12 @@
 				
 				//**************TESTS FOR EACH DRAW FUNCTION*****************
 				
-				var test_building_data = getBuildingID(2);
-				var test_poi_data = getPOIID(4);
-				var test_parking_data = getParkingID(4);
-				var test_polylines_data = getPolylineID(2);
-				var test_polygons_data = getPolygonID(1);
-				var test_circles_data = getCircleID(1);
+				var test_building_data = getBuildingObjectByID(2);
+				var test_poi_data = getPOIObjectByID(4);
+				var test_parking_data = getParkingObjectByID(4);
+				var test_polylines_data = getPolylineObjectByID(2);
+				var test_polygons_data = getPolygonObjectByID(1);
+				var test_circles_data = getCircleObjectByID(1);
 				
 				//drawBuilding (test_building_data, map);
 				//drawPOI (test_poi_data, map);
@@ -664,12 +665,12 @@
 				for ( y = 0; y < searchResults.length; y++ ){
 					//list all buildings included on Name
 					if (searchResults[y].type == "BuildingName"){
-						newBuildingNameContent += "<p><a href='#' onClick='showSearchResultsBuilding(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
+						newBuildingNameContent += "<p><a href='#' onClick='toggleBuildingHighlighted(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
 						//console.log(searchResults[y]);
 					}
 					//list all buildings included on Code
 					if (searchResults[y].type == "BuildingCode"){
-						newBuildingCodeContent += "<p><a href='#' onClick='showSearchResultsBuilding(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
+						newBuildingCodeContent += "<p><a href='#' onClick='toggleBuildingHighlighted(&apos;" + searchResults[y].code + "&apos;)'>" + searchResults[y].building + "</a></p>";
 					}
 					//list all buildings included on Information
 					//if (searchResults[y].type == "Information"){
@@ -754,10 +755,6 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMYzAk4QMdMjpWb7ecr5ImwRaV8xp1sDw&callback=initMap" async defer></script>
 
     <script src="./js/N-spa.js"></script>
-	<!--
-	<script src="./js/buildingData.js"></script>
-	-->
-	<script src="./js/interactions.js"></script>
 	<script src="./js/drawings.js"></script>
 	<script src="./js/toggle.js"></script>
 	<script src="./js/directions.js"></script>

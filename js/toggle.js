@@ -1,10 +1,14 @@
-// infoBoxString, picture, infoLinkString, and campusTourCoordinates.
+//     toggle.js contains the toggle functions for highlighted buildings (for search results 
+// and student information), buildings, pois, polylines, polygons, parking (toggles both 
+// the selected building and its nearby parking lots), circles, layers, and tours.
+//     This file also contains the showParkingLotOnly(), showSearchResultsPOI(), and 
+// showSearchResultsParking() functions that draws a single parking lot on the map, 
+// open a selected poi and its infoWindow, open a selected parking lot and its infoWindow 
+// respectively.
 //
-// ************************NEED TO UPDATE COMMENTS ABOVE**********************
 // Author: Monica Michaud
-// Date: 12-5-2018
+// Date: 12-13-2018
 //-----------------------------------------------------------------------------------------------
-
 
 //******************TOGGLE OBJECT BASED ON A GIVEN ID*****************************************
 
@@ -17,22 +21,18 @@ function toggleBuildingHighlighted( codeValue ) {
 		outlineEdgeHighlighted[building_object_data.id].setVisible(false);
 		//change state to false
 		buildingHighlightedStates[building_object_data.id].state = false;
+		infoWindow.close();
 	}
 	else {
 		//if state is false, draw building
 		drawBuildingHighlighted (building_object_data, map);
-		
 		//change state to true
 		buildingHighlightedStates[building_object_data.id].state = true;
 	}
-	//drawBuilding (building_object_data, map);
 }
 
 function toggleBuilding( idValue ) {
-	var building_object_data = getBuildingID( idValue );
-	//console.log(building_object_data);
-	//console.log(idValue);
-	//console.log(buildingStates[idValue]);
+	var building_object_data = getBuildingObjectByID( idValue );
 	//check if building state is true or not
 	if (buildingStates[idValue].state) {
 		//if state is true, hide building
@@ -44,18 +44,13 @@ function toggleBuilding( idValue ) {
 	else {
 		//if state is false, draw building
 		drawBuilding (building_object_data, map);
-		
 		//change state to true
-		//console.log("before: " + buildingStates[idValue].state);
 		buildingStates[idValue].state = true;
-		//console.log("after: " + buildingStates[idValue].state);
 	}
-	//drawBuilding (building_object_data, map);
 }
 
 function togglePOI( idValue ) {
-	var poi_object_data = getPOIID( idValue );
-	
+	var poi_object_data = getPOIObjectByID( idValue );
 	//check if poi state is true or not
 	if (poiStates[idValue].state) {
 		//if state is true, hide poiMarker
@@ -67,19 +62,13 @@ function togglePOI( idValue ) {
 	else {
 		//if state is false, draw poi
 		drawPOI (poi_object_data, map);
-		
 		//change state to true
-		//console.log("before: " + poiStates[idValue].state);
 		poiStates[idValue].state = true;
-		//console.log("after: " + poiStates[idValue].state);
 	}
-	
-	//drawPOI (poi_object_data, map);
 }
 
 function togglePolyline( idValue ) {
-	var polyline_object_data = getPolylineID( idValue );
-	
+	var polyline_object_data = getPolylineObjectByID( idValue );
 	//check if polyline state is true or not
 	if (polylineStates[idValue].state) {
 		//if state is true, hide polyline
@@ -91,19 +80,13 @@ function togglePolyline( idValue ) {
 	else {
 		//if state is false, draw polyline
 		drawPolyline (polyline_object_data, map);
-		
 		//change state to true
-		//console.log("before: " + polylineStates[idValue].state);
 		polylineStates[idValue].state = true;
-		//console.log("after: " + polylineStates[idValue].state);
 	}
-	
-	//drawPolyline (polyline_object_data, map);
 }
 
 function togglePolygon( idValue ) {
-	var polygon_object_data = getPolygonID( idValue );
-	
+	var polygon_object_data = getPolygonObjectByID( idValue );
 	//check if polygon state is true or not
 	if (polygonStates[idValue].state) {
 		//if state is true, hide polygon
@@ -115,44 +98,42 @@ function togglePolygon( idValue ) {
 	else {
 		//if state is false, draw polygon
 		drawPolygon (polygon_object_data, map);
-		
 		//change state to true
-		//console.log("before: " + polygonStates[idValue].state);
 		polygonStates[idValue].state = true;
-		//console.log("after: " + polygonStates[idValue].state);
 	}
-	//drawPolygon (polygon_object_data, map);
 }
 
 function toggleParking( idValueOfBuilding ) {
-	var building_object_data = getBuildingID( idValueOfBuilding );
+	var building_object_data = getBuildingObjectByID( idValueOfBuilding );
 	//check if parking state is true or not
 	if (parkingStates[idValueOfBuilding].state) {
 		//if state is true, hide parking
 		if (building_object_data.nearbyParkingLots=="true" || building_object_data.parkingLotsId.length>0) {
 			//console.log(building_object_data.parkingLotsId);
 			for(i=0;i<building_object_data.parkingLotsId.length;i++){				
-				var parking_object_data = getParkingID( building_object_data.parkingLotsId[i] );
+				var parking_object_data = getParkingObjectByID( building_object_data.parkingLotsId[i] );
 				//get correct parkingOutline.setVisible(false);
 				parkingOutline[parking_object_data.id].setVisible(false);
 			}
 			//get correct outlineEdge.setVisible(false);
 			outlineEdge[idValueOfBuilding].setVisible(false);
-			//change state to false
+			//change building state to false
 			buildingStates[idValueOfBuilding].state = false;
-			//change state to false
+			//change parking state to false
 			parkingStates[idValueOfBuilding].state = false;
 		}
 	}
 	else {
-		//if state is false, draw parking
+		//if building state is false, draw building and nearby parking lots
 		if (building_object_data.nearbyParkingLots=="true" || building_object_data.parkingLotsId.length>0) {
 			//console.log(building_object_data.parkingLotsId);
 			for(i=0;i<building_object_data.parkingLotsId.length;i++){				
-				var parking_object_data = getParkingID( building_object_data.parkingLotsId[i] );
+				var parking_object_data = getParkingObjectByID( building_object_data.parkingLotsId[i] );
 				drawParking (parking_object_data, map);
+				parkingStates[idValueOfBuilding].state = true;
 			}
 			drawBuilding (building_object_data, map);
+			buildingStates[idValueOfBuilding].state = true;
 		}
 		else {
 			alert("No nearby parking lots were found.");
@@ -162,8 +143,7 @@ function toggleParking( idValueOfBuilding ) {
 }
 
 function toggleCircle( idValue ) {
-	var circle_object_data = getCircleID( idValue );
-	
+	var circle_object_data = getCircleObjectByID( idValue );
 	//check if circle state is true or not
 	if (circleStates[idValue].state) {
 		//if state is true, hide circle
@@ -175,20 +155,15 @@ function toggleCircle( idValue ) {
 	else {
 		//if state is false, draw circle
 		drawCircle (circle_object_data, map);
-		
 		//change state to true
-		//console.log("before: " + circleStates[idValue].state);
 		circleStates[idValue].state = true;
-		//console.log("after: " + circleStates[idValue].state);
 	}	
-	//drawCircle (circle_object_data, map);
 }
 
 function toggleLayer (  ) {
-	
 	for (var i = 0; i < arguments.length; i++) {
 		//find layer object by id
-		var layer_object_data = getLayerID( arguments[i]);
+		var layer_object_data = getLayerObjectByID( arguments[i]);
 		//check for state (on or off)
 		//loop through each element 
 		//console.log(layer_object_data.elements);
@@ -220,12 +195,15 @@ function toggleLayer (  ) {
 			}
 		}//end inner for loop
 	}//end of for loop
+	
+	clearAllMapDrawings();
+	redrawAllTrueStateObjects();
 }
 
 function toggleTour (  ) {
 	for (var i = 0; i < arguments.length; i++) {
 		//find layer object by id
-		var tour_object_data = getTourID( arguments[i]);
+		var tour_object_data = getTourObjectByID( arguments[i]);
 		//check for state (on or off)
 		//loop through each element 
 		for (j=0;j<tour_object_data.elements.length;j++){
@@ -258,14 +236,10 @@ function toggleTour (  ) {
 	}//end of for loop
 }
 
+//*********SHOW FUNCTIONS FOR SEARCH RESULTS - EVENTUALLY TOGGLES*********************
 function showParkingLotOnly ( idValue ) {				
-	var parking_object_data = getParkingID( idValue );
+	var parking_object_data = getParkingObjectByID( idValue );
 	drawParking (parking_object_data, map);
-}
-
-function showSearchResultsBuilding ( codeValue ) {
-	toggleBuildingHighlighted( codeValue );
-	openInfoWindowBuilding( codeValue );
 }
 
 function showSearchResultsPOI ( idValue ) {

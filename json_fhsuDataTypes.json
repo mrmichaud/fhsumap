@@ -1900,7 +1900,7 @@
 	    	"title":"Memorial Union",
 	    	"latLng":{"lat":38.87404,"lng":-99.3419},
 	    	"category":"placesOfInterest",
-	    	"icon":"heart",
+	    	"icon":"siteImages/info2.png",
 	    	"infoWindow": true,
 	    	"picture":"buildingImages/4.JPG",
 	    	"infoBoxString":"Dining facilities for students were first provided in 1909 within the old Infirmary Building, which had been relocated to campus from old Fort Hays, and in 1912, was moved to the new Agricultural High School Building (the first Rarick Hall). As dining needs continued to grow, Cody Commons was constructed in 1923 in the location of the present day Memorial Union kitchen/dining area. At a cost of $851,600, student fees alone financed the construction of the Memorial Union which was completed and dedicated during Homecoming on October 18, 1958. In 2007 the Union was renovated at a cost of $8.5M to include the beautiful new entrance on the west side. The building serves as a gathering space for faculty, staff, students and the general public, and stands as a memorial to those of FHSU who lost their lives in the defense of their country during the two world wars, the Korean conflict, and the Vietnam War. A bronze and walnut plaque in the Sunset Lounge in the Memorial Union lists the names of the FHSU men to whom the building was originally dedicated, and a memorial was added later next to the Memorial Union for those who died in Vietnam.",
@@ -2477,13 +2477,13 @@
 			"parkingName"		: "G", 
 			"latLngCenter"		: {"lat": 38.86955, "lng": -99.34145},
 			"parkingOutline"	: [
-				{"lat"	: 38.86971, "lng"	: -99.34157},
-				{"lat"	: 38.8697, "lng"	: -99.34113}, 
-				{"lat"	: 38.86933, "lng"	: -99.34122},
-				{"lat"	: 38.86941, "lng"	: -99.34188},
-				{"lat"	: 38.86941, "lng"	: -99.34082}, 
 				{"lat"	: 38.86951, "lng"	: -99.34114},
-				{"lat"	: 38.86932, "lng"	: -99.34083}
+				{"lat"	: 38.8697, "lng"	: -99.34113},
+				{"lat"	: 38.86971, "lng"	: -99.34157},
+				{"lat"	: 38.86941, "lng"	: -99.34188},
+				{"lat"	: 38.86933, "lng"	: -99.34122},
+				{"lat"	: 38.86932, "lng"	: -99.34083},
+				{"lat"	: 38.86941, "lng"	: -99.34082}
 				],
 			"disabledParking"   : "",
 			"visitorParking"    : "",

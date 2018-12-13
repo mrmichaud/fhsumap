@@ -35,13 +35,13 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
     if(document.getElementById('walkingDirectionsStartInput').value == 0){
           start = currentPosition;           
         }
-    else start = getBuildingID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance;
+    else start = getBuildingObjectByID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance;
     console.log(start);   
 
     if(document.getElementById('walkingDirectionsEndInput').value == 0){
           end = currentPosition;
         }
-    else end = getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance;
+    else end = getBuildingObjectByID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance;
     console.log(end); 
 
     if(start == end){
@@ -78,13 +78,13 @@ function calculateAndDisplayRoute(directionsDisplay, directionsService,	markerAr
 			    if(document.getElementById('walkingDirectionsStartInput').value == 0){
 			          start = currentPosition;           
 			        }
-			    else start = getBuildingID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance;
+			    else start = getBuildingObjectByID(document.getElementById('walkingDirectionsStartInput').value).latLngMainEntrance;
 			    //console.log(start);   
 
 			    if(document.getElementById('walkingDirectionsEndInput').value == 0){
 			          end = currentPosition;
 			        }
-			    else end = getBuildingID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance;
+			    else end = getBuildingObjectByID(document.getElementById('walkingDirectionsEndInput').value).latLngMainEntrance;
 			    //console.log(end);    
 				var startMarker = new google.maps.Marker({
                     position: start,

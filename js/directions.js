@@ -1,11 +1,11 @@
-//master-----------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------
 // directions.js contains the functions that contol the walking directions operations on the map.
 //
 // This includes: showWalkingDirections, calculateAndDisplayRoute, showSteps, and 
 // attachInstructionText.
 //
 // Author: Monica Michaud
-// Date: 5-1-2018
+// Date: 12-13-2018
 //-----------------------------------------------------------------------------------------------
 function showWalkingDirections() {
 	$("#walkingStepsContainer").empty();

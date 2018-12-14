@@ -113,7 +113,7 @@ function toggleParking( idValueOfBuilding ) {
 			for(i=0;i<building_object_data.parkingLotsId.length;i++){				
 				var parking_object_data = getParkingObjectByID( building_object_data.parkingLotsId[i] );
 				//get correct parkingOutline.setVisible(false);
-				parkingOutline[parking_object_data.id].setVisible(false);
+				parkingOutline[idValueOfBuilding][parking_object_data.id].setVisible(false);
 			}
 			//get correct outlineEdge.setVisible(false);
 			outlineEdge[idValueOfBuilding].setVisible(false);
@@ -129,7 +129,7 @@ function toggleParking( idValueOfBuilding ) {
 			//console.log(building_object_data.parkingLotsId);
 			for(i=0;i<building_object_data.parkingLotsId.length;i++){				
 				var parking_object_data = getParkingObjectByID( building_object_data.parkingLotsId[i] );
-				drawParking (parking_object_data, map);
+				drawParking (idValueOfBuilding,parking_object_data, map);
 				parkingStates[idValueOfBuilding].state = true;
 			}
 			drawBuilding (building_object_data, map);
@@ -160,7 +160,7 @@ function toggleCircle( idValue ) {
 	}	
 }
 
-function toggleLayer (  ) {
+function toggleLayer ( ) {
 	for (var i = 0; i < arguments.length; i++) {
 		//find layer object by id
 		var layer_object_data = getLayerObjectByID( arguments[i]);

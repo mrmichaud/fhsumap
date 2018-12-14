@@ -139,7 +139,6 @@
 		/***********************
 		DECLARE GLOBAL VARIABLES TO STORE GEO DATA
 		***********************/
-		
 		var NUMBER_OF_BUILDINGS = 40;
 		var NUMBER_OF_TOUR_STOPS = 9;
 		
@@ -195,7 +194,9 @@
 		var CIRCLE_FILL_COLOR = '#ff0000';
 		var CIRCLE_FILL_OPACITY = 0.35;
 		
-			
+		var mapSettings = {};
+		var mapStyles = {};
+		
 		// This section declares each of the arrays used to hold building information
 		var buildingNames = {}; 
 		var latLngCenter = {};
@@ -279,8 +280,6 @@
 		var layersArray = [];
 		var alreadyDrawn = [];
 		var parkingLotObject = {};
-		
-		
 	</script>
 	
 	<script>
@@ -314,11 +313,11 @@
 		'<div><h4 class="sidebarOption" id="toggle-share">Share</h4>' +
 			'<div class="share">' +
 				//Facebook share
-				'<iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button_count&size=small&mobile_iframe=true&width=88&height=20&appId" width="88" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>' +
+				//'<iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fnewmedia.fhsu.edu%2Fprojects%2Fmapwebapp&layout=button&size=large&mobile_iframe=true&width=73&height=28&appId" width="73" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>' +
 				//Twitter share 
-				'<div class="">' +
-					'<a style="background-color:#000" class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="large">Tweet</a>' +
-				'</div>' +
+				//'<div class="">' +
+				//	'<a style="background-color:#000" class="twitter-share-button" href="https://twitter.com/intent/tweet?text=FHSU%20Campus%20Map" data-size="large">Tweet</a>' +
+				//'</div>' +
             '</div>' +        
 		'</div>' +
 		'<div><h4 class="sidebarOption" id="toggle-about">About</h4>' +
@@ -335,7 +334,7 @@
 			'<div id="informationCreditsDisplay" class="version" title="About the Next Dimension">' +
 				'<p>Created by Monica Michaud, Meng (Ella) Ding, Conner Chessmore, Yangyang Cui</p>' +
 				'<p>In the Institute for New Media Studies and Informatics Department</p>' +
-				'<p>Advisers: Gordon Carlson, PhD ; Nicholas Caporusso</p>' +
+				'<p>Advisers: Gordon Carlson, PhD ; Nicholas Caporusso, PhD</p>' +
 				'<p>Dev Version: 0.2.6 (Dec 13, 2018)</p>' +
 			'</div></div>' +
 		'{{#personalData}}<li class="sidebarOption">{{label}}</li>{{/personalData}}<br>';
@@ -374,7 +373,8 @@
 	*/
 	
 	//Templates for various menu tabs:	
-	$.getJSON( "json_fhsuDataTypes.json", function( data ) {
+	//$.getJSON( "back_end/jsonFromDB.json", function( data ) {
+	$.getJSON( "jsonFromDB.json", function( data ) {
 		var templateBuildingDirectory = '<h3>Building Directory</h3>{{#buildings}}<li class="sidebarOption toggleBuilding" onClick="toggleBuilding({{id}})">{{buildingName}} ({{code}})</li>{{/buildings}}';
 		Mustache.parse(templateBuildingDirectory);   // optional, speeds up future uses
 		var rendered = Mustache.render(templateBuildingDirectory, data);
@@ -474,9 +474,16 @@
 		});
 			
 		$(function(){
-			$.getJSON("json_fhsuDataTypes.json" , function(result){
+			//$.getJSON("json_fhsuDataTypes.json", function( result ){
+			//$.getJSON("back_end/jsonFromDB.json", function( result ){
+			$.getJSON("jsonFromDB.json", function( result ){
 				DataTypesInformation = result;
-				//console.log(DataTypesInformation);
+				console.log(DataTypesInformation);
+			
+				mapSettings = DataTypesInformation.mapSettings;
+				mapStyles = DataTypesInformation.mapStyles;	
+
+				console.log(mapSettings);
 			
 				for (x in DataTypesInformation.layers){
 					var newElementsArray = [];
@@ -499,7 +506,7 @@
 					//alreadyDrawn = [];			
 					//alreadyDrawn.push({type: "building", id: 2});
 				}
-				console.log(layersArray);
+				//console.log(layersArray);
 
 			
 				//****CREATE ARRAY FOR EACH DATA TYPE HOLDING EACH OBJECT'S ID AND ACTIVE STATE**************
@@ -754,7 +761,7 @@
 	    
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMYzAk4QMdMjpWb7ecr5ImwRaV8xp1sDw&callback=initMap" async defer></script>
 
-    <script src="./js/N-spa.js"></script>
+    <script src="./js/sidebarControls.js"></script>
 	<script src="./js/drawings.js"></script>
 	<script src="./js/toggle.js"></script>
 	<script src="./js/directions.js"></script>
@@ -801,8 +808,9 @@ $(function(){
 	
 });
 </script>
-
-    <script>
+	<!--Social Media scripts-->
+	<!--
+	<script>
         (function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
@@ -812,7 +820,9 @@ $(function(){
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
+	-->
     <!-- tweet share button -->
+	<!--
     <script>
         window.twttr = (function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0],
@@ -831,6 +841,7 @@ $(function(){
             return t;
         }(document, "script", "twitter-wjs"));
     </script>
+	-->
 </body>
 
 </html>

@@ -31,7 +31,7 @@
 		"menuCategories"	:	["athletics"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "false",
         "parkingLotsId"     :   []
 		},
@@ -66,7 +66,7 @@
 		"menuCategories"	:	["academic"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [4, 17]
 		},
@@ -108,7 +108,7 @@
 		"menuCategories"	:	["academic"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [4]
 		},
@@ -169,7 +169,7 @@
 		"menuCategories"	:	["academic"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [20]
 		},
@@ -232,7 +232,7 @@
 		"menuCategories"	:	["placesOfInterest", "food"],
 		"openHours"         :   "true",
         "hourOfOperation"   :   "Monday - Thursday 7:30am - Midnight; Friday - 7:30am - 6pm; Saturday - 10am - 5pm; Sunday - Noon - Midnight",
-        "hourLink”"         :   "https://www.fhsu.edu/library/",
+        "hourLink"         :   "https://www.fhsu.edu/library/",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [2]
 		},
@@ -300,7 +300,7 @@
 		"menuCategories"	:	["academic", "placesOfInterest"],
 		"openHours"         :   "true",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "false",
         "parkingLotsId"     :   []
 		},
@@ -335,7 +335,7 @@
 		"menuCategories"	:	["serviceBuildings"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "false",
         "parkingLotsId"     :   []
 		},
@@ -407,7 +407,7 @@
 		"menuCategories"	:	["academic"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [17]
 		},
@@ -451,7 +451,7 @@
 		"menuCategories"	:	["academic"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [17]
 		},
@@ -510,7 +510,7 @@
 		"menuCategories"	:	["academic"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [4, 17]
 		},
@@ -554,7 +554,7 @@
 		"menuCategories"	:	["academic"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [2, 3, 20]
 		},
@@ -589,7 +589,7 @@
 		"menuCategories"	:	["placesOfInterest"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [2, 3]
 		},
@@ -641,7 +641,7 @@
 		"menuCategories"	:	["academic"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [5]
 		},
@@ -677,7 +677,7 @@
 		"menuCategories"	:	["academic", "placesOfInterest", "food"],
 		"openHours"         :   "true",
         "hourOfOperation"   :   "Monday - Thursday 7:30am - Midnight; Friday - 7:30am  6pm; Saturday - 10am - 5pm; Sunday - Noon - Midnight",
-        "hourLink”"         :   "https://www.fhsu.edu/library/",
+        "hourLink"         :   "https://www.fhsu.edu/library/",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [5, 6]
 		},
@@ -712,7 +712,7 @@
 		"menuCategories"	:	["placesOfInterest"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [6]
 		},
@@ -764,7 +764,7 @@
 		"menuCategories"	:	["academic"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [5, 6]
 		},
@@ -825,7 +825,7 @@
 		"menuCategories"	:	["academic"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [5, 18]
 		},
@@ -857,7 +857,7 @@
 		"menuCategories"	:	["serviceBuildings"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [6]
 		},
@@ -888,7 +888,7 @@
 		"menuCategories"	:	["serviceBuildings"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [6]
 		},
@@ -931,7 +931,7 @@
 		"menuCategories"	:	["residenceBuildings"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [7, 8]
 		},
@@ -987,7 +987,7 @@
 		"menuCategories"	:	["residenceBuildings", "food"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [8, 9]
 		},
@@ -1024,7 +1024,7 @@
 		"menuCategories"	:	["residenceBuildings"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [9]
 		},
@@ -1059,7 +1059,7 @@
 		"menuCategories"	:	["residenceBuildings"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [6, 9]
 		},
@@ -1115,7 +1115,7 @@
 		"menuCategories"	:	["residenceBuildings"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [12]
 		},
@@ -1159,7 +1159,7 @@
 		"menuCategories"	:	["residenceBuildings"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [12]
 		},
@@ -1253,7 +1253,7 @@
 		"menuCategories"	:	["residenceBuildings", "food"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [12]
 		},
@@ -1303,7 +1303,7 @@
 		"menuCategories"	:	["residenceBuildings"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [12]
 		},
@@ -1394,7 +1394,7 @@
 		"menuCategories"	:	["residenceBuildings"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [10, 11]
 		},
@@ -1443,7 +1443,7 @@
 		"menuCategories"	:	["residenceBuildings"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [13]
 		},
@@ -1514,7 +1514,7 @@
 		"menuCategories"	:	["athletics"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [13]
 		},
@@ -1548,7 +1548,7 @@
 		"menuCategories"	:	["athletics"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [19]
 		},
@@ -1579,7 +1579,7 @@
 		"menuCategories"	:	["serviceBuildings"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "false",
         "parkingLotsId"     :   []
 		},
@@ -1617,7 +1617,7 @@
 		"menuCategories"	:	["academic"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [1, 2]
 		},
@@ -1650,7 +1650,7 @@
 		"menuCategories"	:	["serviceBuildings"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [1, 21]
 		},
@@ -1688,7 +1688,7 @@
 		"menuCategories"	:	["serviceBuildings"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [2]
 		},
@@ -1720,7 +1720,7 @@
 		"menuCategories"	:	["serviceBuildings"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [21]
 		},
@@ -1754,7 +1754,7 @@
 		"menuCategories"	:	["serviceBuildings"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [21]
 		},
@@ -1797,7 +1797,7 @@
 		"menuCategories"	:	["placesOfInterest"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [14]
 		},
@@ -1842,7 +1842,7 @@
 		"menuCategories"	:	["athletics"],
 		"openHours"         :   "false",
         "hourOfOperation"   :   "",
-        "hourLink”"         :   "",
+        "hourLink"         :   "",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [14, 15]
 		},
@@ -1888,7 +1888,7 @@
 		"menuCategories"	:	["academic", "athletics"],
 		"openHours"         :   "true",
         "hourOfOperation"   :   "Monday - Thursday: 6:30 AM - 10:00 PM; Friday: 6:30 AM - 6:00 PM; Saturday - Sunday: 10:00 AM - 5:00 PM",
-        "hourLink”"         :   "https://www.fhsu.edu/hhp/Facility-Information/",
+        "hourLink"         :   "https://www.fhsu.edu/hhp/Facility-Information/",
         "nearbyParkingLots" :   "true",
         "parkingLotsId"     :   [15, 16]
 		}

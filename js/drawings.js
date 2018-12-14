@@ -4,9 +4,10 @@
 // image, outline GPS coordinates, center GPS coordinates, and the entrance coordinates, etc). This
 // file also includes the functions that return a given object based on a provided id, a function 
 // that returns the building object given a code, infoWindow open functions for search results, and 
-// clear all and redraw all true functions to enable toggle features.
+// clear all and redraw all true functions to enable toggle features. The initMap function also includes
+// functions that initialize the geolocation feature.
 //
-// This includes: initMap, drawPOI, drawBuilding, drawBuildingHighlighted, drawParking, drawPolyline,
+// This includes: initMap, errorHandler, getLocationUpdate, drawPOI, drawBuilding, drawBuildingHighlighted, drawParking, drawPolyline,
 // drawPolygon, drawCircle, getPOIObjectByID, getBuildingObjectByID, getParkingObjectByID, getPolylineObjectByID,
 // getPolygonObjectByID, getCircleObjectByID, getLayerObjectByID, getTourObjectByID, getBuildingByCode, 
 // openInfoWindowBuilding, openInfoWindowPOI, openInfoWindowParking, clearAllMapDrawings, and 
@@ -61,7 +62,7 @@ function initMap() {
 		]
 	});
 
-	//*********************INITAILIZE GEOLOCATION FEATURE*****************************
+	//*********************INITIALIZE GEOLOCATION FEATURE*****************************
 	//using watchPosition() to tract locations
 	var watchID;
     var marker = null;
@@ -308,13 +309,15 @@ function drawBuildingHighlighted ( buildingObject, map ) {
 }
 
 //Draws a single parking lot on the map
-function drawParking ( parkingObject, map ) {
+function drawParking (buildingId, parkingObject, map ) {
 	//check if parking has already been drawn
 	var parkingObjectForArray = {type: "parking", id: parkingObject.id};
 	//if not in alreadyDrawn[] then draw to map
-	if ( (alreadyDrawn.length == 0) || (alreadyDrawn.indexOf(parkingObjectForArray) < 0) ) {
+	//if (!alreadyDrawn.includes(parkingObject.id) ) {
 		//create parking polygon using passed value and global variables from index.html
-		parkingOutline[parkingObject.id] = new google.maps.Polygon({
+		if(parkingOutline[buildingId]==undefined)parkingOutline[buildingId]={};
+		console.log(parkingObject.parkingOutline);
+		parkingOutline[buildingId][parkingObject.id] = new google.maps.Polygon({
 			path: parkingObject.parkingOutline,
 			geodesic: true,
 			strokeColor: PARKING_SELECTED_BORDER_COLOR,
@@ -323,8 +326,8 @@ function drawParking ( parkingObject, map ) {
 			fillColor: 	PARKING_SELECTED_FILL_COLOR,
 			fillOpacity: PARKING_SELECTED_FILL_OPACITY
 		});
-		parkingOutline[parkingObject.id].setMap(map);
-		parkingOutline[parkingObject.id].setVisible(true);
+		parkingOutline[buildingId][parkingObject.id].setMap(map);
+		parkingOutline[buildingId][parkingObject.id].setVisible(true);
 		// This is the content of the info window for a single parking lot
 		var contentString = '<div id="content"><h1 id="infoWindowHeading" class="infoWindowHeading">' + 
 			parkingObject.parkingName + ' (Zone: ' + parkingObject.zone + ') ' +
@@ -333,22 +336,22 @@ function drawParking ( parkingObject, map ) {
 			//'Insert info content here...' +
 			//'</div>' +
 			'</div>';
-		console.log('outline');
-		console.log(parkingOutline);
+		//console.log('outline');
+		//console.log(parkingOutline);
 			
 		//Add a listener to the marker: when the user clicks the marker, the infoWindow appears
-		google.maps.event.addListener(parkingOutline[parkingObject.id], 'click', (function(marker) {
+		google.maps.event.addListener(parkingOutline[buildingId][parkingObject.id], 'click', (function(marker) {
 			return function() {
 				infoWindow.setContent(contentString);
 				infoWindow.setPosition(parkingObject.latLngCenter);
 				map.setCenter(parkingObject.latLngCenter);
 				infoWindow.open(map, parkingOutline[parkingObject.id]);
 			}
-		})(parkingOutline[parkingObject.id]));
+		})(parkingOutline[buildingId][parkingObject.id]));
 		
 		//add parkingObjectForArray to alreadyDrawn[]
-		alreadyDrawn.push(parkingObjectForArray);
-	}	
+		//alreadyDrawn.push(parkingObject.id);
+	//}	
 }
 
 //Draws a single polyline on the map
@@ -668,9 +671,14 @@ function clearAllMapDrawings(){
 		}
 	}
 	//for every parking
-	for ( x in DataTypesInformation.parking ) {
-		if( typeof parkingOutline[DataTypesInformation.parking[x].id] !== "undefined"){
-			parkingOutline[DataTypesInformation.parking[x].id].setVisible(false);
+	for ( x in DataTypesInformation.buildings ){
+		for ( y in DataTypesInformation.parking ) {
+			if(parkingOutline[DataTypesInformation.buildings[x].id]==undefined){
+				parkingOutline[DataTypesInformation.buildings[x].id]={};
+			}
+			if( typeof parkingOutline[DataTypesInformation.buildings[x].id][DataTypesInformation.parking[y].id] !== "undefined"){
+				parkingOutline[DataTypesInformation.buildings[x].id][DataTypesInformation.parking[y].id].setVisible(false);
+			}
 		}
 	}
 	//for every circle
@@ -717,9 +725,9 @@ function redrawAllTrueStateObjects(){
 		if (parkingStates[x].state){
 			for (j in DataTypesInformation.buildings){
 				if(DataTypesInformation.buildings[j].id==parkingStates[x].id){
-					console.log(DataTypesInformation.buildings[j].parkingLotsId);
+					//console.log(DataTypesInformation.buildings[j].parkingLotsId);
 					for (k=0;k<DataTypesInformation.buildings[j].parkingLotsId.length;k++){
-						parkingOutline[DataTypesInformation.buildings[j].parkingLotsId[k]].setVisible(true);
+						parkingOutline[DataTypesInformation.buildings[j].id][DataTypesInformation.buildings[j].parkingLotsId[k]].setVisible(true);
 					}
 				}
 			}
